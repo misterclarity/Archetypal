@@ -241,6 +241,81 @@
         .hidden {
             display: none;
         }
+
+        /* Selection Tooltip */
+        #selection-tooltip {
+            position: absolute;
+            z-index: 2000;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-primary);
+            border-radius: 8px;
+            padding: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            display: none;
+            backdrop-filter: blur(10px);
+            max-width: 300px;
+            width: 100%;
+        }
+
+        #selection-tooltip button {
+            background: var(--accent-primary);
+            border: none;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--header-font);
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        #selection-tooltip button:hover {
+            background: var(--accent-secondary);
+        }
+
+        .tooltip-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tooltip-textarea {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px;
+            border-radius: 4px;
+            font-family: var(--body-font);
+            resize: vertical;
+            min-height: 60px;
+            width: 100%;
+            outline: none;
+        }
+
+        .tooltip-textarea:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .tooltip-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .text-preview {
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-left: 2px solid var(--accent-secondary);
+            padding-left: 8px;
+            margin-bottom: 4px;
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
     </style>
 </head>
 
@@ -373,6 +448,99 @@
 
         // Initialize
         loadBook();
+
+        // --- Clarifying Question / Search Feature ---
+        const tooltip = document.createElement('div');
+        tooltip.id = 'selection-tooltip';
+        document.body.appendChild(tooltip);
+
+        let currentSelection = '';
+
+        document.addEventListener('mouseup', (e) => {
+            // Wait slightly for selection to finalize
+            setTimeout(() => {
+                const selection = window.getSelection();
+                const text = selection.toString().trim();
+
+                // If clicking inside the tooltip, do not hide it
+                if (tooltip.contains(e.target)) return;
+
+                // If no text selected, hide tooltip
+                if (!text) {
+                    tooltip.style.display = 'none';
+                    return;
+                }
+
+                // If text is selected, save it and show button
+                currentSelection = text;
+                showAskButton(selection);
+            }, 10);
+        });
+
+        // Hide if clicking on existing non-tooltip elements without selecting
+        document.addEventListener('mousedown', (e) => {
+            if (tooltip.style.display !== 'none' && !tooltip.contains(e.target)) {
+                tooltip.style.display = 'none';
+            }
+        });
+
+        function showAskButton(selection) {
+            // Position
+            const range = selection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+
+            // Absolute position accounting for scroll
+            const top = rect.bottom + window.scrollY + 10;
+            let left = rect.left + window.scrollX + (rect.width / 2);
+
+            // Keep within bounds roughly
+            if (left < 100) left = 100;
+            if (left > document.body.clientWidth - 100) left = document.body.clientWidth - 100;
+
+            tooltip.style.top = `${top}px`;
+            tooltip.style.left = `${left}px`;
+            tooltip.style.transform = 'translateX(-50%)';
+            tooltip.style.display = 'block';
+
+            tooltip.innerHTML = `
+                <button onclick="showQuestionForm()">Ask / Search</button>
+            `;
+        }
+
+        // Attach to window so onclick works
+        window.showQuestionForm = function () {
+            const preview = currentSelection;
+
+            tooltip.innerHTML = `
+                <div class="tooltip-form">
+                    <div class="text-preview">"${preview}"</div>
+                    <textarea class="tooltip-textarea" id="user-question" placeholder="Ask a question or just search..."></textarea>
+                    <div class="tooltip-actions">
+                        <button onclick="submitSearch()">Google Search</button>
+                    </div>
+                </div>
+            `;
+            // Focus input
+            setTimeout(() => {
+                const input = document.getElementById('user-question');
+                if (input) input.focus();
+            }, 50);
+        };
+
+        window.submitSearch = function () {
+            const questionInput = document.getElementById('user-question');
+            const question = questionInput ? questionInput.value : "";
+
+            // Construct query: Question + Context
+            const query = `${question} "${currentSelection}"`.trim();
+
+            if (query) {
+                const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                window.open(url, '_blank');
+            }
+
+            tooltip.style.display = 'none';
+        }
     </script>
 </body>
 
