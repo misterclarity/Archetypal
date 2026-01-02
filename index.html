@@ -827,6 +827,20 @@
         const tocContainer = document.getElementById('toc-container');
         const progressBar = document.getElementById('progress-bar');
 
+        // Feature: Estimate Reading Time
+        const wordCount = rawMarkdown.replace(/[#*`_]/g, '').split(/\s+/).length;
+        const readTime = Math.ceil(wordCount / 225); // ~225 WPM average
+        const timeDisplay = document.createElement('div');
+        timeDisplay.innerHTML = `<span style="opacity:0.8">⏱ Reading Time:</span> <strong style="color: var(--accent-secondary)">~${readTime} min</strong>`;
+        timeDisplay.style.margin = '0 0 1.5rem 0';
+        timeDisplay.style.fontSize = '0.9rem';
+        timeDisplay.style.color = 'var(--text-secondary)';
+
+        const sidebarTitle = document.querySelector('.sidebar-title');
+        if (sidebarTitle) {
+            sidebarTitle.after(timeDisplay);
+        }
+
         // Render Markdown
         contentDiv.innerHTML = marked.parse(rawMarkdown);
 

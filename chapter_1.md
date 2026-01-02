@@ -27,11 +27,11 @@ If we imagine the Zodiac as a circle, the line drawn directly across the center 
 
 The universe abhors a vacuum, and the psyche abhors an imbalance. The fundamental algorithm running in the background of your consciousness is **Homeostasis**.
 
-When a planet (Operator) is located in a specific sign (Coordinate), it is "charged" with the energy of that sign. However, the system fundamentally "knows" about the missing energy on the opposite side of the axis.
+When a planet (Operator) is located in a specific sign (Coordinate), it is "initialized" with the energy of that sign. However, the system fundamentally "knows" about the imbalance created by the missing activation on the opposite side of the axis.
 
-**Example**: If you have many planets in **Capricorn** (Public Ambition/Structure), the system will naturally experience a "deficit" in **Cancer** (Private Safety/Emotional Roots).
+**Example**: If you have many planets in **Capricorn** (Public Ambition/Structure), the system will naturally experience an "imbalance" in **Cancer** (Private Safety/Emotional Roots).
 
-The symmetry of the Zodiac implies that to debug a problem in one sign, you often have to look at its mirror. If an operator is stuck in an infinite loop of negative Virgo (Over-analysis and the resulting anxiety), the patch (Selective attention) is often found in relation to the logic of Pisces (Silence, Abstraction, Outsourcing to a "higher" power, Flow, the "blurring" of criteria and inflexible reference points).
+The symmetry of the Zodiac implies that to debug a problem in one sign, you often have to look at its complementary pair. For example, if someone is stuck in an infinite loop of negative Virgo (Over-analysis and the resulting anxiety), the patch (Selective attention) is often found in relation to the logic of Pisces (Silence, Abstraction, Outsourcing to a "higher" power, Flow, the "blurring" of criteria and inflexible reference points).
 
 ## The Coordinate Grid as a Gradient
 
