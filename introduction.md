@@ -10,7 +10,7 @@ True astrology is not a belief system. It is a language. Specifically, it is a s
 
 ## Archetypal Operating System
 
-In this book, we are going to leave behind the mystic veils and the fortune-telling crystal balls. Instead, we are going to approach the birth chart as a **System Engineer** approaches a complex piece of legacy code.
+In this book, we are going to leave behind the mystic veils and the fortune-telling crystal balls. Instead, we are going to approach the birth chart as a **System Engineer** approaches a complex piece of code.
 
 Your birth chart is not a prediction of your fate. It is the **Source Code** of your psyche. It reveals:
 1.  **The Parameters**: Your temperament and default settings.
