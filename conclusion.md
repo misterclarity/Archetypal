@@ -4,7 +4,7 @@
 
 We began this book with the goal of moving from "Horoscope Reading" (Passive User) to "Astrological Self-Knowledge" (System Administrator).
 
-By understanding the **Algebra of the Soul**, you stop asking "What will happen to me?" and start asking "How am I running this program?"
+By understanding the **Archetypal Operating System**, you stop asking "What will happen to me?" and start asking "How am I running this program?"
 
 ## Debugging as a Lifestyle
 Self-knowledge is not a destination; it is a continuous debugging process.

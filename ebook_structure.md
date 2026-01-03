@@ -1,4 +1,4 @@
-# The Algebra of the Soul: A Logical Approach to Astrological Self-Knowledge
+# Archetypal Operating System: A Logical Approach to Astrological Self-Knowledge
 
 ## Introduction: The Code of Consciousness
 - **Astrology as a System**: Viewing the birth chart not as mystic prediction, but as a complex information system grounded in symmetry.

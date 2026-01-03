@@ -8,7 +8,7 @@ This is a common sentiment, often spoken by rational minds who see the daily hor
 
 True astrology is not a belief system. It is a language. Specifically, it is a symbolic language of **Time** and **Character**.
 
-## The Algebra of the Soul
+## Archetypal Operating System
 
 In this book, we are going to leave behind the mystic veils and the fortune-telling crystal balls. Instead, we are going to approach the birth chart as a **System Engineer** approaches a complex piece of legacy code.
 

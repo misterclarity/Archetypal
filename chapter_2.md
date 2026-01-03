@@ -1,6 +1,6 @@
 # Chapter 2: The Six Axes (Complementary Pairs)
 
-If the Zodiac is a coordinate system, the **Axes** are the primary vectors of tension and resolution. We typically interpret signs individually, but in the "algebra of the soul," they function as coupled equations. You cannot solve for one variable without considering its inverse.
+If the Zodiac is a coordinate system, the **Axes** are the primary vectors of tension and resolution. We typically interpret signs individually, but in the "Archetypal Operating System," they function as coupled equations. You cannot solve for one variable without considering its inverse.
 
 These six axes represent the fundamental binaries of the human experience.
 
