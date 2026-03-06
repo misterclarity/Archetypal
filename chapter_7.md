@@ -14,7 +14,7 @@ The framework transfers cleanly:
 - **Axes** become **Agent Pairing Strategies** -- the complementary pairs that prevent overspecialization and systemic fragility
 - **Transits** become **Lifecycle Events** -- the scheduled maintenance windows, version migrations, and architectural audits that keep the fleet evolving
 
-A birth chart is a fleet manifest for one human system. An `agents.md` is a fleet manifest for an autonomous system you design. Same architecture. Different substrate.
+A birth chart is a fleet manifest for one human system. An [`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md) is a fleet manifest for an autonomous system you design. Same architecture. Different substrate.
 
 ---
 
@@ -266,11 +266,11 @@ DEPLOY   o-------o--------o--------o--------o--------o
 
 ---
 
-## The `agents.md` Boilerplate -- Your Fleet Manifest
+## The [`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md) Boilerplate -- Your Fleet Manifest
 
 Every birth chart begins with a moment of incarnation -- the exact time, place, and configuration that defines a system's initial state. Your agent fleet deserves the same precision.
 
-The **`agents.md`** file is the birth chart of your agent system. It is both documentation and operational manifest -- a single source of truth that declares every agent's identity, role, governance policy, communication topology, and lifecycle schedule. When a new engineer joins the team, they read `agents.md` first. When an incident occurs, the investigation starts at `agents.md`. When the fleet evolves, `agents.md` evolves with it.
+The **[`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md)** file is the birth chart of your agent system. It is both documentation and operational manifest -- a single source of truth that declares every agent's identity, role, governance policy, communication topology, and lifecycle schedule. When a new engineer joins the team, they read `agents.md` first. When an incident occurs, the investigation starts at `agents.md`. When the fleet evolves, `agents.md` evolves with it.
 
 The boilerplate follows the full Archetypal Operating System framework:
 
@@ -283,7 +283,7 @@ The boilerplate follows the full Archetypal Operating System framework:
 - **Monitoring (Moon/Buffer)** -- state persistence, logging, and alerting
 - **Security (Cancer/Guardian)** -- authentication, authorization, and data classification
 
-The complete `agents.md` boilerplate is included in this repository. Copy it. Customize it. Deploy it as the living configuration document for your fleet. Update it every time the fleet changes -- because an outdated manifest is worse than no manifest at all.
+The complete [`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md) boilerplate is included in this repository. Copy it. Customize it. Deploy it as the living configuration document for your fleet. Update it every time the fleet changes -- because an outdated manifest is worse than no manifest at all.
 
 ---
 

@@ -1,3 +1,9 @@
+---
+
+**Disclaimer:** This book is provided for educational and entertainment purposes only. The authors and contributors assume no responsibility or liability for any damage, loss, or disruption incurred to software architecture, production systems, agent fleets, or any other infrastructure resulting from the implementation of the principles, frameworks, or methodologies described herein. Apply at your own risk. Test in staging first. Saturn would insist.
+
+---
+
 # Introduction: The Code of Consciousness
 
 ## Beyond Belief
