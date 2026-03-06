@@ -60,6 +60,15 @@
 - **Identifying Loops**: Common logical traps (e.g., a "Saturn hard aspect" as a recursive error in self-belief).
 - **Optimizing the System**: Using the awareness of these operators to balance the axes and integrate reflections.
 
+## Chapter 7: Agentology (The Fleet Architecture)
+- **The Framework Transfer**: Applying the Archetypal Operating System to autonomous AI agent fleet management. Signs as agent role archetypes, Planets as governance functions, Aspects as communication topologies, Axes as pairing strategies, Transits as lifecycle events.
+- **The Twelve Agent Archetypes**: Mapping each sign to a specialized agent role -- Initiator, Accumulator, Router, Guardian, Presenter, Validator, Mediator, Auditor, Strategist, Governor, Innovator, Synthesizer.
+- **Planetary Governance**: Saturn as guardrails and policy enforcement. Mercury as inter-agent messaging protocol. Jupiter as scaling policy. Pluto as retirement and migration.
+- **The Six Axes of Agent Pairing**: Complementary agent strategies for fleet resilience. Never deploy one pole without its complement.
+- **Aspect Topologies**: Inter-agent communication patterns -- conjunction (tight coupling), opposition (microservice), square (contention), trine (superconductive pipeline).
+- **The Agent Runtime**: Lifecycle events mapped to transit cycles -- quarterly scaling review, annual architecture audit, major version migration, full replatforming.
+- **The `agents.md` Boilerplate**: A complete fleet manifest template for declaring agent identity, governance, topology, lifecycle, monitoring, and security.
+
 ## Conclusion: Master Programmer
 - Taking agency over your own internal logic.
 - From "It is written" to "I am writing."
