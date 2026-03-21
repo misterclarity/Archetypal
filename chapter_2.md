@@ -141,3 +141,75 @@ This is the axis of functional reality—how the system interfaces with the worl
   │ debug()  │                           │ flow()    │
   └──────────┘                           └──────────┘
 ```
+
+## What You're Building Toward: A Preview
+
+You now know the six axes—the core binary constraints of the human operating system. Before we move on to the operators (planets) and circuits (aspects) that execute within this field, it is worth previewing what the *finished product* looks like. This is the output you will be able to produce by the end of Chapter 6.
+
+### The System Profile Format
+
+A complete chart reading produces a **system architecture diagram**. At its simplest, it starts with the "Big Three"—the base image of your operating system:
+
+| Layer | Planet | Sign | Function |
+|-------|--------|------|----------|
+| Public API (Interface) | Rising | Libra ♎ | Harmony-first interface |
+| Core CPU (Identity) | Sun | Capricorn ♑ | Structural processing |
+| Cache Layer (Emotional) | Moon | Aries ♈ | Fast, hot reactive state |
+
+*Reading*: `"External calls are handled gracefully and diplomatically (Libra). Core processing optimizes for structure and long-term outcomes (Capricorn). But the cache layer fires fast, hot, and impulsively before the main thread can apply its logic (Aries)."`
+
+The person with this profile presents as polished and balanced—but occasionally flashes unexpected impatience that surprises everyone, including themselves. The system diagram explains *why*: the cache layer is returning hot responses before the CPU has finished processing.
+
+This is one example. Your profile will be different. The point is that you are building toward a concrete, readable output—not an abstract list of traits.
+
+## Quick Diagnostic Reference
+
+You don't need to wait until Chapter 6 to start using the axes. Here is the most immediately practical tool in this book: a lookup table that maps common recurring problems to the axis and operator involved, then prescribes the complementary function as a patch.
+
+When a recurring pattern surfaces, identify the symptom, check which axis is likely overloaded, and consciously invoke the complementary function—not as a suppression of the original, but as the missing operand that completes the equation.
+
+```
+┌──────────────────┬───────────────┬──────────────────────────┐
+│  SYMPTOM         │  CHECK        │  LIKELY PATCH            │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Impulsive       │  ♂ Mars / ♈  │  Invoke ♎ Libra:         │
+│  action, burning │  Aries        │  "What is the cost to    │
+│  bridges         │  overload     │   the shared system?"    │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Paralysis,      │  ♄ Saturn / ♍│  Invoke ♓ Pisces:        │
+│  cannot ship     │  Virgo        │  "Ship at 80%. Accept    │
+│  or decide       │  overload     │   the ambiguity."        │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  People-pleasing,│  ♀ Venus / ♎ │  Invoke ♈ Aries:         │
+│  lost preferences│  Libra        │  "What do I want,        │
+│                  │  overload     │   independent of         │
+│                  │               │   consensus?"            │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Emotional       │  ☽ Moon / ♋  │  Invoke ♑ Capricorn:     │
+│  flooding,       │  Cancer       │  "Build a container.     │
+│  overwhelm       │  overload     │   Name the feeling.      │
+│                  │               │   Give it form."         │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Workaholism,    │  ☉ Sun / ♑   │  Invoke ♋ Cancer:        │
+│  cannot stop     │  Capricorn    │  "Return to private      │
+│  building        │  loop         │   state. Rest is not     │
+│                  │               │   weakness."             │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Info overload,  │  ☿ Merc / ♊  │  Invoke ♐ Sagittarius:   │
+│  too many open   │  Gemini       │  "What is the thesis?    │
+│  tabs            │  overload     │   Close everything       │
+│                  │               │   that isn't it."        │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Rigidity, fear  │  ♉ Taurus    │  Invoke ♏ Scorpio:       │
+│  of change       │  persistence  │  "What must be garbage-  │
+│  or loss         │  loop         │   collected to free      │
+│                  │               │   memory?"               │
+├──────────────────┼───────────────┼──────────────────────────┤
+│  Isolation,      │  ♌ Leo       │  Invoke ♒ Aquarius:      │
+│  "nobody sees    │  foreground   │  "Contribute to a system │
+│  the real me"    │  loop         │   bigger than your       │
+│                  │               │   own UI."               │
+└──────────────────┴───────────────┴──────────────────────────┘
+```
+
+This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch.

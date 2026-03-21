@@ -114,6 +114,18 @@ Every sign occupies a unique cell in this 4×3 matrix. No two signs share both a
 
 **Example**: Mars in Aries (Cardinal Fire) and Mars in Cancer (Cardinal Water) are both trying to initialize a new process—but Aries spawns with raw velocity and zero dependencies, while Cancer spawns only after establishing a secure boundary. Same lifecycle stage, fundamentally different execution environments. This architectural mismatch is the friction engine that Squares create.
 
+### Extended Example: Three Developers, One Layoff
+
+Consider three senior engineers, all laid off on the same Friday. How do they respond? The modality of their Sun sign determines the execution pattern:
+
+**The Cardinal Developer** (Sun in Aries, Capricorn, Cancer, or Libra): By Monday, they have already updated their LinkedIn, sent fifteen cold messages, and scheduled three coffee chats. They don't have a plan—they have *momentum*. The `new()` constructor fires immediately. The risk: they accept the first offer that materializes, before evaluating whether the architecture is sound. *They solve problems by launching new processes.*
+
+**The Fixed Developer** (Sun in Taurus, Leo, Scorpio, or Aquarius): They don't panic. They have six months of savings, a conviction about what they're worth, and a deep reluctance to compromise on either. They spend three weeks refining their resume to perfection. They turn down two offers that don't meet their spec. The `lock()` method holds state under pressure. The risk: they hold so long that the market moves without them—persistence becomes stubbornness. *They solve problems by refusing to flinch.*
+
+**The Mutable Developer** (Sun in Gemini, Virgo, Sagittarius, or Pisces): They immediately start researching—reading industry reports, talking to friends in adjacent fields, exploring whether this is actually an opportunity to pivot entirely. They apply to twelve companies across four different roles. The `adapt()` method reshapes the process to fit the new environment. The risk: they scatter so broadly that no single application gets their best work—flexibility becomes diffusion. *They solve problems by reshaping the problem.*
+
+None of these strategies is wrong. Each is a different execution pattern. The diagnostic power comes from recognizing which pattern you are running *by default*—and whether it's actually serving the current situation.
+
 By modeling the signs as a dynamic, geometrical coordinate system with typed lifecycle phases rather than a static lookup table, we shift the diagnostic question from "What am I?" to "How does my internal architecture behave—and where are the bottlenecks?"
 
 In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system.

@@ -25,47 +25,20 @@ To resolve the exception, you don't drop the module. You refactor it by integrat
 
 ## Quick Diagnostic Reference
 
-When a recurring problem surfaces, use this lookup to identify the operator and axis involved, then inspect the complementary function:
+The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple.
 
-```
-┌──────────────────────┬─────────────────┬──────────────────────────────┐
-│  SYMPTOM             │  CHECK          │  LIKELY PATCH                │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Impulsive action,   │  ♂ Mars / ♈    │  Invoke ♎ Libra evaluation:  │
-│  burning bridges     │  Aries overload │  "What is the cost to the    │
-│                      │                 │   shared system?"            │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Paralysis, cannot   │  ♄ Saturn / ♍  │  Invoke ♓ Pisces release:    │
-│  ship or decide      │  Virgo overload │  "Ship at 80%. Accept the    │
-│                      │                 │   ambiguity."                │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  People-pleasing,    │  ♀ Venus / ♎   │  Invoke ♈ Aries assertion:   │
-│  lost preferences    │  Libra overload │  "What do I actually want,   │
-│                      │                 │   independent of consensus?" │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Emotional flooding, │  ☽ Moon / ♋    │  Invoke ♑ Capricorn struct:  │
-│  overwhelm           │  Cancer overload│  "Build a container. Name    │
-│                      │                 │   the feeling. Give it form."│
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Workaholism, cannot │  ☉ Sun / ♑     │  Invoke ♋ Cancer retreat:    │
-│  stop building       │  Capricorn loop │  "Return to private state.   │
-│                      │                 │   Rest is not weakness."     │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Information overload│  ☿ Mercury / ♊ │  Invoke ♐ Sagittarius filter:│
-│  too many open tabs  │  Gemini overload│  "What is the thesis? Close  │
-│                      │                 │   everything that isn't it." │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Rigidity, fear of   │  ♉ Taurus      │  Invoke ♏ Scorpio release:   │
-│  change or loss      │  persistence    │  "What must be garbage-      │
-│                      │  loop           │   collected to free memory?" │
-├──────────────────────┼─────────────────┼──────────────────────────────┤
-│  Isolation, "nobody  │  ♌ Leo         │  Invoke ♒ Aquarius network:  │
-│  sees the real me"   │  foreground     │  "Contribute to a system     │
-│                      │  loop           │   bigger than your own UI."  │
-└──────────────────────┴─────────────────┴──────────────────────────────┘
-```
+As a quick reminder of the core principle:
 
-**How to use this table**: Identify the symptom in your daily experience. Check which operator and sign are likely overloaded. Then consciously invoke the complementary function as a deliberate practice—not as a suppression of the original function, but as the missing operand that completes the equation.
+| If You're Stuck In... | Invoke The Complement |
+|---|---|
+| Aries (impulsive action) | Libra (evaluate impact) |
+| Virgo (analysis paralysis) | Pisces (ship at 80%) |
+| Libra (people-pleasing) | Aries (assert preference) |
+| Cancer (emotional flooding) | Capricorn (build structure) |
+| Capricorn (workaholism) | Cancer (return to private state) |
+| Gemini (information overload) | Sagittarius (find the thesis) |
+| Taurus (rigidity) | Scorpio (garbage-collect) |
+| Leo (isolation) | Aquarius (serve the network) |
 
 ## `final_commit()`
 
@@ -73,7 +46,7 @@ You are not a static binary deployed at birth and left to run until termination.
 
 The stars provided the initial seed commit—the unique coordinate timestamp of your instantiation, the default configuration values, the hardware constraints. But *you* are the one executing the runtime. *You* hold the keyboard.
 
-The purpose of this framework is not to predict the output. It is to make the implicit architecture explicit—to surface the code that has been running in the background, below the level of conscious access, producing outputs you never intentionally shipped.
+The purpose of this framework is not to predict the output. It is to make the implicit architecture explicit—to surface the code that has been running in the background, below the level of conscious access, producing outputs you never intentionally shipped. It is a *useful symbolic language*—a powerful debugging tool, regardless of whether you believe it reflects a cosmological truth or a well-structured fiction. The value is in the debugging, not the metaphysics.
 
 Read the source. Run the profiler. Own the deploy pipeline.
 
@@ -83,4 +56,4 @@ $ git diff HEAD~1
 $ git commit -m "refactor: integrate complementary axis, resolve long-standing deadlock"
 ```
 
-Welcome to the command line.
+Welcome to the command line of life.

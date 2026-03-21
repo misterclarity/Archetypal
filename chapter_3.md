@@ -43,10 +43,54 @@ These operators handle the daily I/O throughput and interaction with the immedia
 *   **The Logic**: Mercury is the data bus. It handles the ingestion of sensory and informational input and the serialization of internal state into communicable output. It is the logic of the protocol layer itself—the syntax rules that determine whether a message is well-formed and transmissible.
 *   **Syntax**: `"I think [Sign]."`
 
+**Mercury: Quick Reference Across All Twelve Signs**
+
+```
+┌──────────────────────────────────────────────────────┐
+│  ☿ MERCURY — The IO_STREAM Operator:                 │
+│  "How does the system process and transmit data?"    │
+├──────────┬───────────────────────────────────────────┤
+│ ♈ Aries  │ Direct transmit. io(blunt, low_latency)   │
+│ ♉ Taurus │ Slow, considered. io(deliberate, durable) │
+│ ♊ Gemini │ Max bandwidth. io(parallel, multi_channel)│
+│ ♋ Cancer │ Emotional codec. io(intuitive, guarded)   │
+│ ♌ Leo    │ Dramatic signal. io(expressive, warm)     │
+│ ♍ Virgo  │ Precise payload. io(analytical, detailed) │
+│ ♎ Libra  │ Balanced output. io(diplomatic, fair)     │
+│ ♏ Scorpio│ Deep scan. io(probing, encrypted)         │
+│ ♐ Sagitt.│ Big-picture. io(philosophical, broad)     │
+│ ♑ Capri. │ Structured msg. io(formal, hierarchical)  │
+│ ♒ Aquar. │ Unconventional. io(innovative, systemic)  │
+│ ♓ Pisces │ Poetic stream. io(intuitive, impressions) │
+└──────────┴───────────────────────────────────────────┘
+```
+
 ### Venus: The `AND` Operator
 *   **The Operator**: `bind()` / `merge()`
 *   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
 *   **Syntax**: `"I value [Sign]."`
+
+**Venus: Quick Reference Across All Twelve Signs**
+
+```
+┌──────────────────────────────────────────────────────┐
+│  ♀ VENUS — The BIND Operator:                        │
+│  "How does the system form connections and value?"   │
+├──────────┬───────────────────────────────────────────┤
+│ ♈ Aries  │ Direct pursuit. bind(assertive, fast)     │
+│ ♉ Taurus │ Sensory loyalty. bind(steady, physical)   │
+│ ♊ Gemini │ Curious flirting. bind(verbal, varied)    │
+│ ♋ Cancer │ Protective bond. bind(nurturing, deep)    │
+│ ♌ Leo    │ Grand romance. bind(generous, dramatic)   │
+│ ♍ Virgo  │ Acts of service. bind(practical, modest)  │
+│ ♎ Libra  │ Equal partnership. bind(balanced, fair)   │
+│ ♏ Scorpio│ Total merge. bind(intense, all_or_none)   │
+│ ♐ Sagitt.│ Freedom-loving. bind(adventurous, open)   │
+│ ♑ Capri. │ Status-aware. bind(committed, traditional)│
+│ ♒ Aquar. │ Intellectual. bind(unconventional, friend) │
+│ ♓ Pisces │ Oceanic. bind(compassionate, boundaryless)│
+└──────────┴───────────────────────────────────────────┘
+```
 
 ### Mars: The `VECTOR` Operator
 *   **The Operator**: `force()` / `separate()`
@@ -86,6 +130,28 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Operator**: `limit()` / `validate()`
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
+
+**Saturn: Quick Reference Across All Twelve Signs**
+
+```
+┌──────────────────────────────────────────────────────┐
+│  ♄ SATURN — The LIMIT Operator:                      │
+│  "Where does the system enforce constraints?"        │
+├──────────┬───────────────────────────────────────────┤
+│ ♈ Aries  │ Identity test. limit(self_assertion)      │
+│ ♉ Taurus │ Resource audit. limit(material_security)  │
+│ ♊ Gemini │ Speech check. limit(communication)        │
+│ ♋ Cancer │ Emotional wall. limit(vulnerability)      │
+│ ♌ Leo    │ Performance bar. limit(self_expression)   │
+│ ♍ Virgo  │ Precision demand. limit(quality_control)  │
+│ ♎ Libra  │ Fairness audit. limit(relationships)      │
+│ ♏ Scorpio│ Trust gate. limit(intimacy, control)      │
+│ ♐ Sagitt.│ Belief test. limit(philosophy, scope)     │
+│ ♑ Capri. │ Authority check. limit(hierarchy, career) │
+│ ♒ Aquar. │ Systems bound. limit(innovation, freedom) │
+│ ♓ Pisces │ Reality anchor. limit(boundaries, escape) │
+└──────────┴───────────────────────────────────────────┘
+```
 
 **Saturn in Two Contrasting Signs** — The same compiler, different rulesets:
 

@@ -1,5 +1,15 @@
 # Chapter 7: Agentology (The Fleet Architecture)
 
+## Why This Isn't a Digression
+
+If you have read this far, you have internalized a framework for understanding multi-operator systems: specialized execution contexts, typed operators, communication topologies, complementary pairing, and lifecycle events. You learned it by applying it to one system (yourself), but the patterns are general.
+
+This chapter is where the framework pays professional dividends. Everything you've learned about archetypal operators maps directly onto a problem you are likely already solving or will solve soon: **how to design, govern, and maintain a fleet of autonomous AI agents.** The twelve signs become agent role definitions. The planetary operators become governance policies. The aspects become inter-agent wiring patterns. The axes become resilience strategies. The transits become your maintenance calendar.
+
+You already understand fleet architecture. This chapter is the deployment guide.
+
+---
+
 You have learned to read your own source code. You have mapped the operators, traced the circuits, and profiled the runtime of your internal architecture. Now apply the same design patterns to the systems you build and deploy.
 
 The Archetypal Operating System is not just a model for self-knowledge -- it is a **blueprint for organizing any complex, multi-agent system**. A birth chart models a multi-operator system with typed functions, communication patterns, and lifecycle events. An autonomous AI agent fleet is structurally identical: multiple specialized agents with typed roles, inter-agent messaging, and lifecycle management. The mapping is direct.

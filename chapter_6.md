@@ -144,3 +144,15 @@ Below is a simplified but complete reading that puts all the layers together. Th
 **The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal (Gemini Moon). The primary bottleneck is communication—grand vision blocked by inner perfectionism (Mercury-Saturn square)—but this friction produces someone who speaks with unusual authority when they finally ship. Relationships are the hot path: deep, transcendent, effortless (Venus-Neptune trine), with the associated risk of boundary dissolution. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
 
 You are not running someone else's binary. You have the source. You have the build tools. The question is whether you are going to read the codebase before you start making changes.
+
+## From Reading Code to Writing Code
+
+You have now learned to read the source code of one complex, multi-operator system: yourself. You can identify the base image, profile the bottlenecks, trace the hot paths, and resolve the primary dependency error. You have a synthesis protocol that produces a readable system architecture diagram from a set of component specifications.
+
+Here is the thing about architectural patterns: they are substrate-independent. The same patterns that govern the human psyche—specialized operators, typed execution contexts, communication topologies, lifecycle events, complementary pairing strategies—govern *any* complex system with multiple autonomous components.
+
+Including the systems you build for a living.
+
+In the next chapter, we apply the exact same framework to a domain where architecture is literal, not metaphorical: autonomous AI agent fleets. The twelve archetypes become agent role definitions. The planetary operators become governance functions. The aspects become inter-agent communication topologies. The axes become resilience pairing strategies. The transits become lifecycle maintenance schedules.
+
+If you have followed the framework through six chapters of self-knowledge, you already understand fleet architecture. You just haven't deployed it yet.

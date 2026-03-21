@@ -91,6 +91,16 @@ The emotional cache layer (Moon) demands warmth, safety, and unconditional accep
 
 The connection module (Venus) fires quickly and independently (Aries)—it initiates attraction with bold directness. But at 90°, the reformat operator (Pluto) demands that every bond pass through a total power audit (Capricorn). The result: relationships become arenas for profound transformation. The person cannot do "casual." Every connection either transforms them completely or gets purged. The friction IS the growth engine—these are the people who build extraordinary depth in relationships precisely because the system forces them to.
 
+**Extended Example — Mercury in Sagittarius Square Saturn in Virgo (The Developer Who Can't Ship a Blog Post)**:
+
+You know *exactly* what you want to say. You have a clear thesis about microservice architecture that you've been refining for months. You open a document and start writing. The ideas flow—big, sweeping, confident. *This* is the architecture post that will finally get traction.
+
+Then the inner editor arrives. Not a helpful editor—a hostile one. Every sentence triggers a review: *Is this technically precise? Can someone on Hacker News poke a hole in this? Is "always" too strong a word? Should I add a footnote?* The draft bloats from 800 words to 3,000. You delete half of it. You rewrite the opening four times. The post sits in drafts for six weeks. You publish nothing.
+
+This is Mercury (the `IO_STREAM` operator) in Sagittarius (big-picture, high-conviction communication) in a 90° deadlock with Saturn (the `LIMIT` operator) in Virgo (precision, detail, error-checking). The Sagittarius thread wants to broadcast the thesis; the Virgo gate demands footnotes for every claim before the transmit clears.
+
+The resolution is not to silence Saturn. It is to build a pipeline that satisfies both: *Write the bold thesis first (Mercury in Sagittarius). Then run the precision pass as a separate stage (Saturn in Virgo). Ship when both stages are complete, not when one has consumed the other.* The friction, once given a proper concurrency model, produces content that is both sweeping AND precise—which is why Mercury-Saturn squares often produce the most authoritative writers in the room.
+
 ## The Trine (120°) and Sextile (60°): The Superconductive Path
 **Logic**: `A && B == TRUE` (Zero-resistance conductivity)
 

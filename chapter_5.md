@@ -87,6 +87,18 @@ BIRTH ●───────●────────●──────�
 >
 > **Chiron in Virgo**: The legacy bug is in the analysis pipeline. The wound: `"No matter how perfectly I debug, I am never good enough."` The Chiron return reclassifies this: the relentless quality standard was never going to produce "good enough" because it was measuring against an impossible specification. The patch: *your obsessive attention to imperfection is the gift you offer others who need help finding what's wrong.*
 
+**Extended Narrative — Chiron in Gemini: The Developer Who Couldn't Explain**
+
+At 8, she was the kid who understood everything but couldn't explain why. The intuitions were correct—always correct—but when the teacher asked her to show her work, the words jammed. By 14, she had learned to code: a language where the logic didn't require verbal justification. The compiler didn't ask "can you explain your reasoning?" It just ran the code and returned a result.
+
+By 25, she was a brilliant systems architect with a reputation for solving problems no one else could see. But every meeting was agony. She could *see* the architectural flaw in the proposed design, but the words to articulate it arrived 30 seconds too late, scrambled and insufficient. Colleagues who were technically weaker but verbally fluent got promoted past her. The wound calcified: `"I am not articulate enough to be taken seriously."`
+
+She compensated by writing exhaustive documentation—every design decision captured in writing, where she could revise until the words matched the thought. The docs became legendary. People on other teams started reading them. She became, without realizing it, the person everyone consulted when they needed something *explained properly*.
+
+At 50, the Chiron return hits. The wound doesn't heal—it never does. She still hesitates in meetings. The words still arrive late. But the reclassification happens: *the struggle to translate intuition into language is precisely what made her documentation extraordinary.* She understood the gap between knowing and explaining at the kernel level, because she lived in it every day. The bug was never in her intelligence. It was in the protocol layer. And her lifelong patch—meticulous written communication—became the feature that defined her legacy.
+
+The Chiron return doesn't fix the open issue. It reclassifies it from `"won't fix — defect"` to `"won't fix — documented behavior; see: domain expertise."`
+
 ### 5. Pluto Square Pluto: Core Kernel Refactoring (Age ~36-60, varies by generation)
 *   **The Trigger**: Transiting Pluto moves to a square (90-degree) position relative to natal Pluto.
 *   **The Event**: A deep, sustained pressure-cooker phase targeting the kernel layer—the lowest-level abstractions of the psyche. Obsolete dependencies, held at the root level, are forcibly unlinked. This is not a feature update; it is a rewrite of the underlying architecture.
