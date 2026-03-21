@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLDR — Archetypal Operating System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #c084fc;
+            --border-color: #1e293b;
+            --header-font: 'Space Grotesk', sans-serif;
+            --body-font: 'Lora', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--body-font);
+            line-height: 1.8;
+        }
+
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #1a1d24;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--header-font);
+        }
+
+        .toolbar a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .toolbar a:hover {
+            text-decoration: underline;
+        }
+
+        .toolbar button {
+            background: var(--accent-secondary);
+            color: #fff;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .toolbar button:hover {
+            opacity: 0.85;
+        }
+
+        .toolbar .status {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-left: auto;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        pre.markdown-text {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: var(--body-font);
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            background: none;
+            border: none;
+            user-select: all;
+        }
+
+        .copied-toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-secondary);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: var(--header-font);
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .copied-toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <a href="index.html">← Back to Book</a>
+        <button id="copy-btn">Copy All</button>
+        <span class="status" id="word-count"></span>
+    </div>
+    <div class="content">
+        <pre class="markdown-text" id="text-content">Loading...</pre>
+    </div>
+    <div class="copied-toast" id="toast">Copied to clipboard!</div>
+
+    <script>
+        const files = [
+            'introduction.md',
+            'chapter_1.md',
+            'chapter_2.md',
+            'chapter_3.md',
+            'chapter_4.md',
+            'chapter_5.md',
+            'chapter_6.md',
+            'chapter_7.md',
+            'conclusion.md'
+        ];
+
+        const textEl = document.getElementById('text-content');
+        const wordCountEl = document.getElementById('word-count');
+        const copyBtn = document.getElementById('copy-btn');
+        const toast = document.getElementById('toast');
+
+        async function load() {
+            try {
+                const responses = await Promise.all(
+                    files.map(f => fetch(f).then(r => {
+                        if (!r.ok) throw new Error(`Could not load ${f}`);
+                        return r.text();
+                    }))
+                );
+                const fullText = responses.join('\n\n---\n\n');
+                textEl.textContent = fullText;
+
+                const words = fullText.replace(/[#*`_]/g, '').split(/\s+/).length;
+                wordCountEl.textContent = `${words.toLocaleString()} words`;
+            } catch (e) {
+                textEl.textContent = 'Error loading content: ' + e.message;
+            }
+        }
+
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(textEl.textContent);
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            } catch {
+                // Fallback for older browsers
+                const range = document.createRange();
+                range.selectNodeContents(textEl);
+                const sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+                document.execCommand('copy');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }
+        });
+
+        load();
+    </script>
+</body>
+
+</html>

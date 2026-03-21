@@ -428,8 +428,16 @@
                 timeDisplay.style.fontSize = '0.9rem';
                 timeDisplay.style.color = 'var(--text-secondary)';
 
+                // TLDR link for AI agents (plain markdown, no JS required)
+                const tldrLink = document.createElement('div');
+                tldrLink.id = 'tldr-link';
+                tldrLink.innerHTML = `<a href="tldr.html" style="color: var(--accent-secondary); text-decoration: none; opacity: 0.8;">📄 TLDR (LLM food)</a>`;
+                tldrLink.style.margin = '0 0 1.5rem 0';
+                tldrLink.style.fontSize = '0.9rem';
+
                 if (sidebarTitle) {
                     sidebarTitle.after(timeDisplay);
+                    timeDisplay.after(tldrLink);
                 }
 
                 // --- Render Markdown ---
