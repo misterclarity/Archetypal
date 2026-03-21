@@ -34,7 +34,7 @@ This is a **cognitive reframing tool**, not a cosmological truth claim.
 
 The book you are holding does not assert that celestial bodies causally influence human behavior. It does not require you to believe that the position of Mars at your moment of birth physically altered your neural architecture. If that claim were being made, you would be right to demand evidence, and the evidence would not be forthcoming.
 
-What this book *does* assert is the following: **astrology provides a pre-built, internally consistent vocabulary of typed behavioral patterns—and treating your psyche as a codebase using that vocabulary is a surprisingly powerful debugging tool.**
+What this book *does* assert is the following: **astrology provides a pre-built, internally consistent vocabulary of typed behavioral patterns—and treating your psyche as a codebase using that vocabulary is a surprisingly powerful debugging and even programming tool.**
 
 The twelve signs are not personality types. They are a coordinate system of behavioral modes—a 360-degree address space of execution contexts with well-defined relationships to each other. The planets are not gods. They are named operators—typed functions with specific signatures. The aspects are not "good" or "bad" energy. They are communication topologies between operators: merges, deadlocks, superconductive paths, and integration problems.
 
