@@ -20,7 +20,7 @@
 ## Chapter 2: The Six Axes (Complementary Pairs)
 - **Aries <-> Libra**: The Axis of Identity (Self vs. Other). Assertion vs. Harmony.
 - **Taurus <-> Scorpio**: The Axis of Substance (Form vs. Transformation). Accumulation vs. Release.
-- **Gemini <-> Sagittarius**: The Axis of Mind (Data vs. Truth). Logic vs. Intuition.
+- **Gemini <-> Sagittarius**: The Axis of Mind (Data vs. Inference). Collection vs. Synthesis.
 - **Cancer <-> Capricorn**: The Axis of Foundation (Roots vs. Structure). Private Safety vs. Public Achievement.
 - **Leo <-> Aquarius**: The Axis of Expression (Individual vs. Collective). The Performer vs. The Observer.
 - **Virgo <-> Pisces**: The Axis of Service (Order vs. Chaos). Analysis vs. Surrender.
@@ -37,8 +37,8 @@
   - **Mars**: The `VECTOR` operator. Directed force and action. **Quick reference: all 12 signs.**
 - **The Social & Outer Operators**:
   - **Jupiter**: The `MULTIPLY` operator. Expansion and scaling.
-  - **Saturn**: The `NOT` / `LIMIT` operator. Constraints and validation. **Quick reference: all 12 signs.**
-  - **Uranus**: The `INVERT` / `INTERRUPT` operator. Disruption and awakening.
+  - **Saturn**: The `LIMIT` operator. Constraints and validation. **Quick reference: all 12 signs.**
+  - **Uranus**: The `INTERRUPT` operator. Disruption and awakening.
   - **Neptune**: The `DISSOLVE` operator. Boundary removal and transcendence.
   - **Pluto**: The `REFORMAT` operator. Destructive update and regeneration.
 - **The Nodal Operators (The Evolutionary Axis)**:

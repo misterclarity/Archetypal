@@ -17,7 +17,7 @@ Here is the source:
 > **Mars in Gemini, Square Saturn in Virgo**
 
 In the framework you are about to learn:
-- **Mars** (the `FORCE` operator — directed action and drive)
+- **Mars** (the `VECTOR` operator — directed action and drive)
 - **in Gemini** (executing in the Data-collection coordinate — scattered, fast, multi-threaded)
 - **Square Saturn** (in a 90° deadlock with the `LIMIT` operator — structure demanding precision)
 - **in Virgo** (executing in the Debugging coordinate — meticulous, error-checking)
@@ -91,8 +91,8 @@ To understand this system, we will use a new set of analogies grounded in logic 
 │  │ Taurus ♉ 30°│    │ ☽ Moon = BUFFER()       │
 │  │ Gemini ♊ 60°│    │ ☿ Merc = IO_STREAM()   │
 │  │ Cancer ♋ 90°│    │ ♀ Ven  = BIND()         │
-│  │ Leo ♌  120° │    │ ♂ Mars = FORCE()        │
-│  │ Virgo ♍ 150°│    │ ♃ Jup  = SCALE_UP()    │
+│  │ Leo ♌  120° │    │ ♂ Mars = VECTOR()       │
+│  │ Virgo ♍ 150°│    │ ♃ Jup  = MULTIPLY()    │
 │  │ Libra ♎ 180°│    │ ♄ Sat  = LIMIT()        │
 │  │ Scorp ♏ 210°│    │ ♅ Ura  = INTERRUPT()    │
 │  │ Sagit ♐ 240°│    │ ♆ Nep  = DISSOLVE()     │
@@ -576,7 +576,7 @@ These operators handle the daily I/O throughput and interaction with the immedia
 └──────────┴───────────────────────────────────────────┘
 ```
 
-### Venus: The `AND` Operator
+### Venus: The `BIND` Operator
 *   **The Operator**: `bind()` / `merge()`
 *   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
 *   **Syntax**: `"I value [Sign]."`
@@ -637,7 +637,7 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
-### Saturn: The `NOT` Operator
+### Saturn: The `LIMIT` Operator
 *   **The Operator**: `limit()` / `validate()`
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
@@ -670,7 +670,7 @@ These operators handle the scaling, structuring, and transformation of the syste
 >
 > **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims are subjected to rigorous testing. Belief must be earned, not assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
 
-### Uranus: The `INVERT` Operator
+### Uranus: The `INTERRUPT` Operator
 *   **The Operator**: `interrupt()` / `flip_bit()`
 *   **The Logic**: Uranus is the asynchronous interrupt—the signal that fires outside of the normal execution cycle and forces the main thread to yield. It is the exception that no `try/catch` can suppress, the bit-flip that changes the state of a running system in ways the original specification did not anticipate. It prevents the process from entering a stable but stagnant infinite loop by introducing controlled chaos.
 *   **Syntax**: `"I liberate [Sign]."`
@@ -747,11 +747,11 @@ Aspects are geometric angles formed between planets relative to Earth. In our sy
 **Logic**: `A += B` (Merge into a single execution context)
 
 *   **The Circuit**: Two operators occupy the same coordinate (or within orb of it). They are not communicating across a network boundary; they have been merged into a single, co-located super-function sharing the same memory space.
-*   **The Effect**: Massive focus and intensity—a tightly optimized, highly cohesive unit. But the trade-off is loss of separation of concerns. The `IDENTITY` (Sun) and `FORCE` (Mars) in conjunction means the ego and the drive are compiled into the same module; the process cannot act without invoking its own identity, and cannot exist without acting. High performance, low modularity.
+*   **The Effect**: Massive focus and intensity—a tightly optimized, highly cohesive unit. But the trade-off is loss of separation of concerns. The `IDENTITY` (Sun) and `VECTOR` (Mars) in conjunction means the ego and the drive are compiled into the same module; the process cannot act without invoking its own identity, and cannot exist without acting. High performance, low modularity.
 *   **The Experience**: `"I simply am this way."` Zero observability of the merged behavior—it feels like the runtime itself, not a specific function call.
 
 **Example — Sun Conjunct Mars in Scorpio**:
-The `IDENTITY` and `FORCE` operators are fused in the Scorpio execution context. The ego cannot exist without applying intense, directed pressure. The person does not "have" drive—they *are* drive. Willpower is not a resource they draw on; it is the substrate of their identity. Others experience this as magnetic intensity; the individual experiences it as normal operating temperature.
+The `IDENTITY` and `VECTOR` operators are fused in the Scorpio execution context. The ego cannot exist without applying intense, directed pressure. The person does not "have" drive—they *are* drive. Willpower is not a resource they draw on; it is the substrate of their identity. Others experience this as magnetic intensity; the individual experiences it as normal operating temperature.
 
 `define self() { return force(max_intensity, zero_compromise); }`
 
@@ -809,7 +809,7 @@ The resolution is not to silence Saturn. It is to build a pipeline that satisfie
 ## The Trine (120°) and Sextile (60°): The Superconductive Path
 **Logic**: `A && B == TRUE` (Zero-resistance conductivity)
 
-*   **The Circuit**: Operators in harmonious elements (Fire-to-Fire, Earth-to-Water, etc.). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
+*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
 *   **The Effect**: Natural talent, ease, and high-throughput execution. The failure mode is invisibility: because the code path is so optimized, it never surfaces in profiling. You forget it's there. The developer who writes elegant abstractions effortlessly may never learn to optimize the cases where elegance doesn't naturally emerge.
 *   **The Experience**: `"Isn't this O(1) for everyone?"`
 
@@ -882,14 +882,14 @@ BIRTH ●───────●────────●──────�
 
 ### 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
 *   **The Trigger**: Saturn returns to its natal coordinate.
-*   **The Event**: The `NOT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
+*   **The Event**: The `LIMIT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
 *   **The Task**: Debugging under pressure. Accepting radical ownership of the architecture you have built. If you built on solid contracts, this audit is a promotion to senior. If you cut corners and shipped with known defects, this is a mandatory rewrite. There is no skipping the review.
 
 **Example — Saturn Return by Sign**:
 
-> **Saturn Return in Capricorn (~2018-2020 generation)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
+> **Saturn Return in Capricorn (occurring ~2018-2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
 >
-> **Saturn Return in Aries (~2025-2028 generation)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
+> **Saturn Return in Aries (occurring ~2025-2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
 
 ```
  SATURN RETURN — THE TWO PATHS
@@ -915,7 +915,7 @@ BIRTH ●───────●────────●──────�
 
 ### 3. The Uranus Opposition: The Forced Upgrade (Age ~40-42)
 *   **The Trigger**: Transiting Uranus moves to the position directly opposite its natal coordinate.
-*   **The Event**: The `INVERT` operator fires an interrupt against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
+*   **The Event**: The `INTERRUPT` operator fires against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
 *   **The Task**: Upgrade the OS. Identify which modules were written to satisfy someone else's spec rather than your own, and begin the migration. This is the window where breaking changes are expected and architecturally appropriate.
 
 **Example — Uranus Opposition in Practice**:
@@ -1085,7 +1085,7 @@ Below is a simplified but complete reading that puts all the layers together. Th
  │  idealizing partners, confusing merging with love.   │
  └──────────────────────────────────────────────────────┘
 
- ┌─ FORCE VECTOR ───────────────────────────────────────┐
+ ┌─ DRIVE VECTOR ───────────────────────────────────────┐
  │  Mars ♑                                             │
  │  Drive system: Calculated, patient, hierarchical.    │
  │  This person does not rush. They execute long-term   │
@@ -1427,7 +1427,7 @@ You are no longer just reading your own source code. You are writing the source 
 
 ## Escalating Your Own Access Level
 
-We began this book with a clear privilege escalation path: from **Passive User** (executing someone else's code without understanding it) to **System Administrator** (owning the architecture, reading the source, and having full commit access to your own runtime).
+We began this book with a clear privilege escalation path: from **Passive User** (executing someone else's code without understanding it) to **root** (owning the architecture, reading the source, and having full commit access to your own runtime).
 
 By understanding the **Archetypal Operating System**, you stop asking "What will happen to me?" and start asking "How is this system currently configured—and what do I want to change?"
 

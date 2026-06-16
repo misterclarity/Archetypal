@@ -2,7 +2,7 @@
 
 ## Escalating Your Own Access Level
 
-We began this book with a clear privilege escalation path: from **Passive User** (executing someone else's code without understanding it) to **System Administrator** (owning the architecture, reading the source, and having full commit access to your own runtime).
+We began this book with a clear privilege escalation path: from **Passive User** (executing someone else's code without understanding it) to **root** (owning the architecture, reading the source, and having full commit access to your own runtime).
 
 By understanding the **Archetypal Operating System**, you stop asking "What will happen to me?" and start asking "How is this system currently configured—and what do I want to change?"
 

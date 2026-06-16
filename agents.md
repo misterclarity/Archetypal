@@ -849,7 +849,7 @@ security:
 | Route messages across multiple channels | **Router** | Gemini | `IO_STREAM` |
 | Protect sensitive data and control access | **Guardian** | Cancer | `BUFFER` |
 | Produce polished user-facing output | **Presenter** | Leo | `IDENTITY` |
-| Validate outputs against strict schemas | **Validator** | Virgo | `LIMIT` |
+| Validate outputs against strict schemas | **Validator** | Virgo | `IO_STREAM` |
 | Orchestrate multi-agent consensus | **Mediator** | Libra | `BIND` |
 | Detect anomalies and audit behavior | **Auditor** | Scorpio | `REFORMAT` |
 | Decompose goals and plan strategy | **Strategist** | Sagittarius | `MULTIPLY` |

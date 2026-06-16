@@ -124,7 +124,7 @@ Below is a simplified but complete reading that puts all the layers together. Th
  │  idealizing partners, confusing merging with love.   │
  └──────────────────────────────────────────────────────┘
 
- ┌─ FORCE VECTOR ───────────────────────────────────────┐
+ ┌─ DRIVE VECTOR ───────────────────────────────────────┐
  │  Mars ♑                                             │
  │  Drive system: Calculated, patient, hierarchical.    │
  │  This person does not rush. They execute long-term   │

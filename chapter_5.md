@@ -38,14 +38,14 @@ BIRTH ●───────●────────●──────�
 
 ### 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
 *   **The Trigger**: Saturn returns to its natal coordinate.
-*   **The Event**: The `NOT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
+*   **The Event**: The `LIMIT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
 *   **The Task**: Debugging under pressure. Accepting radical ownership of the architecture you have built. If you built on solid contracts, this audit is a promotion to senior. If you cut corners and shipped with known defects, this is a mandatory rewrite. There is no skipping the review.
 
 **Example — Saturn Return by Sign**:
 
-> **Saturn Return in Capricorn (~2018-2020 generation)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
+> **Saturn Return in Capricorn (occurring ~2018-2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
 >
-> **Saturn Return in Aries (~2025-2028 generation)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
+> **Saturn Return in Aries (occurring ~2025-2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
 
 ```
  SATURN RETURN — THE TWO PATHS
@@ -71,7 +71,7 @@ BIRTH ●───────●────────●──────�
 
 ### 3. The Uranus Opposition: The Forced Upgrade (Age ~40-42)
 *   **The Trigger**: Transiting Uranus moves to the position directly opposite its natal coordinate.
-*   **The Event**: The `INVERT` operator fires an interrupt against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
+*   **The Event**: The `INTERRUPT` operator fires against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
 *   **The Task**: Upgrade the OS. Identify which modules were written to satisfy someone else's spec rather than your own, and begin the migration. This is the window where breaking changes are expected and architecturally appropriate.
 
 **Example — Uranus Opposition in Practice**:

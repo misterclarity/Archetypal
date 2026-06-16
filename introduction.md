@@ -17,7 +17,7 @@ Here is the source:
 > **Mars in Gemini, Square Saturn in Virgo**
 
 In the framework you are about to learn:
-- **Mars** (the `FORCE` operator — directed action and drive)
+- **Mars** (the `VECTOR` operator — directed action and drive)
 - **in Gemini** (executing in the Data-collection coordinate — scattered, fast, multi-threaded)
 - **Square Saturn** (in a 90° deadlock with the `LIMIT` operator — structure demanding precision)
 - **in Virgo** (executing in the Debugging coordinate — meticulous, error-checking)
@@ -91,8 +91,8 @@ To understand this system, we will use a new set of analogies grounded in logic 
 │  │ Taurus ♉ 30°│    │ ☽ Moon = BUFFER()       │
 │  │ Gemini ♊ 60°│    │ ☿ Merc = IO_STREAM()   │
 │  │ Cancer ♋ 90°│    │ ♀ Ven  = BIND()         │
-│  │ Leo ♌  120° │    │ ♂ Mars = FORCE()        │
-│  │ Virgo ♍ 150°│    │ ♃ Jup  = SCALE_UP()    │
+│  │ Leo ♌  120° │    │ ♂ Mars = VECTOR()       │
+│  │ Virgo ♍ 150°│    │ ♃ Jup  = MULTIPLY()    │
 │  │ Libra ♎ 180°│    │ ♄ Sat  = LIMIT()        │
 │  │ Scorp ♏ 210°│    │ ♅ Ura  = INTERRUPT()    │
 │  │ Sagit ♐ 240°│    │ ♆ Nep  = DISSOLVE()     │

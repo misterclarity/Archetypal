@@ -42,11 +42,11 @@ Aspects are geometric angles formed between planets relative to Earth. In our sy
 **Logic**: `A += B` (Merge into a single execution context)
 
 *   **The Circuit**: Two operators occupy the same coordinate (or within orb of it). They are not communicating across a network boundary; they have been merged into a single, co-located super-function sharing the same memory space.
-*   **The Effect**: Massive focus and intensity—a tightly optimized, highly cohesive unit. But the trade-off is loss of separation of concerns. The `IDENTITY` (Sun) and `FORCE` (Mars) in conjunction means the ego and the drive are compiled into the same module; the process cannot act without invoking its own identity, and cannot exist without acting. High performance, low modularity.
+*   **The Effect**: Massive focus and intensity—a tightly optimized, highly cohesive unit. But the trade-off is loss of separation of concerns. The `IDENTITY` (Sun) and `VECTOR` (Mars) in conjunction means the ego and the drive are compiled into the same module; the process cannot act without invoking its own identity, and cannot exist without acting. High performance, low modularity.
 *   **The Experience**: `"I simply am this way."` Zero observability of the merged behavior—it feels like the runtime itself, not a specific function call.
 
 **Example — Sun Conjunct Mars in Scorpio**:
-The `IDENTITY` and `FORCE` operators are fused in the Scorpio execution context. The ego cannot exist without applying intense, directed pressure. The person does not "have" drive—they *are* drive. Willpower is not a resource they draw on; it is the substrate of their identity. Others experience this as magnetic intensity; the individual experiences it as normal operating temperature.
+The `IDENTITY` and `VECTOR` operators are fused in the Scorpio execution context. The ego cannot exist without applying intense, directed pressure. The person does not "have" drive—they *are* drive. Willpower is not a resource they draw on; it is the substrate of their identity. Others experience this as magnetic intensity; the individual experiences it as normal operating temperature.
 
 `define self() { return force(max_intensity, zero_compromise); }`
 
@@ -104,7 +104,7 @@ The resolution is not to silence Saturn. It is to build a pipeline that satisfie
 ## The Trine (120°) and Sextile (60°): The Superconductive Path
 **Logic**: `A && B == TRUE` (Zero-resistance conductivity)
 
-*   **The Circuit**: Operators in harmonious elements (Fire-to-Fire, Earth-to-Water, etc.). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
+*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
 *   **The Effect**: Natural talent, ease, and high-throughput execution. The failure mode is invisibility: because the code path is so optimized, it never surfaces in profiling. You forget it's there. The developer who writes elegant abstractions effortlessly may never learn to optimize the cases where elegance doesn't naturally emerge.
 *   **The Experience**: `"Isn't this O(1) for everyone?"`
 

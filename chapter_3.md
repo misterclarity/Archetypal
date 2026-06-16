@@ -65,7 +65,7 @@ These operators handle the daily I/O throughput and interaction with the immedia
 └──────────┴───────────────────────────────────────────┘
 ```
 
-### Venus: The `AND` Operator
+### Venus: The `BIND` Operator
 *   **The Operator**: `bind()` / `merge()`
 *   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
 *   **Syntax**: `"I value [Sign]."`
@@ -126,7 +126,7 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
-### Saturn: The `NOT` Operator
+### Saturn: The `LIMIT` Operator
 *   **The Operator**: `limit()` / `validate()`
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
@@ -159,7 +159,7 @@ These operators handle the scaling, structuring, and transformation of the syste
 >
 > **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims are subjected to rigorous testing. Belief must be earned, not assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
 
-### Uranus: The `INVERT` Operator
+### Uranus: The `INTERRUPT` Operator
 *   **The Operator**: `interrupt()` / `flip_bit()`
 *   **The Logic**: Uranus is the asynchronous interrupt—the signal that fires outside of the normal execution cycle and forces the main thread to yield. It is the exception that no `try/catch` can suppress, the bit-flip that changes the state of a running system in ways the original specification did not anticipate. It prevents the process from entering a stable but stagnant infinite loop by introducing controlled chaos.
 *   **Syntax**: `"I liberate [Sign]."`
