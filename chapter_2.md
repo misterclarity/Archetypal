@@ -142,6 +142,65 @@ This is the axis of functional reality—how the system interfaces with the worl
   └──────────┘                           └──────────┘
 ```
 
+## Reading an Axis: The Three States
+
+Every axis has three possible states, and only one of them is stable. Learning to tell them apart is most of the diagnostic skill in this book.
+
+```
+  THE AXIS TENSION METER
+
+  ┌──── POLE A OVERLOADED ──────────────────────────────┐
+  │  ████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░   │
+  │  A                                              B   │
+  │  Symptom: A's strength has become A's pathology.    │
+  │  The system does not experience this as imbalance.  │
+  │  It experiences it as "being a person of integrity."│
+  └─────────────────────────────────────────────────────┘
+
+  ┌──── OSCILLATION ────────────────────────────────────┐
+  │  ██████████████░░░░░░░░░░░░░░░░░░░░░░░░█████████    │
+  │  A         ◄────── swings ──────►               B   │
+  │  Symptom: violent alternation. Six months of pure   │
+  │  A, then a dramatic correction into pure B, then    │
+  │  back. Each swing is experienced as "finally        │
+  │  getting it right." Neither pole is integrated;     │
+  │  they are taking turns.                             │
+  └─────────────────────────────────────────────────────┘
+
+  ┌──── INTEGRATED ─────────────────────────────────────┐
+  │  ░░░░░░░░░░░░░░░░████████████░░░░░░░░░░░░░░░░░░░░   │
+  │  A            ◄── both live ──►                 B   │
+  │  Symptom: the tension is still there and no longer  │
+  │  costs anything. A is expressed IN THE FORM of B.   │
+  │  This is not compromise. It is a working contract.  │
+  └─────────────────────────────────────────────────────┘
+
+  The goal is never to move to the middle. The goal is
+  to hold both ends of the wire at once.
+```
+
+Most self-improvement advice is an instruction to swing from one pole to the other, which is why it works for six weeks and then stops. "Be more assertive" is a Libra-overloaded person being told to run pure Aries. It is not integration; it is a swing, and swings revert.
+
+### Extended Example: The Founder Who Couldn't Go Home (Cancer ↔ Capricorn)
+
+He built the company because his father lost a job in 1998 and the family spent four years being quietly afraid. Nobody said the word "afraid." That was the point—the household ran a policy of protecting everyone from the state of the household. He learned two things simultaneously: that private safety is the only thing that matters, and that it is *structurally* unavailable unless somebody builds something big enough to guarantee it.
+
+That is the Cancer–Capricorn axis compiled into a life plan. `PROTECT` outsourced entirely to `BUILD`.
+
+By 34 he had 60 employees and an office he liked more than his apartment. He was not a workaholic in the cliché sense—he did not love work. He loved that while the build was running, the fear had somewhere to go. Every quarter of growth was a quarter of proof. Capricorn was pegged at 100% and Cancer was not underperforming; Cancer had been *unmounted*. He described himself, accurately, as someone with no inner life, and said it the way you'd report a build flag.
+
+His wife's complaint was not that he worked late. It was that he was *managing* her—that every conversation about how she felt got converted into a plan, a resource, a fix. She once said: "You keep trying to solve me." He genuinely did not understand the objection. Solving was the only form of care his system had a driver for. The private-namespace operator had never been loaded; all emotional input was being routed to the public build server, because that was the only endpoint listening.
+
+The correction, when it came, was not "work less." He tried working less. It did nothing, because the axis was untouched—he simply had more hours in which to feel a thing he had no handler for, which he experienced as unbearable and correctly diagnosed as an argument for working more.
+
+What actually moved it was smaller and stranger. His therapist asked him to describe a problem without proposing a solution, for ninety seconds, timed. He could not do it. Not "found it difficult"—could not. He kept arriving at a plan by second twenty and had to start over four times.
+
+That failure was the first thing in a decade that told him something true about the architecture: **the operator was not missing, it was never given a runtime.** Cancer's job is to hold state, not to resolve it. Capricorn's job is to give state a form it can survive in. He had built an extraordinary container and put nothing in it.
+
+The integrated version is not a man who works less. It is a man who can sit with his wife's bad day without converting it into a project—and who still builds, because the building was never the problem. Capricorn was always the right operator. It had just been running with Cancer's responsibilities forcibly assigned to it, which is why it never felt like enough. No amount of structure satisfies a need for safety, because they are different functions on opposite ends of the same wire.
+
+> **The diagnostic pattern, generalized**: when a pole is *overloaded*, the complement is usually not weak. It is unmounted—never given permission to run at all. Look for the function you cannot perform even for ninety seconds. That is where the axis is broken, and it is almost never where the symptom is.
+
 ## What You're Building Toward: A Preview
 
 You now know the six axes—the core binary constraints of the human operating system. Before we move on to the operators (planets) and circuits (aspects) that execute within this field, it is worth previewing what the *finished product* looks like. This is the output you will be able to produce by the end of Chapter 6.

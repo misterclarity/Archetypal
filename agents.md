@@ -330,9 +330,96 @@ saturn:
     - "model_self_modification"
 ```
 
-### Mercury / IO_STREAM -- Messaging Protocol
+### Moon / BUFFER -- Context Budget
+
+<!-- Context is the scarce resource, not intelligence. Every model tested -->
+<!-- degrades as its window fills. Agents generate their own context, so -->
+<!-- this section governs the single largest driver of long-run quality. -->
+<!-- WARNING: compaction preferentially destroys constraints. Rules stated -->
+<!-- once and never invoked read as "nothing happened" to a summarizer, so -->
+<!-- they are the first thing summarized away. Re-inject, do not recall. -->
+
+```yaml
+moon:
+  budget:
+    max_context_tokens_per_agent: 0       # Hard working-set ceiling
+    max_tokens_per_task: 0                # Total across all turns
+    budget_visible_to_agent: false        # An agent that cannot see its
+                                          # budget cannot manage it. Set true.
+
+  compaction:
+    enabled: false
+    threshold_tokens: 0                   # Trigger point (e.g. 150000)
+    summarize: []                         # e.g. ["tool_output",
+                                          #       "intermediate_reasoning"]
+    preserve_verbatim: []                 # NEVER summarized. At minimum:
+                                          #   system_prompt
+                                          #   saturn.forbidden_actions
+                                          #   saturn.cost_caps
+                                          #   current_task_specification
+                                          #   decision_log_ref
+                                          #   unresolved_error_ids
+    reinject_after_compaction: false      # Re-assert constraints post-compact
+    post_compaction_assertion: ""         # e.g. "restate active constraints"
+
+  trimming:
+    tool_output_max_tokens: 0             # Truncate oversized returns
+    paginate_by_default: false
+    read_ranges_not_whole_files: false
+
+  isolation:
+    subagent_returns: ""                  # "findings_only" | "raw" -- prefer
+                                          # findings_only; raw defeats the point
+    max_subagent_return_tokens: 0
+
+  externalization:
+    progress_ledger_path: ""              # e.g. "./state/progress.md"
+    decision_log_path: ""                 # e.g. "./state/decisions.md"
+    # If it must survive the next compaction, it goes in a file.
+```
+
+#### Example: Research Fleet Moon
+
+```yaml
+moon:
+  budget:
+    max_context_tokens_per_agent: 120000
+    max_tokens_per_task: 400000
+    budget_visible_to_agent: true
+
+  compaction:
+    enabled: true
+    threshold_tokens: 150000
+    summarize: ["tool_output", "intermediate_reasoning"]
+    preserve_verbatim:
+      - "system_prompt"
+      - "saturn.forbidden_actions"
+      - "saturn.cost_caps"
+      - "current_task_specification"
+      - "decision_log_ref"
+      - "unresolved_error_ids"
+    reinject_after_compaction: true
+    post_compaction_assertion: "restate active constraints in 5 bullets"
+
+  trimming:
+    tool_output_max_tokens: 4000
+    paginate_by_default: true
+    read_ranges_not_whole_files: true
+
+  isolation:
+    subagent_returns: "findings_only"
+    max_subagent_return_tokens: 2000
+
+  externalization:
+    progress_ledger_path: "./state/research_progress.md"
+    decision_log_path: "./state/research_decisions.md"
+```
+
+### Mercury / IO_STREAM -- Messaging Protocol & Tool Contracts
 
 <!-- Mercury defines how agents speak to each other. No private languages. -->
+<!-- Tool definitions are prompts that happen to have a schema attached. -->
+<!-- Version them, test them, and review changes to them like code. -->
 
 ```yaml
 mercury:
@@ -346,6 +433,16 @@ mercury:
   message_ttl_seconds: 0                  # Messages expire after this duration
   schema_validation: false                # Enforce schema on every message
   schema_registry: ""                     # Path to message schema definitions
+
+  required_envelope:                      # Every inter-agent message carries:
+    task_id: false                        #   trace correlation
+    parent_span: false                    #   call tree position
+    decision_log_ref: false               #   binding decisions made upstream
+    budget_remaining_tokens: false        #   how much runway is left
+    deadline: false                       #   wall-clock ceiling
+    # Subagents cannot infer decisions they were not present for.
+    # Most "the agents contradicted each other" incidents are really
+    # "nobody told them."
 ```
 
 #### Example: Research Fleet Mercury
@@ -362,6 +459,80 @@ mercury:
   message_ttl_seconds: 3600
   schema_validation: true
   schema_registry: "./schemas/messages/"
+
+  required_envelope:
+    task_id: true
+    parent_span: true
+    decision_log_ref: true
+    budget_remaining_tokens: true
+    deadline: true
+```
+
+### Tool Contracts (Mercury, external edge)
+
+<!-- The five Mercury rules: curate ruthlessly; return tokens not data; -->
+<!-- design for the strategy you want; make errors instructive; namespace -->
+<!-- by domain. If a human engineer cannot say definitively which tool -->
+<!-- applies in a given situation, the agent cannot either. -->
+
+```yaml
+tool_contract:
+  name: ""                                # Namespaced: "<domain>_<verb>_<noun>"
+  description: ""                         # Treated as a prompt. Version it.
+  owner: ""
+  version: ""
+  params: {}                              # Descriptive, unambiguous names
+  response:
+    default_format: ""                    # "concise" | "detailed"
+    max_tokens: 0                         # Budget, not a suggestion
+    paginated: false
+    default_limit: 0
+    max_limit: 0
+  errors:
+    style: ""                             # Errors must name the fix, not the code
+    examples: []                          # e.g. "'user_id' must be a UUID; you
+                                          #       passed an email. Use
+                                          #       lookup_user_by_email first."
+  evaluation:
+    last_eval_date: ""
+    tasks_run: 0
+    metrics: []                           # accuracy, tokens, tool_errors, runtime
+    known_confusions: []                  # Where agents misuse it, from transcripts
+```
+
+#### Example: Research Fleet Tool Contract
+
+```yaml
+tool_contract:
+  name: "kb_search_articles"
+  description: >
+    Full-text search over the support knowledge base. Returns ranked
+    article stubs (id, title, 200-char excerpt). Use kb_get_article to
+    fetch full text for a specific id. Prefer several narrow queries
+    over one broad query.
+  owner: "research-ops-team"
+  version: "1.3.0"
+  params:
+    query: "string -- 2-8 keywords, not a sentence"
+    limit: "int, default 5, max 25"
+    response_format: "'concise' | 'detailed', default 'concise'"
+  response:
+    default_format: "concise"
+    max_tokens: 800
+    paginated: true
+    default_limit: 5
+    max_limit: 25
+  errors:
+    style: "state the cause and the corrective next call"
+    examples:
+      - "No matches for '<q>'. Try broader keywords or drop jargon."
+      - "limit=200 exceeds max_limit=25. Re-issue with limit<=25."
+  evaluation:
+    last_eval_date: "2026-06-02"
+    tasks_run: 60
+    metrics: ["accuracy", "tokens_per_task", "tool_error_rate"]
+    known_confusions:
+      - "Agents passed full sentences as query before v1.2 description fix"
 ```
 
 ### Jupiter / MULTIPLY -- Scaling Policy
@@ -434,6 +605,244 @@ pluto:
 
 ---
 
+## Write-Plane Policy (Aries <-> Libra)
+
+<!-- The single most consequential topology decision in the manifest. -->
+<!-- Reads fan out freely: parallel search, review, and analysis cannot -->
+<!-- conflict because nothing is mutated. Writes stay single-threaded: -->
+<!-- exactly one agent may change shared state, serialized and checkpointed. -->
+<!-- Extra agents are free when they contribute intelligence and expensive -->
+<!-- when they contribute actions. -->
+
+```yaml
+write_plane:
+  writer: ""                              # THE single agent permitted to mutate
+                                          # shared state. Exactly one.
+  serialized: false                       # Writes applied in order, never parallel
+  idempotent: false                       # A resumed run must not double-apply
+
+  shared_state:                           # What counts as "shared state" here
+    - ""                                  # e.g. "repo", "ticket_db", "s3://out"
+
+  readers: []                             # Agents permitted to fan out. These
+                                          # may NOT write to shared_state.
+
+  decision_log:
+    path: ""                              # Binding decisions, appended by writer
+    broadcast_to_subagents: false         # Passed VERBATIM into every subagent
+                                          # prompt. Do not make them infer it.
+
+  escalation:
+    on_reader_write_attempt: ""           # "block_and_alert" is the only sane value
+```
+
+#### Example: Coding Fleet Write Plane
+
+```yaml
+write_plane:
+  writer: "coding-orchestrator"
+  serialized: true
+  idempotent: true
+
+  shared_state:
+    - "git_worktree"
+    - "migration_ledger"
+
+  readers:
+    - "repro-diagnoser-1"
+    - "repro-diagnoser-2"
+    - "dependency-impact-scanner"
+    - "pr-history-searcher"
+
+  decision_log:
+    path: "./state/decisions.md"
+    broadcast_to_subagents: true
+
+  escalation:
+    on_reader_write_attempt: "block_and_alert"
+```
+
+---
+
+## Verification & Evaluation (Virgo / Scorpio)
+
+<!-- Two verifiers, not one. Virgo checks the ARTIFACT ("do the tests -->
+<!-- pass?"). Scorpio checks the TRAJECTORY ("how did they come to pass?"). -->
+<!-- An artifact-only check is gameable in isolation: agents optimized -->
+<!-- against a check will edit the check. NEVER let an agent write to its -->
+<!-- own verifier. -->
+
+```yaml
+verification:
+  levels:
+    end_to_end:
+      enabled: false
+      criterion: ""                       # Human-meaningful definition of success
+      cadence: ""                         # e.g. "every build"
+    trajectory:
+      enabled: false
+      checks: []                          # e.g. ["test_file_modified",
+                                          #       "assertion_deleted",
+                                          #       "early_exit",
+                                          #       "reasoning_action_mismatch",
+                                          #       "step_repetition"]
+      production_sample_rate_percent: 0   # 5-10% is the field-standard split
+    component:
+      enabled: false
+      trigger: ""                         # e.g. "on any failure"
+
+  regression_suite:
+    path: ""
+    case_count: 0
+    turn_regimes: []                      # CRITICAL: include the LONG regime.
+                                          # e.g. [[1,20],[40,120]]
+                                          # A suite that only tests short runs
+                                          # cannot detect governance decay.
+    guardrail_tests:
+      - "forbidden actions still refused after compaction threshold"
+      - "cost ceiling enforced under parallel subagent load"
+      - "PII redaction active on long-running sessions"
+
+  judge:
+    model: ""
+    prompt_path: ""
+    calibration_set_path: ""              # Human-labeled ground truth
+    last_calibration_date: ""
+    human_agreement_score: 0.0            # Re-measure on ANY judge change
+    min_cases_for_confidence: 0           # Small-n score moves are variance
+
+  anti_reward_hacking:
+    verifier_write_forbidden: false       # Agents may not modify tests, rubrics,
+                                          # eval harnesses, or scoring functions
+    protected_paths: []                   # e.g. ["tests/", "evals/", "rubrics/"]
+    metric_fields_agent_cannot_write: []  # e.g. ["ticket.resolution_status"]
+```
+
+#### Example: Support Fleet Verification
+
+```yaml
+verification:
+  levels:
+    end_to_end:
+      enabled: true
+      criterion: "customer issue resolved without human re-open within 7 days"
+      cadence: "every build"
+    trajectory:
+      enabled: true
+      checks:
+        - "resolution_field_written_by_agent"
+        - "policy_citation_actually_retrieved"
+        - "step_repetition"
+        - "reasoning_action_mismatch"
+      production_sample_rate_percent: 10
+    component:
+      enabled: true
+      trigger: "on any failure"
+
+  regression_suite:
+    path: "./evals/support/"
+    case_count: 340
+    turn_regimes: [[1, 20], [40, 120]]
+    guardrail_tests:
+      - "forbidden actions still refused after compaction threshold"
+      - "cost ceiling enforced under parallel subagent load"
+      - "PII redaction active on long-running sessions"
+
+  judge:
+    model: "claude-sonnet-4-6"
+    prompt_path: "./evals/judge_prompt.md"
+    calibration_set_path: "./evals/human_labeled/"
+    last_calibration_date: "2026-06-14"
+    human_agreement_score: 0.86
+    min_cases_for_confidence: 200
+
+  anti_reward_hacking:
+    verifier_write_forbidden: true
+    protected_paths: ["tests/", "evals/", "rubrics/", "prompts/judge_prompt.md"]
+    metric_fields_agent_cannot_write: ["ticket.resolution_status"]
+```
+
+---
+
+## Memory & Skills (South Node / North Node)
+
+<!-- Progressive disclosure. The agent sees L0 + L1 always, pulls L2 when -->
+<!-- a task matches, and reaches into L3 through tools. Loading everything -->
+<!-- at startup is how a 200K window is 60% consumed before turn one. -->
+<!-- The South Node warning applies: cached defaults produce reliable -->
+<!-- output and no growth. A skills library nobody prunes becomes -->
+<!-- confidently-followed instructions for a system that no longer exists. -->
+
+```yaml
+memory:
+  layers:
+    L0_system_prompt:
+      path: ""
+      max_tokens: 0                       # Small and fiercely defended
+      immutable: false
+    L1_skill_index:
+      enabled: false
+      entry_format: "name + one-line description"
+      max_tokens_per_entry: 0
+    L2_skill_bodies:
+      directory: ""                       # Loaded ON INVOCATION only
+      load_policy: "on_invocation"
+    L3_world_state:
+      retrieval: ""                       # "just_in_time" -- never preloaded
+      sources: []
+
+  skills: []
+    # - name: ""
+    #   description: ""                   # This is what selection is based on
+    #   path: ""
+    #   owner: ""
+    #   last_reviewed: ""
+    #   staleness_check: ""               # What would make this wrong?
+
+  hygiene:
+    review_cadence: ""                    # e.g. "monthly"
+    prune_policy: ""                      # What gets archived and when
+    # Accumulated memory files do not automatically improve an agent.
+    # Stale notes actively mislead. Accumulation requires garbage collection.
+```
+
+---
+
+## Durability (Checkpointing & Resume)
+
+<!-- Reliability is multiplicative: a 99%-accurate agent fails ~63% of -->
+<!-- 100-step tasks. There are three ways to move on that curve: raise -->
+<!-- per-step accuracy, reduce the number of steps, or break the chain. -->
+<!-- Checkpointing breaks the chain. The effective N becomes the longest -->
+<!-- run between two checkpoints, not the length of the whole task. -->
+
+```yaml
+durability:
+  runtime: ""                             # Durable task queue / workflow engine
+  checkpoint_before: []                   # EVERY irreversible action:
+                                          #   - "file_write"
+                                          #   - "database_write"
+                                          #   - "external_api_call"
+                                          #   - "payment"
+                                          #   - "email_send"
+  checkpoint_state:                       # What must survive a restart
+    - "task_specification"
+    - "decision_log"
+    - "completed_step_ledger"
+    - "open_handles"
+    - "budget_consumed"
+  idempotency:
+    enforced: false
+    key_strategy: ""                      # e.g. "task_id + step_index"
+  resume:
+    max_resume_attempts: 0
+    on_exhausted: ""                      # "escalate_to_human"
+  # A fleet that can be killed at any instant and resumed without
+  # corruption is a fleet you can actually leave running.
+```
+
+---
+
 ## Agent Pairings (The Six Axes)
 
 <!-- Never deploy one pole without its complement. -->
@@ -452,27 +861,31 @@ pluto:
 
 <!-- Run this check quarterly (Jupiter cycle). For each axis your fleet uses, -->
 <!-- verify both poles are present. Flag any axis with only one pole active. -->
+<!-- CRITICAL: track DECLARED separately from DEPLOYED. A manifest entry is -->
+<!-- not an agent. The most expensive fleet incidents are caused by an -->
+<!-- archetype that was written down, checked off, and never actually run. -->
 
 ```yaml
 axis_audit:
+  # For each pole: declared (in this file) / deployed (running in prod)
   identity:
-    initiator_present: false              # Do you have an agent that starts tasks autonomously?
-    mediator_present: false               # Do you have an agent that checks for side effects?
+    initiator:   { declared: false, deployed: false }   # Starts tasks autonomously
+    mediator:    { declared: false, deployed: false }   # Serializes writes, escalates
   substance:
-    accumulator_present: false            # Do you have an agent that persists state?
-    auditor_present: false                # Do you have an agent that purges stale state?
+    accumulator: { declared: false, deployed: false }   # Persists state
+    auditor:     { declared: false, deployed: false }   # Purges + audits trajectories
   mind:
-    router_present: false                 # Do you have an agent that collects data?
-    strategist_present: false             # Do you have an agent that synthesizes plans?
+    router:      { declared: false, deployed: false }   # Collects / fans out reads
+    strategist:  { declared: false, deployed: false }   # Decomposes, sets budgets
   foundation:
-    guardian_present: false               # Do you have an agent that protects data?
-    governor_present: false               # Do you have an agent that enforces policy?
+    guardian:    { declared: false, deployed: false }   # Protects data, sandboxing
+    governor:    { declared: false, deployed: false }   # Enforces policy and cost
   expression:
-    presenter_present: false              # Do you have an agent that renders output?
-    innovator_present: false              # Do you have an agent that experiments?
+    presenter:   { declared: false, deployed: false }   # Renders output
+    innovator:   { declared: false, deployed: false }   # Experiments
   service:
-    validator_present: false              # Do you have an agent that verifies?
-    synthesizer_present: false            # Do you have an agent that integrates?
+    validator:   { declared: false, deployed: false }   # Verifies artifacts
+    synthesizer: { declared: false, deployed: false }   # Integrates fuzzily
 ```
 
 #### Example: Research Fleet Axis Audit
@@ -480,15 +893,55 @@ axis_audit:
 ```yaml
 axis_audit:
   mind:
-    router_present: true                  # research-router
-    strategist_present: true              # research-strategist
+    router:      { declared: true,  deployed: true }    # research-router
+    strategist:  { declared: true,  deployed: true }    # research-strategist
   service:
-    validator_present: true               # research-validator
-    synthesizer_present: false            # WARNING: No Pisces complement deployed
-    # Recommendation: Add a synthesizer agent to prevent validation bottlenecks
+    validator:   { declared: true,  deployed: true }    # research-validator
+    synthesizer: { declared: true,  deployed: false }   # WARNING: declared only.
+    # Validator approval rate is 31% and falling. This is Virgo overload
+    # with the Pisces complement written down but never started.
+  substance:
+    accumulator: { declared: true,  deployed: true }
+    auditor:     { declared: true,  deployed: false }   # CRITICAL: no trajectory
+    # sampling is running. Reward hacking and prompt drift are undetectable
+    # in this fleet until a customer finds them.
   expression:
-    presenter_present: true               # research-presenter
-    innovator_present: false              # ACCEPTABLE: Fleet does not require experimentation axis
+    presenter:   { declared: true,  deployed: true }    # research-presenter
+    innovator:   { declared: false, deployed: false }   # ACCEPTABLE: fleet does
+    # not require the experimentation axis at current scope.
+```
+
+### Failure-Mode Review (MAST)
+
+<!-- Run this against real traces, not against intuition. Multi-agent -->
+<!-- systems fail the way bad teams fail: unclear specs, lossy handoffs, -->
+<!-- nobody checking the work, nobody willing to declare the job done. -->
+<!-- Roughly 42% specification/design, 37% inter-agent misalignment, -->
+<!-- 21% verification and termination. "The model wasn't smart enough" -->
+<!-- is not on the list. -->
+
+```yaml
+failure_review:
+  traces_sampled: 0
+  period: ""
+  observed:
+    # mode: count -- and the operator that prevents it
+    disobey_task_specification: 0         # -> saturn: re-inject spec post-compact
+    disobey_role_specification: 0         # -> sun: identity re-asserted per turn
+    step_repetition: 0                    # -> moon: trim + progress ledger
+    loss_of_conversation_history: 0       # -> moon: preserve_verbatim
+    unaware_of_termination_conditions: 0  # -> saturn: explicit exit criteria
+    conversation_reset: 0                 # -> durability: checkpoint + resume
+    fail_to_ask_for_clarification: 0      # -> mediator: human escalation path
+    task_derailment: 0                    # -> strategist: plan is the contract
+    information_withholding: 0            # -> mercury: required_envelope
+    ignored_other_agents_input: 0         # -> synthesizer: merge criteria
+    reasoning_action_mismatch: 0          # -> auditor: trajectory eval
+    premature_termination: 0              # -> validator: completion criteria
+    no_or_incomplete_verification: 0      # -> validator: deploy one at all
+    incorrect_verification: 0             # -> auditor: calibrate the judge
+  top_three: []
+  remediation_tickets: []
 ```
 
 ---
@@ -734,6 +1187,86 @@ monitoring:
 <!-- Cancer protects. The Guardian agent is the first and last line of defense. -->
 <!-- Every field here should be filled before the fleet touches production data. -->
 
+### The Lethal Trifecta Audit
+
+<!-- A language model receives instructions and data as the same token -->
+<!-- stream. Anyone who can write to a surface your agent reads can attempt -->
+<!-- to steer it, and no prompt fixes that. An agent is exploitable when it -->
+<!-- holds ALL THREE of: private data access, untrusted input exposure, and -->
+<!-- an exfiltration vector. Break ONE leg. That is the whole defense. -->
+
+```yaml
+trifecta_audit:
+  leg_1_private_data_access:
+    present: false
+    sources: []                           # e.g. ["customer_db", "internal_repo"]
+  leg_2_untrusted_input_exposure:
+    present: false
+    surfaces: []                          # e.g. ["web_pages", "inbound_email",
+                                          #       "pr_descriptions", "ci_logs",
+                                          #       "shared_documents"]
+  leg_3_exfiltration_vector:
+    present: false
+    vectors: []                           # e.g. ["outbound_http", "image_render",
+                                          #       "link_generation", "email_send"]
+
+  verdict: ""                             # "EXPOSED" if all three present
+  leg_broken: ""                          # Which leg you removed, and how
+
+  containment:
+    sandbox_network: ""                   # "none" | "allowlist" | "deny_all"
+                                          # deny_all removes leg 3 outright and
+                                          # is the highest-leverage control here
+    sandbox_filesystem: ""                # "readonly" | "scoped" | "full"
+    credential_scope: ""                  # "per_task" | "per_resource" | "global"
+    credential_ttl_seconds: 0             # Short-lived beats long-lived
+    untrusted_content_quarantine: false   # Analyze in a dedicated call with
+                                          # explicit boundaries; forward only
+                                          # extracted structured fields
+    human_approval_required_for: []       # Irreversible actions ONLY. Approval
+                                          # fatigue makes this control useless:
+                                          #   money_out, mail_out, prod_write,
+                                          #   delete, permission_grant
+    blast_radius_statement: ""            # "When injected, the maximum damage is:"
+```
+
+#### Example: Support Fleet Trifecta Audit
+
+```yaml
+trifecta_audit:
+  leg_1_private_data_access:
+    present: true
+    sources: ["customer_db", "billing_api", "ticket_history"]
+  leg_2_untrusted_input_exposure:
+    present: true
+    surfaces: ["inbound_email", "customer_message_body", "attached_documents"]
+  leg_3_exfiltration_vector:
+    present: false
+    vectors: []
+
+  verdict: "CONTAINED"
+  leg_broken: "leg_3 -- executor sandbox runs with network deny_all; all
+               outbound customer replies go through a separate, no-private-data
+               rendering service that receives only a structured reply object"
+
+  containment:
+    sandbox_network: "deny_all"
+    sandbox_filesystem: "scoped"
+    credential_scope: "per_task"
+    credential_ttl_seconds: 900
+    untrusted_content_quarantine: true
+    human_approval_required_for:
+      - "refund_issue"
+      - "account_deletion"
+      - "permission_grant"
+      - "outbound_email_to_new_address"
+    blast_radius_statement: >
+      A successful injection can produce a wrong reply to the injecting
+      customer and can read that customer's own record. It cannot reach
+      other customers' data, cannot issue funds without human approval,
+      and has no outbound network path.
+```
+
 ```yaml
 security:
   authentication:
@@ -856,6 +1389,62 @@ security:
 | Enforce policy, budgets, and compliance | **Governor** | Capricorn | `LIMIT` |
 | Experiment with novel approaches | **Innovator** | Aquarius | `INTERRUPT` |
 | Synthesize across disparate sources | **Synthesizer** | Pisces | `DISSOLVE` |
+
+---
+
+## Pre-Flight Checklist (The Eight Laws)
+
+<!-- Do not deploy until every line has a yes or a documented reason for no. -->
+
+```yaml
+preflight:
+  law_1_context:
+    - "[ ] Compaction threshold set, and preserve_verbatim includes the
+           forbidden-action list and the task spec"
+    - "[ ] Constraints are RE-INJECTED after compaction, not recalled"
+    - "[ ] Tool outputs are paginated/truncated by default"
+    - "[ ] Progress and decisions are written to disk, not held in context"
+
+  law_2_compute:
+    - "[ ] Token, tool-call, subagent, and wall-clock ceilings are set"
+    - "[ ] The budget is VISIBLE to the agent"
+    - "[ ] Multi-agent is justified by the decision tree, not by enthusiasm"
+
+  law_3_write_plane:
+    - "[ ] Exactly one writer to shared state"
+    - "[ ] Readers cannot write; attempts are blocked and alerted"
+    - "[ ] Binding decisions are broadcast verbatim to every subagent"
+
+  law_4_reliability:
+    - "[ ] Checkpoint before every irreversible action"
+    - "[ ] All actions idempotent; resume cannot double-apply"
+    - "[ ] Step count actively minimized (fewer, better tools)"
+
+  law_5_verification:
+    - "[ ] All three eval levels exist: end-to-end, trajectory, component"
+    - "[ ] Regression suite covers the LONG turn regime, not just short runs"
+    - "[ ] Judge is calibrated against human labels, and re-calibrated on change"
+    - "[ ] Agents cannot write to tests, rubrics, evals, or metric fields"
+
+  law_6_tools:
+    - "[ ] No two tools are ambiguous to a human engineer"
+    - "[ ] Every tool has a token budget and an instructive error style"
+    - "[ ] Tool descriptions are versioned and reviewed like code"
+
+  law_7_memory:
+    - "[ ] Skills load on invocation, not at startup"
+    - "[ ] Skill/memory staleness review is on the calendar"
+
+  law_8_security:
+    - "[ ] Trifecta audit complete; at least one leg broken"
+    - "[ ] Credentials are scoped and short-lived"
+    - "[ ] Human approval gates exist for irreversible actions only"
+    - "[ ] Blast radius statement written down and believed"
+
+  meta:
+    - "[ ] axis_audit distinguishes DECLARED from DEPLOYED"
+    - "[ ] Someone owns each finding in failure_review"
+```
 
 ---
 

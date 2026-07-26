@@ -4,6 +4,44 @@ If the signs are the coordinate field (the "Where"), the planets are the active 
 
 Every planet represents a specific class of operation—a deterministic behavior that fires in a given context.
 
+### The Operator Stack
+
+Not all operators run at the same layer. They differ in orbital speed, and orbital speed maps almost perfectly onto scope: fast operators are personal and change frequently; slow operators are generational and change on the timescale of cultural epochs.
+
+```
+  THE OPERATOR STACK — by layer and cycle time
+
+  ┌───────────────────────────────────────────────────────┐
+  │  OUTER / KERNEL LAYER          shared by a generation │
+  │  ♇ Pluto    REFORMAT    ~248 yr  ~12-30 yr per sign   │
+  │  ♆ Neptune  DISSOLVE    ~165 yr  ~14 yr per sign      │
+  │  ♅ Uranus   INTERRUPT    ~84 yr  ~7 yr per sign       │
+  │  → Everyone born within years of you shares these.    │
+  │    They describe the era's operating assumptions,     │
+  │    not your personality.                              │
+  ├───────────────────────────────────────────────────────┤
+  │  SOCIAL / FRAMEWORK LAYER        shared by a cohort   │
+  │  ♄ Saturn   LIMIT        ~29 yr  ~2.5 yr per sign     │
+  │  ♃ Jupiter  MULTIPLY     ~12 yr  ~1 yr per sign       │
+  │  → Where you meet the world's rules and rewards.      │
+  ├───────────────────────────────────────────────────────┤
+  │  PERSONAL / APPLICATION LAYER              yours      │
+  │  ♂ Mars     VECTOR      ~2 yr   ~6 wk per sign        │
+  │  ♀ Venus    BIND        ~1 yr   ~3 wk per sign        │
+  │  ☿ Mercury  IO_STREAM   ~1 yr   ~3 wk per sign        │
+  │  ☽ Moon     BUFFER      ~28 days  ~2.5 days per sign  │
+  │  ☉ Sun      IDENTITY    ~1 yr   ~30 days per sign     │
+  │  → These are genuinely individuating. Two people      │
+  │    born the same week differ most here.               │
+  └───────────────────────────────────────────────────────┘
+
+  Diagnostic consequence: an outer-planet placement on its
+  own tells you almost nothing about a person. It becomes
+  personal only when it ASPECTS a personal operator — when
+  the generational kernel is wired directly into your Sun,
+  Moon, Mercury, Venus, or Mars.
+```
+
 ## The Constants (The Luminaries)
 These are the core binaries of consciousness: the process identity and its stateful context.
 
@@ -126,6 +164,35 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
+**Jupiter: Quick Reference Across All Twelve Signs**
+
+```
+┌──────────────────────────────────────────────────────┐
+│  ♃ JUPITER — The MULTIPLY Operator:                  │
+│  "What does the system scale up without being told?" │
+├──────────┬───────────────────────────────────────────┤
+│ ♈ Aries  │ Scales courage. grow(initiative, risk)    │
+│ ♉ Taurus │ Scales resources. grow(comfort, assets)   │
+│ ♊ Gemini │ Scales curiosity. grow(inputs, contacts)  │
+│ ♋ Cancer │ Scales care. grow(belonging, feeding)     │
+│ ♌ Leo    │ Scales presence. grow(generosity, stage)  │
+│ ♍ Virgo  │ Scales refinement. grow(process, service) │
+│ ♎ Libra  │ Scales fairness. grow(alliances, taste)   │
+│ ♏ Scorpio│ Scales depth. grow(intensity, leverage)   │
+│ ♐ Sagitt.│ Scales meaning. grow(scope, conviction)   │
+│ ♑ Capri. │ Scales authority. grow(standing, mandate) │
+│ ♒ Aquar. │ Scales the network. grow(reach, ideology) │
+│ ♓ Pisces │ Scales empathy. grow(compassion, drift)   │
+└──────────┴───────────────────────────────────────────┘
+
+  Jupiter has no brake. Whatever sits in this coordinate
+  gets multiplied WHETHER OR NOT it should be. This is why
+  Jupiter placements read as "luck" from the outside and
+  "I cannot stop doing this" from the inside.
+```
+
+**Example — Jupiter in Gemini vs Jupiter in Scorpio**: Same operator, opposite scaling targets. Jupiter in Gemini multiplies inputs—forty open tabs, six side projects, three languages half-learned, an inbox that is functionally a landfill. Abundance of *breadth*. Jupiter in Scorpio multiplies intensity—there are four things in this person's life and all four are total. Abundance of *depth*. Neither is more fortunate. Each is over-supplied in exactly the dimension the other is starved in, and each finds the other's life unimaginable.
+
 ### Saturn: The `LIMIT` Operator
 *   **The Operator**: `limit()` / `validate()`
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
@@ -173,6 +240,43 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Operator**: `purge()` / `reboot()`
 *   **The Logic**: Pluto is the destructive update that cannot be rolled back. It identifies corrupt memory blocks or deeply outdated dependencies and initiates a full wipe-and-reinstall cycle. It does not patch; it replaces. It is the operator that governs the irreversible state transitions—the ones where the system that comes back online after the reformat is not the same system that went offline.
 *   **Syntax**: `"I transform [Sign]."`
+
+### The Outer Operators in Practice: Generational Firmware
+
+Because Uranus, Neptune, and Pluto move so slowly, their placements describe a *cohort*, not a person. Everyone born in a several-year window shares the same value. This is why "Pluto in Scorpio" tells you about a generation's relationship to power, secrecy, and taboo—and tells you nothing at all about whether a specific person born in 1988 is guarded or open.
+
+The outer operators become personal in exactly one circumstance: **when they aspect a personal operator.**
+
+```
+  GENERATIONAL vs PERSONAL — same placement, two cases
+
+  CASE A: Neptune in Capricorn, no personal aspects
+  ┌────────────────────────────────────────────────┐
+  │  ♆ DISSOLVE running on the structure coordinate│
+  │  Shared with ~14 years of people.              │
+  │  Reads as: a generation that grew up watching  │
+  │  institutions lose their solidity.             │
+  │  Personal impact: ambient. Background firmware.│
+  └────────────────────────────────────────────────┘
+
+  CASE B: Neptune in Capricorn CONJUNCT natal Sun
+  ┌────────────────────────────────────────────────┐
+  │  ♆ DISSOLVE merged into ☉ IDENTITY             │
+  │  Now the generational operator is wired        │
+  │  directly into the main thread.                │
+  │  Reads as: this specific person's sense of who │
+  │  they are has no hard boundary. Ambition is    │
+  │  real but the shape keeps shifting. They are   │
+  │  a mirror in rooms where others are objects.   │
+  │  Personal impact: total. This is a defining    │
+  │  architectural feature, not background.        │
+  └────────────────────────────────────────────────┘
+
+  The rule: an outer planet's sign is the era.
+  An outer planet's ASPECT is the person.
+```
+
+**Worked example — Uranus square Mercury**: The `INTERRUPT` operator is in 90° contention with the `IO_STREAM` operator. This person's thoughts arrive as interrupts rather than as a stream: the idea shows up mid-sentence, out of order, and refuses to queue. In school this is a discipline problem. In a design review it is the observation nobody else could have made, delivered at the worst possible moment. The friction never resolves into smoothness—but it does, eventually, resolve into *timing*, which is what a person with this placement is actually learning across their twenties and thirties. The interrupt handler cannot be disabled. It can be given a scheduler.
 
 ## The Nodal Operators (The Evolutionary Axis)
 The Nodes of the Moon are not planets but intersection points—crossings of the Moon's orbital plane with the ecliptic. They function as a **directional flow controller**: a chronological axis that governs the trajectory of the system's development over time.

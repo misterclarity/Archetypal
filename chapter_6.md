@@ -145,6 +145,168 @@ Below is a simplified but complete reading that puts all the layers together. Th
 
 You are not running someone else's binary. You have the source. You have the build tools. The question is whether you are going to read the codebase before you start making changes.
 
+## Second Worked Example: A Contrasting System Profile
+
+One example teaches the format. Two teach the *method*—because the interesting part is not either reading, it is seeing the same four steps produce a completely different architecture.
+
+**The Chart**: *Sun in Pisces, Moon in Capricorn, Virgo Rising. Mars in Cancer opposite Saturn in Capricorn. Mercury in Aquarius sextile Jupiter in Aries. Venus in Aries. North Node in Taurus / South Node in Scorpio.*
+
+```
+ SYSTEM ARCHITECTURE DIAGRAM
+ ═══════════════════════════════════════════════════════
+
+ ┌─ PUBLIC API (Rising = Virgo) ───────────────────────┐
+ │  Interface: precise, useful, quietly critical.      │
+ │  Presents as competent and unbothered. Every        │
+ │  external call gets a correct, well-formed reply.   │
+ │  PID 1 = Mercury (chart ruler) — system health      │
+ │  depends on the IO layer, which is in Aquarius:     │
+ │  detached, systemic, several degrees off-consensus. │
+ └─────────────────────────────────────────────────────┘
+           │
+ ┌─ CPU (Sun = Pisces) ────────────────────────────────┐
+ │  Core Process: permeable, associative, absorptive.  │
+ │  The identity function has soft type boundaries.    │
+ │  NOTE THE CONTRADICTION: a Virgo interface in front │
+ │  of a Pisces core. The world receives precision.    │
+ │  The core is running on impressions. Nobody guesses │
+ │  this from the outside, including sometimes them.   │
+ └─────────────────────────────────────────────────────┘
+           │
+ ┌─ CACHE (Moon = Capricorn) ──────────────────────────┐
+ │  Emotional State: stored in compressed, structured  │
+ │  form. Feelings are logged, not felt in real time.  │
+ │  Under stress the cache does not flood — it goes    │
+ │  quiet, gets competent, and files everything for    │
+ │  processing at an unspecified later date.           │
+ └─────────────────────────────────────────────────────┘
+
+ ┌─ BOTTLENECK ─────────────────────────────────────────┐
+ │  Mars ♋ ☍ Saturn ♑                                   │
+ │  Drive (protective, indirect, acts when threatened)  │
+ │  at maximum distance from Limit (authority, hierarchy│
+ │  , public standard).                                 │
+ │  "I don't push. I hold. And then I resent the        │
+ │   structures I never pushed against."                │
+ │  Classic projection risk: the LIMIT operator gets    │
+ │  externalized onto bosses, institutions, and rules,  │
+ │  which are then experienced as doing this TO them.   │
+ │  Integration: own the Capricorn end. The authority   │
+ │  is not out there. Build the structure yourself and  │
+ │  the opposition stops being a wire and starts being  │
+ │  a spine.                                            │
+ └──────────────────────────────────────────────────────┘
+
+ ┌─ HOT PATH (invocable, not automatic) ────────────────┐
+ │  Mercury ♒ ⚹ Jupiter ♈                               │
+ │  Systemic, unconventional thinking has a 60° link to │
+ │  the operator that scales initiative.                │
+ │  Sextile, not trine: this DOES NOT FIRE ON ITS OWN.  │
+ │  When deliberately invoked — when they actually say  │
+ │  the strange idea out loud early — it works every    │
+ │  single time. Most of the time they don't.           │
+ │  This is the single highest-leverage line in the     │
+ │  whole profile.                                      │
+ └──────────────────────────────────────────────────────┘
+
+ ┌─ DRIVE VECTOR ───────────────────────────────────────┐
+ │  Mars ♋ / Venus ♈                                    │
+ │  Split configuration: acts defensively, WANTS        │
+ │  directly. Pursues fast and fights slow. Reads as    │
+ │  inconsistent from outside; is entirely consistent   │
+ │  once you know the two operators are in different    │
+ │  coordinates.                                        │
+ └──────────────────────────────────────────────────────┘
+
+ ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
+ │  South Node ♏ → North Node ♉                         │
+ │  Default: intensity, crisis fluency, reading         │
+ │  subtext, surviving on leverage and depth.           │
+ │  Growth: ordinary durable value. Steadiness that     │
+ │  is not earned through catastrophe.                  │
+ │  "FROM: 'I am good in the fire' → TO: 'I can build   │
+ │   something that doesn't need a fire to matter.'"    │
+ └──────────────────────────────────────────────────────┘
+```
+
+**The Executive Summary**: *A system whose public interface (Virgo Rising) is far more precise than its core process (Pisces Sun), producing a person others read as organized and self-contained while the actual identity layer runs on absorption and impression. Emotional state is compressed and deferred rather than expressed (Capricorn Moon). The primary bottleneck is an Opposition between drive and limit (Mars in Cancer opposite Saturn in Capricorn) that resolves only when the Capricorn end is claimed rather than projected onto external authority. The highest-value asset is a Sextile—unconventional thinking linked to scaled initiative—which is reliable but never automatic, and therefore mostly unused. The trajectory runs from crisis competence (South Node in Scorpio) toward durable, undramatic value (North Node in Taurus).*
+
+### Compare The Two Readings
+
+```
+  ┌──────────────┬──────────────────┬──────────────────┐
+  │              │  EXAMPLE 1       │  EXAMPLE 2       │
+  ├──────────────┼──────────────────┼──────────────────┤
+  │ Interface    │ Leo — warm,      │ Virgo — precise, │
+  │              │ commanding       │ self-contained   │
+  │ Core         │ Scorpio — deep   │ Pisces — porous, │
+  │              │ investigation    │ associative      │
+  │ Cache        │ Gemini — verbal, │ Capricorn —      │
+  │              │ fast, scattered  │ deferred, filed  │
+  │ Bottleneck   │ SQUARE (heat)    │ OPPOSITION       │
+  │              │ internal friction│ (projection)     │
+  │ Key asset    │ TRINE — runs on  │ SEXTILE — works  │
+  │              │ its own, invisible│ but must be     │
+  │              │                  │ invoked          │
+  │ Direction    │ Leo → Aquarius   │ Scorpio → Taurus │
+  │              │ me → the network │ intensity →      │
+  │              │                  │ steadiness       │
+  └──────────────┴──────────────────┴──────────────────┘
+
+  Same four steps. Nothing else in common.
+  That is what it means for this to be a method
+  rather than a set of descriptions.
+```
+
+## The Profiling Worksheet
+
+Use this on your own chart. Fill it in the order given—the order is the method.
+
+```
+  ┌─ STEP 1: BASE IMAGE ───────────────────────────────┐
+  │  Rising  ________  → public API contract:          │
+  │  Sun     ________  → core processing style:        │
+  │  Moon    ________  → cache/eviction strategy:      │
+  │  PID 1 (ruler of Rising) ________                  │
+  │  Where does the interface CONTRADICT the core?     │
+  │  ______________________________________________    │
+  └────────────────────────────────────────────────────┘
+
+  ┌─ STEP 2: BOTTLENECKS (□ and ☍) ────────────────────┐
+  │  Hard aspects to ☿ ♀ ♂:                            │
+  │  ______ □/☍ ______  orb ____                       │
+  │  What does this block, specifically, in a normal   │
+  │  week? ________________________________________    │
+  │  What would satisfying BOTH operands look like?    │
+  │  ______________________________________________    │
+  └────────────────────────────────────────────────────┘
+
+  ┌─ STEP 3: HOT PATHS (△ and ⚹) ──────────────────────┐
+  │  ______ △/⚹ ______                                 │
+  │  Trine → what am I good at that I never trained?   │
+  │  Sextile → what works whenever I remember to do    │
+  │  it, and how often do I remember?                  │
+  │  ______________________________________________    │
+  └────────────────────────────────────────────────────┘
+
+  ┌─ STEP 4: GROWTH VECTOR (☋ → ☊) ────────────────────┐
+  │  South Node ______  the cached default that is     │
+  │  reliable and produces no growth:                  │
+  │  North Node ______  the dependency I keep          │
+  │  deferring the install on:                         │
+  │  One deliberate IMPORT this month: ____________    │
+  └────────────────────────────────────────────────────┘
+
+  ┌─ THE TEST ───────────────────────────────────────── ┐
+  │  Does any line above make you say "oh, THAT'S       │
+  │  why I keep doing that"?                            │
+  │                                                     │
+  │  If yes: the tool is working. Keep it.              │
+  │  If no:  the tool has failed for you. Discard it.   │
+  │          That was always the deal.                  │
+  └────────────────────────────────────────────────────┘
+```
+
 ## From Reading Code to Writing Code
 
 You have now learned to read the source code of one complex, multi-operator system: yourself. You can identify the base image, profile the bottlenecks, trace the hot paths, and resolve the primary dependency error. You have a synthesis protocol that produces a readable system architecture diagram from a set of component specifications.

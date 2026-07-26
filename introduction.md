@@ -26,6 +26,43 @@ In the framework you are about to learn:
 
 That is one "line of code" in a birth chart—one statement in a symbolic language that maps the architecture of recurring behavioral patterns onto a readable, debuggable system diagram. A full chart contains dozens of these interacting statements. By the end of this book, you will know how to read them all.
 
+### The Decoder Ring
+
+Every statement in this language has the same grammar. Once you see the shape, you can parse any placement you encounter—including the ones in your own chart that you have not learned yet.
+
+```
+   MARS      in    GEMINI    square    SATURN    in    VIRGO
+    │              │           │         │             │
+    ▼              ▼           ▼         ▼             ▼
+ ┌────────┐  ┌──────────┐  ┌────────┐ ┌────────┐ ┌──────────┐
+ │OPERATOR│  │COORDINATE│  │CIRCUIT │ │OPERATOR│ │COORDINATE│
+ │ what   │  │  where   │  │  how   │ │ what   │ │  where   │
+ │ fires  │  │ it runs  │  │ they   │ │ fires  │ │ it runs  │
+ │        │  │          │  │ talk   │ │        │ │          │
+ │VECTOR()│  │ scattered│  │ 90°    │ │LIMIT() │ │ precise, │
+ │ drive, │  │ fast,    │  │ mutual │ │ gate,  │ │ error-   │
+ │ action │  │ parallel │  │ block  │ │validate│ │ checking │
+ └────────┘  └──────────┘  └────────┘ └────────┘ └──────────┘
+
+   OPERATOR  = the function (Chapter 3)
+   COORDINATE = the execution context it runs in (Chapters 1-2)
+   CIRCUIT   = the message-passing topology between them (Chapter 4)
+
+   Read it as one sentence:
+   "<function> running in <context> is <topology> <function>
+    running in <context>."
+```
+
+Three more statements, parsed the same way, to show the range:
+
+> **Moon in Capricorn trine Pluto in Virgo** — `"My emotional cache (Moon) stores in structured, disciplined form (Capricorn), and it has a zero-resistance path (trine) to the operator that performs total rewrites (Pluto) in the debugging context (Virgo). I reorganize my inner life the way other people reorganize a garage: completely, competently, and without telling anyone it was hard."`
+>
+> **Venus in Aquarius opposite Uranus in Leo** — `"My connection module (Venus) runs on unconventional, network-first terms (Aquarius), staring across maximum distance (opposition) at the interrupt handler (Uranus) in the individual-expression context (Leo). I want freedom and I want to be adored, I have deployed those on separate servers, and I keep discovering that whichever one I'm running, the other one is throwing errors."`
+>
+> **Sun conjunct Mercury in Taurus** — `"My identity function (Sun) and my data bus (Mercury) are compiled into one module (conjunction) in the slow, durable, sensory context (Taurus). I do not have opinions; I have conclusions, arrived at slowly, and revising them feels like a schema migration."`
+
+Notice what these are *not*: predictions, compliments, or fortune. They are architecture descriptions—the kind of thing you would write in a design doc after reading an unfamiliar service and figuring out why it behaves the way it does.
+
 But first: what kind of claim is this book actually making?
 
 ## What This Framework Is (and Isn't)

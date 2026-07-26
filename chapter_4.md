@@ -38,6 +38,39 @@ Aspects are geometric angles formed between planets relative to Earth. In our sy
      FUSION aspect (☌):   Merge → Intensity
 ```
 
+### Orbs: Signal Strength
+
+Aspects are not binary. Two operators at exactly 90° and two operators at 97° are both in a Square, but not with the same intensity. The deviation from exactness is called the **orb**, and it behaves like signal strength on a connection.
+
+```
+  ORB — how loud is this circuit?
+
+  Exact ────────────────────────────────► Out of range
+   0°        2°        4°        6°        8°       10°
+   │         │         │         │         │         │
+  ████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   │         │         │         │         │
+   │         │         │         │         └─ barely audible;
+   │         │         │         │            shows up only
+   │         │         │         │            under stress
+   │         │         │         └─ present but soft;
+   │         │         │            you'd call it a "tendency"
+   │         │         └─ clearly operational;
+   │         │            a recognizable pattern
+   │         └─ loud; this is a defining feature
+   └─ deafening; the person cannot tell it is a
+      circuit at all — it reads as reality itself
+
+  Rule of thumb: tighter orb = less observable.
+  The tightest aspects in a chart are the ones the
+  person will never name, because they have no
+  contrast case. You do not notice the water.
+```
+
+This inverts a common assumption. A wide, loose Square shows up as "I struggle with this sometimes." A 0°-exact Square never shows up as a struggle at all—it shows up as *the shape of the world*. `"That's just how things are."` When someone describes a constraint as a law of physics rather than a preference, look for a tight aspect.
+
+**Example**: Two people both have Moon square Saturn. Person A's is at 7° orb: they notice they get a bit cold and formal when upset, and they can usually catch it. Person B's is at 0°30′: they do not believe emotional expression is a thing that people genuinely do. Not "I find it hard"—they experience others' openness as performance. Same circuit. Different amplitude. Only one of them can see it.
+
 ## The Conjunction (0°): The Monolith
 **Logic**: `A += B` (Merge into a single execution context)
 
@@ -112,6 +145,29 @@ The resolution is not to silence Saturn. It is to build a pipeline that satisfie
 
 The `IO_STREAM` (Mercury) runs in the Aquarius context: innovative, systems-level, unconventional communication. It has a 120° superconductive path to the `MULTIPLY` operator (Jupiter) in Gemini: expansive curiosity, rapid data acquisition, and intellectual breadth. The circuit is pure flow—ideas come fast, connections happen effortlessly, and the person can teach, write, or communicate complex systems to broad audiences with natural ease. The risk: this path is so effortless it never gets stress-tested. *The person assumes everyone can explain quantum mechanics over coffee.*
 
+**Sextile vs. Trine — Why 60° Is Often More Useful Than 120°**:
+
+A Trine connects the same element: the two operators share a runtime, so the path is native and *automatic*. A Sextile connects compatible-but-different elements—Fire↔Air, Earth↔Water. The path exists, but it must be *invoked*. Nothing happens by default.
+
+```
+  △ TRINE (120°)              ⚹ SEXTILE (60°)
+  same element                compatible elements
+  ┌────────────────┐          ┌────────────────┐
+  │ auto-executes  │          │ available on   │
+  │ zero effort    │          │ call, needs a  │
+  │ often invisible│          │ deliberate     │
+  │ rarely trained │          │ invocation     │
+  └────────────────┘          └────────────────┘
+   "Isn't this easy            "When I remember
+    for everyone?"              to do this, it
+                                works every time."
+
+  The Trine is a gift you may never develop.
+  The Sextile is a skill you can actually build.
+```
+
+**Example — Venus in Taurus Sextile Moon in Cancer**: The `BIND` operator (Earth: stable, sensory, loyal) has a 60° link to the `BUFFER` (Water: protective, emotionally retentive). Nothing forces these to interact. But when this person deliberately connects them—when they let attachment inform care, or use physical steadiness to soothe emotional state—the circuit works, every time, with no resistance. Cooking for someone they're worried about. Sitting in the same room without talking. These are not talents; they are *invocations*. And unlike Trines, Sextiles improve with practice, because the person can feel themselves choosing them.
+
 ## The Quincunx (150°): The Integration Hell
 **Logic**: `INCOMPATIBLE_ABI` (No shared protocol or interface contract)
 
@@ -122,6 +178,106 @@ The `IO_STREAM` (Mercury) runs in the Aquarius context: innovative, systems-leve
 **Example — Sun in Aries Quincunx Neptune in Virgo**:
 
 The `IDENTITY` function (Sun) runs as a fast, assertive main thread (Aries)—direct, self-starting, uncomplicated. At 150°, it must somehow integrate with the `DISSOLVE` operator (Neptune) running in the debug-and-refine context (Virgo). One module says "charge forward"; the other says "dissolve into service to the details." There is no shared element, no shared modality, no natural protocol. The person must manually write and maintain the adapter layer: *How do I be both a self-asserting initiator AND someone who surrenders to a larger, more refined process?* The integration is never "solved"—it is perpetually managed.
+
+## Aspect Patterns: Multi-Operator Circuits
+
+Single aspects are two-node circuits. Charts also contain **patterns**—three or more operators wired into a shape with its own emergent behavior. These are the architectural signatures worth learning, because they explain the recurring dynamics that no individual aspect accounts for.
+
+### The T-Square: Two Blockers, One Release Valve
+
+Two operators in Opposition, both Square a third. The third operator absorbs pressure from both sides.
+
+```
+        ♂ MARS (Aries)
+             ▲
+             │  □ 90°
+             │
+   ☽ MOON ───┼─── ♄ SATURN
+   (Cancer)  │    (Capricorn)
+        ◄─── ☍ 180° ───►
+             │
+             │  □ 90°
+             ▼
+      APEX = Mars
+
+   Both Moon and Saturn dump contention onto Mars.
+   The apex operator is over-worked and under-supported:
+   whatever Mars does, one of the other two objects.
+
+   Release valve: the EMPTY LEG — the point opposite
+   the apex (here, Libra). The unoccupied coordinate
+   is where the pattern's pressure can actually go.
+```
+
+The T-square is the highest-output configuration in the system and the most exhausting. The apex operator becomes hyper-developed—people with a Mars apex are formidable at *acting under conflicting pressure*, because they have never done it any other way. The cost is that they cannot stop, and the resolution is almost never "do less." It is to deliberately run the empty leg: in this example, to route some of the pressure into Libra's `COMPARE`—negotiation, partnership, external reference—rather than absorbing all of it in the apex.
+
+### The Grand Trine: The Closed Loop
+
+Three operators in the same element, each 120° from the others. A closed, self-sustaining circuit.
+
+```
+          ♀ VENUS (Leo) 🔥
+              /\
+             /  \
+      △120° /    \ △120°
+           /      \
+          /        \
+   ☉ SUN ──── △ ────── ♃ JUPITER
+   (Aries)   120°      (Sagittarius)
+      🔥                    🔥
+
+   All three in Fire. Zero impedance between any pair.
+   The circuit runs itself and requires nothing.
+
+   Failure mode: closed loops do not seek input.
+   A Grand Trine is a talent that never has to leave
+   the house, and often doesn't.
+```
+
+Grand Trines read as gift and behave as insulation. The three operators support each other so completely that the configuration has no external dependency—and therefore no pressure to develop. This is the person who is genuinely, effortlessly good at something and has never had to be *deliberate* about it, which means they cannot teach it, cannot recover it when it fails, and often cannot be bothered to use it. The patch is external: a Square or Opposition to one of the three points from anywhere else in the chart cracks the loop open and makes it productive.
+
+### The Yod: The Unavoidable Adapter Problem
+
+Two operators in Sextile, both Quincunx a third. The apex has no shared protocol with *either* of the other two.
+
+```
+   ☿ MERCURY ──── ⚹ 60° ──── ♀ VENUS
+   (Gemini)                   (Leo)
+        \                      /
+         \                    /
+     ⚻150° \                / ⚻150°
+           \                /
+            \              /
+             ♇ PLUTO (Capricorn)
+                   APEX
+
+   The two base operators cooperate easily.
+   Neither can talk to the apex without an adapter.
+   The apex is not in conflict — it is untranslatable.
+```
+
+Yods produce a very specific experience: an area of life that feels *fated and awkward at the same time*. The apex operator keeps asserting itself, the rest of the system has no interface for it, and each attempt to integrate it requires hand-written glue that works once and then needs rewriting. Chapter 4's quincunx advice applies at scale here: the integration is not solved, it is *maintained*, and people with a Yod usually end up doing exactly one strange, specific thing extremely well because it was the only adapter that ever held.
+
+### The Stellium: The Monolith at Scale
+
+Three or more operators conjunct in the same sign.
+
+```
+  ♑ CAPRICORN
+  ┌──────────────────────────────────────┐
+  │  ☉ Sun  ☿ Mercury  ♀ Venus  ♄ Saturn │
+  │  ──────────────────────────────────  │
+  │  identity, thought, value, and limit │
+  │  all compiled into ONE module        │
+  └──────────────────────────────────────┘
+
+  Enormous concentration. Enormous blind spot.
+  A stellium is a system that has bet everything
+  on a single execution context — and cannot
+  perceive the contexts it has no operator in.
+```
+
+A stellium is a Conjunction with compounding interest: the merged operators reinforce each other until the sign's mode of operation stops feeling like *a* way of doing things and starts feeling like the only sane one. The diagnostic question is always the same, and it is the Chapter 2 question: **what is the opposite sign, and what does this person believe about people who live there?** The answer is usually revealing, usually unflattering, and usually the growth vector.
 
 ### Aspect Summary Table
 

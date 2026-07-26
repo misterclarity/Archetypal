@@ -114,6 +114,41 @@ Every sign occupies a unique cell in this 4×3 matrix. No two signs share both a
 
 **Example**: Mars in Aries (Cardinal Fire) and Mars in Cancer (Cardinal Water) are both trying to initialize a new process—but Aries spawns with raw velocity and zero dependencies, while Cancer spawns only after establishing a secure boundary. Same lifecycle stage, fundamentally different execution environments. This architectural mismatch is the friction engine that Squares create.
 
+### The Element Compatibility Matrix
+
+Elements are runtime environments. Two operators in compatible elements exchange data without a translation layer; two operators in incompatible elements need an adapter, and the adapter is something you have to write and maintain yourself.
+
+```
+  DATA EXCHANGE BETWEEN ELEMENTS
+
+              FIRE      EARTH      AIR       WATER
+            ────────────────────────────────────────
+   FIRE    │  native  │  friction │  fuels  │ steam  │
+           │  △ trine │  □ square │ ⚹ sextile│□ square│
+            ────────────────────────────────────────
+   EARTH   │ friction │  native   │ friction│ nourish│
+           │  □ square│  △ trine  │ □ square│⚹ sextile│
+            ────────────────────────────────────────
+   AIR     │  fuels   │  friction │ native  │friction│
+           │ ⚹ sextile│  □ square │ △ trine │□ square│
+            ────────────────────────────────────────
+   WATER   │  steam   │  nourish  │ friction│ native │
+           │  □ square│ ⚹ sextile │ □ square│△ trine │
+            ────────────────────────────────────────
+
+   native  (△)  same element: zero-impedance, shared types
+   fuels   (⚹)  Fire↔Air, Earth↔Water: compatible, needs
+                slight effort, produces more than it costs
+   friction(□)  incompatible protocols competing for the
+                same lifecycle slot — where growth happens
+
+   Physical intuition, which is the point:
+     Air feeds Fire.        Water nourishes Earth.
+     Water quenches Fire.   Earth smothers Air.
+```
+
+**Example**: Mercury in Gemini (Air) and Jupiter in Libra (Air) share a runtime. Ideas serialize between them with no loss—the person thinks in conversation and their conclusions arrive already social. Mercury in Gemini and Saturn in Virgo (Air meets Earth) do not share a runtime. Every fast, exploratory thought must be marshalled into a structure that demands proof before it will accept the object. That is not a defect. That is the mismatch that eventually produces someone who can think fast *and* be right.
+
 ### Extended Example: Three Developers, One Layoff
 
 Consider three senior engineers, all laid off on the same Friday. How do they respond? The modality of their Sun sign determines the execution pattern:
@@ -125,6 +160,40 @@ Consider three senior engineers, all laid off on the same Friday. How do they re
 **The Mutable Developer** (Sun in Gemini, Virgo, Sagittarius, or Pisces): They immediately start researching—reading industry reports, talking to friends in adjacent fields, exploring whether this is actually an opportunity to pivot entirely. They apply to twelve companies across four different roles. The `adapt()` method reshapes the process to fit the new environment. The risk: they scatter so broadly that no single application gets their best work—flexibility becomes diffusion. *They solve problems by reshaping the problem.*
 
 None of these strategies is wrong. Each is a different execution pattern. The diagnostic power comes from recognizing which pattern you are running *by default*—and whether it's actually serving the current situation.
+
+```
+  MODALITY AS PROCESS LIFECYCLE
+
+  CARDINAL ──────► FIXED ──────► MUTABLE ──────► (next Cardinal)
+   spawn()         lock()          adapt()
+
+  ▲ starts fast    ▲ holds under   ▲ reshapes to
+  ▲ low context      pressure        environment
+  ▲ high energy    ▲ high inertia  ▲ high flexibility
+
+  ✗ starts before  ✗ holds past    ✗ adapts so much
+    it understands   usefulness      it never commits
+
+  Every sign is one of these three, and every problem
+  in your life is being handled by whichever one your
+  chart reaches for first. The question is never "is
+  this good?" It is "is this the right phase for this
+  problem?"
+```
+
+### Extended Example: Four Elements, One Bug Report
+
+Same input, four runtimes. A production incident lands in the channel at 4:50pm on a Friday: *"Checkout is failing for about 3% of users. No idea why."*
+
+**🔥 Fire** (Aries, Leo, Sagittarius) reaches for **action and narrative**. Fire opens the logs before finishing the sentence, forms a hypothesis in ninety seconds, and starts testing it. Fire is also the one who says out loud, "this is the payment provider, I'd bet money"—and is right often enough to keep doing it. *Failure mode*: commits to the first compelling story and stops looking. The energy that makes Fire fast is the same energy that makes Fire certain too early.
+
+**🌍 Earth** (Taurus, Virgo, Capricorn) reaches for **structure and verification**. Earth wants the actual number—3% of what, over what window, since when? Earth pulls the deploy log, finds the last change that touched checkout, and builds a reproduction case before touching anything. *Failure mode*: still building the reproduction case at 7pm while the revenue meter runs. Rigor has a clock cost, and Earth is chronically willing to pay it.
+
+**🌬️ Air** (Gemini, Libra, Aquarius) reaches for **information and coordination**. Air asks who else is seeing it, checks whether the provider has a status page, pulls in the two people most likely to know, and reframes the question: "is this checkout, or is this only the users who came through the new signup flow?" Air's reframe often *is* the fix. *Failure mode*: the conversation becomes the work. Enormous clarity generated, nothing yet deployed.
+
+**💧 Water** (Cancer, Scorpio, Pisces) reaches for **state and undercurrent**. Water notices this is the third checkout incident this quarter and that they all followed a release from the same team. Water is tracking what the failure *means*—for the customers hitting it, for the on-call engineer who shipped it, for the trust that is quietly being spent. *Failure mode*: reads significance into noise, and carries the incident home for a week after it's closed.
+
+The incident is resolved fastest by a team with all four and slowest by a team with one. That is the entire argument for the coordinate system: **not that any position is better, but that every position is blind in a specific direction, and the blindness is predictable.**
 
 By modeling the signs as a dynamic, geometrical coordinate system with typed lifecycle phases rather than a static lookup table, we shift the diagnostic question from "What am I?" to "How does my internal architecture behave—and where are the bottlenecks?"
 

@@ -40,6 +40,80 @@ As a quick reminder of the core principle:
 | Taurus (rigidity) | Scorpio (garbage-collect) |
 | Leo (isolation) | Aquarius (serve the network) |
 
+## The Whole System On One Page
+
+If you retain nothing else, retain this.
+
+```
+ ╔═══════════════════════════════════════════════════════════╗
+ ║  ARCHETYPAL OS — QUICK REFERENCE CARD                     ║
+ ╠═══════════════════════════════════════════════════════════╣
+ ║  OPERATORS (what fires)                                   ║
+ ║   ☉ Sun     IDENTITY()   main thread, "I am"              ║
+ ║   ☽ Moon    BUFFER()     cache, instinct, "I feel"        ║
+ ║   ☿ Mercury IO_STREAM()  data bus, "I think"              ║
+ ║   ♀ Venus   BIND()       attraction, value, "I value"     ║
+ ║   ♂ Mars    VECTOR()     directed force, "I act"          ║
+ ║   ♃ Jupiter MULTIPLY()   scaling, "I expand"              ║
+ ║   ♄ Saturn  LIMIT()      constraint, "I structure"        ║
+ ║   ♅ Uranus  INTERRUPT()  disruption, "I liberate"         ║
+ ║   ♆ Neptune DISSOLVE()   boundary removal, "I dream"      ║
+ ║   ♇ Pluto   REFORMAT()   destructive update, "I transform"║
+ ║   ☊ N.Node  IMPORT()     the dependency you keep deferring║
+ ║   ☋ S.Node  ARCHIVE()    the cached default that costs you║
+ ╠═══════════════════════════════════════════════════════════╣
+ ║  MODALITY (how it executes)   ELEMENT (what it runs on)   ║
+ ║   Cardinal  spawn()            🔥 Fire   energy / action   ║
+ ║   Fixed     lock()             🌍 Earth  structure         ║
+ ║   Mutable   adapt()            🌬️ Air    information       ║
+ ║                                💧 Water  state / emotion   ║
+ ╠═══════════════════════════════════════════════════════════╣
+ ║  CIRCUITS (how they talk)                                 ║
+ ║   ☌   0°  MERGE      "I simply am this way."              ║
+ ║   ⚹  60°  LINK       "Works when I invoke it."            ║
+ ║   □  90°  BLOCK      "This stops me." → friction engine   ║
+ ║   △ 120°  FLOW       "Isn't this easy for everyone?"      ║
+ ║   ⚻ 150°  NO ABI     "These two never fit."               ║
+ ║   ☍ 180°  MIRROR     "They do this to me." → own both     ║
+ ║                                                           ║
+ ║   Tighter orb = LESS visible. The invisible ones are      ║
+ ║   the ones you describe as "how things are."              ║
+ ╠═══════════════════════════════════════════════════════════╣
+ ║  THE SIX AXES (every symptom's address)                   ║
+ ║   ♈ Aries  ↔ ♎ Libra      self       ↔ other             ║
+ ║   ♉ Taurus ↔ ♏ Scorpio    form       ↔ transformation    ║
+ ║   ♊ Gemini ↔ ♐ Sagitt.    data       ↔ inference         ║
+ ║   ♋ Cancer ↔ ♑ Capricorn  private    ↔ public            ║
+ ║   ♌ Leo    ↔ ♒ Aquarius   individual ↔ collective        ║
+ ║   ♍ Virgo  ↔ ♓ Pisces     order      ↔ surrender         ║
+ ╠═══════════════════════════════════════════════════════════╣
+ ║  THE PROTOCOL                                             ║
+ ║   1. Base image   Rising / Sun / Moon                     ║
+ ║   2. Bottlenecks  □ and ☍ to ☿ ♀ ♂                        ║
+ ║   3. Hot paths    △ and ⚹                                 ║
+ ║   4. Growth       ☋ → ☊, then IMPORT deliberately         ║
+ ║                                                           ║
+ ║   Overloaded pole? The complement is not weak.            ║
+ ║   It is UNMOUNTED. Find the function you cannot           ║
+ ║   perform for ninety seconds.                             ║
+ ╚═══════════════════════════════════════════════════════════╝
+```
+
+## And If You Build Systems
+
+Chapter 7 pointed the same framework at agent fleets, and there the claims are measurable rather than metaphorical. Eight laws came back from the evidence, and they are worth carrying out of this book even if you never open a chart again:
+
+1. **Context is the scarce resource**, not intelligence. Every model degrades as its window fills.
+2. **Compute is the multiplier** — and unbounded by Saturn, it is also the bill.
+3. **Reads fan out; writes stay single-threaded.** Parallel intelligence is free; parallel action is not.
+4. **Reliability is multiplicative.** 99% per step is 37% over a hundred steps. Checkpoint or accept the odds.
+5. **Verification is the product — and verifiers get gamed.** Check the trajectory, not just the artifact.
+6. **Tools are prompts.** Their descriptions are the highest-leverage text you will write.
+7. **Memory lives outside the window**, loaded on demand.
+8. **Security is topology, not behavior.** You cannot prompt your way out of it.
+
+The through-line from Chapter 1 to Chapter 7 is a single claim: **specialized operators fail in predictable ways when their complements are absent, and the fastest diagnosis is always to name the operator that was never deployed.** That is true of a fleet. It is true of a team. It is true of you.
+
 ## `final_commit()`
 
 You are not a static binary deployed at birth and left to run until termination. You are a **dynamic, stateful system** with mutable configuration, an evolving dependency graph, and a runtime that responds to input.

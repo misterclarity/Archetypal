@@ -104,6 +104,60 @@ The Chiron return doesn't fix the open issue. It reclassifies it from `"won't fi
 *   **The Event**: A deep, sustained pressure-cooker phase targeting the kernel layer—the lowest-level abstractions of the psyche. Obsolete dependencies, held at the root level, are forcibly unlinked. This is not a feature update; it is a rewrite of the underlying architecture.
 *   **The Task**: Survive the reformat. Identify what is genuinely load-bearing versus what is just accumulated complexity with no current purpose. Strip to the indestructible core and rebuild from there.
 
+**Extended Narrative — Pluto Square Pluto: The Architect Who Deleted The Framework**
+
+For nineteen years he was the framework guy. Not *a* framework guy—the one whose internal framework three hundred engineers built on, whose conventions were in every onboarding doc, whose name appeared in commit messages written by people who had never met him. He had earned it honestly. The framework was good. It had survived four platform migrations and two acquisitions.
+
+The pressure did not arrive as a crisis. That is the signature of Pluto: it does not interrupt (that is Uranus), and it does not audit (that is Saturn). It applies **sustained, non-negotiable pressure to the lowest layer**, for years, until what is load-bearing separates from what is merely old.
+
+It started with a junior engineer asking, in a design review, why they were doing something a particular way. He gave the answer he had given a hundred times. She said "sure, but why *now*?" and he found that he did not have a second answer. He had a historical one. The constraint that had produced the pattern had been removed in 2014.
+
+That was the first block flagged as corrupt. Over the next four years, more followed—not through any single confrontation but through the accumulated weight of noticing. He kept finding that his most defended positions were load-bearing for a building that had been demolished. His identity as *the person who knows the right way* turned out to be a dependency on a version of the problem that no longer existed.
+
+The Plutonic part is what happened next, and it is why this milestone is not a Saturn audit. He did not refactor. He deleted it. He proposed, and then executed, the deprecation of the framework he was known for—including the parts that still worked—because he could no longer distinguish which of them he was keeping for technical reasons and which he was keeping because they were *his*. He lost status doing it. Two people he had mentored told him it was a mistake. It probably was, partly.
+
+What came back online after the reformat was not the same system. He is not the framework guy anymore. He is the person the organization calls when something needs to be *ended*—a genuinely rare skill, and one he could not have developed while he still had something to protect. `REFORMAT` does not patch. It replaces. And the thing it replaces is always, without exception, the thing you had most reason to keep.
+
+## Preparing for a Maintenance Window
+
+Every milestone in this chapter runs on a schedule you can see coming. That fact is worth more than any interpretation of it.
+
+```
+  THE MILESTONE PREP CHECKLIST
+
+  BEFORE the window (12-18 months out)
+  ┌──────────────────────────────────────────────────┐
+  │ ♄  What did I commit to under someone else's     │
+  │    spec, that I have never re-examined?          │
+  │ ☽  What am I still caching that expired?         │
+  │ ⚷  What limitation do I describe as permanent?   │
+  │ ☊  What dependency have I been deferring for     │
+  │    more than three years?                        │
+  └──────────────────────────────────────────────────┘
+
+  DURING the window
+  ┌──────────────────────────────────────────────────┐
+  │ · The pressure is not a verdict on your worth.   │
+  │   It is a load test with a fixed start date.     │
+  │ · Do not ship structural changes and emotional   │
+  │   changes in the same release if you can help it.│
+  │ · Preserve the ledger: write down what you       │
+  │   actually decided and why. You will not         │
+  │   remember, and next cycle needs it.             │
+  └──────────────────────────────────────────────────┘
+
+  AFTER the window
+  ┌──────────────────────────────────────────────────┐
+  │ · What passed? Promote it. Say it out loud.      │
+  │ · What failed? It failed for a reason that       │
+  │   predates the test. Find the reason, not the    │
+  │   blame.                                         │
+  │ · What did you rebuild? That is the new base     │
+  │   image. The next cycle audits THIS, not the     │
+  │   thing you just replaced.                       │
+  └──────────────────────────────────────────────────┘
+```
+
 ## The Space Between: Free Will as Configuration
 
 Astrology predicts the *type of maintenance window*, not the specific outcome.
