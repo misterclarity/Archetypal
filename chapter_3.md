@@ -50,6 +50,8 @@ These are the core binaries of consciousness: the process identity and its state
 *   **The Logic**: The Sun is the origin point `(0,0,0)` of your personal coordinate system—the central reference from which all other positions are measured. It is the main thread of the process: the conscious will, the ego, the narrative that gives continuity to the execution. All other operators run relative to this reference.
 *   **Syntax**: `"I am [Sign]."` — The function that resolves the question: *what is this process?*
 
+This chapter uses two table formats. The luminaries (Sun, Moon) are shown across the **four elements**, because element is the dimension along which they vary most. The personal and social operators are shown across **all twelve signs**, because for them the sign-level detail is what you will actually look up.
+
 **The Sun Across Four Elements** — Same operator, different execution contexts:
 
 | Placement | Element | System Profile |
@@ -296,3 +298,5 @@ The Nodes of the Moon are not planets but intersection points—crossings of the
 > **North Node in Aries / South Node in Libra**: The system's pre-compiled defaults are all about consensus, diplomacy, and other-management (South Node in Libra). The cache is full of elegant compromise routines that run beautifully on autopilot. But the unregistered dependency is self-assertion (North Node in Aries)—the system needs to `IMPORT` the ability to act unilaterally, even at the risk of being disagreeable. The growth vector: *from "What do you think?" to "This is what I'm doing."*
 >
 > **North Node in Capricorn / South Node in Cancer**: The defaults are emotional security, family-first processing, and private-namespace management (South Node in Cancer). The new dependency is public accountability, structural ambition, and building something that compiles in production (North Node in Capricorn). The growth vector: *from "I need to feel safe first" to "I need to build something that stands."*
+
+Operators are the functions. The Nodes are the one pair among them that points at the future: the South Node is the function you mount by reflex, and the North Node is, by definition, *the function that was never mounted.* Every other operator in this chapter can be overloaded. Only this one is missing on purpose—until you import it.

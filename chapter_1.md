@@ -81,6 +81,14 @@ When a planet (Operator) is instantiated in a specific sign (Coordinate), it is 
 
 The diagnostic implication is direct: to debug a problem in one sign, inspect its coupled complement. A system stuck in a **Virgo** infinite loop—over-analysis, obsessive error-checking, runaway linting—will find the patch not by running the loop faster, but by calling the **Pisces** handler: suspend strict validation, abstract up a level, delegate to a higher-order process, accept that some runtime ambiguity is not a defect.
 
+### The Complement Principle
+
+That last paragraph is the thesis of this book. It is worth stating once, plainly, because every chapter that follows is an application of it:
+
+> **Every recurring failure is an overloaded function whose complement was never mounted. The fix is never to run the function harder, and it is never to run it less. The fix is to find the function that was never mounted, and mount it.**
+
+Chapter 2 names the six pairs. Chapter 4 shows what happens when several operators pile onto one. Chapter 6 turns it into a profiling protocol. Chapter 7 shows that a fleet of autonomous agents fails by exactly the same rule—and that the fourteen documented ways such fleets break are, almost every one, a missing operator. When you lose the thread anywhere in this book, come back to this sentence: *find the function that was never mounted.*
+
 ## The Coordinate Grid as a Type System
 
 Finally, it helps to model the signs not as hard-edged discrete types, but as a continuous spectrum with three distinct execution phases—analogous to the lifecycle stages of any well-structured process:
@@ -197,4 +205,6 @@ The incident is resolved fastest by a team with all four and slowest by a team w
 
 By modeling the signs as a dynamic, geometrical coordinate system with typed lifecycle phases rather than a static lookup table, we shift the diagnostic question from "What am I?" to "How does my internal architecture behave—and where are the bottlenecks?"
 
-In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system.
+A coordinate system tells you where a function is running. It does not tell you what's missing. For that you need the pairs.
+
+In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system—the map of which function was never mounted.

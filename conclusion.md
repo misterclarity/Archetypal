@@ -25,20 +25,7 @@ To resolve the exception, you don't drop the module. You refactor it by integrat
 
 ## Quick Diagnostic Reference
 
-The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple.
-
-As a quick reminder of the core principle:
-
-| If You're Stuck In... | Invoke The Complement |
-|---|---|
-| Aries (impulsive action) | Libra (evaluate impact) |
-| Virgo (analysis paralysis) | Pisces (ship at 80%) |
-| Libra (people-pleasing) | Aries (assert preference) |
-| Cancer (emotional flooding) | Capricorn (build structure) |
-| Capricorn (workaholism) | Cancer (return to private state) |
-| Gemini (information overload) | Sagittarius (find the thesis) |
-| Taurus (rigidity) | Scorpio (garbage-collect) |
-| Leo (isolation) | Aquarius (serve the network) |
+The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple. The one-page card below carries the axes; the Chapter 2 table carries the symptoms. Between them, that is the whole diagnostic kit.
 
 ## The Whole System On One Page
 
@@ -112,7 +99,7 @@ Chapter 7 pointed the same framework at agent fleets, and there the claims are m
 7. **Memory lives outside the window**, loaded on demand.
 8. **Security is topology, not behavior.** You cannot prompt your way out of it.
 
-The through-line from Chapter 1 to Chapter 7 is a single claim: **specialized operators fail in predictable ways when their complements are absent, and the fastest diagnosis is always to name the operator that was never deployed.** That is true of a fleet. It is true of a team. It is true of you.
+The through-line from Chapter 1 to Chapter 7 is a single sentence, and it was stated in full in Chapter 1: **every recurring failure is an overloaded function whose complement was never mounted.** The person on page one kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
 
 ## `final_commit()`
 

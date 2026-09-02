@@ -169,3 +169,5 @@ You cannot defer the maintenance window. You can choose between:
 2.  **Reactive approach**: Ignore the deprecation warnings until the forced restart hits at peak load, with no rollback strategy and no staging environment.
 
 The system will run the update either way. The only variable is your preparation.
+
+Every one of these windows is the same audit at a different layer: a scheduled check for the function you have been running without its complement. The Saturn Return asks which structure you built without a foundation. The Uranus Opposition asks which stability you kept without any interrupt. The Chiron Return asks which wound you carried without a use. The runtime does not add new bugs. It surfaces the ones already in the source—the function that was never mounted—on a schedule you can read off a calendar.

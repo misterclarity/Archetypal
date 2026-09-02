@@ -205,6 +205,16 @@ The integrated version is not a man who works less. It is a man who can sit with
 
 You now know the six axes—the core binary constraints of the human operating system. Before we move on to the operators (planets) and circuits (aspects) that execute within this field, it is worth previewing what the *finished product* looks like. This is the output you will be able to produce by the end of Chapter 6.
 
+### First, Your Data—and One Term You Haven't Met
+
+To do any of this on yourself you need three inputs: **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
+
+The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—a term the next table uses and this book has not yet defined. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
+
+If you do not know your birth time, you do not know your Rising sign. Say so honestly, work from Sun and Moon, and the method still holds—you have the CPU and the cache; you are missing the interface spec. Do not guess it from how you think you come across. That is the one input the framework cannot infer.
+
+**A note on what this book leaves out.** Astrology has a fourth layer this book deliberately does not use: the twelve **houses**, which locate *where in life* an operator is called from—career, home, partnership, and so on. They are a real and useful part of the system. They are also a fourth term in a framework whose entire spine is three—coordinates, operators, circuits—and the book stays cleaner without them. The Rising sign is the single house-derived concept used here, because it is the first house's boundary and the interface belongs in the profile. If you go further with this after finishing, houses are the next thing to learn.
+
 ### The System Profile Format
 
 A complete chart reading produces a **system architecture diagram**. At its simplest, it starts with the "Big Three"—the base image of your operating system:
@@ -272,3 +282,5 @@ When a recurring pattern surfaces, identify the symptom, check which axis is lik
 ```
 
 This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch.
+
+The six axes are the map of what can go missing. The next chapter is about what runs on them: *find the function that was never mounted* only works once you know what the functions are.

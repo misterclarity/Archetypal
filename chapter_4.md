@@ -126,6 +126,8 @@ The connection module (Venus) fires quickly and independently (Aries)—it initi
 
 **Extended Example — Mercury in Sagittarius Square Saturn in Virgo (The Developer Who Can't Ship a Blog Post)**:
 
+This is the person from the first page of this book. Same Saturn, same Virgo gate. In the opening scene it was Mars—the drive to *speak*—that couldn't clear the validator. Here it is Mercury—the drive to *write*. Two different operators, one gate, and the reader who is paying attention will already suspect that this is not two bugs but one architecture. Hold that thought; the T-square section below is where it pays off.
+
 You know *exactly* what you want to say. You have a clear thesis about microservice architecture that you've been refining for months. You open a document and start writing. The ideas flow—big, sweeping, confident. *This* is the architecture post that will finally get traction.
 
 Then the inner editor arrives. Not a helpful editor—a hostile one. Every sentence triggers a review: *Is this technically precise? Can someone on Hacker News poke a hole in this? Is "always" too strong a word? Should I add a footnote?* The draft bloats from 800 words to 3,000. You delete half of it. You rewrite the opening four times. The post sits in drafts for six weeks. You publish nothing.
@@ -187,29 +189,35 @@ Single aspects are two-node circuits. Charts also contain **patterns**—three o
 
 Two operators in Opposition, both Square a third. The third operator absorbs pressure from both sides.
 
+And here is where the person from the opening page comes back—for the third time. On page one, Mars in Gemini was blocked by Saturn in Virgo. In the blog-post example above, Mercury in Sagittarius was blocked by Saturn in Virgo. Gemini and Sagittarius are opposite signs. So Mars and Mercury are *also* in Opposition to each other. That is not two squares. It is one pattern:
+
 ```
-        ♂ MARS (Aries)
+        ♂ MARS (Gemini)
              ▲
              │  □ 90°
              │
-   ☽ MOON ───┼─── ♄ SATURN
-   (Cancer)  │    (Capricorn)
+   ☿ MERCURY ┼─── ♄ SATURN
+   (Sagitt.) │    (Virgo)
         ◄─── ☍ 180° ───►
              │
              │  □ 90°
              ▼
-      APEX = Mars
+      APEX = Saturn
 
-   Both Moon and Saturn dump contention onto Mars.
-   The apex operator is over-worked and under-supported:
-   whatever Mars does, one of the other two objects.
+   Mars (drive to act) and Mercury (drive to speak)
+   sit at opposite ends of a wire and BOTH dump their
+   contention onto Saturn. Whatever the apex does, one
+   of the other two objects.
 
    Release valve: the EMPTY LEG — the point opposite
-   the apex (here, Libra). The unoccupied coordinate
-   is where the pattern's pressure can actually go.
+   the apex. Here that is Pisces. Note what the Chapter 2
+   table prescribes for Virgo overload: invoke Pisces.
+   The geometry and the diagnostic agree.
 ```
 
-The T-square is the highest-output configuration in the system and the most exhausting. The apex operator becomes hyper-developed—people with a Mars apex are formidable at *acting under conflicting pressure*, because they have never done it any other way. The cost is that they cannot stop, and the resolution is almost never "do less." It is to deliberately run the empty leg: in this example, to route some of the pressure into Libra's `COMPARE`—negotiation, partnership, external reference—rather than absorbing all of it in the apex.
+Read what that means for this person. The meeting scene on page one and the blog-post scene above were never separate problems. Every impulse to act (Mars) and every impulse to communicate (Mercury) is routed through a single overworked validator, and the validator has become the most developed function in the whole system—because it has never done anything *but* handle two streams of pressure at once. That is why they are formidable at precision under load, and why they cannot stop checking.
+
+The T-square is the highest-output configuration in the system and the most exhausting. The apex operator becomes hyper-developed. The cost is that it cannot rest, and the resolution is almost never "do less." It is to deliberately run the empty leg. For this person that is Pisces: suspend validation on purpose, ship at eighty percent, treat some ambiguity as a feature. Which is precisely what Chapter 2 said—but now you can see it in the geometry rather than taking it from a lookup table. In Chapter 6 you will read their whole chart and find that the empty leg is not quite empty, and that where the pressure actually escapes turns out to be the best thing in the profile.
 
 ### The Grand Trine: The Closed Loop
 
@@ -293,3 +301,5 @@ A stellium is a Conjunction with compounding interest: the merged operators rein
 │ Opposition│ 180° │ Distributed    │ "They do this to me."     │
 └───────────┴──────┴────────────────┴───────────────────────────┘
 ```
+
+An aspect is not a verdict on two operators. It is a description of the wire between them—and a Square, a T-square, a Stellium are all, at bottom, the same finding at different scales: too much load on one node and nothing on its complement. The circuit tells you *where* the pressure is. The axis tells you where it can go. Find the function that was never mounted.

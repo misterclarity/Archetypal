@@ -26,6 +26,8 @@ In the framework you are about to learn:
 
 That is one "line of code" in a birth chart—one statement in a symbolic language that maps the architecture of recurring behavioral patterns onto a readable, debuggable system diagram. A full chart contains dozens of these interacting statements. By the end of this book, you will know how to read them all.
 
+Keep this person in mind. They are not a one-off illustration. You will meet them again in Chapter 4, where a second operator turns out to be caught in the same gate, and in Chapter 6 you will read their entire chart—and find out that the line above was never the whole bug, only the first line of the stack trace.
+
 ### The Decoder Ring
 
 Every statement in this language has the same grammar. Once you see the shape, you can parse any placement you encounter—including the ones in your own chart that you have not learned yet.
@@ -97,6 +99,38 @@ Consider: you cannot define "hot" without "cold," or "up" without "down." In the
 
 This is why strict scientific methods, designed to isolate variables and measure observable outcomes, struggle with astrology. The archetypes are not variables; they are the axes along which variables *move*. Trying to measure an archetype directly is like trying to weigh the concept of a kilogram rather than the object on the scale. The tools of empirical science are built for the sensible world; the archetypes, like Platonic Forms, belong to the intelligible one. Understanding them requires the same faculty that grasps mathematical proof or musical harmony: pattern recognition operating on abstraction, not sensation.
 
+## Chaos, Symmetry, and the Cusp of Rebirth
+
+**A note on scientific claims**: In this section, the language of dynamical systems, phase transitions, and symmetry-breaking is used as a *structural metaphor*—not a claim about physics. The resonance between these ideas and the astrological model is evocative and architecturally useful, but it is poetic, not causal. The author is aware of the difference.
+
+There is a persistent misconception that chaos and order are enemies—that a system is either structured or disordered, never both. In dynamical systems theory, the opposite is often true: **chaos can coexist with, and even amplify, symmetric structures**. A system driven far from equilibrium does not merely collapse; it can spontaneously settle into new, highly ordered states. Chaos is not the absence of pattern—it is the engine that *finds* pattern when the old one breaks down.
+
+This principle is encoded directly in the Zodiac at the boundary between **Pisces** and **Aries**—the cusp of rebirth, the point where the cycle's address space wraps from 359° back to 0°.
+
+**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **low-symmetry, ordered phase** perceived as stillness (think deep meditation states). Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
+
+Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The low-symmetry disorder built up by Pisces' boundaryless uniformity gives rise to emergent order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
+
+```
+ CUSP OF REBIRTH: CHAOS → EMERGENT ORDER
+
+ ♓ Pisces (330°-359°)        ♈ Aries (0°-29°)
+ ┌──────────────────┐        ┌──────────────────┐
+ │ All boundaries   │        │ First boundary   │
+ │ dissolved        │   ⚡   │ asserted         │
+ │                  │ ─────► │                  │
+ │ Uniform field    │ BREAK  │ Differentiated   │
+ │ (low-symmetry    │        │ state (emergent  │
+ │  chaos)          │        │ order)           │
+ └──────────────────┘        └──────────────────┘
+   Deterministic but           Specific, directed,
+   unpredictable               self-referencing
+```
+
+In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
+
+This is why the Zodiac is not a line but a **cycle**. Dissolution feeds initiation. The end state of maximum entropy is simultaneously the precondition for maximum differentiation. Every Aries impulse carries the residue of the Piscean ocean it emerged from, and every Piscean surrender carries the seed of the Aries spark that will break it open again.
+
 ## Archetypal Operating System
 
 In this book, we are going to leave behind the mystic veils and the fortune-telling crystal balls. Instead, we are going to approach the birth chart the way a **software architect** reads an unfamiliar legacy codebase for the first time: looking for the underlying design patterns, mapping the dependency graph, and identifying where the architecture flows cleanly and where it introduces bottlenecks.
@@ -158,38 +192,6 @@ This book is written for software developers—people who think in systems, debu
 Every concept in this book is explained through programming metaphors: signs as coordinates, planets as operators, aspects as inter-process communication topologies. If you understand deadlocks, you understand Squares. If you understand caching, you understand the Moon. The metaphors are not decoration—they are the framework.
 
 You do not need any prior knowledge of astrology. You do not need to "believe" in anything. The only prerequisite is a willingness to try on a new vocabulary and see if it helps you articulate patterns you already sense in yourself but haven't had language for.
-
-**A note on scientific claims**: In the section that follows, the language of dynamical systems, phase transitions, and symmetry-breaking is used as a *structural metaphor*—not a claim about physics. The resonance between these ideas and the astrological model is evocative and architecturally useful, but it is poetic, not causal. The author is aware of the difference.
-
-## Chaos, Symmetry, and the Cusp of Rebirth
-
-There is a persistent misconception that chaos and order are enemies—that a system is either structured or disordered, never both. In dynamical systems theory, the opposite is often true: **chaos can coexist with, and even amplify, symmetric structures**. A system driven far from equilibrium does not merely collapse; it can spontaneously settle into new, highly ordered states. Chaos is not the absence of pattern—it is the engine that *finds* pattern when the old one breaks down.
-
-This principle is encoded directly in the Zodiac at the boundary between **Pisces** and **Aries**—the cusp of rebirth, the point where the cycle's address space wraps from 359° back to 0°.
-
-**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **low-symmetry, ordered phase** perceived as stillness (think deep meditation states). Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
-
-Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The low-symmetry disorder built up by Pisces' boundaryless uniformity gives rise to emergent order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
-
-```
- CUSP OF REBIRTH: CHAOS → EMERGENT ORDER
-
- ♓ Pisces (330°-359°)        ♈ Aries (0°-29°)
- ┌──────────────────┐        ┌──────────────────┐
- │ All boundaries   │        │ First boundary   │
- │ dissolved        │   ⚡   │ asserted         │
- │                  │ ─────► │                  │
- │ Uniform field    │ BREAK  │ Differentiated   │
- │ (low-symmetry    │        │ state (emergent  │
- │  chaos)          │        │ order)           │
- └──────────────────┘        └──────────────────┘
-   Deterministic but           Specific, directed,
-   unpredictable               self-referencing
-```
-
-In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
-
-This is why the Zodiac is not a line but a **cycle**. Dissolution feeds initiation. The end state of maximum entropy is simultaneously the precondition for maximum differentiation. Every Aries impulse carries the residue of the Piscean ocean it emerged from, and every Piscean surrender carries the seed of the Aries spark that will break it open again.
 
 ## The Goal: "Debugging" the Self
 
@@ -282,6 +284,14 @@ When a planet (Operator) is instantiated in a specific sign (Coordinate), it is 
 **Example**: A chart heavily loaded with planets in **Capricorn** (Public Ambition / structural processing) will generate predictable underflow in **Cancer** (Private Safety / emotional state management). The processor is running hot on one side; the buffer on the other side is starved.
 
 The diagnostic implication is direct: to debug a problem in one sign, inspect its coupled complement. A system stuck in a **Virgo** infinite loop—over-analysis, obsessive error-checking, runaway linting—will find the patch not by running the loop faster, but by calling the **Pisces** handler: suspend strict validation, abstract up a level, delegate to a higher-order process, accept that some runtime ambiguity is not a defect.
+
+### The Complement Principle
+
+That last paragraph is the thesis of this book. It is worth stating once, plainly, because every chapter that follows is an application of it:
+
+> **Every recurring failure is an overloaded function whose complement was never mounted. The fix is never to run the function harder, and it is never to run it less. The fix is to find the function that was never mounted, and mount it.**
+
+Chapter 2 names the six pairs. Chapter 4 shows what happens when several operators pile onto one. Chapter 6 turns it into a profiling protocol. Chapter 7 shows that a fleet of autonomous agents fails by exactly the same rule—and that the fourteen documented ways such fleets break are, almost every one, a missing operator. When you lose the thread anywhere in this book, come back to this sentence: *find the function that was never mounted.*
 
 ## The Coordinate Grid as a Type System
 
@@ -399,7 +409,9 @@ The incident is resolved fastest by a team with all four and slowest by a team w
 
 By modeling the signs as a dynamic, geometrical coordinate system with typed lifecycle phases rather than a static lookup table, we shift the diagnostic question from "What am I?" to "How does my internal architecture behave—and where are the bottlenecks?"
 
-In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system.
+A coordinate system tells you where a function is running. It does not tell you what's missing. For that you need the pairs.
+
+In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system—the map of which function was never mounted.
 # Chapter 2: The Six Axes (Complementary Pairs)
 
 If the Zodiac is a coordinate system, the **Axes** are the primary constraint pairs—coupled equations where you cannot solve for one variable without considering its complement. In the "Archetypal Operating System," the signs don't operate as independent modules; they are **tightly coupled interfaces**. Every sign exports a contract that its opposite is designed to fulfill.
@@ -607,6 +619,16 @@ The integrated version is not a man who works less. It is a man who can sit with
 
 You now know the six axes—the core binary constraints of the human operating system. Before we move on to the operators (planets) and circuits (aspects) that execute within this field, it is worth previewing what the *finished product* looks like. This is the output you will be able to produce by the end of Chapter 6.
 
+### First, Your Data—and One Term You Haven't Met
+
+To do any of this on yourself you need three inputs: **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
+
+The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—a term the next table uses and this book has not yet defined. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
+
+If you do not know your birth time, you do not know your Rising sign. Say so honestly, work from Sun and Moon, and the method still holds—you have the CPU and the cache; you are missing the interface spec. Do not guess it from how you think you come across. That is the one input the framework cannot infer.
+
+**A note on what this book leaves out.** Astrology has a fourth layer this book deliberately does not use: the twelve **houses**, which locate *where in life* an operator is called from—career, home, partnership, and so on. They are a real and useful part of the system. They are also a fourth term in a framework whose entire spine is three—coordinates, operators, circuits—and the book stays cleaner without them. The Rising sign is the single house-derived concept used here, because it is the first house's boundary and the interface belongs in the profile. If you go further with this after finishing, houses are the next thing to learn.
+
 ### The System Profile Format
 
 A complete chart reading produces a **system architecture diagram**. At its simplest, it starts with the "Big Three"—the base image of your operating system:
@@ -674,6 +696,8 @@ When a recurring pattern surfaces, identify the symptom, check which axis is lik
 ```
 
 This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch.
+
+The six axes are the map of what can go missing. The next chapter is about what runs on them: *find the function that was never mounted* only works once you know what the functions are.
 # Chapter 3: The Planetary Operators (The Logic Functions)
 
 If the signs are the coordinate field (the "Where"), the planets are the active execution layer (the "What"). In this algebraic framework, we strip away the mythological personas of the gods and treat them as **Logical Operators**: typed functions with specific signatures that process state and execute commands within the psyche's runtime.
@@ -725,6 +749,8 @@ These are the core binaries of consciousness: the process identity and its state
 *   **The Operator**: `define self()`
 *   **The Logic**: The Sun is the origin point `(0,0,0)` of your personal coordinate system—the central reference from which all other positions are measured. It is the main thread of the process: the conscious will, the ego, the narrative that gives continuity to the execution. All other operators run relative to this reference.
 *   **Syntax**: `"I am [Sign]."` — The function that resolves the question: *what is this process?*
+
+This chapter uses two table formats. The luminaries (Sun, Moon) are shown across the **four elements**, because element is the dimension along which they vary most. The personal and social operators are shown across **all twelve signs**, because for them the sign-level detail is what you will actually look up.
 
 **The Sun Across Four Elements** — Same operator, different execution contexts:
 
@@ -972,6 +998,8 @@ The Nodes of the Moon are not planets but intersection points—crossings of the
 > **North Node in Aries / South Node in Libra**: The system's pre-compiled defaults are all about consensus, diplomacy, and other-management (South Node in Libra). The cache is full of elegant compromise routines that run beautifully on autopilot. But the unregistered dependency is self-assertion (North Node in Aries)—the system needs to `IMPORT` the ability to act unilaterally, even at the risk of being disagreeable. The growth vector: *from "What do you think?" to "This is what I'm doing."*
 >
 > **North Node in Capricorn / South Node in Cancer**: The defaults are emotional security, family-first processing, and private-namespace management (South Node in Cancer). The new dependency is public accountability, structural ambition, and building something that compiles in production (North Node in Capricorn). The growth vector: *from "I need to feel safe first" to "I need to build something that stands."*
+
+Operators are the functions. The Nodes are the one pair among them that points at the future: the South Node is the function you mount by reflex, and the North Node is, by definition, *the function that was never mounted.* Every other operator in this chapter can be overloaded. Only this one is missing on purpose—until you import it.
 # Chapter 4: The Syntax of Aspects (The Circuitry)
 
 If planets are operators and signs are coordinates, then **Aspects** are the inter-process communication layer. They define how the functions in your system pass messages to each other. Do they share a memory bus and operate in tight synchrony? Or do they block each other's execution threads, creating contention that must be explicitly resolved?
@@ -1100,6 +1128,8 @@ The connection module (Venus) fires quickly and independently (Aries)—it initi
 
 **Extended Example — Mercury in Sagittarius Square Saturn in Virgo (The Developer Who Can't Ship a Blog Post)**:
 
+This is the person from the first page of this book. Same Saturn, same Virgo gate. In the opening scene it was Mars—the drive to *speak*—that couldn't clear the validator. Here it is Mercury—the drive to *write*. Two different operators, one gate, and the reader who is paying attention will already suspect that this is not two bugs but one architecture. Hold that thought; the T-square section below is where it pays off.
+
 You know *exactly* what you want to say. You have a clear thesis about microservice architecture that you've been refining for months. You open a document and start writing. The ideas flow—big, sweeping, confident. *This* is the architecture post that will finally get traction.
 
 Then the inner editor arrives. Not a helpful editor—a hostile one. Every sentence triggers a review: *Is this technically precise? Can someone on Hacker News poke a hole in this? Is "always" too strong a word? Should I add a footnote?* The draft bloats from 800 words to 3,000. You delete half of it. You rewrite the opening four times. The post sits in drafts for six weeks. You publish nothing.
@@ -1161,29 +1191,35 @@ Single aspects are two-node circuits. Charts also contain **patterns**—three o
 
 Two operators in Opposition, both Square a third. The third operator absorbs pressure from both sides.
 
+And here is where the person from the opening page comes back—for the third time. On page one, Mars in Gemini was blocked by Saturn in Virgo. In the blog-post example above, Mercury in Sagittarius was blocked by Saturn in Virgo. Gemini and Sagittarius are opposite signs. So Mars and Mercury are *also* in Opposition to each other. That is not two squares. It is one pattern:
+
 ```
-        ♂ MARS (Aries)
+        ♂ MARS (Gemini)
              ▲
              │  □ 90°
              │
-   ☽ MOON ───┼─── ♄ SATURN
-   (Cancer)  │    (Capricorn)
+   ☿ MERCURY ┼─── ♄ SATURN
+   (Sagitt.) │    (Virgo)
         ◄─── ☍ 180° ───►
              │
              │  □ 90°
              ▼
-      APEX = Mars
+      APEX = Saturn
 
-   Both Moon and Saturn dump contention onto Mars.
-   The apex operator is over-worked and under-supported:
-   whatever Mars does, one of the other two objects.
+   Mars (drive to act) and Mercury (drive to speak)
+   sit at opposite ends of a wire and BOTH dump their
+   contention onto Saturn. Whatever the apex does, one
+   of the other two objects.
 
    Release valve: the EMPTY LEG — the point opposite
-   the apex (here, Libra). The unoccupied coordinate
-   is where the pattern's pressure can actually go.
+   the apex. Here that is Pisces. Note what the Chapter 2
+   table prescribes for Virgo overload: invoke Pisces.
+   The geometry and the diagnostic agree.
 ```
 
-The T-square is the highest-output configuration in the system and the most exhausting. The apex operator becomes hyper-developed—people with a Mars apex are formidable at *acting under conflicting pressure*, because they have never done it any other way. The cost is that they cannot stop, and the resolution is almost never "do less." It is to deliberately run the empty leg: in this example, to route some of the pressure into Libra's `COMPARE`—negotiation, partnership, external reference—rather than absorbing all of it in the apex.
+Read what that means for this person. The meeting scene on page one and the blog-post scene above were never separate problems. Every impulse to act (Mars) and every impulse to communicate (Mercury) is routed through a single overworked validator, and the validator has become the most developed function in the whole system—because it has never done anything *but* handle two streams of pressure at once. That is why they are formidable at precision under load, and why they cannot stop checking.
+
+The T-square is the highest-output configuration in the system and the most exhausting. The apex operator becomes hyper-developed. The cost is that it cannot rest, and the resolution is almost never "do less." It is to deliberately run the empty leg. For this person that is Pisces: suspend validation on purpose, ship at eighty percent, treat some ambiguity as a feature. Which is precisely what Chapter 2 said—but now you can see it in the geometry rather than taking it from a lookup table. In Chapter 6 you will read their whole chart and find that the empty leg is not quite empty, and that where the pressure actually escapes turns out to be the best thing in the profile.
 
 ### The Grand Trine: The Closed Loop
 
@@ -1267,6 +1303,8 @@ A stellium is a Conjunction with compounding interest: the merged operators rein
 │ Opposition│ 180° │ Distributed    │ "They do this to me."     │
 └───────────┴──────┴────────────────┴───────────────────────────┘
 ```
+
+An aspect is not a verdict on two operators. It is a description of the wire between them—and a Square, a T-square, a Stellium are all, at bottom, the same finding at different scales: too much load on one node and nothing on its complement. The circuit tells you *where* the pressure is. The axis tells you where it can go. Find the function that was never mounted.
 # Chapter 5: The Execution Runtime (Milestones & Free Will)
 
 Your birth chart is the source code, but life is the **Runtime Environment**. The code doesn't sit idle in a repository; it executes over time, against real inputs, in a system that has its own scheduled processes. While the variable choices you make daily (Free Will) are yours to write, the runtime has hard-coded maintenance windows and major version upgrades (Milestones) that execute at fixed timestamps regardless of whether you scheduled them.
@@ -1438,6 +1476,8 @@ You cannot defer the maintenance window. You can choose between:
 2.  **Reactive approach**: Ignore the deprecation warnings until the forced restart hits at peak load, with no rollback strategy and no staging environment.
 
 The system will run the update either way. The only variable is your preparation.
+
+Every one of these windows is the same audit at a different layer: a scheduled check for the function you have been running without its complement. The Saturn Return asks which structure you built without a foundation. The Uranus Opposition asks which stability you kept without any interrupt. The Chiron Return asks which wound you carried without a use. The runtime does not add new bugs. It surfaces the ones already in the source—the function that was never mounted—on a schedule you can read off a calendar.
 # Chapter 6: Synthesizing the Source Code
 
 So far, we have analyzed the components in isolation:
@@ -1519,7 +1559,9 @@ The chart is the hardware specification and the default `config.yaml`. The softw
 
 Below is a simplified but complete reading that puts all the layers together. This is the kind of synthesis the entire book has been building toward.
 
-**The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mercury in Sagittarius square Saturn in Virgo. Venus in Scorpio trine Neptune in Pisces. Mars in Capricorn. North Node in Aquarius / South Node in Leo.*
+It is also the chart of the person you met in the first paragraph of this book—the one who could not get the sentence out in the meeting. You have seen three pieces of their chart already: Mars in Gemini square Saturn in Virgo (page one), Mercury in Sagittarius square Saturn in Virgo (Chapter 4), and the T-square those two turn out to form (Chapter 4 again). Here is the rest of the source.
+
+**The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mars in Gemini opposite Mercury in Sagittarius, both square Saturn in Virgo (T-square, Saturn apex). Venus in Scorpio trine Neptune in Pisces. North Node in Aquarius / South Node in Leo.*
 
 ```
  SYSTEM ARCHITECTURE DIAGRAM
@@ -1544,44 +1586,60 @@ Below is a simplified but complete reading that puts all the layers together. Th
  │  processing emotions by naming them rapidly.        │
  └─────────────────────────────────────────────────────┘
 
- ┌─ BOTTLENECK ─────────────────────────────────────────┐
- │  Mercury ♐ □ Saturn ♍                               │
- │  IO layer (big-picture communication) BLOCKED by     │
- │  validation layer (detail-level precision).          │
- │  "I want to say the grand thing, but the inner      │
- │   editor demands footnotes for every claim."         │
- │  Resolution: Speak with EARNED authority. The        │
- │  friction produces someone whose grand claims        │
- │  actually hold up under scrutiny.                    │
+ ┌─ BOTTLENECK (T-SQUARE, ♄ APEX) ──────────────────────┐
+ │  Mars ♊ ☍ Mercury ♐, both □ Saturn ♍                 │
+ │  Drive (act fast, in parallel) and IO (broadcast the │
+ │  thesis) sit at opposite ends of a wire and route    │
+ │  ALL their contention through one validator.         │
+ │  "Every impulse to act or speak hits the same        │
+ │   inner editor, and the editor never sleeps."        │
+ │  This is the meeting on page one AND the unshipped   │
+ │  blog post: one architecture, not two bugs.          │
+ │  Resolution: run the EMPTY LEG (Pisces). Suspend     │
+ │  validation on purpose. Ship at 80%. The friction    │
+ │  already made them precise; the release valve is     │
+ │  what lets the precision leave the building.         │
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH ───────────────────────────────────────────┐
- │  Venus ♏ △ Neptune ♓                                │
+ │  Venus ♏ △ Neptune ♓                                 │
  │  Connection layer (deep bonding) FLOWS with          │
  │  dissolution layer (spiritual merging).              │
  │  "Love is transcendent, boundaryless, oceanic."      │
  │  Effortless depth in intimate connection. Risk:      │
  │  idealizing partners, confusing merging with love.   │
+ │  NOTE WHERE NEPTUNE IS: in Pisces — the T-square's   │
+ │  empty leg. The one place this person's pressure     │
+ │  escapes the validator is intimacy, and it is the    │
+ │  best-running circuit in the chart. Not a            │
+ │  coincidence. The system found its own release       │
+ │  valve; it just hasn't learned to open it on         │
+ │  purpose anywhere else.                              │
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♑                                             │
- │  Drive system: Calculated, patient, hierarchical.    │
- │  This person does not rush. They execute long-term   │
- │  campaigns with military-grade discipline.           │
+ │  Mars ♊ (conjunct Moon ♊)                            │
+ │  Drive and cache are fused in the same coordinate:   │
+ │  the impulse to act IS the emotional reaction, and   │
+ │  both are fast, verbal, and multi-threaded. Under    │
+ │  stress this person does not go quiet — they start   │
+ │  three sentences at once. Then Saturn blocks all     │
+ │  three. That is the meeting.                         │
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♌ → North Node ♒                        │
+ │  South Node ♌ → North Node ♒                         │
  │  Default: Performing, creating, being the star.      │
  │  Growth: Contributing to the collective, innovating  │
  │  for systems, releasing the need for personal        │
  │  recognition.                                        │
- │  "FROM: 'Notice me' → TO: 'This serves everyone.'"  │
+ │  "FROM: 'Notice me' → TO: 'This serves everyone.'"   │
  └──────────────────────────────────────────────────────┘
 ```
 
-**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal (Gemini Moon). The primary bottleneck is communication—grand vision blocked by inner perfectionism (Mercury-Saturn square)—but this friction produces someone who speaks with unusual authority when they finally ship. Relationships are the hot path: deep, transcendent, effortless (Venus-Neptune trine), with the associated risk of boundary dissolution. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
+**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal, and fused with the drive to act (Moon conjunct Mars in Gemini). The primary bottleneck is a T-square: both the drive to act and the drive to speak are routed through one overworked validator (Saturn in Virgo at the apex)—which is why this person is formidably precise and chronically unable to ship, and why the meeting on page one and the unfinished blog post were the same bug. The release valve is the empty leg, Pisces, and the chart has already found it once: intimacy is the hot path (Venus trine Neptune in Pisces), the one domain where the validator is off. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
+
+Go back and reread the first page now. "You've tried 'just speak up.'" Of course that didn't work—it is an instruction to run Mars harder against a gate that was already handling two streams. The patch was never on the Mars side. It was the function that was never mounted: Pisces, deliberately, in the domains where this person has only ever run it by accident.
 
 You are not running someone else's binary. You have the source. You have the build tools. The question is whether you are going to read the codebase before you start making changes.
 
@@ -1683,8 +1741,8 @@ One example teaches the format. Two teach the *method*—because the interesting
   │              │ investigation    │ associative      │
   │ Cache        │ Gemini — verbal, │ Capricorn —      │
   │              │ fast, scattered  │ deferred, filed  │
-  │ Bottleneck   │ SQUARE (heat)    │ OPPOSITION       │
-  │              │ internal friction│ (projection)     │
+  │ Bottleneck   │ T-SQUARE, ♄ apex │ OPPOSITION       │
+  │              │ two loads, 1 gate│ (projection)     │
   │ Key asset    │ TRINE — runs on  │ SEXTILE — works  │
   │              │ its own, invisible│ but must be     │
   │              │                  │ invoked          │
@@ -1747,6 +1805,18 @@ Use this on your own chart. Fill it in the order given—the order is the method
   └────────────────────────────────────────────────────┘
 ```
 
+## Where This Model Breaks
+
+The introduction made a promise: that this framework could fail, and that you would know when it had. Six chapters later, before the book changes substrate, it owes you the specifics.
+
+**It cannot be used on people who didn't ask.** Every validity this half of the book has comes from *your* recognition—the "oh, *that's* why" that only the person inside the system can report. Pointed at a colleague or a partner, that check is gone, and what remains is exactly the cold-read the introduction disowned. The framework is a mirror. It is not a scanner. Chapter 7 will read other systems, but only ones that are instrumented—logged, measured, and able to be wrong in public. A person across the table is neither.
+
+**It flatters on contact.** Any sufficiently rich vocabulary produces resonance. Feeling *seen* by a description is not evidence the description is right; it is evidence the description is well-written. The test is narrower than resonance: did it name a *specific, recurring* pattern you had not articulated, and did naming it change what you did next? If the answer is "it felt true," the tool has not done anything yet.
+
+**It explains backwards better than forwards.** After a decision, the chart can always account for it. That is not insight; that is a language with enough vocabulary to describe any outcome. Use it *before*—to predict which pole you will overload, which complement you will forget, which gate every impulse will hit—and then check. If your own predictions keep missing, the model has failed for you, and the introduction already told you what to do with a tool that doesn't work.
+
+The book's own protagonist is the case for using it correctly. Three separate scenes, three separate instructions that didn't work, one architecture underneath. The framework did not tell them anything about fate. It told them the patch was on the other side of the axis from where they kept applying it.
+
 ## From Reading Code to Writing Code
 
 You have now learned to read the source code of one complex, multi-operator system: yourself. You can identify the base image, profile the bottlenecks, trace the hot paths, and resolve the primary dependency error. You have a synthesis protocol that produces a readable system architecture diagram from a set of component specifications.
@@ -1758,6 +1828,8 @@ Including the systems you build for a living.
 In the next chapter, we apply the exact same framework to a domain where architecture is literal, not metaphorical: autonomous AI agent fleets. The twelve archetypes become agent role definitions. The planetary operators become governance functions. The aspects become inter-agent communication topologies. The axes become resilience pairing strategies. The transits become lifecycle maintenance schedules.
 
 If you have followed the framework through six chapters of self-knowledge, you already understand fleet architecture. You just haven't deployed it yet.
+
+And you already know the rule the fleet will fail by. It is the one this book has repeated since Chapter 1: find the function that was never mounted.
 # Chapter 7: Agentology (The Fleet Architecture)
 
 ## Why This Isn't a Digression
@@ -1767,6 +1839,8 @@ If you have read this far, you have internalized a framework for understanding m
 This chapter is where the framework pays professional dividends. Everything you've learned about archetypal operators maps onto a problem you are likely already solving: **how to design, govern, and maintain a fleet of autonomous AI agents.** The twelve signs become agent role definitions. The planetary operators become governance policies. The aspects become inter-agent wiring. The axes become resilience strategies. The transits become your maintenance calendar.
 
 You already understand fleet architecture. This chapter is the deployment guide.
+
+It is also the longest chapter in the book, by design, and it is built in three movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map.
 
 ## The Honest Framing: This Chapter Can Be Falsified
 
@@ -2775,7 +2849,7 @@ And the eight laws give you the part the metaphor cannot supply on its own: the 
 
 Hold both. The archetypes are how you remember; the evidence is how you decide.
 
-You are no longer only reading your own source code. You are writing the source code for autonomous systems that carry your architectural intelligence forward. The fleet you design reflects the patterns you understand—including, precisely and unforgivingly, the ones you never bothered to deploy.
+You are no longer only reading your own source code. You are writing the source code for autonomous systems that carry your architectural intelligence forward. The fleet you design reflects the patterns you understand—including, precisely and unforgivingly, the function that was never mounted.
 
 `fleet.deploy(manifest="agents.md", architect="you")`
 # Conclusion: Master Programmer
@@ -2805,20 +2879,7 @@ To resolve the exception, you don't drop the module. You refactor it by integrat
 
 ## Quick Diagnostic Reference
 
-The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple.
-
-As a quick reminder of the core principle:
-
-| If You're Stuck In... | Invoke The Complement |
-|---|---|
-| Aries (impulsive action) | Libra (evaluate impact) |
-| Virgo (analysis paralysis) | Pisces (ship at 80%) |
-| Libra (people-pleasing) | Aries (assert preference) |
-| Cancer (emotional flooding) | Capricorn (build structure) |
-| Capricorn (workaholism) | Cancer (return to private state) |
-| Gemini (information overload) | Sagittarius (find the thesis) |
-| Taurus (rigidity) | Scorpio (garbage-collect) |
-| Leo (isolation) | Aquarius (serve the network) |
+The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple. The one-page card below carries the axes; the Chapter 2 table carries the symptoms. Between them, that is the whole diagnostic kit.
 
 ## The Whole System On One Page
 
@@ -2892,7 +2953,7 @@ Chapter 7 pointed the same framework at agent fleets, and there the claims are m
 7. **Memory lives outside the window**, loaded on demand.
 8. **Security is topology, not behavior.** You cannot prompt your way out of it.
 
-The through-line from Chapter 1 to Chapter 7 is a single claim: **specialized operators fail in predictable ways when their complements are absent, and the fastest diagnosis is always to name the operator that was never deployed.** That is true of a fleet. It is true of a team. It is true of you.
+The through-line from Chapter 1 to Chapter 7 is a single sentence, and it was stated in full in Chapter 1: **every recurring failure is an overloaded function whose complement was never mounted.** The person on page one kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
 
 ## `final_commit()`
 

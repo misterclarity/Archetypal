@@ -79,7 +79,9 @@ The chart is the hardware specification and the default `config.yaml`. The softw
 
 Below is a simplified but complete reading that puts all the layers together. This is the kind of synthesis the entire book has been building toward.
 
-**The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mercury in Sagittarius square Saturn in Virgo. Venus in Scorpio trine Neptune in Pisces. Mars in Capricorn. North Node in Aquarius / South Node in Leo.*
+It is also the chart of the person you met in the first paragraph of this book—the one who could not get the sentence out in the meeting. You have seen three pieces of their chart already: Mars in Gemini square Saturn in Virgo (page one), Mercury in Sagittarius square Saturn in Virgo (Chapter 4), and the T-square those two turn out to form (Chapter 4 again). Here is the rest of the source.
+
+**The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mars in Gemini opposite Mercury in Sagittarius, both square Saturn in Virgo (T-square, Saturn apex). Venus in Scorpio trine Neptune in Pisces. North Node in Aquarius / South Node in Leo.*
 
 ```
  SYSTEM ARCHITECTURE DIAGRAM
@@ -104,44 +106,60 @@ Below is a simplified but complete reading that puts all the layers together. Th
  │  processing emotions by naming them rapidly.        │
  └─────────────────────────────────────────────────────┘
 
- ┌─ BOTTLENECK ─────────────────────────────────────────┐
- │  Mercury ♐ □ Saturn ♍                               │
- │  IO layer (big-picture communication) BLOCKED by     │
- │  validation layer (detail-level precision).          │
- │  "I want to say the grand thing, but the inner      │
- │   editor demands footnotes for every claim."         │
- │  Resolution: Speak with EARNED authority. The        │
- │  friction produces someone whose grand claims        │
- │  actually hold up under scrutiny.                    │
+ ┌─ BOTTLENECK (T-SQUARE, ♄ APEX) ──────────────────────┐
+ │  Mars ♊ ☍ Mercury ♐, both □ Saturn ♍                 │
+ │  Drive (act fast, in parallel) and IO (broadcast the │
+ │  thesis) sit at opposite ends of a wire and route    │
+ │  ALL their contention through one validator.         │
+ │  "Every impulse to act or speak hits the same        │
+ │   inner editor, and the editor never sleeps."        │
+ │  This is the meeting on page one AND the unshipped   │
+ │  blog post: one architecture, not two bugs.          │
+ │  Resolution: run the EMPTY LEG (Pisces). Suspend     │
+ │  validation on purpose. Ship at 80%. The friction    │
+ │  already made them precise; the release valve is     │
+ │  what lets the precision leave the building.         │
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH ───────────────────────────────────────────┐
- │  Venus ♏ △ Neptune ♓                                │
+ │  Venus ♏ △ Neptune ♓                                 │
  │  Connection layer (deep bonding) FLOWS with          │
  │  dissolution layer (spiritual merging).              │
  │  "Love is transcendent, boundaryless, oceanic."      │
  │  Effortless depth in intimate connection. Risk:      │
  │  idealizing partners, confusing merging with love.   │
+ │  NOTE WHERE NEPTUNE IS: in Pisces — the T-square's   │
+ │  empty leg. The one place this person's pressure     │
+ │  escapes the validator is intimacy, and it is the    │
+ │  best-running circuit in the chart. Not a            │
+ │  coincidence. The system found its own release       │
+ │  valve; it just hasn't learned to open it on         │
+ │  purpose anywhere else.                              │
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♑                                             │
- │  Drive system: Calculated, patient, hierarchical.    │
- │  This person does not rush. They execute long-term   │
- │  campaigns with military-grade discipline.           │
+ │  Mars ♊ (conjunct Moon ♊)                            │
+ │  Drive and cache are fused in the same coordinate:   │
+ │  the impulse to act IS the emotional reaction, and   │
+ │  both are fast, verbal, and multi-threaded. Under    │
+ │  stress this person does not go quiet — they start   │
+ │  three sentences at once. Then Saturn blocks all     │
+ │  three. That is the meeting.                         │
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♌ → North Node ♒                        │
+ │  South Node ♌ → North Node ♒                         │
  │  Default: Performing, creating, being the star.      │
  │  Growth: Contributing to the collective, innovating  │
  │  for systems, releasing the need for personal        │
  │  recognition.                                        │
- │  "FROM: 'Notice me' → TO: 'This serves everyone.'"  │
+ │  "FROM: 'Notice me' → TO: 'This serves everyone.'"   │
  └──────────────────────────────────────────────────────┘
 ```
 
-**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal (Gemini Moon). The primary bottleneck is communication—grand vision blocked by inner perfectionism (Mercury-Saturn square)—but this friction produces someone who speaks with unusual authority when they finally ship. Relationships are the hot path: deep, transcendent, effortless (Venus-Neptune trine), with the associated risk of boundary dissolution. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
+**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal, and fused with the drive to act (Moon conjunct Mars in Gemini). The primary bottleneck is a T-square: both the drive to act and the drive to speak are routed through one overworked validator (Saturn in Virgo at the apex)—which is why this person is formidably precise and chronically unable to ship, and why the meeting on page one and the unfinished blog post were the same bug. The release valve is the empty leg, Pisces, and the chart has already found it once: intimacy is the hot path (Venus trine Neptune in Pisces), the one domain where the validator is off. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
+
+Go back and reread the first page now. "You've tried 'just speak up.'" Of course that didn't work—it is an instruction to run Mars harder against a gate that was already handling two streams. The patch was never on the Mars side. It was the function that was never mounted: Pisces, deliberately, in the domains where this person has only ever run it by accident.
 
 You are not running someone else's binary. You have the source. You have the build tools. The question is whether you are going to read the codebase before you start making changes.
 
@@ -243,8 +261,8 @@ One example teaches the format. Two teach the *method*—because the interesting
   │              │ investigation    │ associative      │
   │ Cache        │ Gemini — verbal, │ Capricorn —      │
   │              │ fast, scattered  │ deferred, filed  │
-  │ Bottleneck   │ SQUARE (heat)    │ OPPOSITION       │
-  │              │ internal friction│ (projection)     │
+  │ Bottleneck   │ T-SQUARE, ♄ apex │ OPPOSITION       │
+  │              │ two loads, 1 gate│ (projection)     │
   │ Key asset    │ TRINE — runs on  │ SEXTILE — works  │
   │              │ its own, invisible│ but must be     │
   │              │                  │ invoked          │
@@ -307,6 +325,18 @@ Use this on your own chart. Fill it in the order given—the order is the method
   └────────────────────────────────────────────────────┘
 ```
 
+## Where This Model Breaks
+
+The introduction made a promise: that this framework could fail, and that you would know when it had. Six chapters later, before the book changes substrate, it owes you the specifics.
+
+**It cannot be used on people who didn't ask.** Every validity this half of the book has comes from *your* recognition—the "oh, *that's* why" that only the person inside the system can report. Pointed at a colleague or a partner, that check is gone, and what remains is exactly the cold-read the introduction disowned. The framework is a mirror. It is not a scanner. Chapter 7 will read other systems, but only ones that are instrumented—logged, measured, and able to be wrong in public. A person across the table is neither.
+
+**It flatters on contact.** Any sufficiently rich vocabulary produces resonance. Feeling *seen* by a description is not evidence the description is right; it is evidence the description is well-written. The test is narrower than resonance: did it name a *specific, recurring* pattern you had not articulated, and did naming it change what you did next? If the answer is "it felt true," the tool has not done anything yet.
+
+**It explains backwards better than forwards.** After a decision, the chart can always account for it. That is not insight; that is a language with enough vocabulary to describe any outcome. Use it *before*—to predict which pole you will overload, which complement you will forget, which gate every impulse will hit—and then check. If your own predictions keep missing, the model has failed for you, and the introduction already told you what to do with a tool that doesn't work.
+
+The book's own protagonist is the case for using it correctly. Three separate scenes, three separate instructions that didn't work, one architecture underneath. The framework did not tell them anything about fate. It told them the patch was on the other side of the axis from where they kept applying it.
+
 ## From Reading Code to Writing Code
 
 You have now learned to read the source code of one complex, multi-operator system: yourself. You can identify the base image, profile the bottlenecks, trace the hot paths, and resolve the primary dependency error. You have a synthesis protocol that produces a readable system architecture diagram from a set of component specifications.
@@ -318,3 +348,5 @@ Including the systems you build for a living.
 In the next chapter, we apply the exact same framework to a domain where architecture is literal, not metaphorical: autonomous AI agent fleets. The twelve archetypes become agent role definitions. The planetary operators become governance functions. The aspects become inter-agent communication topologies. The axes become resilience pairing strategies. The transits become lifecycle maintenance schedules.
 
 If you have followed the framework through six chapters of self-knowledge, you already understand fleet architecture. You just haven't deployed it yet.
+
+And you already know the rule the fleet will fail by. It is the one this book has repeated since Chapter 1: find the function that was never mounted.

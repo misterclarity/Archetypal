@@ -8,6 +8,8 @@ This chapter is where the framework pays professional dividends. Everything you'
 
 You already understand fleet architecture. This chapter is the deployment guide.
 
+It is also the longest chapter in the book, by design, and it is built in three movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map.
+
 ## The Honest Framing: This Chapter Can Be Falsified
 
 Chapters 1 through 6 pointed an archetypal vocabulary at a system nobody can instrument directly: you. This chapter points the same vocabulary at a system that *is* instrumented—logged, traced, benchmarked, priced per token, and studied in public. That changes the rules, and it should.
@@ -1015,6 +1017,6 @@ And the eight laws give you the part the metaphor cannot supply on its own: the 
 
 Hold both. The archetypes are how you remember; the evidence is how you decide.
 
-You are no longer only reading your own source code. You are writing the source code for autonomous systems that carry your architectural intelligence forward. The fleet you design reflects the patterns you understand—including, precisely and unforgivingly, the ones you never bothered to deploy.
+You are no longer only reading your own source code. You are writing the source code for autonomous systems that carry your architectural intelligence forward. The fleet you design reflects the patterns you understand—including, precisely and unforgivingly, the function that was never mounted.
 
 `fleet.deploy(manifest="agents.md", architect="you")`

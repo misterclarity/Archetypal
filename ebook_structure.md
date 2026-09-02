@@ -1,20 +1,21 @@
 # Archetypal Operating System: A Logical Approach to Astrological Self-Knowledge
 
 ## Introduction: The Code of Consciousness
-- **Start Here: One Line of Code**: Opening with a concrete worked example (Mars in Gemini square Saturn in Virgo) wrapped in a relatable developer scenario.
+- **Start Here: One Line of Code**: Opening with a concrete worked example (Mars in Gemini square Saturn in Virgo) wrapped in a relatable developer scenario. This person recurs in Chapters 4 and 6.
 - **The Decoder Ring**: The universal grammar of a placement — Operator / Coordinate / Circuit — plus three additional parsed statements.
 - **What This Framework Is (and Isn't)**: Explicit epistemic framing — a cognitive reframing tool, not a cosmological truth claim.
 - **Beyond Belief**: Addressing the "I don't believe in astrology" response. Astrology as a symbolic language, not a belief system.
 - **The Platonic Problem**: Signs as Forms — why the system resists conventional scientific analysis.
+- **Chaos, Symmetry, and the Cusp of Rebirth**: The Pisces-Aries cusp as symmetry-breaking event (framed as structural metaphor) — why the Zodiac is a cycle, not a line.
 - **Archetypal Operating System**: The birth chart as Source Code — Parameters, Functions, Architecture.
 - **The Framework**: Signs as Coordinates, Planets as Operators, Aspects as Circuits.
 - **How to Read This Book**: Developer-focused reading guide. No prior astrology knowledge required.
-- **Chaos, Symmetry, and the Cusp of Rebirth**: The Pisces-Aries cusp as symmetry-breaking event (framed as structural metaphor).
 - **The Goal**: "Debugging" the self by understanding your internal logic and source code.
 
 ## Chapter 1: The Geometry of Signs (The Coordinate System)
 - **Beyond the Flat Enum**: Moving away from the list of 12 isolated signs. The Zodiac as a continuous 360-degree address space.
 - **The Axis of Reflection**: Understanding signs through Linear Transformation (Reflection). Every sign defined by its opposite.
+- **The Complement Principle**: The book's thesis, stated once — every recurring failure is an overloaded function whose complement was never mounted. Echoed at the close of every chapter.
 - **The Coordinate Grid as a Type System**: Element × Modality grid. Cardinal (init), Fixed (persist), Mutable (transform).
 - **The Element Compatibility Matrix**: Which runtimes exchange data natively, which need an adapter.
 - **Extended Example**: Three Developers, One Layoff — how Cardinal, Fixed, and Mutable modalities shape responses to the same event.
@@ -29,6 +30,7 @@
 - **Virgo <-> Pisces**: The Axis of Service (Order vs. Chaos). Analysis vs. Surrender.
 - **Reading an Axis: The Three States**: Overload, oscillation, and integration — the axis tension meter.
 - **Extended Narrative**: The Founder Who Couldn't Go Home — an unmounted complement, not a weak one.
+- **First, Your Data — and One Term You Haven't Met**: How to obtain your chart; the Rising sign defined as the interface layer and why it needs a birth time; the twelve houses explicitly scoped out.
 - **What You're Building Toward: A Preview**: Simplified synthesis protocol preview showing the Big Three system profile format.
 - **Quick Diagnostic Reference**: The Symptom → Operator → Patch lookup table for immediate practical use.
 
@@ -59,7 +61,7 @@
 - **Square (90°)**: Deadlock — mutual contention, friction engine. **Extended example: The Developer Who Can't Ship a Blog Post.**
 - **Trine/Sextile (120°/60°)**: Superconductive Path — zero-resistance flow. **Trine vs. Sextile: the gift you never develop vs. the skill you can build.**
 - **Quincunx (150°)**: Integration Hell — no shared ABI.
-- **Aspect Patterns**: T-Square (apex overload and the empty leg), Grand Trine (the closed loop), Yod (the unavoidable adapter), Stellium (the monolith at scale).
+- **Aspect Patterns**: T-Square — the recurring character's two squares turn out to be one pattern with Saturn at the apex and Pisces as the empty leg; Grand Trine (the closed loop), Yod (the unavoidable adapter), Stellium (the monolith at scale).
 
 ## Chapter 5: The Execution Runtime (Milestones & Free Will)
 - **The 12th Year**: The First Branch (Jupiter Return).
@@ -73,13 +75,14 @@
 ## Chapter 6: Synthesizing the Source Code
 - **The Profiling Protocol**: Step-by-step synthesis — Root Process, Bottlenecks, Hot Paths, Nodal Axis.
 - **The Root Process (PID 1)**: The Chart Ruler.
-- **Full Worked Example**: A Complete System Profile (Sun in Scorpio, Moon in Gemini, Leo Rising).
+- **Full Worked Example**: The recurring character's complete chart (Sun in Scorpio, Moon conjunct Mars in Gemini, Leo Rising, Saturn-apex T-square) — the page-one bug resolved.
 - **Second Worked Example**: A Contrasting Profile (Sun in Pisces, Moon in Capricorn, Virgo Rising) plus a side-by-side comparison.
 - **The Profiling Worksheet**: A fill-in template for your own chart, with the falsification test.
+- **Where This Model Breaks**: The limits of the personal half — no use on people who didn't ask, resonance is not evidence, and it explains backwards better than forwards.
 - **From Reading Code to Writing Code**: Bridge section connecting self-knowledge to fleet architecture.
 
 ## Chapter 7: Agentology (The Fleet Architecture)
-- **Why This Isn't a Digression**: Connecting the personal framework to professional AI fleet design.
+- **Why This Isn't a Digression**: Connecting the personal framework to professional AI fleet design, with a three-movement roadmap for the chapter.
 - **The Honest Framing**: This chapter is falsifiable — the archetypes are the retrieval index, the field research is the evidence.
 - **What The Field Actually Learned**: Eight findings from 2024–2026 agent research, each with an archetypal address.
 - **The Fleet Chart**: A manifest rendered as a birth chart.
@@ -104,7 +107,7 @@
 ## Conclusion: Master Programmer
 - Escalating your own access level.
 - Debugging as a Continuous Integration Practice.
-- Quick Diagnostic Reference (compact summary with back-reference to Chapter 2).
+- Quick Diagnostic Reference (back-reference to Chapter 2; the duplicate table was removed).
 - **The Whole System On One Page**: Single-card reference for operators, elements, circuits, axes, and the protocol.
 - **And If You Build Systems**: The eight laws of Chapter 7, condensed.
 - From "It is written" to "I am writing."
