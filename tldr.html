@@ -140,7 +140,8 @@
             'chapter_5.md',
             'chapter_6.md',
             'chapter_7.md',
-            'conclusion.md'
+            'conclusion.md',
+            'appendix.md'
         ];
 
         const textEl = document.getElementById('text-content');
@@ -151,7 +152,7 @@
         async function load() {
             try {
                 const responses = await Promise.all(
-                    files.map(f => fetch(f).then(r => {
+                    files.map(f => fetch(f, { cache: 'no-cache' }).then(r => {
                         if (!r.ok) throw new Error(`Could not load ${f}`);
                         return r.text();
                     }))

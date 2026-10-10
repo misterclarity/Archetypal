@@ -19,11 +19,12 @@ Self-knowledge is not a destination you deploy to once and leave in production. 
 The axes teach us that every recurring exception is just an optimized path that has lost its complement.
 
 -   Your "Impatience" is your **Aries** execution path running without the balancing latency of the **Libra** evaluation loop. The function is not broken—it is missing its rate limiter.
--   Your "Rigidity" is your **Capricorn** structural module caching a schema that the **Cancer** state layer has already updated. The interface contract no longer matches the internal state.
+-   Your "Workaholism" is your **Capricorn** structural module shipping builds against a schema the **Cancer** state layer has already updated. The public interface no longer matches the internal state—and no amount of building will fix a stale cache.
+-   Your "Rigidity" is your **Taurus** persistence layer holding references the **Scorpio** garbage collector flagged for release long ago. The leak is not in the data; it is in the refusal to free it.
 
 To resolve the exception, you don't drop the module. You refactor it by integrating the complementary function it has been ignoring.
 
-## Quick Diagnostic Reference
+## Quick Diagnostic Reference (Recap)
 
 The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple.
 
@@ -32,13 +33,17 @@ As a quick reminder of the core principle:
 | If You're Stuck In... | Invoke The Complement |
 |---|---|
 | Aries (impulsive action) | Libra (evaluate impact) |
-| Virgo (analysis paralysis) | Pisces (ship at 80%) |
 | Libra (people-pleasing) | Aries (assert preference) |
+| Taurus (rigidity) | Scorpio (garbage-collect) |
+| Scorpio (obsession, control) | Taurus (accept what is already stable) |
+| Gemini (information overload) | Sagittarius (find the thesis) |
+| Sagittarius (preaching without data) | Gemini (fetch the raw data) |
 | Cancer (emotional flooding) | Capricorn (build structure) |
 | Capricorn (workaholism) | Cancer (return to private state) |
-| Gemini (information overload) | Sagittarius (find the thesis) |
-| Taurus (rigidity) | Scorpio (garbage-collect) |
 | Leo (isolation) | Aquarius (serve the network) |
+| Aquarius (detachment) | Leo (render one warm signal) |
+| Virgo (analysis paralysis) | Pisces (ship at 80%) |
+| Pisces (drift, no boundaries) | Virgo (add one validation gate) |
 
 ## `final_commit()`
 
@@ -53,7 +58,7 @@ Read the source. Run the profiler. Own the deploy pipeline.
 ```
 $ git log --oneline --all
 $ git diff HEAD~1
-$ git commit -m "refactor: integrate complementary axis, resolve long-standing deadlock"
+$ git commit -m "refactor: integrate complementary axis, resolve deadlock"
 ```
 
 Welcome to the command line of life.

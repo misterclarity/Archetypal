@@ -5,7 +5,7 @@ If the signs are the coordinate field (the "Where"), the planets are the active 
 Every planet represents a specific class of operation—a deterministic behavior that fires in a given context.
 
 ## The Constants (The Luminaries)
-These are the core binaries of consciousness: the process identity and its stateful context.
+These are the core binaries of consciousness: the process identity and its stateful context. (*Luminaries* is astrology's word for the two lights—the Sun and the Moon—which the chart ranks as its two most important operators even though neither is, astronomically, a planet. The Moon is also by far the fastest-moving point in the chart; the Sun is the clock the inner planets keep time to.)
 
 ### The Sun: The `IDENTITY` Function
 *   **The Operator**: `define self()`
@@ -26,6 +26,8 @@ These are the core binaries of consciousness: the process identity and its state
 *   **The Logic**: The Moon is the memory management layer. It caches the residual charge of past events, building the lookup table we call "instinct" or "gut reaction." It manages emotional state not by reasoning but by pattern-matching against cached history. When the system encounters a familiar stimulus, the Moon fires a cached response before the Sun's conscious thread can run its own evaluation.
 *   **Syntax**: `"I feel [Sign]."` — The function that gives the process its history and context.
 
+Hold on to that last point of the Logic. The Moon answering *before* the Sun is not a flaw in the design; it is the design. A fast, cached pattern-matcher in front of a slow, deliberate main thread is how the human runtime stays responsive—and in Chapter 7 it is the blueprint for building a two-speed "brain" out of a small, fast model and a large, slow one.
+
 **The Moon Across Four Elements** — Same cache layer, different storage strategies:
 
 | Placement | Element | System Profile |
@@ -36,128 +38,157 @@ These are the core binaries of consciousness: the process identity and its state
 | Moon in Scorpio | Water | `BUFFER = encrypted_cache("intensity")` Emotional state is deep, encrypted, and never fully exposed. The cache retains everything and trusts no one with the decryption key. |
 
 ## The Personal Operators
-These operators handle the daily I/O throughput and interaction with the immediate environment.
+These operators handle the daily I/O throughput and interaction with the immediate environment. They move through the ring in weeks, so their signs are genuinely individual.
 
 ### Mercury: The `IO_STREAM` Operator
 *   **The Operator**: `connect()` / `transmit()`
 *   **The Logic**: Mercury is the data bus. It handles the ingestion of sensory and informational input and the serialization of internal state into communicable output. It is the logic of the protocol layer itself—the syntax rules that determine whether a message is well-formed and transmissible.
 *   **Syntax**: `"I think [Sign]."`
 
-**Mercury: Quick Reference Across All Twelve Signs**
+**Mercury: Quick Reference Across All Twelve Signs** — *"How does the system process and transmit data?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ☿ MERCURY — The IO_STREAM Operator:                 │
-│  "How does the system process and transmit data?"    │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Direct transmit. io(blunt, low_latency)   │
-│ ♉ Taurus │ Slow, considered. io(deliberate, durable) │
-│ ♊ Gemini │ Max bandwidth. io(parallel, multi_channel)│
-│ ♋ Cancer │ Emotional codec. io(intuitive, guarded)   │
-│ ♌ Leo    │ Dramatic signal. io(expressive, warm)     │
-│ ♍ Virgo  │ Precise payload. io(analytical, detailed) │
-│ ♎ Libra  │ Balanced output. io(diplomatic, fair)     │
-│ ♏ Scorpio│ Deep scan. io(probing, encrypted)         │
-│ ♐ Sagitt.│ Big-picture. io(philosophical, broad)     │
-│ ♑ Capri. │ Structured msg. io(formal, hierarchical)  │
-│ ♒ Aquar. │ Unconventional. io(innovative, systemic)  │
-│ ♓ Pisces │ Poetic stream. io(intuitive, impressions) │
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct transmit | `io(blunt, low_latency)` |
+| ♉ Taurus | Slow, considered | `io(deliberate, durable)` |
+| ♊ Gemini | Max bandwidth | `io(parallel, multi_channel)` |
+| ♋ Cancer | Emotional codec | `io(intuitive, guarded)` |
+| ♌ Leo | Dramatic signal | `io(expressive, warm)` |
+| ♍ Virgo | Precise payload | `io(analytical, detailed)` |
+| ♎ Libra | Balanced output | `io(diplomatic, fair)` |
+| ♏ Scorpio | Deep scan | `io(probing, encrypted)` |
+| ♐ Sagittarius | Big-picture | `io(philosophical, broad)` |
+| ♑ Capricorn | Structured message | `io(formal, hierarchical)` |
+| ♒ Aquarius | Unconventional | `io(innovative, systemic)` |
+| ♓ Pisces | Poetic stream | `io(intuitive, impressions)` |
 
 ### Venus: The `BIND` Operator
 *   **The Operator**: `bind()` / `merge()`
 *   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
 *   **Syntax**: `"I value [Sign]."`
 
-**Venus: Quick Reference Across All Twelve Signs**
+**Venus: Quick Reference Across All Twelve Signs** — *"How does the system form connections and value?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ♀ VENUS — The BIND Operator:                        │
-│  "How does the system form connections and value?"   │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Direct pursuit. bind(assertive, fast)     │
-│ ♉ Taurus │ Sensory loyalty. bind(steady, physical)   │
-│ ♊ Gemini │ Curious flirting. bind(verbal, varied)    │
-│ ♋ Cancer │ Protective bond. bind(nurturing, deep)    │
-│ ♌ Leo    │ Grand romance. bind(generous, dramatic)   │
-│ ♍ Virgo  │ Acts of service. bind(practical, modest)  │
-│ ♎ Libra  │ Equal partnership. bind(balanced, fair)   │
-│ ♏ Scorpio│ Total merge. bind(intense, all_or_none)   │
-│ ♐ Sagitt.│ Freedom-loving. bind(adventurous, open)   │
-│ ♑ Capri. │ Status-aware. bind(committed, traditional)│
-│ ♒ Aquar. │ Intellectual. bind(unconventional, friend) │
-│ ♓ Pisces │ Oceanic. bind(compassionate, boundaryless)│
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct pursuit | `bind(assertive, fast)` |
+| ♉ Taurus | Sensory loyalty | `bind(steady, physical)` |
+| ♊ Gemini | Curious flirting | `bind(verbal, varied)` |
+| ♋ Cancer | Protective bond | `bind(nurturing, deep)` |
+| ♌ Leo | Grand romance | `bind(generous, dramatic)` |
+| ♍ Virgo | Acts of service | `bind(practical, modest)` |
+| ♎ Libra | Equal partnership | `bind(balanced, fair)` |
+| ♏ Scorpio | Total merge | `bind(intense, all_or_none)` |
+| ♐ Sagittarius | Freedom-loving | `bind(adventurous, open)` |
+| ♑ Capricorn | Status-aware | `bind(committed, traditional)` |
+| ♒ Aquarius | Intellectual | `bind(unconventional, friend)` |
+| ♓ Pisces | Oceanic | `bind(compassionate, boundaryless)` |
 
 ### Mars: The `VECTOR` Operator
 *   **The Operator**: `force()` / `separate()`
 *   **The Logic**: Mars is the directed force—a vector with both magnitude and heading. It acts to separate the subject from the object in order to achieve a defined objective. Where Venus creates dependencies, Mars severs them. It resolves tension by applying directional pressure until the blocking constraint is removed.
 *   **Syntax**: `"I act [Sign]."`
 
-**Mars: Quick Reference Across All Twelve Signs**
+**Mars: Quick Reference Across All Twelve Signs** — *"How does the system apply force?"*
 
-```
-┌────────────────────────────────────────────────────────────────────┐
-│  ♂ MARS — The VECTOR Operator: "How does the system apply force?" │
-├──────────┬─────────────────────────────────────────────────────────┤
-│ ♈ Aries  │ Direct strike. force(max_velocity, zero_delay)         │
-│ ♉ Taurus │ Slow, unstoppable push. force(steady, no_timeout)      │
-│ ♊ Gemini │ Multi-vector assault. force(scatter, parallel_threads) │
-│ ♋ Cancer │ Defensive perimeter. force(protect, if_threatened)     │
-│ ♌ Leo    │ Dramatic offensive. force(display, demand_recognition) │
-│ ♍ Virgo  │ Precision strike. force(targeted, error_checked)       │
-│ ♎ Libra  │ Strategic negotiation. force(indirect, via_consensus)  │
-│ ♏ Scorpio│ Surgical elimination. force(hidden, total_commitment)  │
-│ ♐ Sagitt.│ Broadside barrage. force(wide_arc, philosophical)      │
-│ ♑ Capri. │ Calculated campaign. force(long_term, hierarchical)    │
-│ ♒ Aquar. │ System disruption. force(unconventional, detached)     │
-│ ♓ Pisces │ Passive resistance. force(dissolve_boundary, absorb)   │
-└──────────┴─────────────────────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct strike | `force(max_velocity, zero_delay)` |
+| ♉ Taurus | Slow, unstoppable push | `force(steady, no_timeout)` |
+| ♊ Gemini | Multi-vector assault | `force(scatter, parallel_threads)` |
+| ♋ Cancer | Defensive perimeter | `force(protect, if_threatened)` |
+| ♌ Leo | Dramatic offensive | `force(display, demand_recognition)` |
+| ♍ Virgo | Precision strike | `force(targeted, error_checked)` |
+| ♎ Libra | Strategic negotiation | `force(indirect, via_consensus)` |
+| ♏ Scorpio | Surgical elimination | `force(hidden, total_commitment)` |
+| ♐ Sagittarius | Broadside barrage | `force(wide_arc, philosophical)` |
+| ♑ Capricorn | Calculated campaign | `force(long_term, hierarchical)` |
+| ♒ Aquarius | System disruption | `force(unconventional, detached)` |
+| ♓ Pisces | Passive resistance | `force(dissolve_boundary, absorb)` |
 
 ## The Social & Outer Operators
 These operators handle the scaling, structuring, and transformation of the system at the architectural level.
+
+**A note on clock speed.** These operators move at very different rates through the coordinate field: Jupiter changes sign roughly every year, Saturn every ~2.5 years, Uranus every ~7, Neptune every ~14, Pluto every ~12–30. Consequence: everyone born within a multi-year window shares the same Uranus, Neptune and Pluto signs. For those three, the *sign* describes your cohort's defaults—the generation's shared `config`—not you personally. What personalizes an outer operator is its aspects (Chapter 4) to your Sun, Moon, Mercury, Venus and Mars. So when your chart says "Pluto in Scorpio," read it as "born 1983–1995" first and as a trait second. Jupiter and Saturn sit in between: slow enough to be shared with a school year, fast enough to still be worth reading by sign.
+
+### Operator Clock Speeds
+
+Every operator runs on its own clock—its orbital period. The clock is what turns a static chart into a schedule: when an operator completes a full lap and returns to its natal coordinate, or reaches the quarter- and half-way points, the system gets a scheduled maintenance window. Chapter 5 is built entirely on this table.
+
+| Operator | Glyph | One full cycle | Changes sign every | Natal return at age | Opposition at age | Tier |
+|---|---|---|---|---|---|---|
+| Moon | ☽ | 27.3 days | ~2.5 days | every month | — | luminary |
+| Mercury | ☿ | 1 year as seen from Earth (88-day orbit) | ~3–4 weeks | every year (with the Sun) | — | personal |
+| Venus | ♀ | 1 year as seen from Earth (225-day orbit) | ~4 weeks | every year (with the Sun) | — | personal |
+| Sun | ☉ | 1 year | ~1 month | every birthday | — | luminary |
+| Mars | ♂ | 1.9 years | ~6–7 weeks | ~2, 4, 6 … | — | personal |
+| Jupiter | ♃ | 11.9 years | ~1 year | ~12, 24, 36, 48, 60 | ~6, 18, 30 … | social |
+| Saturn | ♄ | 29.5 years | ~2.5 years | ~29, 59, 88 | ~15, 44 | social |
+| Chiron | ⚷ | 50.4 years | 2–8 years (eccentric orbit) | ~50 | varies | minor body |
+| Uranus | ♅ | 84 years | ~7 years | ~84 | ~42 | outer / generational |
+| Neptune | ♆ | 164.8 years | ~14 years | never in one life | ~82 (square at ~41) | outer / generational |
+| Pluto | ♇ | 247.9 years | 12–30 years | never in one life | — (square at ~36–60, varies by generation) | outer / generational |
+| Lunar Nodes | ☊ ☋ | 18.6 years (moving backwards) | ~1.5 years | ~19, 37, 56 | ~9, 28, 46 | axis |
+
+Mercury and Venus orbit inside Earth's orbit, so from here they never get far from the Sun—at most ~28° and ~47°—and their lap around the ring, the lap the return column counts, takes a year regardless of their 88- and 225-day trips around the Sun.
+
+Read it as a cron table. The fast operators return so often that their returns are noise; the slow ones return so rarely that each return is a version bump.
 
 ### Jupiter: The `MULTIPLY` Operator
 *   **The Operator**: `scale_up()` / `optimize()`
 *   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
+**Jupiter: Quick Reference Across All Twelve Signs** — *"Where does the system scale without being asked?"*
+
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Bold expansion | `scale(initiative, risk)` |
+| ♉ Taurus | Material growth | `scale(assets, comfort)` |
+| ♊ Gemini | Idea sprawl | `scale(inputs, connections)` |
+| ♋ Cancer | Nurture at scale | `scale(home, belonging)` |
+| ♌ Leo | Big stage | `scale(expression, generosity)` |
+| ♍ Virgo | Process tuning | `scale(craft, detail)` |
+| ♎ Libra | Social reach | `scale(partnership, fairness)` |
+| ♏ Scorpio | Deep leverage | `scale(intensity, research)` |
+| ♐ Sagittarius | Native context | `scale(meaning, horizon)` |
+| ♑ Capricorn | Institutional climb | `scale(rank, plan)` |
+| ♒ Aquarius | Network effects | `scale(ideas, community)` |
+| ♓ Pisces | Boundless empathy | `scale(faith, art)` |
+
 ### Saturn: The `LIMIT` Operator
 *   **The Operator**: `limit()` / `validate()`
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
 
-**Saturn: Quick Reference Across All Twelve Signs**
+**Saturn: Quick Reference Across All Twelve Signs** — *"Where does the system enforce constraints?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ♄ SATURN — The LIMIT Operator:                      │
-│  "Where does the system enforce constraints?"        │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Identity test. limit(self_assertion)      │
-│ ♉ Taurus │ Resource audit. limit(material_security)  │
-│ ♊ Gemini │ Speech check. limit(communication)        │
-│ ♋ Cancer │ Emotional wall. limit(vulnerability)      │
-│ ♌ Leo    │ Performance bar. limit(self_expression)   │
-│ ♍ Virgo  │ Precision demand. limit(quality_control)  │
-│ ♎ Libra  │ Fairness audit. limit(relationships)      │
-│ ♏ Scorpio│ Trust gate. limit(intimacy, control)      │
-│ ♐ Sagitt.│ Belief test. limit(philosophy, scope)     │
-│ ♑ Capri. │ Authority check. limit(hierarchy, career) │
-│ ♒ Aquar. │ Systems bound. limit(innovation, freedom) │
-│ ♓ Pisces │ Reality anchor. limit(boundaries, escape) │
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Identity test | `limit(self_assertion)` |
+| ♉ Taurus | Resource audit | `limit(material_security)` |
+| ♊ Gemini | Speech check | `limit(communication)` |
+| ♋ Cancer | Emotional wall | `limit(vulnerability)` |
+| ♌ Leo | Performance bar | `limit(self_expression)` |
+| ♍ Virgo | Precision demand | `limit(quality_control)` |
+| ♎ Libra | Fairness audit | `limit(relationships)` |
+| ♏ Scorpio | Trust gate | `limit(intimacy, control)` |
+| ♐ Sagittarius | Belief test | `limit(philosophy, scope)` |
+| ♑ Capricorn | Authority check | `limit(hierarchy, career)` |
+| ♒ Aquarius | Systems bound | `limit(innovation, freedom)` |
+| ♓ Pisces | Reality anchor | `limit(boundaries, escape)` |
 
 **Saturn in Two Contrasting Signs** — The same compiler, different rulesets:
 
 > **Saturn in Gemini**: The `LIMIT` operator constrains the data bus. Communication is tested for precision; no sloppy output passes the review. The system learns slowly but speaks with earned authority. *Think: a compiler that rejects code with any ambiguous syntax.*
 >
 > **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims are subjected to rigorous testing. Belief must be earned, not assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
+
+### Chiron: The `WONTFIX` Operator
+*   **The Operator**: `known_issue()` / `work_around()`
+*   **The Logic**: Chiron (⚷) is not one of the classical planets. It is a small body orbiting between Saturn and Uranus—between the `LIMIT` and the `INTERRUPT`—and astrology reads it as the system's permanently open issue: the defect that Saturn could not validate away and Uranus could not patch out. Every release has shipped around it. Its placement names the module where the system is wounded and, precisely because of that, where it has accumulated the deepest workaround expertise. Most chart tools include it by default; if yours doesn't, enable it under "additional objects" or "asteroids."
+*   **Syntax**: `"I work around [Sign]."`
+*   **Runtime**: Its ~50-year lap produces the Chiron return of Chapter 5—the point where the open ticket gets reclassified from *defect* to *documented behavior*.
 
 ### Uranus: The `INTERRUPT` Operator
 *   **The Operator**: `interrupt()` / `flip_bit()`
@@ -176,6 +207,8 @@ These operators handle the scaling, structuring, and transformation of the syste
 
 ## The Nodal Operators (The Evolutionary Axis)
 The Nodes of the Moon are not planets but intersection points—crossings of the Moon's orbital plane with the ecliptic. They function as a **directional flow controller**: a chronological axis that governs the trajectory of the system's development over time.
+
+On a chart printout they appear as **☊** (North) and **☋** (South). The two nodes are always exactly 180° apart—two ends of one line—so a North Node placement implies its South Node, and many tools print only the North. If yours does, the South Node is simply the opposite sign at the same degree (Aries ↔ Libra, Taurus ↔ Scorpio, and so on down the six axes of Chapter 2). The axis also precesses backwards through the Zodiac once every ~18.6 years, so the **nodal return** (ages ~19, ~37, ~56) is a scheduled `IMPORT` checkpoint in its own right.
 
 ### North Node: The `IMPORT` Operator
 *   **The Operator**: `fetch_new()` / `load_dependency()`
