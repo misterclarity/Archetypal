@@ -4,30 +4,44 @@ Your birth chart is the source code, but life is the **Runtime Environment**. Th
 
 Understanding these milestones means you can plan your deployments around the maintenance calendar rather than waking up at 3am to an unexpected production outage.
 
+## Runtime Vocabulary
+
+Three words carry this chapter:
+
+- **Natal** — the value frozen in your source at birth. "Natal Saturn at 12° Virgo" is a constant.
+- **Transit** — the live value: where that planet is in the sky *today*. The planets keep orbiting after you're born; a transit is the running clock being read against the constant.
+- **Return** — the moment the live value equals the natal value again: one full orbit completed. Jupiter takes ~12 years, Saturn ~29.5, Chiron ~50. Uranus takes ~84, so within a working lifetime you get its half-way point—the *opposition*—at ~42.
+
+The ages below are not arbitrary; they are the orbital periods from the clock-speed table in Chapter 3, read as a calendar. Notation on the timeline: `1st Saturn return` = transiting Saturn conjunct natal Saturn; `Uranus opposition` = transiting Uranus opposite natal Uranus; `Pluto square` = transiting Pluto square natal Pluto. It is the same aspect grammar as Chapter 4, applied between a planet and its own birth position. Any chart tool will overlay today's transits on your natal chart—look for a "transits" tab—and will tell you the date your next return lands.
+
 ## The Deployment Timeline
 
 ```
 LIFE RUNTIME — MAJOR SCHEDULED MAINTENANCE WINDOWS
-═══════════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════
 
-Age:  0      12       24       29       36       42       50       59
-      │       │        │        │        │        │        │        │
-      ▼       ▼        ▼        ▼        ▼        ▼        ▼        ▼
-BIRTH ●───────●────────●────────●────────●────────●────────●────────●
-      │    1st ♃     2nd ♃   1st ♄    ♇ □ ♇    ♅ ☍ ♅    ⚷ Return  2nd ♄
-      │   Return    Return   Return   (varies)  Opposition          Return
-      │       │        │        │        │        │        │        │
-      │  ┌────┴────┐   │  ┌────┴────┐   │   ┌────┴────┐   │   ┌────┴────┐
-      │  │ FIRST   │   │  │ SYSTEM  │   │   │ MIDLIFE │   │   │ SENIOR  │
-      │  │ BRANCH  │   │  │ AUDIT   │   │   │ FORK    │   │   │ REVIEW  │
-      │  │ fork()  │   │  │ test()  │   │   │ rewrite()│  │   │ audit() │
-      │  └─────────┘   │  └─────────┘   │   └─────────┘   │   └─────────┘
-      │                │                │                  │
- ─────┴────────────────┴────────────────┴──────────────────┴──────────────
- Phase:  INIT       EXPANSION      STRUCTURAL TEST     REFACTOR     MASTERY
+Age      0       12      24      29      37      42      50      59
+         │       │       │       │       │       │       │       │
+BIRTH    ●───────●───────●───────●───────●───────●───────●───────●───►
+         │     1st     2nd     1st    nodal   Uranus  Chiron   2nd
+         │   Jupiter Jupiter Saturn  return   oppos.  return  Saturn
+         │   return  return  return  (18.6×2) (84÷2)  (50)    return
+         │
+         │   ┌────────┐       ┌────────┐       ┌────────┐       ┌────────┐
+         │   │ FIRST  │       │ SYSTEM │       │ MIDLIFE│       │ SENIOR │
+         │   │ BRANCH │       │ AUDIT  │       │ FORK   │       │ REVIEW │
+         │   │ fork() │       │ test() │       │ rewrite│       │ audit()│
+         │   └────────┘       └────────┘       └────────┘       └────────┘
+
+Phase:    INIT ──── EXPANSION ──── STRUCTURAL TEST ──── REFACTOR ──── MASTERY
+
+Not on a fixed age: Pluto square Pluto lands anywhere between ~36 and ~60
+depending on the generation (Pluto's orbit is eccentric). Also on the
+calendar: Saturn's quarter points (~7, ~15, ~22) and the nodal returns
+(~19, ~37, ~56).
 ```
 
-### 1. The 12th Year: The First Branch (Jupiter Return)
+## 1. The 12th Year: The First Branch (Jupiter Return)
 *   **The Trigger**: Jupiter completes its first full orbit (~12 years) and returns to its natal coordinate.
 *   **The Event**: The first major fork in the dependency tree. You step outside the default runtime environment (family nucleus) and begin installing your own third-party packages: worldview, peer group, personal interests. The dependencies you pull in during this window often become the load-bearing libraries of your adult architecture.
 *   **The Task**: Expand the scope. Let the `MULTIPLY` operator run without throttling it.
@@ -36,16 +50,18 @@ BIRTH ●───────●────────●──────�
 - *Jupiter in Sagittarius* returns to Sagittarius at age 12: The expansion impulse fires in its home context. The child discovers philosophy, travel, or a worldview that breaks the family bubble. This is the kid who reads encyclopedias, becomes obsessed with a foreign culture, or declares they are going to be a lawyer/priest/explorer.
 - *Jupiter in Virgo* returns to Virgo at age 12: The expansion impulse fires through service and analysis. The child discovers a craft, a skill, or a system to optimize. This is the kid who takes apart electronics, organizes the classroom library, or starts a small business selling handmade items.
 
-### 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
+## 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
 *   **The Trigger**: Saturn returns to its natal coordinate.
 *   **The Event**: The `LIMIT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
 *   **The Task**: Debugging under pressure. Accepting radical ownership of the architecture you have built. If you built on solid contracts, this audit is a promotion to senior. If you cut corners and shipped with known defects, this is a mandatory rewrite. There is no skipping the review.
 
 **Example — Saturn Return by Sign**:
 
-> **Saturn Return in Capricorn (occurring ~2018-2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
+Your chart lists your natal Saturn sign; Saturn spends ~2.5 years in each sign, so everyone in roughly a two-and-a-half-year birth window hits the return together.
+
+> **Saturn Return in Capricorn (born ~1988–1991; return hit ~2018–2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
 >
-> **Saturn Return in Aries (occurring ~2025-2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
+> **Saturn Return in Aries (born ~1996–1999; return hits ~2025–2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
 
 ```
  SATURN RETURN — THE TWO PATHS
@@ -69,7 +85,7 @@ BIRTH ●───────●────────●──────�
          └──────────┘    └──────────┘
 ```
 
-### 3. The Uranus Opposition: The Forced Upgrade (Age ~40-42)
+## 3. The Uranus Opposition: The Forced Upgrade (Age ~40–42)
 *   **The Trigger**: Transiting Uranus moves to the position directly opposite its natal coordinate.
 *   **The Event**: The `INTERRUPT` operator fires against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
 *   **The Task**: Upgrade the OS. Identify which modules were written to satisfy someone else's spec rather than your own, and begin the migration. This is the window where breaking changes are expected and architecturally appropriate.
@@ -77,7 +93,8 @@ BIRTH ●───────●────────●──────�
 **Example — Uranus Opposition in Practice**:
 > Consider someone born with Uranus in Leo (creative individual identity). At age 40-42, transiting Uranus in Aquarius opposes this placement. The system that has built its innovation identity around personal creative expression ("I am the genius") receives the interrupt: *"The network is more interesting than any single node. Can you innovate for the collective, not just for the applause?"* The person who was the brilliant solo performer is now challenged to become the brilliant systems architect.
 
-### 4. The Chiron Return: Patching the Legacy Bug (Age ~50)
+## 4. The Chiron Return: Patching the Legacy Bug (Age ~50)
+*   **The Operator**: Chiron (⚷), the `WONTFIX` operator from Chapter 3—the small body between Saturn and Uranus that marks the issue every release has shipped around. Its orbit is eccentric, so the return lands anywhere from 49 to 51.
 *   **The Trigger**: Chiron returns to its natal coordinate.
 *   **The Event**: A confrontation with the permanently open issue—the bug that has been in the tracker for decades with the label "won't fix." By age 50, you have enough runtime context to understand that some defects cannot be patched in isolation; they can only be refactored into a feature by changing the design around them.
 *   **The Task**: Close the issue—not by fixing it, but by reclassifying it. Convert the known limitation into documented behavior. Use your specific failure history as the foundation for a domain expertise that others cannot acquire without living it. The Elder is the developer who has seen every failure mode in production and mentors the team accordingly.
@@ -99,8 +116,8 @@ At 50, the Chiron return hits. The wound doesn't heal—it never does. She still
 
 The Chiron return doesn't fix the open issue. It reclassifies it from `"won't fix — defect"` to `"won't fix — documented behavior; see: domain expertise."`
 
-### 5. Pluto Square Pluto: Core Kernel Refactoring (Age ~36-60, varies by generation)
-*   **The Trigger**: Transiting Pluto moves to a square (90-degree) position relative to natal Pluto.
+## 5. Pluto Square Pluto: Core Kernel Refactoring (Age ~36–60, varies by generation)
+*   **The Trigger**: Transiting Pluto moves to a square (90-degree) position relative to natal Pluto. Because Pluto's orbit is highly eccentric, the age varies with the generation: those born from the mid-1950s to the early 1980s met it in their mid-to-late thirties—the earliest it ever comes, because the 90° arc straddled Pluto's 1989 perihelion, where it moves fastest; those born in the 1990s meet it in their mid-forties; those born in the early 1910s met it in their late fifties, and anyone born after 2000 will wait until their fifties or beyond as Pluto slows toward aphelion.
 *   **The Event**: A deep, sustained pressure-cooker phase targeting the kernel layer—the lowest-level abstractions of the psyche. Obsolete dependencies, held at the root level, are forcibly unlinked. This is not a feature update; it is a rewrite of the underlying architecture.
 *   **The Task**: Survive the reformat. Identify what is genuinely load-bearing versus what is just accumulated complexity with no current purpose. Strip to the indestructible core and rebuild from there.
 

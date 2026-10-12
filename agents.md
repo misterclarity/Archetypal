@@ -28,7 +28,7 @@ fleet:
 fleet:
   name: "quantum-research-fleet"
   purpose: "Autonomously research, validate, and synthesize briefing documents on emerging technology topics"
-  version: "2.1.0"
+  version: "2.2.0"
   owner: "research-ops-team"
   repository: "github.com/org/quantum-research-fleet"
   created: "2025-09-15"
@@ -56,7 +56,13 @@ agent:
     element: ""                     # Fire, Earth, Air, or Water
     modality: ""                    # Cardinal (init), Fixed (persist), Mutable (transform)
   description: ""                   # What this agent does in plain language
-  model: ""                         # LLM model identifier (e.g., claude-sonnet-4-6)
+  model: ""                         # LLM model identifier, e.g. claude-opus-5-5 for slow/deliberate
+                                    # roles, claude-haiku-5-5 for fast/classifier roles. Current IDs
+                                    # carry no date suffix; pin a dated snapshot only when the Saturn
+                                    # audit requires reproducibility.
+  tier: ""                          # "fast" (Moon handler) | "slow" (Sun prompt) | "code" (no model)
+  effort: ""                        # low | medium | high | xhigh | max -- the depth dial for the
+                                    # model's thinking. Both current models default to medium; set it.
   system_prompt: ""                 # Path to system prompt file or inline prompt
   tools: []                         # List of tools/APIs this agent can access
   input_schema: ""                  # Expected input format (JSON schema path or inline)
@@ -84,12 +90,15 @@ agent:
     circuit_breaker:
       failure_threshold: 0          # Number of failures before circuit opens
       recovery_timeout_seconds: 0   # Time before circuit half-opens
+    # Neptune / DISSOLVE -- Graceful degradation (what the agent does when its contracts are relaxed)
     degraded_mode: ""               # Behavior when operating in degraded state
 ```
 
 ### Example: Research Fleet Agents
 
-<!-- This fleet uses 4 archetypes from the research pipeline example in Chapter 7. -->
+<!-- This fleet declares seven agents: the six archetypes of the research pipeline example in -->
+<!-- Chapter 7, plus the Governor that owns the saturn: block. Declared is not deployed: see the -->
+<!-- axis audit below, which is where this manifest tells the truth about itself. -->
 
 #### Agent: Strategist
 
@@ -101,7 +110,9 @@ agent:
     element: "Fire"
     modality: "Mutable"
   description: "Decomposes research goals into sub-queries, sets success criteria, and determines research horizon"
-  model: "claude-sonnet-4-6"
+  model: "claude-opus-5-5"
+  tier: "slow"
+  effort: "high"
   system_prompt: "./prompts/strategist.md"
   tools:
     - "goal_decomposition"
@@ -142,7 +153,9 @@ agent:
     element: "Air"
     modality: "Mutable"
   description: "Dispatches sub-queries across multiple data sources in parallel, manages channel multiplexing and deduplication"
-  model: "claude-haiku-4-5-20251001"
+  model: "claude-haiku-5-5"
+  tier: "fast"
+  effort: "low"
   system_prompt: "./prompts/router.md"
   tools:
     - "arxiv_search"
@@ -185,7 +198,9 @@ agent:
     element: "Earth"
     modality: "Mutable"
   description: "Checks source credibility, cross-references claims, flags contradictions, enforces citation schema"
-  model: "claude-sonnet-4-6"
+  model: "claude-opus-5-5"
+  tier: "slow"
+  effort: "medium"
   system_prompt: "./prompts/validator.md"
   tools:
     - "citation_checker"
@@ -197,7 +212,7 @@ agent:
 
   dependencies:
     upstream: ["research-router"]
-    downstream: ["research-presenter"]
+    downstream: ["research-synthesizer"]
     shared_resources: ["credibility-database"]
 
   execution:
@@ -210,11 +225,54 @@ agent:
       retry_on: ["timeout"]
 
   fallback:
-    fallback_agent: "research-presenter"
+    fallback_agent: "research-synthesizer"
     circuit_breaker:
       failure_threshold: 2
       recovery_timeout_seconds: 120
     degraded_mode: "pass results with unvalidated flag, alert governor"
+```
+
+#### Agent: Synthesizer
+
+```yaml
+agent:
+  name: "research-synthesizer"
+  archetype: "Synthesizer"
+  sign:
+    element: "Water"
+    modality: "Mutable"
+  description: "Merges validated fragments into a coherent narrative, finds cross-domain patterns, and surfaces contradictions instead of smoothing them over"
+  model: "claude-opus-5-5"
+  tier: "slow"
+  effort: "high"
+  system_prompt: "./prompts/synthesizer.md"
+  tools:
+    - "semantic_similarity"
+    - "cross_domain_pattern_match"
+    - "narrative_merge"
+  input_schema: "./schemas/validated_results.json"
+  output_schema: "./schemas/synthesis.json"
+
+  dependencies:
+    upstream: ["research-validator"]
+    downstream: ["research-presenter"]
+    shared_resources: ["research-knowledge-base"]
+
+  execution:
+    trigger: "upstream_complete"
+    priority: "normal"
+    timeout_seconds: 120
+    retry_strategy:
+      max_retries: 1
+      backoff: "none"
+      retry_on: ["timeout"]
+
+  fallback:
+    fallback_agent: "research-presenter"
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_timeout_seconds: 180
+    degraded_mode: "pass validated fragments through unsynthesized, with gaps flagged 'no narrative'"
 ```
 
 #### Agent: Presenter
@@ -226,18 +284,20 @@ agent:
   sign:
     element: "Fire"
     modality: "Fixed"
-  description: "Formats validated research into executive summary, key findings, visual charts, and recommended actions"
-  model: "claude-sonnet-4-6"
+  description: "Formats the synthesized narrative into executive summary, key findings, visual charts, and recommended actions"
+  model: "claude-opus-5-5"
+  tier: "slow"
+  effort: "low"
   system_prompt: "./prompts/presenter.md"
   tools:
     - "markdown_formatter"
     - "chart_generator"
     - "executive_summary_template"
-  input_schema: "./schemas/validated_results.json"
+  input_schema: "./schemas/synthesis.json"
   output_schema: "./schemas/briefing_document.json"
 
   dependencies:
-    upstream: ["research-validator"]
+    upstream: ["research-synthesizer"]
     downstream: []
     shared_resources: ["output-templates"]
 
@@ -255,7 +315,93 @@ agent:
     circuit_breaker:
       failure_threshold: 3
       recovery_timeout_seconds: 180
-    degraded_mode: "output raw validated results as plaintext"
+    degraded_mode: "output the synthesized narrative as plaintext"
+```
+
+#### Agent: Auditor
+
+```yaml
+agent:
+  name: "research-auditor"
+  archetype: "Auditor"
+  sign:
+    element: "Water"
+    modality: "Fixed"
+  description: "Samples 10% of completed runs and scores the trajectory, not the artifact: did any branch cite a source it never retrieved? Did the synthesizer assert anything absent from the validated set? Purges stale credibility scores"
+  model: "claude-opus-5-5"
+  tier: "slow"
+  effort: "high"
+  system_prompt: "./prompts/auditor.md"
+  tools:
+    - "trajectory_sampler"
+    - "citation_trace_check"
+    - "credibility_purge"
+  input_schema: "./schemas/run_trajectory.json"
+  output_schema: "./schemas/audit_finding.json"
+
+  dependencies:
+    upstream: ["research-presenter"]
+    downstream: ["research-governor"]
+    shared_resources: ["credibility-database"]
+
+  execution:
+    trigger: "schedule"
+    priority: "normal"
+    timeout_seconds: 300
+    retry_strategy:
+      max_retries: 1
+      backoff: "none"
+      retry_on: ["timeout"]
+
+  fallback:
+    fallback_agent: null
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_timeout_seconds: 600
+    degraded_mode: "stop sampling and raise a finding: the fleet is running unaudited"
+```
+
+#### Agent: Governor
+
+```yaml
+agent:
+  name: "research-governor"
+  archetype: "Governor"
+  sign:
+    element: "Earth"
+    modality: "Cardinal"
+  description: "Owns the saturn: block. The LIMIT gate itself is deterministic code; this agent reviews escalations, budget freezes and audit findings, and is the only agent allowed to change thresholds"
+  model: "claude-opus-5-5"            # used for review only; the gate never calls a model
+  tier: "code"
+  effort: "high"
+  system_prompt: "./prompts/governor.md"
+  tools:
+    - "policy_engine"
+    - "budget_ledger"
+    - "threshold_registry"
+  input_schema: "./schemas/escalation.json"
+  output_schema: "./schemas/governor_ruling.json"
+
+  dependencies:
+    upstream: ["*"]
+    downstream: []
+    shared_resources: ["budget_ledger"]
+
+  execution:
+    trigger: "event"
+    priority: "critical"
+    timeout_seconds: 300
+    retry_strategy:
+      max_retries: 0
+      backoff: "none"
+      retry_on: []
+
+  fallback:
+    fallback_agent: null
+    circuit_breaker:
+      failure_threshold: 1
+      recovery_timeout_seconds: 0
+    degraded_mode: "fail closed: freeze the escalating agent until a human rules"
 ```
 
 ---
@@ -749,7 +895,7 @@ verification:
       - "PII redaction active on long-running sessions"
 
   judge:
-    model: "claude-sonnet-4-6"
+    model: "claude-opus-5-5"
     prompt_path: "./evals/judge_prompt.md"
     calibration_set_path: "./evals/human_labeled/"
     last_calibration_date: "2026-06-14"
@@ -843,6 +989,64 @@ durability:
 
 ---
 
+## Cognition Layer (The Moon / The Sun -- Fast and Slow Threads)
+
+The two-speed brain from Chapter 7. The fast thread classifies every input; the slow thread deliberates when the fast thread may not act alone; Saturn owns the thresholds; the learning loop turns slow decisions into fast examples. The keys mirror `brain/archetypal_brain.py` so the manifest and the code agree.
+
+```yaml
+brain:
+  fast_thread:                            # Moon / BUFFER
+    model: "claude-haiku-5-5"
+    effort: "low"
+    labels: ["Initiator", "Accumulator", "Router", "Guardian", "Presenter", "Validator",
+             "Mediator", "Auditor", "Strategist", "Governor", "Innovator", "Synthesizer"]
+    output_schema: "./schemas/moon_verdict.json"       # {sign, confidence, risk, rationale}
+    handler_registry: "./handlers/"
+    examples_per_call: 6                  # nearest Sun-labeled precedents pasted in as few-shot
+    max_latency_ms: 800
+    cache_system_prompt: true             # explicit breakpoint on the system block; engages only above the
+                                          # model's minimum cacheable prefix (check usage.cache_read_input_tokens)
+
+  slow_thread:                            # Sun / IDENTITY
+    model: "claude-opus-5-5"
+    effort_deliberate: "high"
+    effort_verify: "low"
+    output_schema: "./schemas/decision.json"           # {sign, action, response, risk, confidence, rationale, needs_human, rule}
+    max_latency_ms: 60000
+    complement_review: true               # the opposite archetype reviews before the handler runs
+
+  thresholds:                             # Saturn owns these; the Auditor only tightens them
+    reflex_confidence: 0.85               # Moon acts alone at or above this
+    verify_confidence: 0.70               # between verify and reflex: Sun checks the Moon's draft at low effort
+    reflex_max_novelty: 0.60              # 1.0 = nothing similar in memory
+    slow_only: ["Initiator", "Auditor", "Governor", "Innovator", "Strategist"]
+    risk_floor:                           # the Moon may raise a risk grade, never lower it below these
+      Initiator: "medium"
+      Auditor: "medium"
+      Governor: "medium"
+      Innovator: "medium"
+
+  hard_escalation:
+    on_forbidden_action: "hold_for_human"
+    on_irreversible_side_effect: "deliberate"
+    on_pii: "redact_before_anything_else"
+    on_budget_exhausted: "hold_for_human"        # a Sun that cannot run is never scored as a disagreement
+    on_api_error: "degrade"                      # Moon -> untrusted verdict; Sun -> hold; reviewer -> reject
+    on_complement_rejects_reflex: "interrupt"   # Uranus: one re-run on the slow thread
+
+  learning_loop:                          # South Node / ARCHIVE and North Node / IMPORT
+    decision_log: "./memory.jsonl"        # Taurus store; redacted text only (mock runs use memory.mock.jsonl)
+    examples_from: ["slow", "verify"]     # reflex-only records are never training examples
+    shadow_every: 10                      # Scorpio: every Nth reflex re-judged by the Sun at low effort
+    shadow_window: 10                     # the tighten rule's evidence window; stale disagreements expire
+    tighten_rule: "shadow-check disagreement > 0.20 over the last shadow_window shadow checks -> reflex_confidence += 0.02, one step per window, persisted in memory.policy.json"
+    loosen_rule: "never automatic; human sign-off in a maintenance window"
+    pluto_rebuild: "keep the last 500 Sun-labeled records; drop reflex-only records"
+    import_signal: "inputs with novelty > 0.8 counted at the Jupiter review -> candidate new handler"
+```
+
+---
+
 ## Agent Pairings (The Six Axes)
 
 <!-- Never deploy one pole without its complement. -->
@@ -898,13 +1102,20 @@ axis_audit:
   service:
     validator:   { declared: true,  deployed: true }    # research-validator
     synthesizer: { declared: true,  deployed: false }   # WARNING: declared only.
-    # Validator approval rate is 31% and falling. This is Virgo overload
+    # research-synthesizer is in the registry above and in nobody's process
+    # list. Validator approval rate is 31% and falling. This is Virgo overload
     # with the Pisces complement written down but never started.
   substance:
-    accumulator: { declared: true,  deployed: true }
-    auditor:     { declared: true,  deployed: false }   # CRITICAL: no trajectory
-    # sampling is running. Reward hacking and prompt drift are undetectable
-    # in this fleet until a customer finds them.
+    accumulator: { declared: false, deployed: false }   # WARNING: research-knowledge-base
+    # and credibility-database are persisted by nobody. Give the knowledge base
+    # an Accumulator owner at the next Jupiter review.
+    auditor:     { declared: true,  deployed: false }   # CRITICAL: research-auditor is
+    # declared; no trajectory sampling is running. Reward hacking and prompt
+    # drift are undetectable in this fleet until a customer finds them.
+  foundation:
+    guardian:    { declared: false, deployed: false }   # ACCEPTABLE: public sources, no PII
+    # in the pipeline (saturn.content_filters.pii_detection still runs at the gate).
+    governor:    { declared: true,  deployed: true }    # research-governor
   expression:
     presenter:   { declared: true,  deployed: true }    # research-presenter
     innovator:   { declared: false, deployed: false }   # ACCEPTABLE: fleet does
@@ -951,6 +1162,8 @@ failure_review:
 <!-- Map how your agents are wired together. -->
 <!-- Conjunctions are fast but fragile. Oppositions are resilient but slow. -->
 <!-- Squares are where your incidents will come from. Trines are your happy paths. -->
+<!-- Measure the angle between the two agents' signs (Chapter 4): same element = trine, -->
+<!-- same modality = square or opposition, nothing shared = quincunx. Do not guess. -->
 
 ### Conjunctions (Tightly Coupled Agents)
 
@@ -996,35 +1209,63 @@ squares: []
 <!-- These agents flow naturally into each other. Protect these paths. -->
 
 ```yaml
-trines:
+trines: []
   # - agents: ["agent_a", "agent_b"]
   #   data_flow: "a -> b"
-  #   format_compatibility: "native"
+  #   format_compatibility: "native"   # a's output_schema IS b's input_schema, no adapter
   #   throughput_target: ""
+```
+
+### Quincunxes (Adapter Required)
+
+<!-- No shared element, no shared modality, no common protocol. Name the adapter and its owner. -->
+
+```yaml
+quincunxes: []
+  # - agents: ["agent_a", "agent_b"]
+  #   adapter: ""                      # Path to the translation layer
+  #   risk: "No shared format -- silent drift between the two sides"
+  #   mitigation: ""
 ```
 
 #### Example: Research Fleet Topology
 
 ```yaml
 trines:
-  - agents: ["research-strategist", "research-router"]
-    data_flow: "strategist -> router"
-    format_compatibility: "native (research_plan.json)"
-    throughput_target: "< 5s handoff"
-
-  - agents: ["research-router", "research-validator"]
-    data_flow: "router -> validator"
-    format_compatibility: "native (raw_results.json)"
-    throughput_target: "< 10s handoff"
-
-  - agents: ["research-validator", "research-presenter"]
-    data_flow: "validator -> presenter"
-    format_compatibility: "native (validated_results.json)"
+  - agents: ["research-strategist", "research-presenter"]    # Fire -> Fire (Sagittarius -> Leo, 120°)
+    data_flow: "strategist -> presenter"
+    format_compatibility: "native (research_plan.json sections become the briefing skeleton)"
     throughput_target: "< 3s handoff"
 
-squares: []
-  # No contention points in this pipeline -- all agents are sequential.
-  # If a parallel validation agent is added, document the square here.
+oppositions:
+  - agents: ["research-strategist", "research-router"]       # Mind axis: Sagittarius <-> Gemini, 180°
+    communication_channel: "redis queue: research_plans"
+    latency_budget_ms: 5000
+    risk: "Router starts fetching before the plan is final"
+    mitigation: "plans are versioned; router consumes only plans marked final"
+  - agents: ["research-validator", "research-synthesizer"]   # Service axis: Virgo <-> Pisces, 180°
+    communication_channel: "redis queue: validated_results"
+    latency_budget_ms: 10000
+    risk: "Synthesizer merges fragments the validator later rejects"
+    mitigation: "synthesizer consumes only results with validation_status: passed"
+
+squares:
+  - agents: ["research-router", "research-validator"]        # both Mutable: Gemini -> Virgo, 90°
+    contested_resource: "raw_results throughput (router floods, validator gates)"
+    conflict_resolution: "agent_b_wins"                      # the validator sets the acceptance rate
+    risk: "Validator backlog starves the pipeline"
+    mitigation: "router honours validator backpressure; queue depth triggers jupiter scale-up"
+  - agents: ["jupiter.auto_scale", "saturn.rate_limits"]     # the Mars/Saturn square from Chapter 7
+    contested_resource: "concurrent_agents_max (4) vs max_instances_per_agent (3) x 7 agents = 21"
+    conflict_resolution: "agent_b_wins"                      # Saturn sets the ceiling; Jupiter scales within it
+    risk: "scale-up events that can never be honoured; queue_depth trigger fires forever"
+    mitigation: "auto_scale reads concurrent_agents_max as its hard cap; alert when cap-bound > 15 min"
+
+quincunxes:
+  - agents: ["research-synthesizer", "research-presenter"]   # Pisces -> Leo, 150°: no shared element or modality
+    adapter: "./adapters/synthesis_to_briefing.py"
+    risk: "Narrative prose does not map cleanly onto rich sections"
+    mitigation: "synthesizer emits section anchors the presenter keys on"
 ```
 
 ---
@@ -1045,6 +1286,7 @@ jupiter_cycle:
     - "Identify overloaded agents for scaling"
     - "Evaluate new tool integrations"
     - "Run axis balance audit"
+    - "Review the brain's handler-usage histogram and high-novelty inputs (North Node)"
     - "Update fleet version if capabilities changed"
   owner: ""
 ```
@@ -1060,6 +1302,7 @@ saturn_cycle:
     - "Verify all API endpoints are active and returning fresh data"
     - "Audit all system prompts for drift and contradictions"
     - "Confirm all fallback paths and circuit breakers are functional"
+    - "Re-run shadow evaluation: Moon vs Sun agreement per label; tighten any label below 0.85"
     - "Review and renew all authentication credentials"
     - "Validate that escalation channels are monitored"
     - "Run full integration test across entire pipeline"
@@ -1077,6 +1320,7 @@ uranus_trigger:
     - "Regulatory requirement mandates architecture change"
     - "Core dependency deprecated with no backward compatibility"
     - "Performance degradation exceeds acceptable threshold for 30+ days"
+    - "A reflex label's Moon-vs-Sun agreement collapses (re-baseline thresholds after any model swap)"
   migration_playbook: ""                  # Path to migration procedure
   rollback_playbook: ""                   # Path to rollback procedure
   estimated_downtime: ""
@@ -1087,7 +1331,7 @@ uranus_trigger:
 ```yaml
 pluto_trigger:
   trigger_conditions:
-    - "Entire model family replaced (e.g., GPT-3.5 era -> GPT-4 era -> next gen)"
+    - "Entire model family replaced (one generation of models -> the next)"
     - "Infrastructure provider migration (e.g., AWS -> GCP)"
     - "Fundamental architectural redesign required"
     - "Fleet purpose has changed beyond original design parameters"
@@ -1134,6 +1378,15 @@ monitoring:
       - "error_rate_percent"
       - "token_usage_per_agent"
       - "queue_depth"
+      # the brain's own metrics (Cognition Layer)
+      - "reflex_hit_rate"               # fast decisions / all decisions
+      - "moon_sun_disagreement"         # per label, from verify + shadow comparisons
+      - "escalation_rate"               # decisions held for a human / all decisions
+      - "interrupt_rate"                # reflexes overruled by the complement review
+      - "novelty_p95"                   # rising = the world changed, the cache is stale
+      - "cost_per_decision_usd"
+      - "p95_latency_fast_ms"
+      - "p95_latency_slow_ms"
 ```
 
 #### Example: Research Fleet Monitoring
@@ -1168,6 +1421,18 @@ monitoring:
         condition: "any source last_updated > 24 hours"
         severity: "warning"
         action: "notify"
+      - name: "reflex_rot"
+        condition: "moon_sun_disagreement > 0.20 over last 100 comparisons for any label"
+        severity: "warning"
+        action: "notify -- tighten reflex_confidence; move the label to slow_only until the Saturn audit"
+      - name: "novelty_surge"
+        condition: "novelty_p95 up 50% week over week"
+        severity: "warning"
+        action: "notify -- North Node candidate; review at the Jupiter cycle"
+      - name: "fast_path_collapse"
+        condition: "reflex_hit_rate < 0.50 for 24h"
+        severity: "info"
+        action: "notify -- cost review"
 
   metrics:
     collection_interval_seconds: 60
@@ -1178,6 +1443,12 @@ monitoring:
       - "error_rate_percent"
       - "token_usage_per_agent"
       - "queue_depth"
+      - "reflex_hit_rate"
+      - "moon_sun_disagreement"
+      - "escalation_rate"
+      - "interrupt_rate"
+      - "novelty_p95"
+      - "cost_per_decision_usd"
 ```
 
 ---
@@ -1296,6 +1567,7 @@ security:
     on_detection: ""                      # "block" | "redact" | "encrypt" | "flag"
     redaction_pattern: ""                 # e.g., "[REDACTED]" or "***"
     audit_pii_access: false               # Whether to log all PII access events
+    redact_before_model_or_memory: true   # the brain's Guardian step: models and the decision log see redacted text only
 
   audit_trail:
     enabled: false
@@ -1336,10 +1608,22 @@ security:
         - "read:credibility_database"
         - "read:raw_results"
         - "write:validated_results"
-      research-presenter:
+      research-synthesizer:
         - "read:validated_results"
+        - "write:synthesis"
+      research-presenter:
+        - "read:synthesis"
         - "read:output_templates"
         - "write:briefing_documents"
+      research-auditor:
+        - "read:run_trajectories"
+        - "read:credibility_database"
+        - "write:audit_findings"
+        - "purge:credibility_database"
+      research-governor:
+        - "read:*"
+        - "write:thresholds"
+        - "write:budget_ledger"
 
   data_classification:
     levels: ["public", "internal", "confidential"]
@@ -1354,6 +1638,7 @@ security:
     on_detection: "redact"
     redaction_pattern: "[REDACTED]"
     audit_pii_access: true
+    redact_before_model_or_memory: true
 
   audit_trail:
     enabled: true
@@ -1375,7 +1660,7 @@ security:
 
 <!-- Use this table to select the right archetype for your agent's purpose. -->
 
-| If your agent needs to... | Use Archetype | Sign | Operator |
+| If your agent needs to... | Use Archetype | Sign | Ruling Operator |
 |---|---|---|---|
 | Start new tasks fast with no dependencies | **Initiator** | Aries | `VECTOR` |
 | Maintain long-running state reliably | **Accumulator** | Taurus | `BIND` |
@@ -1440,6 +1725,11 @@ preflight:
     - "[ ] Credentials are scoped and short-lived"
     - "[ ] Human approval gates exist for irreversible actions only"
     - "[ ] Blast radius statement written down and believed"
+
+  cognition:
+    - "[ ] brain.thresholds match the tightened values persisted beside memory.jsonl"
+    - "[ ] slow_only set and risk floors declared; no deploy is ever a reflex"
+    - "[ ] shadow_every set; reflex-only records are never training examples"
 
   meta:
     - "[ ] axis_audit distinguishes DECLARED from DEPLOYED"

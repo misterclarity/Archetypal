@@ -1,6 +1,6 @@
 > **Disclaimer:** This book is provided for educational and entertainment purposes only. It was expanded upon by an LLM based on an idea hatched during years of my own experience, intuitive insights, and research. Once the main body was done, I edited and added to it. I assume no responsibility or liability for any damage, loss, or disruption, whether financial, professional, physical, or mental, incurred from the study or implementation of the concepts, principles, or methodologies described. Apply at your own risk. Test in staging first. Saturn would insist.
 
-**Printing this book is possible by scrolling the sidebar all the way to the bottom and clicking the Print Book icon.**
+**Printing this book:** scroll the sidebar to the bottom and click *Print Book* (on a phone, use the *Print* button in the top bar). A plain-markdown copy of the whole book for pasting into an LLM is linked as *TLDR* in the same place.
 
 # Introduction: The Code of Consciousness
 
@@ -107,27 +107,27 @@ There is a persistent misconception that chaos and order are enemies—that a sy
 
 This principle is encoded directly in the Zodiac at the boundary between **Pisces** and **Aries**—the cusp of rebirth, the point where the cycle's address space wraps from 359° back to 0°.
 
-**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **low-symmetry, ordered phase** perceived as stillness (think deep meditation states). Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
+**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **high-symmetry, undifferentiated phase** perceived as stillness (think deep meditation states)—every point in the field is equivalent to every other. Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
 
-Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The low-symmetry disorder built up by Pisces' boundaryless uniformity gives rise to emergent order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
+Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The high-symmetry uniformity built up by Pisces' boundarylessness gives rise to emergent, lower-symmetry order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
 
 ```
  CUSP OF REBIRTH: CHAOS → EMERGENT ORDER
 
- ♓ Pisces (330°-359°)        ♈ Aries (0°-29°)
+ Pisces (330°–359°)          Aries (0°–29°)
  ┌──────────────────┐        ┌──────────────────┐
  │ All boundaries   │        │ First boundary   │
- │ dissolved        │   ⚡   │ asserted         │
+ │ dissolved        │ BREAK  │ asserted         │
  │                  │ ─────► │                  │
- │ Uniform field    │ BREAK  │ Differentiated   │
- │ (low-symmetry    │        │ state (emergent  │
- │  chaos)          │        │ order)           │
+ │ Uniform field    │        │ Differentiated   │
+ │ (high-symmetry   │        │ state (symmetry  │
+ │  chaos)          │        │ broken: order)   │
  └──────────────────┘        └──────────────────┘
    Deterministic but           Specific, directed,
    unpredictable               self-referencing
 ```
 
-In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
+In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. Note the direction: in physics the uniform phase is the *high*-symmetry one—liquid water looks the same from every angle; an ice lattice does not. Symmetry breaking always runs from more symmetric to less, from Pisces to Aries. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
 
 This is why the Zodiac is not a line but a **cycle**. Dissolution feeds initiation. The end state of maximum entropy is simultaneously the precondition for maximum differentiation. Every Aries impulse carries the residue of the Piscean ocean it emerged from, and every Piscean surrender carries the seed of the Aries spark that will break it open again.
 
@@ -144,44 +144,58 @@ Your birth chart is not a prediction of your fate. Treating it as the **Source C
 
 To understand this system, we will use a new set of analogies grounded in logic and geometry:
 
-*   **The Signs are Coordinates**: They are not lists of traits, but the X and Y axes of a 360-degree field—a continuous address space, not a fixed `enum`.
+*   **The Signs are Coordinates**: They are not lists of traits, but twelve 30° segments of a circular, 360-degree address space—a ring, not a fixed `enum`.
 *   **The Planets are Operators**: They are the functions (`IF`, `THEN`, `AND`, `NOT`) that execute commands within that field.
 *   **The Aspects are Circuits**: They are the wires connecting the operators, forming the logic gates that govern how your internal modules communicate.
 
 ### The Architecture at a Glance
 
-```
-┌─────────────────────────────────────────────────┐
-│               THE BIRTH CHART                   │
-│                                                 │
-│  ┌──────────────┐    ┌──────────────┐           │
-│  │   SIGNS      │    │   PLANETS    │           │
-│  │ (Coordinates)│    │ (Operators)  │           │
-│  │              │    │              │           │
-│  │ Aries ♈  0° │    │ ☉ Sun  = IDENTITY()     │
-│  │ Taurus ♉ 30°│    │ ☽ Moon = BUFFER()       │
-│  │ Gemini ♊ 60°│    │ ☿ Merc = IO_STREAM()   │
-│  │ Cancer ♋ 90°│    │ ♀ Ven  = BIND()         │
-│  │ Leo ♌  120° │    │ ♂ Mars = VECTOR()       │
-│  │ Virgo ♍ 150°│    │ ♃ Jup  = MULTIPLY()    │
-│  │ Libra ♎ 180°│    │ ♄ Sat  = LIMIT()        │
-│  │ Scorp ♏ 210°│    │ ♅ Ura  = INTERRUPT()    │
-│  │ Sagit ♐ 240°│    │ ♆ Nep  = DISSOLVE()     │
-│  │ Capri ♑ 270°│    │ ♇ Plu  = REFORMAT()     │
-│  │ Aquar ♒ 300°│    └──────────────┘           │
-│  │ Pisces♓ 330°│                               │
-│  └──────────────┘    ┌──────────────┐           │
-│                      │   ASPECTS    │           │
-│                      │  (Circuits)  │           │
-│                      │              │           │
-│                      │ ☌  0° = MERGE│           │
-│                      │ ☍180° = MIRROR│          │
-│                      │ □ 90° = BLOCK│           │
-│                      │ △120° = FLOW │           │
-│                      │ ⚹ 60° = LINK│           │
-│                      └──────────────┘           │
-└─────────────────────────────────────────────────┘
-```
+The three tables below are the complete vocabulary of that grammar. Every glyph in this book is defined here (and again in the Appendix); bookmark it.
+
+**Signs — the coordinates.** Each sign is a 30° segment of the ring, typed by an element (what kind of payload) and a modality (what lifecycle phase). Chapter 1 explains both.
+
+| Glyph | Sign | Degrees | Element / Modality |
+|---|---|---|---|
+| ♈ | Aries | 0°–29° | Fire / Cardinal |
+| ♉ | Taurus | 30°–59° | Earth / Fixed |
+| ♊ | Gemini | 60°–89° | Air / Mutable |
+| ♋ | Cancer | 90°–119° | Water / Cardinal |
+| ♌ | Leo | 120°–149° | Fire / Fixed |
+| ♍ | Virgo | 150°–179° | Earth / Mutable |
+| ♎ | Libra | 180°–209° | Air / Cardinal |
+| ♏ | Scorpio | 210°–239° | Water / Fixed |
+| ♐ | Sagittarius | 240°–269° | Fire / Mutable |
+| ♑ | Capricorn | 270°–299° | Earth / Cardinal |
+| ♒ | Aquarius | 300°–329° | Air / Fixed |
+| ♓ | Pisces | 330°–359° | Water / Mutable |
+
+**Planets — the operators.** Chapter 3 defines each one.
+
+| Glyph | Operator | Function |
+|---|---|---|
+| ☉ | Sun | `IDENTITY()` — the main thread |
+| ☽ | Moon | `BUFFER()` — the cache layer |
+| ☿ | Mercury | `IO_STREAM()` — the data bus |
+| ♀ | Venus | `BIND()` — connection and value |
+| ♂ | Mars | `VECTOR()` — directed force |
+| ♃ | Jupiter | `MULTIPLY()` — expansion |
+| ♄ | Saturn | `LIMIT()` — constraint and validation |
+| ♅ | Uranus | `INTERRUPT()` — disruption |
+| ♆ | Neptune | `DISSOLVE()` — boundary removal |
+| ♇ | Pluto | `REFORMAT()` — irreversible rebuild |
+| ⚷ | Chiron | `WONTFIX()` — the permanently open issue |
+| ☊ / ☋ | North / South Node | `IMPORT()` / `ARCHIVE()` — the growth axis |
+
+**Aspects — the circuits.** The angle between two operators, measured the short way round the ring. Chapter 4 defines each one.
+
+| Glyph | Angle | Aspect | Circuit |
+|---|---|---|---|
+| ☌ | 0° | Conjunction | Merge — one monolith |
+| ⚹ | 60° | Sextile | Link — a helper path |
+| □ | 90° | Square | Block — a deadlock |
+| △ | 120° | Trine | Flow — a superconductor |
+| ⚻ | 150° | Quincunx | Shim — no shared ABI |
+| ☍ | 180° | Opposition | Mirror — a distributed pair |
 
 You've already seen one sentence of this language—Mars in Gemini, Square Saturn. By the end of this book, you will read the full source.
 
@@ -193,6 +207,25 @@ Every concept in this book is explained through programming metaphors: signs as 
 
 You do not need any prior knowledge of astrology. You do not need to "believe" in anything. The only prerequisite is a willingness to try on a new vocabulary and see if it helps you articulate patterns you already sense in yourself but haven't had language for.
 
+### Before You Start: Pull Your Own Source
+
+Everything from Chapter 1 onward is more useful with your own chart open in another tab. A **birth chart** (also *natal chart*) is a computed snapshot of where every planet sat along the zodiac ring at the moment you were born, as seen from the place you were born. It is calculated, not interpreted—any two tools given the same inputs produce the same chart. The "sign" people ask about at parties is your Sun sign; it is one of roughly fifteen placements in the file.
+
+You need three inputs:
+
+| Input | What it fixes | If you don't have it |
+|---|---|---|
+| **Date of birth** | The Sun and every slow operator (Jupiter → Pluto) | Required. No chart without it. |
+| **Time of birth** (to the minute, local time) | The **Rising sign** (the sign on the eastern horizon at your birth minute—your chart tool labels it **ASC** or *Ascendant*; it changes every ~2 hours) and the Moon's exact degree (the Moon changes sign every ~2.5 days) | Check your birth certificate or hospital record. If unknown, enter 12:00, ignore the Rising sign, and treat the Moon sign as "probable." Everything else in this book still works. |
+| **Place of birth** (city is enough) | The horizon the Rising sign is measured against | Needed for Rising only. |
+
+Feed those into any free natal chart calculator (search the phrase; astro.com and astro-seek.com are long-standing options that need no account). If it asks for a *house system*, pick anything—this book doesn't use houses. Save two outputs:
+
+1. **The placement list** — each planet with its sign and degree, e.g. `Venus 15° Scorpio`. That is the `operator @ coordinate` notation this book uses.
+2. **The aspect table** (often a triangular grid of symbols) — which planet pairs sit at 0°, 60°, 90°, 120°, 150° or 180° from each other, within tolerance. That is your circuit diagram (Chapter 4).
+
+Ignore the numbered houses, "Part of Fortune," and anything else you don't recognize for now. The Appendix has a legend for every glyph you'll see, and Chapter 2 says more about the Rising sign and why the birth time matters.
+
 ## The Goal: "Debugging" the Self
 
 Why learn this? Because an unexamined system runs on default loops. We repeat the same errors, encounter the same failure modes in our relationships, and hit the same architectural ceilings—not because the "stars are against us," but because we are running a script we have never bothered to read, let alone profile.
@@ -202,6 +235,9 @@ Treating your recurring problems as a stack trace—and your chart as the codeba
 It is a guide to escalating your own access level: from **passive User** executing someone else's code, to **root**—the operator with full administrative privileges and commit access to your own life.
 
 It is time to stop running other people's binaries and start writing your own.
+
+---
+
 # Chapter 1: The Geometry of Signs (The Coordinate System)
 
 ## Beyond the Flat Enum: A Field, Not a Lookup Table
@@ -210,39 +246,41 @@ In pop psychology and newspaper horoscopes, the Zodiac is often modeled as a fla
 
 To understand the source code of your psyche, you must stop treating the signs as isolated value objects in a flat schema and start treating them as **coordinates in a 360-degree continuous address space**.
 
-Just as a pixel on a screen is defined by its X and Y position within the coordinate grid—not by membership in a category—every planet in your birth chart occupies a specific degree within the ecliptic. This background field—the Zodiac—is the coordinate system against which the logical operators (the planets) execute their functions. The sign is not *what* a planet is; it is *where* it is executing, and that location determines its behavior.
+Just as an index into a ring buffer is defined by its offset—not by membership in a category—every planet in your birth chart occupies a specific degree on the **ecliptic**: the circular path the Sun appears to trace through the sky over a year, which is the ring the Zodiac is laid out along. The address space is one-dimensional and circular, 0° to 359°, wrapping. Each sign is a 30° page of that ring. This background field—the Zodiac—is the coordinate system against which the logical operators (the planets) execute their functions. The sign is not *what* a planet is; it is *where* it is executing, and that location determines its behavior.
 
 ```
-                    ♋ Cancer (90°)
+                     Capricorn (270°)
                          |
-            ♊ Gemini     |     ♌ Leo
-              (60°)      |      (120°)
+              Aquarius   |   Sagittarius
+               (300°)    |      (240°)
                   \      |      /
                    \     |     /
-     ♉ Taurus (30°) \   |   / ♍ Virgo (150°)
+       Pisces (330°) \   |   / Scorpio (210°)
                       \  |  /
                        \ | /
-     ♈ Aries (0°) ------+------ ♎ Libra (180°)
+          Aries (0°) ----+---- Libra (180°)
                        / | \
                       /  |  \
-     ♓ Pisces (330°)/   |   \ ♏ Scorpio (210°)
+        Taurus (30°) /   |   \ Virgo (150°)
                    /     |     \
                   /      |      \
-            ♒ Aquarius   |   ♐ Sagittarius
-              (300°)     |      (240°)
+               Gemini    |    Leo
+                (60°)    |    (120°)
                          |
-                   ♑ Capricorn (270°)
+                     Cancer (90°)
 ```
 
-**Example**: When we say "Venus is at 15° Scorpio," we mean the `BIND` operator is executing at coordinate 225° in the ecliptic field—not that Venus "is" a Scorpio personality, but that the attraction-and-connection function is running in the Scorpio execution context: deep, intense, all-or-nothing binding with a built-in garbage collection cycle for anything that fails the loyalty test.
+Longitude increases counter-clockwise, exactly as on the chart wheel your calculator will draw—but a real chart is rotated so that your Rising degree sits on the left-hand horizon line, and the sign at 9 o'clock is whatever was rising when you were born. The order of the signs never changes; only the rotation does. The diagram above is the special case of 0° Aries rising.
+
+**Example**: When we say "Venus is at 15° Scorpio," we mean the `BIND` operator is executing at coordinate 225° in the ecliptic field (`address = sign_base + offset` → Scorpio starts at 210°, plus 15°)—not that Venus "is" a Scorpio personality, but that the attraction-and-connection function is running in the Scorpio execution context: deep, intense, all-or-nothing binding with a built-in garbage collection cycle for anything that fails the loyalty test. Your chart tool prints the sign-relative form; the absolute degree is what the aspect math in Chapter 4 runs on.
 
 ## The Axis of Reflection: Linear Transformation
 
 The most critical architectural pattern in the astrological system is the **Axis**.
 
-In computer graphics and linear algebra, a **reflection** is a mapping from a Euclidean space to itself: an isometry with a hyperplane as its set of fixed points. For every point in space, there is a mirror image across that plane. Mutate one side and the other side changes to compensate.
+In linear algebra, the map that sends every point on the wheel to its opposite is a **point reflection** through the origin: `x ↦ −x`. In two dimensions this is identical to rotating the wheel by 180°. It is an isometry—distances are preserved—whose only fixed point is the center, and it is its own inverse: `reflect(reflect(x)) == x`. Every coordinate has exactly one antipode, and the pair is rigid: move one end and the other moves with it. (A mirror reflection across the wheel's vertical axis would pair Taurus with Leo—across its horizontal axis, with Aquarius; the Zodiac pairs Taurus with Scorpio. The six axes are the six diameters of the wheel, not six mirrors.)
 
-Astrology operates on the same invariant. No sign exists in isolation; every sign is defined relationally by its opposite. Polarity is not a feature of the system—it *is* the system.
+Astrology operates on the same invariant. No sign exists in isolation; every sign is defined relationally by its opposite. The axis is not a feature of the system—it *is* the system.
 
 - **Aries** (Self) has no computable definition without **Libra** (Other).
 - **Taurus** (Form) carries no stable value without **Scorpio** (Transformation).
@@ -305,24 +343,34 @@ Finally, it helps to model the signs not as hard-edged discrete types, but as a 
 
 Every sign occupies a unique cell in this 4×3 matrix. No two signs share both an element and a modality—each has a unique type signature.
 
+The four **Elements** are the data types the operators work on—what kind of payload a process running in that sign handles:
+
+- **Fire** — energy and action. Payload: impulse, will, momentum.
+- **Earth** — structure and matter. Payload: resources, bodies, build artifacts.
+- **Air** — information and relation. Payload: messages, ideas, protocols.
+- **Water** — emotion and state. Payload: feelings, memory, attachment.
+
+Element is the *type*; modality is the *lifecycle phase*. Twelve signs = four types × three phases.
+
 ```
-              🔥 FIRE        🌍 EARTH       🌬️ AIR        💧 WATER
-            (Energy)      (Structure)    (Information)  (Emotion)
-           ─────────────────────────────────────────────────────────
- CARDINAL  │  ♈ Aries    │  ♑ Capricorn │  ♎ Libra    │  ♋ Cancer  │
- (Init)    │  new Fire()  │  new Earth() │  new Air()   │  new Water()│
-           ─────────────────────────────────────────────────────────
- FIXED     │  ♌ Leo      │  ♉ Taurus   │  ♒ Aquarius │  ♏ Scorpio │
- (Persist) │  Fire.lock() │  Earth.lock()│  Air.lock()  │  Water.lock()│
-           ─────────────────────────────────────────────────────────
- MUTABLE   │  ♐ Sagitt.  │  ♍ Virgo    │  ♊ Gemini   │  ♓ Pisces  │
- (Transform)│  Fire.adapt()│  Earth.adapt()│ Air.adapt() │  Water.adapt()│
-           ─────────────────────────────────────────────────────────
+              FIRE           EARTH          AIR            WATER
+            (Energy)       (Structure)    (Information)  (Emotion)
+            ─────────────────────────────────────────────────────────────
+ CARDINAL   │ Aries        │ Capricorn    │ Libra        │ Cancer       │
+ (Init)     │ new Fire()   │ new Earth()  │ new Air()    │ new Water()  │
+            ─────────────────────────────────────────────────────────────
+ FIXED      │ Leo          │ Taurus       │ Aquarius     │ Scorpio      │
+ (Persist)  │ Fire.lock()  │ Earth.lock() │ Air.lock()   │ Water.lock() │
+            ─────────────────────────────────────────────────────────────
+ MUTABLE    │ Sagittarius  │ Virgo        │ Gemini       │ Pisces       │
+ (Transform)│ Fire.adapt() │ Earth.adapt()│ Air.adapt()  │ Water.adapt()│
+            ─────────────────────────────────────────────────────────────
 ```
 
 **Reading the Grid**:
-- Signs sharing an **Element** (same column) have compatible runtime environments—they speak the same language and data flows easily between them. Fire signs share the `Energy` type; Earth signs share the `Structure` type.
-- Signs sharing a **Modality** (same row) have the same lifecycle phase but different element domains—they compete for the same class of resource with incompatible strategies. This is the source of Square aspects (90° angles).
+- Signs sharing an **Element** (same column) have compatible runtime environments—they speak the same language and data flows easily between them. Fire signs share the `Energy` type; Earth signs share the `Structure` type. This is the source of Trine aspects (120°).
+- Signs sharing a **Modality** (same row) have the same lifecycle phase but different element domains—they compete for the same class of resource with incompatible strategies. This is the source of Square aspects (90°)—and of Oppositions (180°), which also pair two signs of the same modality. Rule of thumb: Trines run down a column; Squares and Oppositions run across a row.
+- Elements also alternate in **polarity**: Fire and Air are the outward, expressive types; Earth and Water are the inward, receptive types. Fire pairs naturally with Air and Earth with Water—the "compatible elements" behind the Sextile (60°). Think of polarity as a parity bit on the sign index: even signs (Aries, Gemini, Leo, ...) are outward, odd signs (Taurus, Cancer, Virgo, ...) are inward.
 
 **Example**: Mars in Aries (Cardinal Fire) and Mars in Cancer (Cardinal Water) are both trying to initialize a new process—but Aries spawns with raw velocity and zero dependencies, while Cancer spawns only after establishing a secure boundary. Same lifecycle stage, fundamentally different execution environments. This architectural mismatch is the friction engine that Squares create.
 
@@ -333,20 +381,20 @@ Elements are runtime environments. Two operators in compatible elements exchange
 ```
   DATA EXCHANGE BETWEEN ELEMENTS
 
-              FIRE      EARTH      AIR       WATER
-            ────────────────────────────────────────
-   FIRE    │  native  │  friction │  fuels  │ steam  │
-           │  △ trine │  □ square │ ⚹ sextile│□ square│
-            ────────────────────────────────────────
-   EARTH   │ friction │  native   │ friction│ nourish│
-           │  □ square│  △ trine  │ □ square│⚹ sextile│
-            ────────────────────────────────────────
-   AIR     │  fuels   │  friction │ native  │friction│
-           │ ⚹ sextile│  □ square │ △ trine │□ square│
-            ────────────────────────────────────────
-   WATER   │  steam   │  nourish  │ friction│ native │
-           │  □ square│ ⚹ sextile │ □ square│△ trine │
-            ────────────────────────────────────────
+               FIRE        EARTH        AIR        WATER
+           ─────────────────────────────────────────────────
+   FIRE    │  native   │ friction  │   fuels   │   steam   │
+           │  △ trine  │ □ square  │ ⚹ sextile │ □ square  │
+           ─────────────────────────────────────────────────
+   EARTH   │ friction  │  native   │ friction  │  nourish  │
+           │ □ square  │  △ trine  │ □ square  │ ⚹ sextile │
+           ─────────────────────────────────────────────────
+   AIR     │   fuels   │ friction  │  native   │ friction  │
+           │ ⚹ sextile │ □ square  │  △ trine  │ □ square  │
+           ─────────────────────────────────────────────────
+   WATER   │   steam   │  nourish  │ friction  │  native   │
+           │ □ square  │ ⚹ sextile │ □ square  │  △ trine  │
+           ─────────────────────────────────────────────────
 
    native  (△)  same element: zero-impedance, shared types
    fuels   (⚹)  Fire↔Air, Earth↔Water: compatible, needs
@@ -358,6 +406,8 @@ Elements are runtime environments. Two operators in compatible elements exchange
      Air feeds Fire.        Water nourishes Earth.
      Water quenches Fire.   Earth smothers Air.
 ```
+
+(Strictly, two signs of incompatible elements form a Square only when they also share a modality; otherwise the mismatch is a Quincunx or the minor 30° step. Chapter 4 has the full table.)
 
 **Example**: Mercury in Gemini (Air) and Jupiter in Libra (Air) share a runtime. Ideas serialize between them with no loss—the person thinks in conversation and their conclusions arrive already social. Mercury in Gemini and Saturn in Virgo (Air meets Earth) do not share a runtime. Every fast, exploratory thought must be marshalled into a structure that demands proof before it will accept the object. That is not a defect. That is the mismatch that eventually produces someone who can think fast *and* be right.
 
@@ -412,6 +462,9 @@ By modeling the signs as a dynamic, geometrical coordinate system with typed lif
 A coordinate system tells you where a function is running. It does not tell you what's missing. For that you need the pairs.
 
 In the next chapter, we will inspect the six specific Axes of Reflection: the core binary constraints of the human operating system—the map of which function was never mounted.
+
+---
+
 # Chapter 2: The Six Axes (Complementary Pairs)
 
 If the Zodiac is a coordinate system, the **Axes** are the primary constraint pairs—coupled equations where you cannot solve for one variable without considering its complement. In the "Archetypal Operating System," the signs don't operate as independent modules; they are **tightly coupled interfaces**. Every sign exports a contract that its opposite is designed to fulfill.
@@ -425,7 +478,7 @@ This is the primary runtime context: the tension between the executing process a
 
 *   **Aries (The Spark)**: The raw `EXECUTE` command. It initializes the process, asserts a direction, and acts with subjective velocity. No dependency injection; it runs from internal state alone.
 *   **Libra (The Mirror)**: The `COMPARE` function. It evaluates the output of an action against an external reference point—the other process in the system. It seeks equilibrium by negotiating rather than asserting.
-*   **The Coupling**: Aries calls Libra to observe the side effects of its own execution. Libra calls Aries to recover the agent of choice it has outsourced to external consensus.
+*   **The Coupling**: Aries calls Libra to observe the side effects of its own execution. Libra calls Aries to recover the agency it has outsourced to external consensus.
 *   **The Integration**: Asserting direction (Aries) without introducing breaking changes to the shared system (Libra). Maintaining compatibility (Libra) without sacrificing the clarity of your own interface contract (Aries).
 
 **Worked Example — Venus on this Axis**:
@@ -433,12 +486,12 @@ This is the primary runtime context: the tension between the executing process a
 - *Venus in Libra*: The `BIND` operator runs in Other-first mode. Attraction is mediated through harmony-seeking negotiation. The system forms connections by mirroring: `"I want what you want; let us find the shared interface."` Elegant contract negotiation; risk of outsourcing the entire preference set.
 
 ```
-    ♈ ARIES                                    ♎ LIBRA
-  ┌──────────┐     Axis of Identity      ┌──────────┐
-  │ "I act"  │◄─────────────────────────►│ "We agree"│
-  │ EXECUTE  │    Self ◄────► Other      │ COMPARE   │
-  │ assert() │                           │ evaluate()│
-  └──────────┘                           └──────────┘
+    ARIES                                   LIBRA
+  ┌─────────────┐     Axis of Identity      ┌─────────────┐
+  │ "I act"     │◄─────────────────────────►│ "We agree"  │
+  │ EXECUTE     │     Self ◄────► Other     │ COMPARE     │
+  │ assert()    │                           │ evaluate()  │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 2. The Axis of Substance (Taurus <-> Scorpio)
@@ -448,7 +501,7 @@ This axis manages resource allocation and lifecycle—what the system retains in
 
 *   **Taurus (The Garden)**: The `PERSIST` operation. It writes to stable storage, builds redundancy, and resists state changes. It optimizes for durability and uptime. Its anti-pattern is memory leak: holding references that should have been released.
 *   **Scorpio (The Composter)**: The `PURGE` and `MERGE` operations. It runs the garbage collector, dereferences obsolete objects, and forces the destructive updates that enable regeneration. Its anti-pattern is destroying state before a replacement is ready.
-*   **The Coupling**: Taurus provides the stable container that Scorpio's intensity requires a vessel for. Scorpio runs the cleanup cycle that prevents Taurus from heap overflow.
+*   **The Coupling**: Taurus provides the stable container that Scorpio's intensity requires. Scorpio runs the cleanup cycle that prevents Taurus from heap overflow.
 *   **The Integration**: Maintaining persistent state (Taurus) while accepting that long-lived objects must eventually be garbage-collected (Scorpio). Building security (Taurus) while engaging in the deep merges that allow for genuine transformation (Scorpio).
 
 **Worked Example — The Moon on this Axis**:
@@ -456,12 +509,12 @@ This axis manages resource allocation and lifecycle—what the system retains in
 - *Moon in Scorpio*: The `BUFFER` function runs through deep encryption and compression. Emotional processing is intense, all-or-nothing, and never shallow. The cache holds everything—including what should have been garbage-collected years ago. `"I feel everything, and I delete nothing."`
 
 ```
-    ♉ TAURUS                                   ♏ SCORPIO
-  ┌──────────┐     Axis of Substance     ┌──────────┐
-  │ "I have" │◄─────────────────────────►│ "I purge"│
-  │ PERSIST  │   Form ◄────► Transform   │ MERGE    │
-  │ retain() │                           │ release()│
-  └──────────┘                           └──────────┘
+    TAURUS                                  SCORPIO
+  ┌─────────────┐     Axis of Substance     ┌─────────────┐
+  │ "I have"    │◄─────────────────────────►│ "I purge"   │
+  │ PERSIST     │   Form ◄────► Transform   │ MERGE       │
+  │ retain()    │                           │ release()   │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 3. The Axis of Mind (Gemini <-> Sagittarius)
@@ -479,12 +532,12 @@ This is the axis of information processing—from raw input to derived meaning.
 - *Mercury in Sagittarius*: The `IO_STREAM` operator trades bandwidth for depth. It runs a single, high-priority thread that synthesizes rather than collects. Communication is big-picture, philosophical, sometimes preachy. `"I don't want the data points—give me the thesis statement."`
 
 ```
-    ♊ GEMINI                                ♐ SAGITTARIUS
-  ┌──────────┐       Axis of Mind        ┌──────────┐
-  │ "I learn"│◄─────────────────────────►│"I believe"│
-  │ GET_DATA │   Data ◄────► Inference   │ EVALUATE  │
-  │ collect()│                           │ synthesize()│
-  └──────────┘                           └──────────┘
+    GEMINI                                  SAGITTARIUS
+  ┌─────────────┐       Axis of Mind        ┌─────────────┐
+  │ "I learn"   │◄─────────────────────────►│ "I believe" │
+  │ GET_DATA    │   Data ◄────► Inference   │ EVALUATE    │
+  │ collect()   │                           │ synthesize()│
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 4. The Axis of Foundation (Cancer <-> Capricorn)
@@ -502,12 +555,12 @@ This axis represents the infrastructure split between the internal runtime and t
 - *Saturn in Capricorn*: The `LIMIT` operator is in its native domain—the public build server. Structure, hierarchy, and career are taken with dead seriousness. The deployment pipeline has zero tolerance for untested code. `"I will not ship until every test passes. The build is sacred."`
 
 ```
-    ♋ CANCER                                 ♑ CAPRICORN
-  ┌──────────┐     Axis of Foundation    ┌──────────┐
-  │ "I feel" │◄─────────────────────────►│ "I build"│
-  │ PROTECT  │  Private ◄────► Public    │ COMPILE  │
-  │ secure() │                           │ deploy() │
-  └──────────┘                           └──────────┘
+    CANCER                                  CAPRICORN
+  ┌─────────────┐    Axis of Foundation     ┌─────────────┐
+  │ "I feel"    │◄─────────────────────────►│ "I build"   │
+  │ PROTECT     │   Private ◄────► Public   │ COMPILE     │
+  │ secure()    │                           │ deploy()    │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 5. The Axis of Expression (Leo <-> Aquarius)
@@ -525,12 +578,12 @@ This axis governs the relationship between the individual process and the distri
 - *Sun in Aquarius*: The `IDENTITY` function is defined through network contribution. The ego process runs as a mesh node rather than a central server. Identity is sourced from ideas, community, and systemic thinking. `"I am not the server; I am the protocol that connects them."`
 
 ```
-    ♌ LEO                                    ♒ AQUARIUS
-  ┌──────────┐     Axis of Expression    ┌──────────┐
-  │"I create"│◄─────────────────────────►│"I connect"│
-  │ RENDER   │ Individual ◄──► Collective│ BROADCAST │
-  │ display()│                           │ distribute()│
-  └──────────┘                           └──────────┘
+    LEO                                     AQUARIUS
+  ┌─────────────┐    Axis of Expression     ┌─────────────┐
+  │ "I create"  │◄─────────────────────────►│ "I connect" │
+  │ RENDER      │Individual ◄──► Collective │ BROADCAST   │
+  │ display()   │                           │ distribute()│
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 6. The Axis of Service (Virgo <-> Pisces)
@@ -548,12 +601,12 @@ This is the axis of functional reality—how the system interfaces with the worl
 - *Jupiter in Pisces*: The `MULTIPLY` operator scales the event bus. Empathy, imagination, and spiritual receptivity expand without boundaries. The system absorbs every signal on the wire without filtering. `"I feel the entire network's traffic, and it is all meaningful."` Risk: the system floods and loses the ability to distinguish signal from noise.
 
 ```
-    ♍ VIRGO                                  ♓ PISCES
-  ┌──────────┐      Axis of Service      ┌──────────┐
-  │"I refine"│◄─────────────────────────►│"I dissolve"│
-  │ LINT     │   Order ◄────► Surrender  │ STREAM    │
-  │ debug()  │                           │ flow()    │
-  └──────────┘                           └──────────┘
+    VIRGO                                   PISCES
+  ┌─────────────┐      Axis of Service      ┌─────────────┐
+  │ "I refine"  │◄─────────────────────────►│ "I dissolve"│
+  │ LINT        │  Order ◄────► Surrender   │ STREAM      │
+  │ debug()     │                           │ flow()      │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## Reading an Axis: The Three States
@@ -621,9 +674,9 @@ You now know the six axes—the core binary constraints of the human operating s
 
 ### First, Your Data—and One Term You Haven't Met
 
-To do any of this on yourself you need three inputs: **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
+If you skipped the Introduction's *Before You Start* box: to do any of this on yourself you need three inputs, **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
 
-The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—a term the next table uses and this book has not yet defined. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
+The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—the term the Introduction's inputs table glossed and the next table relies on. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
 
 If you do not know your birth time, you do not know your Rising sign. Say so honestly, work from Sun and Moon, and the method still holds—you have the CPU and the cache; you are missing the interface spec. Do not guess it from how you think you come across. That is the one input the framework cannot infer.
 
@@ -633,8 +686,8 @@ If you do not know your birth time, you do not know your Rising sign. Say so hon
 
 A complete chart reading produces a **system architecture diagram**. At its simplest, it starts with the "Big Three"—the base image of your operating system:
 
-| Layer | Planet | Sign | Function |
-|-------|--------|------|----------|
+| Layer | Point | Sign | Function |
+|-------|-------|------|----------|
 | Public API (Interface) | Rising | Libra ♎ | Harmony-first interface |
 | Core CPU (Identity) | Sun | Capricorn ♑ | Structural processing |
 | Cache Layer (Emotional) | Moon | Aries ♈ | Fast, hot reactive state |
@@ -651,53 +704,29 @@ You don't need to wait until Chapter 6 to start using the axes. Here is the most
 
 When a recurring pattern surfaces, identify the symptom, check which axis is likely overloaded, and consciously invoke the complementary function—not as a suppression of the original, but as the missing operand that completes the equation.
 
-```
-┌──────────────────┬───────────────┬──────────────────────────┐
-│  SYMPTOM         │  CHECK        │  LIKELY PATCH            │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Impulsive       │  ♂ Mars / ♈  │  Invoke ♎ Libra:         │
-│  action, burning │  Aries        │  "What is the cost to    │
-│  bridges         │  overload     │   the shared system?"    │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Paralysis,      │  ♄ Saturn / ♍│  Invoke ♓ Pisces:        │
-│  cannot ship     │  Virgo        │  "Ship at 80%. Accept    │
-│  or decide       │  overload     │   the ambiguity."        │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  People-pleasing,│  ♀ Venus / ♎ │  Invoke ♈ Aries:         │
-│  lost preferences│  Libra        │  "What do I want,        │
-│                  │  overload     │   independent of         │
-│                  │               │   consensus?"            │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Emotional       │  ☽ Moon / ♋  │  Invoke ♑ Capricorn:     │
-│  flooding,       │  Cancer       │  "Build a container.     │
-│  overwhelm       │  overload     │   Name the feeling.      │
-│                  │               │   Give it form."         │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Workaholism,    │  ☉ Sun / ♑   │  Invoke ♋ Cancer:        │
-│  cannot stop     │  Capricorn    │  "Return to private      │
-│  building        │  loop         │   state. Rest is not     │
-│                  │               │   weakness."             │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Info overload,  │  ☿ Merc / ♊  │  Invoke ♐ Sagittarius:   │
-│  too many open   │  Gemini       │  "What is the thesis?    │
-│  tabs            │  overload     │   Close everything       │
-│                  │               │   that isn't it."        │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Rigidity, fear  │  ♉ Taurus    │  Invoke ♏ Scorpio:       │
-│  of change       │  persistence  │  "What must be garbage-  │
-│  or loss         │  loop         │   collected to free      │
-│                  │               │   memory?"               │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Isolation,      │  ♌ Leo       │  Invoke ♒ Aquarius:      │
-│  "nobody sees    │  foreground   │  "Contribute to a system │
-│  the real me"    │  loop         │   bigger than your       │
-│                  │               │   own UI."               │
-└──────────────────┴───────────────┴──────────────────────────┘
-```
+| Symptom | Check | Likely Patch |
+|---|---|---|
+| Impulsive action, burning bridges | ♂ Mars / ♈ Aries overload | Invoke ♎ Libra: "What is the cost to the shared system?" |
+| Paralysis, cannot ship or decide | ♄ Saturn / ♍ Virgo overload | Invoke ♓ Pisces: "Ship at 80%. Accept the ambiguity." |
+| People-pleasing, lost preferences | ♀ Venus / ♎ Libra overload | Invoke ♈ Aries: "What do I want, independent of consensus?" |
+| Emotional flooding, overwhelm | ☽ Moon / ♋ Cancer overload | Invoke ♑ Capricorn: "Build a container. Name the feeling. Give it form." |
+| Workaholism, cannot stop building | ☉ Sun / ♑ Capricorn loop | Invoke ♋ Cancer: "Return to private state. Rest is not weakness." |
+| Info overload, too many open tabs | ☿ Mercury / ♊ Gemini overload | Invoke ♐ Sagittarius: "What is the thesis? Close everything that isn't it." |
+| Rigidity, fear of change or loss | ♉ Taurus persistence loop | Invoke ♏ Scorpio: "What must be garbage-collected to free memory?" |
+| Isolation, "nobody sees the real me" | ♌ Leo foreground loop | Invoke ♒ Aquarius: "Contribute to a system bigger than your own UI." |
+| Obsession, cannot let go, control | ♇ Pluto / ♏ Scorpio overload | Invoke ♉ Taurus: "What is already stable and enough? Stop digging." |
+| Grand theories, preaching, no evidence | ♃ Jupiter / ♐ Sagittarius overload | Invoke ♊ Gemini: "What does the raw data say? Fetch before you infer." |
+| Detachment, everyone is a node, nobody is a person | ♅ Uranus / ♒ Aquarius overload | Invoke ♌ Leo: "Render one warm, specific signal. Sign your work." |
+| Drift, no boundaries, no error handling | ♆ Neptune / ♓ Pisces overload | Invoke ♍ Virgo: "Add one validation gate. Name one concrete next step." |
 
-This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch.
+This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch. Twelve rows, six axes, each diagnosable in both directions.
+
+In Chapter 7 these twelve questions get a second job: when an autonomous agent built on this framework makes a decision, the archetype on the opposite end of the axis asks exactly this question before the decision ships.
 
 The six axes are the map of what can go missing. The next chapter is about what runs on them: *find the function that was never mounted* only works once you know what the functions are.
+
+---
+
 # Chapter 3: The Planetary Operators (The Logic Functions)
 
 If the signs are the coordinate field (the "Where"), the planets are the active execution layer (the "What"). In this algebraic framework, we strip away the mythological personas of the gods and treat them as **Logical Operators**: typed functions with specific signatures that process state and execute commands within the psyche's runtime.
@@ -742,8 +771,31 @@ Not all operators run at the same layer. They differ in orbital speed, and orbit
   Moon, Mercury, Venus, or Mars.
 ```
 
+### Operator Clock Speeds
+
+The stack above sorts operators by layer. This table turns the same orbital periods into a schedule: when an operator completes a full lap and returns to its natal coordinate, or reaches the quarter- and half-way points, the system gets a scheduled maintenance window. Chapter 5 is built entirely on it.
+
+| Operator | Glyph | One full cycle | Changes sign every | Natal return at age | Opposition at age | Tier |
+|---|---|---|---|---|---|---|
+| Moon | ☽ | 27.3 days | ~2.5 days | every month | — | luminary |
+| Mercury | ☿ | 1 year as seen from Earth (88-day orbit) | ~3–4 weeks | every year (with the Sun) | — | personal |
+| Venus | ♀ | 1 year as seen from Earth (225-day orbit) | ~4 weeks | every year (with the Sun) | — | personal |
+| Sun | ☉ | 1 year | ~1 month | every birthday | — | luminary |
+| Mars | ♂ | 1.9 years | ~6–7 weeks | ~2, 4, 6 … | — | personal |
+| Jupiter | ♃ | 11.9 years | ~1 year | ~12, 24, 36, 48, 60 | ~6, 18, 30 … | social |
+| Saturn | ♄ | 29.5 years | ~2.5 years | ~29, 59, 88 | ~15, 44 | social |
+| Chiron | ⚷ | 50.4 years | 2–8 years (eccentric orbit) | ~50 | varies | minor body |
+| Uranus | ♅ | 84 years | ~7 years | ~84 | ~42 | outer / generational |
+| Neptune | ♆ | 164.8 years | ~14 years | never in one life | ~82 (square at ~41) | outer / generational |
+| Pluto | ♇ | 247.9 years | 12–30 years | never in one life | — (square at ~36–60, varies by generation) | outer / generational |
+| Lunar Nodes | ☊ ☋ | 18.6 years (moving backwards) | ~1.5 years | ~19, 37, 56 | ~9, 28, 46 | axis |
+
+Mercury and Venus orbit inside Earth's orbit, so from here they never get far from the Sun—at most ~28° and ~47°—and their lap around the ring, the lap the return column counts, takes a year regardless of their 88- and 225-day trips around the Sun.
+
+Read it as a cron table. The fast operators return so often that their returns are noise; the slow ones return so rarely that each return is a version bump.
+
 ## The Constants (The Luminaries)
-These are the core binaries of consciousness: the process identity and its stateful context.
+These are the core binaries of consciousness: the process identity and its stateful context. (*Luminaries* is astrology's word for the two lights—the Sun and the Moon—which the chart ranks as its two most important operators even though neither is, astronomically, a planet.)
 
 ### The Sun: The `IDENTITY` Function
 *   **The Operator**: `define self()`
@@ -783,80 +835,66 @@ These operators handle the daily I/O throughput and interaction with the immedia
 *   **The Logic**: Mercury is the data bus. It handles the ingestion of sensory and informational input and the serialization of internal state into communicable output. It is the logic of the protocol layer itself—the syntax rules that determine whether a message is well-formed and transmissible.
 *   **Syntax**: `"I think [Sign]."`
 
-**Mercury: Quick Reference Across All Twelve Signs**
+**Mercury: Quick Reference Across All Twelve Signs** — *"How does the system process and transmit data?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ☿ MERCURY — The IO_STREAM Operator:                 │
-│  "How does the system process and transmit data?"    │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Direct transmit. io(blunt, low_latency)   │
-│ ♉ Taurus │ Slow, considered. io(deliberate, durable) │
-│ ♊ Gemini │ Max bandwidth. io(parallel, multi_channel)│
-│ ♋ Cancer │ Emotional codec. io(intuitive, guarded)   │
-│ ♌ Leo    │ Dramatic signal. io(expressive, warm)     │
-│ ♍ Virgo  │ Precise payload. io(analytical, detailed) │
-│ ♎ Libra  │ Balanced output. io(diplomatic, fair)     │
-│ ♏ Scorpio│ Deep scan. io(probing, encrypted)         │
-│ ♐ Sagitt.│ Big-picture. io(philosophical, broad)     │
-│ ♑ Capri. │ Structured msg. io(formal, hierarchical)  │
-│ ♒ Aquar. │ Unconventional. io(innovative, systemic)  │
-│ ♓ Pisces │ Poetic stream. io(intuitive, impressions) │
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct transmit | `io(blunt, low_latency)` |
+| ♉ Taurus | Slow, considered | `io(deliberate, durable)` |
+| ♊ Gemini | Max bandwidth | `io(parallel, multi_channel)` |
+| ♋ Cancer | Emotional codec | `io(intuitive, guarded)` |
+| ♌ Leo | Dramatic signal | `io(expressive, warm)` |
+| ♍ Virgo | Precise payload | `io(analytical, detailed)` |
+| ♎ Libra | Balanced output | `io(diplomatic, fair)` |
+| ♏ Scorpio | Deep scan | `io(probing, encrypted)` |
+| ♐ Sagittarius | Big-picture | `io(philosophical, broad)` |
+| ♑ Capricorn | Structured message | `io(formal, hierarchical)` |
+| ♒ Aquarius | Unconventional | `io(innovative, systemic)` |
+| ♓ Pisces | Poetic stream | `io(intuitive, impressions)` |
 
 ### Venus: The `BIND` Operator
 *   **The Operator**: `bind()` / `merge()`
 *   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
 *   **Syntax**: `"I value [Sign]."`
 
-**Venus: Quick Reference Across All Twelve Signs**
+**Venus: Quick Reference Across All Twelve Signs** — *"How does the system form connections and value?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ♀ VENUS — The BIND Operator:                        │
-│  "How does the system form connections and value?"   │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Direct pursuit. bind(assertive, fast)     │
-│ ♉ Taurus │ Sensory loyalty. bind(steady, physical)   │
-│ ♊ Gemini │ Curious flirting. bind(verbal, varied)    │
-│ ♋ Cancer │ Protective bond. bind(nurturing, deep)    │
-│ ♌ Leo    │ Grand romance. bind(generous, dramatic)   │
-│ ♍ Virgo  │ Acts of service. bind(practical, modest)  │
-│ ♎ Libra  │ Equal partnership. bind(balanced, fair)   │
-│ ♏ Scorpio│ Total merge. bind(intense, all_or_none)   │
-│ ♐ Sagitt.│ Freedom-loving. bind(adventurous, open)   │
-│ ♑ Capri. │ Status-aware. bind(committed, traditional)│
-│ ♒ Aquar. │ Intellectual. bind(unconventional, friend) │
-│ ♓ Pisces │ Oceanic. bind(compassionate, boundaryless)│
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct pursuit | `bind(assertive, fast)` |
+| ♉ Taurus | Sensory loyalty | `bind(steady, physical)` |
+| ♊ Gemini | Curious flirting | `bind(verbal, varied)` |
+| ♋ Cancer | Protective bond | `bind(nurturing, deep)` |
+| ♌ Leo | Grand romance | `bind(generous, dramatic)` |
+| ♍ Virgo | Acts of service | `bind(practical, modest)` |
+| ♎ Libra | Equal partnership | `bind(balanced, fair)` |
+| ♏ Scorpio | Total merge | `bind(intense, all_or_none)` |
+| ♐ Sagittarius | Freedom-loving | `bind(adventurous, open)` |
+| ♑ Capricorn | Status-aware | `bind(committed, traditional)` |
+| ♒ Aquarius | Intellectual | `bind(unconventional, friend)` |
+| ♓ Pisces | Oceanic | `bind(compassionate, boundaryless)` |
 
 ### Mars: The `VECTOR` Operator
 *   **The Operator**: `force()` / `separate()`
 *   **The Logic**: Mars is the directed force—a vector with both magnitude and heading. It acts to separate the subject from the object in order to achieve a defined objective. Where Venus creates dependencies, Mars severs them. It resolves tension by applying directional pressure until the blocking constraint is removed.
 *   **Syntax**: `"I act [Sign]."`
 
-**Mars: Quick Reference Across All Twelve Signs**
+**Mars: Quick Reference Across All Twelve Signs** — *"How does the system apply force?"*
 
-```
-┌────────────────────────────────────────────────────────────────────┐
-│  ♂ MARS — The VECTOR Operator: "How does the system apply force?" │
-├──────────┬─────────────────────────────────────────────────────────┤
-│ ♈ Aries  │ Direct strike. force(max_velocity, zero_delay)         │
-│ ♉ Taurus │ Slow, unstoppable push. force(steady, no_timeout)      │
-│ ♊ Gemini │ Multi-vector assault. force(scatter, parallel_threads) │
-│ ♋ Cancer │ Defensive perimeter. force(protect, if_threatened)     │
-│ ♌ Leo    │ Dramatic offensive. force(display, demand_recognition) │
-│ ♍ Virgo  │ Precision strike. force(targeted, error_checked)       │
-│ ♎ Libra  │ Strategic negotiation. force(indirect, via_consensus)  │
-│ ♏ Scorpio│ Surgical elimination. force(hidden, total_commitment)  │
-│ ♐ Sagitt.│ Broadside barrage. force(wide_arc, philosophical)      │
-│ ♑ Capri. │ Calculated campaign. force(long_term, hierarchical)    │
-│ ♒ Aquar. │ System disruption. force(unconventional, detached)     │
-│ ♓ Pisces │ Passive resistance. force(dissolve_boundary, absorb)   │
-└──────────┴─────────────────────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Direct strike | `force(max_velocity, zero_delay)` |
+| ♉ Taurus | Slow, unstoppable push | `force(steady, no_timeout)` |
+| ♊ Gemini | Multi-vector assault | `force(scatter, parallel_threads)` |
+| ♋ Cancer | Defensive perimeter | `force(protect, if_threatened)` |
+| ♌ Leo | Dramatic offensive | `force(display, demand_recognition)` |
+| ♍ Virgo | Precision strike | `force(targeted, error_checked)` |
+| ♎ Libra | Strategic negotiation | `force(indirect, via_consensus)` |
+| ♏ Scorpio | Surgical elimination | `force(hidden, total_commitment)` |
+| ♐ Sagittarius | Broadside barrage | `force(wide_arc, philosophical)` |
+| ♑ Capricorn | Calculated campaign | `force(long_term, hierarchical)` |
+| ♒ Aquarius | System disruption | `force(unconventional, detached)` |
+| ♓ Pisces | Passive resistance | `force(dissolve_boundary, absorb)` |
 
 ## The Social & Outer Operators
 These operators handle the scaling, structuring, and transformation of the system at the architectural level.
@@ -866,32 +904,24 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
-**Jupiter: Quick Reference Across All Twelve Signs**
+**Jupiter: Quick Reference Across All Twelve Signs** — *"What does the system scale up without being told?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ♃ JUPITER — The MULTIPLY Operator:                  │
-│  "What does the system scale up without being told?" │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Scales courage. grow(initiative, risk)    │
-│ ♉ Taurus │ Scales resources. grow(comfort, assets)   │
-│ ♊ Gemini │ Scales curiosity. grow(inputs, contacts)  │
-│ ♋ Cancer │ Scales care. grow(belonging, feeding)     │
-│ ♌ Leo    │ Scales presence. grow(generosity, stage)  │
-│ ♍ Virgo  │ Scales refinement. grow(process, service) │
-│ ♎ Libra  │ Scales fairness. grow(alliances, taste)   │
-│ ♏ Scorpio│ Scales depth. grow(intensity, leverage)   │
-│ ♐ Sagitt.│ Scales meaning. grow(scope, conviction)   │
-│ ♑ Capri. │ Scales authority. grow(standing, mandate) │
-│ ♒ Aquar. │ Scales the network. grow(reach, ideology) │
-│ ♓ Pisces │ Scales empathy. grow(compassion, drift)   │
-└──────────┴───────────────────────────────────────────┘
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Scales courage | `grow(initiative, risk)` |
+| ♉ Taurus | Scales resources | `grow(comfort, assets)` |
+| ♊ Gemini | Scales curiosity | `grow(inputs, contacts)` |
+| ♋ Cancer | Scales care | `grow(belonging, feeding)` |
+| ♌ Leo | Scales presence | `grow(generosity, stage)` |
+| ♍ Virgo | Scales refinement | `grow(process, service)` |
+| ♎ Libra | Scales fairness | `grow(alliances, taste)` |
+| ♏ Scorpio | Scales depth | `grow(intensity, leverage)` |
+| ♐ Sagittarius | Scales meaning | `grow(scope, conviction)` |
+| ♑ Capricorn | Scales authority | `grow(standing, mandate)` |
+| ♒ Aquarius | Scales the network | `grow(reach, ideology)` |
+| ♓ Pisces | Scales empathy | `grow(compassion, drift)` |
 
-  Jupiter has no brake. Whatever sits in this coordinate
-  gets multiplied WHETHER OR NOT it should be. This is why
-  Jupiter placements read as "luck" from the outside and
-  "I cannot stop doing this" from the inside.
-```
+Jupiter has no brake. Whatever sits in this coordinate gets multiplied *whether or not it should be*. This is why Jupiter placements read as "luck" from the outside and "I cannot stop doing this" from the inside.
 
 **Example — Jupiter in Gemini vs Jupiter in Scorpio**: Same operator, opposite scaling targets. Jupiter in Gemini multiplies inputs—forty open tabs, six side projects, three languages half-learned, an inbox that is functionally a landfill. Abundance of *breadth*. Jupiter in Scorpio multiplies intensity—there are four things in this person's life and all four are total. Abundance of *depth*. Neither is more fortunate. Each is over-supplied in exactly the dimension the other is starved in, and each finds the other's life unimaginable.
 
@@ -900,33 +930,34 @@ These operators handle the scaling, structuring, and transformation of the syste
 *   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
 
-**Saturn: Quick Reference Across All Twelve Signs**
+**Saturn: Quick Reference Across All Twelve Signs** — *"Where does the system enforce constraints?"*
 
-```
-┌──────────────────────────────────────────────────────┐
-│  ♄ SATURN — The LIMIT Operator:                      │
-│  "Where does the system enforce constraints?"        │
-├──────────┬───────────────────────────────────────────┤
-│ ♈ Aries  │ Identity test. limit(self_assertion)      │
-│ ♉ Taurus │ Resource audit. limit(material_security)  │
-│ ♊ Gemini │ Speech check. limit(communication)        │
-│ ♋ Cancer │ Emotional wall. limit(vulnerability)      │
-│ ♌ Leo    │ Performance bar. limit(self_expression)   │
-│ ♍ Virgo  │ Precision demand. limit(quality_control)  │
-│ ♎ Libra  │ Fairness audit. limit(relationships)      │
-│ ♏ Scorpio│ Trust gate. limit(intimacy, control)      │
-│ ♐ Sagitt.│ Belief test. limit(philosophy, scope)     │
-│ ♑ Capri. │ Authority check. limit(hierarchy, career) │
-│ ♒ Aquar. │ Systems bound. limit(innovation, freedom) │
-│ ♓ Pisces │ Reality anchor. limit(boundaries, escape) │
-└──────────┴───────────────────────────────────────────┘
-```
+| Sign | Mode | Signature |
+|---|---|---|
+| ♈ Aries | Identity test | `limit(self_assertion)` |
+| ♉ Taurus | Resource audit | `limit(material_security)` |
+| ♊ Gemini | Speech check | `limit(communication)` |
+| ♋ Cancer | Emotional wall | `limit(vulnerability)` |
+| ♌ Leo | Performance bar | `limit(self_expression)` |
+| ♍ Virgo | Precision demand | `limit(quality_control)` |
+| ♎ Libra | Fairness audit | `limit(relationships)` |
+| ♏ Scorpio | Trust gate | `limit(intimacy, control)` |
+| ♐ Sagittarius | Belief test | `limit(philosophy, scope)` |
+| ♑ Capricorn | Authority check | `limit(hierarchy, career)` |
+| ♒ Aquarius | Systems bound | `limit(innovation, freedom)` |
+| ♓ Pisces | Reality anchor | `limit(boundaries, escape)` |
 
 **Saturn in Two Contrasting Signs** — The same compiler, different rulesets:
 
 > **Saturn in Gemini**: The `LIMIT` operator constrains the data bus. Communication is tested for precision; no sloppy output passes the review. The system learns slowly but speaks with earned authority. *Think: a compiler that rejects code with any ambiguous syntax.*
 >
 > **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims are subjected to rigorous testing. Belief must be earned, not assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
+
+### Chiron: The `WONTFIX` Operator
+*   **The Operator**: `known_issue()` / `work_around()`
+*   **The Logic**: Chiron (⚷) is not one of the classical planets. It is a small body orbiting between Saturn and Uranus—between the `LIMIT` and the `INTERRUPT`—and astrology reads it as the system's permanently open issue: the defect that Saturn could not validate away and Uranus could not patch out. Every release has shipped around it. Its placement names the module where the system is wounded and, precisely because of that, where it has accumulated the deepest workaround expertise. Most chart tools include it by default; if yours doesn't, enable it under "additional objects" or "asteroids."
+*   **Syntax**: `"I work around [Sign]."`
+*   **Runtime**: Its ~50-year lap produces the Chiron return of Chapter 5—the point where the open ticket gets reclassified from *defect* to *documented behavior*.
 
 ### Uranus: The `INTERRUPT` Operator
 *   **The Operator**: `interrupt()` / `flip_bit()`
@@ -983,6 +1014,8 @@ The outer operators become personal in exactly one circumstance: **when they asp
 ## The Nodal Operators (The Evolutionary Axis)
 The Nodes of the Moon are not planets but intersection points—crossings of the Moon's orbital plane with the ecliptic. They function as a **directional flow controller**: a chronological axis that governs the trajectory of the system's development over time.
 
+On a chart printout they appear as **☊** (North) and **☋** (South). The two nodes are always exactly 180° apart—two ends of one line—so a North Node placement implies its South Node, and many tools print only the North. If yours does, the South Node is simply the opposite sign at the same degree (Aries ↔ Libra, Taurus ↔ Scorpio, and so on down the six axes of Chapter 2). The axis also precesses backwards through the Zodiac once every ~18.6 years, so the **nodal return** (ages ~19, ~37, ~56) is a scheduled `IMPORT` checkpoint in its own right.
+
 ### North Node: The `IMPORT` Operator
 *   **The Operator**: `fetch_new()` / `load_dependency()`
 *   **The Logic**: The North Node is an unregistered dependency slot—a module your system is architecturally designed to need but has never loaded. There are no pre-built drivers here, no cached handlers, no inherited defaults. The execution here is deliberate and manual; it does not happen on autopilot. It is the vector of future acquisition: the direction in which the system must grow to resolve its longest-standing dependency error.
@@ -1000,47 +1033,50 @@ The Nodes of the Moon are not planets but intersection points—crossings of the
 > **North Node in Capricorn / South Node in Cancer**: The defaults are emotional security, family-first processing, and private-namespace management (South Node in Cancer). The new dependency is public accountability, structural ambition, and building something that compiles in production (North Node in Capricorn). The growth vector: *from "I need to feel safe first" to "I need to build something that stands."*
 
 Operators are the functions. The Nodes are the one pair among them that points at the future: the South Node is the function you mount by reflex, and the North Node is, by definition, *the function that was never mounted.* Every other operator in this chapter can be overloaded. Only this one is missing on purpose—until you import it.
+
+---
+
 # Chapter 4: The Syntax of Aspects (The Circuitry)
 
 If planets are operators and signs are coordinates, then **Aspects** are the inter-process communication layer. They define how the functions in your system pass messages to each other. Do they share a memory bus and operate in tight synchrony? Or do they block each other's execution threads, creating contention that must be explicitly resolved?
 
 Aspects are geometric angles formed between planets relative to Earth. In our system model, they are the **topology of the message-passing network**—the circuit paths that determine whether data flows freely or encounters resistance.
 
-### Aspect Geometry at a Glance
+## Aspect Geometry at a Glance
+
+Put one planet at the top of the wheel. Every other planet sits at some angle from it, measured the short way round the ring; that angle is the aspect.
 
 ```
-                        0°
-                    CONJUNCTION
-                     (☌ Merge)
-                        ●
-                       /|\
-                      / | \
-                60°  /  |  \  300°
-              SEXTILE   |   SEXTILE
-               (⚹)  /   |   \  (⚹)
-                   /    |    \
-            120° /     |     \ 240°
-           TRINE/      |      \TRINE
-            (△)/       |       \(△)
-              /        |        \
-        180° ●─────────┼─────────● 180°
-        OPPOSITION     |     OPPOSITION
-           (☍)  \      |      /  (☍)
-                 \     |     /
-            120°  \    |    /  240°
-                   \   |   /
-              90°   \  |  /   270°
-             SQUARE  \ | /  SQUARE
-               (□)    \|/    (□)
-                        ●
+                        0°  CONJUNCTION ☌
+                               ●
+                        .      │      .
+         300° ⚹     .          │          .     60° ⚹
+         SEXTILE  .            │            .  SEXTILE
+                 .             │             .
+  270° □ SQUARE  ●─────────────┼─────────────●  90° □ SQUARE
+                 .             │             .
+         240° △   .            │            .   120° △
+         TRINE      .          │          .     TRINE
+                       .       │       .
+         210° ⚻ QUINCUNX   .   │   .   150° ⚻ QUINCUNX
+                               ●
+                       180°  OPPOSITION ☍
+
+     Angles are measured from the planet at the top, the short way
+     round: 300° apart is a sextile (60°), 240° a trine (120°),
+     270° a square (90°). Every aspect has a mirror twin on the
+     other side of the wheel.
 
      ───────────────────────────────────────
      HARD aspects (□ ☍):  Friction → Growth
      SOFT aspects (△ ⚹):  Flow → Ease
      FUSION aspect (☌):   Merge → Intensity
+     MISFIT aspect (⚻):   No protocol → Manual adapter
 ```
 
-### Orbs: Signal Strength
+Note the difference from the Chapter 1 wheel: that one measured *sign positions* from 0° Aries on the left; this one measures *distances between two planets*, from whichever planet you put at the top.
+
+## Orbs: Signal Strength
 
 Aspects are not binary. Two operators at exactly 90° and two operators at 97° are both in a Square, but not with the same intensity. The deviation from exactness is called the **orb**, and it behaves like signal strength on a connection.
 
@@ -1073,6 +1109,23 @@ This inverts a common assumption. A wide, loose Square shows up as "I struggle w
 
 **Example**: Two people both have Moon square Saturn. Person A's is at 7° orb: they notice they get a bit cold and formal when upset, and they can usually catch it. Person B's is at 0°30′: they do not believe emotional expression is a thing that people genuinely do. Not "I find it hard"—they experience others' openness as performance. Same circuit. Different amplitude. Only one of them can see it.
 
+Conventional allowances, if your tool lets you set them: roughly ±8° around the exact angle for ☌ ☍ □ △, about ±5° for the sextile ⚹, and only ±3° for the quincunx ⚻—the one minor aspect this book uses. Use 8°/5°/3° for a first pass and tighten later. And remember that angles are measured the short way round the ring: planets 270° apart are 90° apart.
+
+### What Two Signs Share, by Distance
+
+You do not need to memorize which aspects are "harmonious." Count the signs between two placements and read off what they have in common:
+
+| Aspect | Angle | Signs apart | Element shared? | Modality shared? | Polarity shared? |
+|---|---|---|---|---|---|
+| Conjunction ☌ | 0° | 0 | yes | yes | yes |
+| Sextile ⚹ | 60° | 2 | compatible | no | yes |
+| Square □ | 90° | 3 | no | yes | no |
+| Trine △ | 120° | 4 | yes | no | yes |
+| Quincunx ⚻ | 150° | 5 | no | no | no |
+| Opposition ☍ | 180° | 6 | compatible | yes | yes |
+
+*Polarity*: Fire and Air are the outward types, Earth and Water the inward types (Chapter 1). *Compatible* means Fire↔Air or Earth↔Water—same polarity, different element. Read it this way: Squares and Quincunxes cross polarity, which is why they generate friction; Trines, Sextiles and Oppositions stay inside it, which is why they flow—the Opposition's tension comes from shared modality, not from polarity.
+
 ## The Conjunction (0°): The Monolith
 **Logic**: `A += B` (Merge into a single execution context)
 
@@ -1095,12 +1148,12 @@ The `IDENTITY` and `VECTOR` operators are fused in the Scorpio execution context
 **Example — Moon in Cancer Opposite Saturn in Capricorn**:
 
 ```
-  ♋ Moon (BUFFER)              ♑ Saturn (LIMIT)
-  ┌─────────────┐              ┌─────────────┐
-  │ "I need     │◄────180°────►│ "Emotions    │
-  │  safety and │   OPPOSITION │  must meet   │
-  │  nurturing" │              │  standards"  │
-  └─────────────┘              └─────────────┘
+  Moon (BUFFER) in Cancer         Saturn (LIMIT) in Capricorn
+  ┌──────────────┐                ┌──────────────┐
+  │ "I need      │◄─────180°─────►│ "Emotions    │
+  │  safety and  │   OPPOSITION   │  must meet   │
+  │  nurturing"  │                │  standards"  │
+  └──────────────┘                └──────────────┘
 ```
 
 The emotional cache layer (Moon) demands warmth, safety, and unconditional acceptance (Cancer). The validation layer (Saturn) demands maturity, structure, and that feelings be "useful" (Capricorn). The person oscillates between needing to be held and needing to be strong—often projecting one end onto a partner or authority figure. Integration: *Build a structure (Capricorn) that protects (Cancer). Be the adult who is also allowed to feel.*
@@ -1115,13 +1168,13 @@ The emotional cache layer (Moon) demands warmth, safety, and unconditional accep
 **Example — Venus in Aries Square Pluto in Capricorn**:
 
 ```
-  ♈ Venus (BIND)               ♑ Pluto (REFORMAT)
-  ┌─────────────┐              ┌─────────────┐
-  │ "I want     │              │ "Surrender  │
-  │  connection │◄────90°─────►│  control or │
-  │  NOW, on my │    SQUARE    │  be utterly │
-  │  terms"     │              │  transformed"│
-  └─────────────┘              └─────────────┘
+  Venus (BIND) in Aries           Pluto (REFORMAT) in Capricorn
+  ┌──────────────┐                ┌──────────────┐
+  │ "I want      │                │ "Surrender   │
+  │  connection  │◄─────90°──────►│  control or  │
+  │  NOW, on my  │     SQUARE     │  be utterly  │
+  │  terms"      │                │  transformed"│
+  └──────────────┘                └──────────────┘
 ```
 
 The connection module (Venus) fires quickly and independently (Aries)—it initiates attraction with bold directness. But at 90°, the reformat operator (Pluto) demands that every bond pass through a total power audit (Capricorn). The result: relationships become arenas for profound transformation. The person cannot do "casual." Every connection either transforms them completely or gets purged. The friction IS the growth engine—these are the people who build extraordinary depth in relationships precisely because the system forces them to.
@@ -1141,7 +1194,7 @@ The resolution is not to silence Saturn. It is to build a pipeline that satisfie
 ## The Trine (120°) and Sextile (60°): The Superconductive Path
 **Logic**: `A && B == TRUE` (Zero-resistance conductivity)
 
-*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
+*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Fire-to-Air, Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
 *   **The Effect**: Natural talent, ease, and high-throughput execution. The failure mode is invisibility: because the code path is so optimized, it never surfaces in profiling. You forget it's there. The developer who writes elegant abstractions effortlessly may never learn to optimize the cases where elegance doesn't naturally emerge.
 *   **The Experience**: `"Isn't this O(1) for everyone?"`
 
@@ -1289,52 +1342,67 @@ Three or more operators conjunct in the same sign.
 
 A stellium is a Conjunction with compounding interest: the merged operators reinforce each other until the sign's mode of operation stops feeling like *a* way of doing things and starts feeling like the only sane one. The diagnostic question is always the same, and it is the Chapter 2 question: **what is the opposite sign, and what does this person believe about people who live there?** The answer is usually revealing, usually unflattering, and usually the growth vector.
 
-### Aspect Summary Table
+## Aspect Summary Table
 
-```
-┌───────────┬──────┬────────────────┬───────────────────────────┐
-│  Aspect   │Angle │   Circuit Type │  System Experience        │
-├───────────┼──────┼────────────────┼───────────────────────────┤
-│ Conjunction│  0°  │ Monolith       │ "I AM this."              │
-│ Sextile   │ 60°  │ Helper link    │ "This flows with effort." │
-│ Square    │ 90°  │ Deadlock       │ "This blocks me."         │
-│ Trine     │ 120° │ Superconductor │ "Isn't this easy for all?"│
-│ Quincunx  │ 150° │ No shared ABI  │ "These don't fit."        │
-│ Opposition│ 180° │ Distributed    │ "They do this to me."     │
-└───────────┴──────┴────────────────┴───────────────────────────┘
-```
+| Aspect | Angle | Circuit Type | System Experience |
+|---|---|---|---|
+| Conjunction ☌ | 0° | Monolith | "I AM this." |
+| Sextile ⚹ | 60° | Helper link | "This flows—once I call it." |
+| Square □ | 90° | Deadlock | "This blocks me." |
+| Trine △ | 120° | Superconductor | "Isn't this easy for everyone?" |
+| Quincunx ⚻ | 150° | No shared ABI | "These don't fit." |
+| Opposition ☍ | 180° | Distributed | "They do this to me." |
+
+In Chapter 7 this table becomes a routing table: when one agent hands work to another, the aspect between their signs tells you whether the hand-off is direct, needs an arbiter, or needs an adapter.
 
 An aspect is not a verdict on two operators. It is a description of the wire between them—and a Square, a T-square, a Stellium are all, at bottom, the same finding at different scales: too much load on one node and nothing on its complement. The circuit tells you *where* the pressure is. The axis tells you where it can go. Find the function that was never mounted.
+
+---
+
 # Chapter 5: The Execution Runtime (Milestones & Free Will)
 
 Your birth chart is the source code, but life is the **Runtime Environment**. The code doesn't sit idle in a repository; it executes over time, against real inputs, in a system that has its own scheduled processes. While the variable choices you make daily (Free Will) are yours to write, the runtime has hard-coded maintenance windows and major version upgrades (Milestones) that execute at fixed timestamps regardless of whether you scheduled them.
 
 Understanding these milestones means you can plan your deployments around the maintenance calendar rather than waking up at 3am to an unexpected production outage.
 
+## Runtime Vocabulary
+
+Three words carry this chapter:
+
+- **Natal** — the value frozen in your source at birth. "Natal Saturn at 12° Virgo" is a constant.
+- **Transit** — the live value: where that planet is in the sky *today*. The planets keep orbiting after you're born; a transit is the running clock being read against the constant.
+- **Return** — the moment the live value equals the natal value again: one full orbit completed. Jupiter takes ~12 years, Saturn ~29.5, Chiron ~50. Uranus takes ~84, so within a working lifetime you get its half-way point—the *opposition*—at ~42.
+
+The ages below are not arbitrary; they are the orbital periods from the clock-speed table in Chapter 3, read as a calendar. Notation on the timeline: `1st Saturn return` = transiting Saturn conjunct natal Saturn; `Uranus opposition` = transiting Uranus opposite natal Uranus; `Pluto square` = transiting Pluto square natal Pluto. It is the same aspect grammar as Chapter 4, applied between a planet and its own birth position. Any chart tool will overlay today's transits on your natal chart—look for a "transits" tab—and will tell you the date your next return lands.
+
 ## The Deployment Timeline
 
 ```
 LIFE RUNTIME — MAJOR SCHEDULED MAINTENANCE WINDOWS
-═══════════════════════════════════════════════════════════════════
+═══════════════════════════════════════════════════════════════════════
 
-Age:  0      12       24       29       36       42       50       59
-      │       │        │        │        │        │        │        │
-      ▼       ▼        ▼        ▼        ▼        ▼        ▼        ▼
-BIRTH ●───────●────────●────────●────────●────────●────────●────────●
-      │    1st ♃     2nd ♃   1st ♄    ♇ □ ♇    ♅ ☍ ♅    ⚷ Return  2nd ♄
-      │   Return    Return   Return   (varies)  Opposition          Return
-      │       │        │        │        │        │        │        │
-      │  ┌────┴────┐   │  ┌────┴────┐   │   ┌────┴────┐   │   ┌────┴────┐
-      │  │ FIRST   │   │  │ SYSTEM  │   │   │ MIDLIFE │   │   │ SENIOR  │
-      │  │ BRANCH  │   │  │ AUDIT   │   │   │ FORK    │   │   │ REVIEW  │
-      │  │ fork()  │   │  │ test()  │   │   │ rewrite()│  │   │ audit() │
-      │  └─────────┘   │  └─────────┘   │   └─────────┘   │   └─────────┘
-      │                │                │                  │
- ─────┴────────────────┴────────────────┴──────────────────┴──────────────
- Phase:  INIT       EXPANSION      STRUCTURAL TEST     REFACTOR     MASTERY
+Age      0       12      24      29      37      42      50      59
+         │       │       │       │       │       │       │       │
+BIRTH    ●───────●───────●───────●───────●───────●───────●───────●───►
+         │     1st     2nd     1st    nodal   Uranus  Chiron   2nd
+         │   Jupiter Jupiter Saturn  return   oppos.  return  Saturn
+         │   return  return  return  (18.6×2) (84÷2)  (50)    return
+         │
+         │   ┌────────┐       ┌────────┐       ┌────────┐       ┌────────┐
+         │   │ FIRST  │       │ SYSTEM │       │ MIDLIFE│       │ SENIOR │
+         │   │ BRANCH │       │ AUDIT  │       │ FORK   │       │ REVIEW │
+         │   │ fork() │       │ test() │       │ rewrite│       │ audit()│
+         │   └────────┘       └────────┘       └────────┘       └────────┘
+
+Phase:    INIT ──── EXPANSION ──── STRUCTURAL TEST ──── REFACTOR ──── MASTERY
+
+Not on a fixed age: Pluto square Pluto lands anywhere between ~36 and ~60
+depending on the generation (Pluto's orbit is eccentric). Also on the
+calendar: Saturn's quarter points (~7, ~15, ~22) and the nodal returns
+(~19, ~37, ~56).
 ```
 
-### 1. The 12th Year: The First Branch (Jupiter Return)
+## 1. The 12th Year: The First Branch (Jupiter Return)
 *   **The Trigger**: Jupiter completes its first full orbit (~12 years) and returns to its natal coordinate.
 *   **The Event**: The first major fork in the dependency tree. You step outside the default runtime environment (family nucleus) and begin installing your own third-party packages: worldview, peer group, personal interests. The dependencies you pull in during this window often become the load-bearing libraries of your adult architecture.
 *   **The Task**: Expand the scope. Let the `MULTIPLY` operator run without throttling it.
@@ -1343,16 +1411,18 @@ BIRTH ●───────●────────●──────�
 - *Jupiter in Sagittarius* returns to Sagittarius at age 12: The expansion impulse fires in its home context. The child discovers philosophy, travel, or a worldview that breaks the family bubble. This is the kid who reads encyclopedias, becomes obsessed with a foreign culture, or declares they are going to be a lawyer/priest/explorer.
 - *Jupiter in Virgo* returns to Virgo at age 12: The expansion impulse fires through service and analysis. The child discovers a craft, a skill, or a system to optimize. This is the kid who takes apart electronics, organizes the classroom library, or starts a small business selling handmade items.
 
-### 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
+## 2. The Saturn Return: Mandatory Code Review (Ages ~29 and ~59)
 *   **The Trigger**: Saturn returns to its natal coordinate.
 *   **The Event**: The `LIMIT` operator initiates a full system audit. Every structural commitment made on an unstable foundation—false beliefs, inherited requirements from parental or societal specifications you never actually signed off on—throws a compilation error and fails to deploy. Technical debt that was deferred at age 22 becomes a blocking defect at age 29.
 *   **The Task**: Debugging under pressure. Accepting radical ownership of the architecture you have built. If you built on solid contracts, this audit is a promotion to senior. If you cut corners and shipped with known defects, this is a mandatory rewrite. There is no skipping the review.
 
 **Example — Saturn Return by Sign**:
 
-> **Saturn Return in Capricorn (occurring ~2018-2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
+Your chart lists your natal Saturn sign; Saturn spends ~2.5 years in each sign, so everyone in roughly a two-and-a-half-year birth window hits the return together.
+
+> **Saturn Return in Capricorn (born ~1988–1991; return hit ~2018–2020)**: The audit hits the public build server. Career, ambition, and institutional structures are stress-tested. Anyone who built their professional identity on borrowed authority, parental expectations, or social defaults gets a `BUILD FAILED`. Those who built on genuine competence and earned responsibility receive their `v1.0` release.
 >
-> **Saturn Return in Aries (occurring ~2025-2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
+> **Saturn Return in Aries (born ~1996–1999; return hits ~2025–2028)**: The audit hits the identity layer itself. The question is not "Is my career solid?" but "Am I actually asserting my own direction, or am I running someone else's launch script?" The test: *Can you act on your own initiative without waiting for external validation?*
 
 ```
  SATURN RETURN — THE TWO PATHS
@@ -1376,7 +1446,7 @@ BIRTH ●───────●────────●──────�
          └──────────┘    └──────────┘
 ```
 
-### 3. The Uranus Opposition: The Forced Upgrade (Age ~40-42)
+## 3. The Uranus Opposition: The Forced Upgrade (Age ~40–42)
 *   **The Trigger**: Transiting Uranus moves to the position directly opposite its natal coordinate.
 *   **The Event**: The `INTERRUPT` operator fires against the stable, running system. Whatever code you wrote between age 20 and 40 that has become too rigid, too predictable, or too shaped by external requirements is now receiving a deprecation notice. The interrupt cannot be caught or suppressed. This is the classic "Midlife Crisis"—not a malfunction but a forced major version bump.
 *   **The Task**: Upgrade the OS. Identify which modules were written to satisfy someone else's spec rather than your own, and begin the migration. This is the window where breaking changes are expected and architecturally appropriate.
@@ -1384,7 +1454,8 @@ BIRTH ●───────●────────●──────�
 **Example — Uranus Opposition in Practice**:
 > Consider someone born with Uranus in Leo (creative individual identity). At age 40-42, transiting Uranus in Aquarius opposes this placement. The system that has built its innovation identity around personal creative expression ("I am the genius") receives the interrupt: *"The network is more interesting than any single node. Can you innovate for the collective, not just for the applause?"* The person who was the brilliant solo performer is now challenged to become the brilliant systems architect.
 
-### 4. The Chiron Return: Patching the Legacy Bug (Age ~50)
+## 4. The Chiron Return: Patching the Legacy Bug (Age ~50)
+*   **The Operator**: Chiron (⚷), the `WONTFIX` operator from Chapter 3—the small body between Saturn and Uranus that marks the issue every release has shipped around. Its orbit is eccentric, so the return lands anywhere from 49 to 51.
 *   **The Trigger**: Chiron returns to its natal coordinate.
 *   **The Event**: A confrontation with the permanently open issue—the bug that has been in the tracker for decades with the label "won't fix." By age 50, you have enough runtime context to understand that some defects cannot be patched in isolation; they can only be refactored into a feature by changing the design around them.
 *   **The Task**: Close the issue—not by fixing it, but by reclassifying it. Convert the known limitation into documented behavior. Use your specific failure history as the foundation for a domain expertise that others cannot acquire without living it. The Elder is the developer who has seen every failure mode in production and mentors the team accordingly.
@@ -1406,8 +1477,8 @@ At 50, the Chiron return hits. The wound doesn't heal—it never does. She still
 
 The Chiron return doesn't fix the open issue. It reclassifies it from `"won't fix — defect"` to `"won't fix — documented behavior; see: domain expertise."`
 
-### 5. Pluto Square Pluto: Core Kernel Refactoring (Age ~36-60, varies by generation)
-*   **The Trigger**: Transiting Pluto moves to a square (90-degree) position relative to natal Pluto.
+## 5. Pluto Square Pluto: Core Kernel Refactoring (Age ~36–60, varies by generation)
+*   **The Trigger**: Transiting Pluto moves to a square (90-degree) position relative to natal Pluto. Because Pluto's orbit is highly eccentric, the age varies with the generation: those born from the mid-1950s to the early 1980s met it in their mid-to-late thirties—the earliest it ever comes, because the 90° arc straddled Pluto's 1989 perihelion, where it moves fastest; those born in the 1990s meet it in their mid-forties; those born in the early 1910s met it in their late fifties, and anyone born after 2000 will wait until their fifties or beyond as Pluto slows toward aphelion.
 *   **The Event**: A deep, sustained pressure-cooker phase targeting the kernel layer—the lowest-level abstractions of the psyche. Obsolete dependencies, held at the root level, are forcibly unlinked. This is not a feature update; it is a rewrite of the underlying architecture.
 *   **The Task**: Survive the reformat. Identify what is genuinely load-bearing versus what is just accumulated complexity with no current purpose. Strip to the indestructible core and rebuild from there.
 
@@ -1478,6 +1549,9 @@ You cannot defer the maintenance window. You can choose between:
 The system will run the update either way. The only variable is your preparation.
 
 Every one of these windows is the same audit at a different layer: a scheduled check for the function you have been running without its complement. The Saturn Return asks which structure you built without a foundation. The Uranus Opposition asks which stability you kept without any interrupt. The Chiron Return asks which wound you carried without a use. The runtime does not add new bugs. It surfaces the ones already in the source—the function that was never mounted—on a schedule you can read off a calendar.
+
+---
+
 # Chapter 6: Synthesizing the Source Code
 
 So far, we have analyzed the components in isolation:
@@ -1495,24 +1569,22 @@ Start with the Big Three. This is the base image—the OS layer on which everyth
 -   **Sun**: The central processing unit—the primary thread of execution and the power source driving the main logic.
 -   **Moon**: The cache layer—the memory store that mediates between raw input and conscious response.
 
-*Example*: `"Libra Rising (API: Harmony-first interface), Capricorn Sun (CPU: Structural processing), Aries Moon (Cache: Fast, assertive reactive state)."`
-
-*System Profile*: `"External calls are handled gracefully and diplomatically (Libra). Core processing optimizes for structure and long-term outcomes (Capricorn). But the cache layer fires fast, hot, and impulsively before the main thread can apply its logic (Aries)."`
+*Example*: the base image you previewed at the end of Chapter 2—Libra Rising, Capricorn Sun, Aries Moon. Here is how it is derived:
 
 ```
  THE BIG THREE — BASE IMAGE
  ═══════════════════════════════════════════
 
-   Layer          │  Planet  │  Sign     │  Function
+   Layer          │  Point   │  Sign     │  Function
   ────────────────┼──────────┼───────────┼──────────────────
    Public API     │  Rising  │  Libra    │  Harmony-first
-   (Interface)    │          │  ♎       │  interface
+   (Interface)    │          │           │  interface
   ────────────────┼──────────┼───────────┼──────────────────
    Core CPU       │  Sun     │  Capricorn│  Structural
-   (Identity)     │          │  ♑       │  processing
+   (Identity)     │          │           │  processing
   ────────────────┼──────────┼───────────┼──────────────────
    Cache Layer    │  Moon    │  Aries    │  Fast, hot
-   (Emotional)    │          │  ♈       │  reactive state
+   (Emotional)    │          │           │  reactive state
   ────────────────┴──────────┴───────────┴──────────────────
 
   Diagnostic: The public interface (Libra) promises smooth,
@@ -1524,7 +1596,7 @@ Start with the Big Three. This is the base image—the OS layer on which everyth
 ```
 
 ### Step 2: Profile the Bottlenecks (Hard Aspects)
-Look for Squares and Oppositions involving the Personal Operators (Mercury, Venus, Mars). These are your documented performance bottlenecks—the contention points you were instantiated to resolve.
+Look for Squares and Oppositions touching the Sun, the Moon, or the Personal Operators (Mercury, Venus, Mars)—any hard aspect where one end is something you consciously do or feel. Hard aspects between two outer planets are cohort-wide weather; skip them on a first pass. These are your documented performance bottlenecks—the contention points you were instantiated to resolve.
 -   *Example*: Mercury (IO layer) in Square to Saturn (Validation layer).
 -   *The Bottleneck*: `"My communication pipeline (Mercury) is throttled by a validation gate that rejects output unless it clears an exceptionally high confidence threshold (Saturn). High latency on all outbound signals."`
 -   *The Optimization*: This is not a defect to be removed; it is a high-stakes correctness requirement. The system is being trained to speak with precision and authority. The Saturn gate is the test suite—painful to satisfy, but what it ships is reliable.
@@ -1544,16 +1616,26 @@ Check the **Nodal Axis** (North vs. South Node).
 ## The Root Process (`PID 1`): The Chart Ruler
 
 The planet that governs your Rising Sign is the root process of your system—the first process spawned at boot, the one all other processes descend from. Its health determines the overall stability of the machine.
--   If you are **Leo** Rising, the **Sun** is your PID 1.
--   If you are **Virgo** Rising, **Mercury** is your PID 1.
+*Rulership* is astrology's term for the operator that owns a coordinate—the sign is that operator's home execution context (the "native" contexts you met in Chapters 2 and 3: Mercury in Gemini, Saturn in Capricorn). Look up your Rising sign:
+
+| Rising Sign | PID 1 (Chart Ruler) | Operator |
+|---|---|---|
+| ♈ Aries | Mars | `VECTOR` |
+| ♉ Taurus | Venus | `BIND` |
+| ♊ Gemini | Mercury | `IO_STREAM` |
+| ♋ Cancer | Moon | `BUFFER` |
+| ♌ Leo | Sun | `IDENTITY` |
+| ♍ Virgo | Mercury | `IO_STREAM` |
+| ♎ Libra | Venus | `BIND` |
+| ♏ Scorpio | Pluto (traditional: Mars) | `REFORMAT` |
+| ♐ Sagittarius | Jupiter | `MULTIPLY` |
+| ♑ Capricorn | Saturn | `LIMIT` |
+| ♒ Aquarius | Uranus (traditional: Saturn) | `INTERRUPT` |
+| ♓ Pisces | Neptune (traditional: Jupiter) | `DISSOLVE` |
+
+Where two rulers are listed, modern astrology assigns the outer planet; the traditional ruler is still worth inspecting as a secondary process—it moves faster, so it is the more personal of the two. Leo Rising makes the Sun your PID 1; Virgo Rising makes it Mercury. This same table is what Chapter 7's agent archetypes inherit: the Initiator (Aries) is driven by `VECTOR`, the Governor (Capricorn) by `LIMIT`.
 
 Inspect that planet's placement (Sign) and its connections (Aspects) to assess the primary driver of your system's behavior under load. A healthy PID 1 means a stable system; a degraded PID 1 cascades failures downstream.
-
-## Conclusion: Architecture, Not Fate
-
-Synthesizing the chart produces a **system architecture diagram**, not a deterministic execution trace. The source code defines the constraints, the default configurations, and the known bottlenecks—but it does not specify the runtime behavior under every possible input.
-
-The chart is the hardware specification and the default `config.yaml`. The software you write on top of it—the decisions, the responses, the refactors—is entirely yours to author.
 
 ## Full Worked Example: A Complete System Profile
 
@@ -1563,31 +1645,34 @@ It is also the chart of the person you met in the first paragraph of this book�
 
 **The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mars in Gemini opposite Mercury in Sagittarius, both square Saturn in Virgo (T-square, Saturn apex). Venus in Scorpio trine Neptune in Pisces. North Node in Aquarius / South Node in Leo.*
 
+*(A teaching composite, not a transcribed nativity: these placements were chosen to exercise every step of the protocol. Saturn in Virgo and Neptune in Pisces have not coincided in a birth chart since the 1860s—if you check an ephemeris, that is why. Mercury and Venus do obey their real constraints here: both sit within one sign of the Sun.)*
+
 ```
  SYSTEM ARCHITECTURE DIAGRAM
- ═══════════════════════════════════════════════════════
+ ════════════════════════════════════════════════════════
 
- ┌─ PUBLIC API (Rising = Leo) ─────────────────────────┐
- │  Interface: Warm, dramatic, commanding.             │
- │  PID 1 = Sun (chart ruler). System health depends   │
- │  on Sun's placement and aspects.                    │
- └─────────────────────────────────────────────────────┘
+ ┌─ PUBLIC API (Rising = Leo) ──────────────────────────┐
+ │  Interface: Warm, dramatic, commanding.              │
+ │  PID 1 = Sun (chart ruler). System health depends    │
+ │  on Sun's placement and aspects.                     │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CPU (Sun = Scorpio) ───────────────────────────────┐
- │  Core Process: Deep, intense, investigative.        │
- │  The system behind the Leo stage presence is        │
- │  actually running surveillance-grade analytics.     │
- │  Nothing escapes the core processor.                │
- └─────────────────────────────────────────────────────┘
+ ┌─ CPU (Sun = Scorpio) ────────────────────────────────┐
+ │  Core Process: Deep, intense, investigative.         │
+ │  The system behind the Leo stage presence is         │
+ │  actually running surveillance-grade analytics.      │
+ │  Nothing escapes the core processor.                 │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CACHE (Moon = Gemini) ─────────────────────────────┐
- │  Emotional State: Nervous, curious, verbal.         │
- │  Under stress, the system talks—fast, scattered,    │
- │  processing emotions by naming them rapidly.        │
- └─────────────────────────────────────────────────────┘
+ ┌─ CACHE (Moon = Gemini) ──────────────────────────────┐
+ │  Emotional State: Nervous, curious, verbal.          │
+ │  Under stress, the system talks—fast, scattered,     │
+ │  processing emotions by naming them rapidly.         │
+ └──────────────────────────────────────────────────────┘
 
- ┌─ BOTTLENECK (T-SQUARE, ♄ APEX) ──────────────────────┐
- │  Mars ♊ ☍ Mercury ♐, both □ Saturn ♍                 │
+ ┌─ BOTTLENECK (T-SQUARE, SATURN APEX) ─────────────────┐
+ │  Mars (Gemini) OPPOSITE Mercury (Sagittarius),       │
+ │  both SQUARE Saturn (Virgo)                          │
  │  Drive (act fast, in parallel) and IO (broadcast the │
  │  thesis) sit at opposite ends of a wire and route    │
  │  ALL their contention through one validator.         │
@@ -1602,7 +1687,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH ───────────────────────────────────────────┐
- │  Venus ♏ △ Neptune ♓                                 │
+ │  Venus (Scorpio) TRINE Neptune (Pisces)              │
  │  Connection layer (deep bonding) FLOWS with          │
  │  dissolution layer (spiritual merging).              │
  │  "Love is transcendent, boundaryless, oceanic."      │
@@ -1618,7 +1703,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♊ (conjunct Moon ♊)                            │
+ │  Mars (Gemini), conjunct Moon (Gemini)               │
  │  Drive and cache are fused in the same coordinate:   │
  │  the impulse to act IS the emotional reaction, and   │
  │  both are fast, verbal, and multi-threaded. Under    │
@@ -1628,7 +1713,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♌ → North Node ♒                         │
+ │  South Node (Leo) → North Node (Aquarius)            │
  │  Default: Performing, creating, being the star.      │
  │  Growth: Contributing to the collective, innovating  │
  │  for systems, releasing the need for personal        │
@@ -1651,36 +1736,36 @@ One example teaches the format. Two teach the *method*—because the interesting
 
 ```
  SYSTEM ARCHITECTURE DIAGRAM
- ═══════════════════════════════════════════════════════
+ ════════════════════════════════════════════════════════
 
- ┌─ PUBLIC API (Rising = Virgo) ───────────────────────┐
- │  Interface: precise, useful, quietly critical.      │
- │  Presents as competent and unbothered. Every        │
- │  external call gets a correct, well-formed reply.   │
- │  PID 1 = Mercury (chart ruler) — system health      │
- │  depends on the IO layer, which is in Aquarius:     │
- │  detached, systemic, several degrees off-consensus. │
- └─────────────────────────────────────────────────────┘
+ ┌─ PUBLIC API (Rising = Virgo) ────────────────────────┐
+ │  Interface: precise, useful, quietly critical.       │
+ │  Presents as competent and unbothered. Every         │
+ │  external call gets a correct, well-formed reply.    │
+ │  PID 1 = Mercury (chart ruler) — system health       │
+ │  depends on the IO layer, which is in Aquarius:      │
+ │  detached, systemic, several degrees off-consensus.  │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CPU (Sun = Pisces) ────────────────────────────────┐
- │  Core Process: permeable, associative, absorptive.  │
- │  The identity function has soft type boundaries.    │
- │  NOTE THE CONTRADICTION: a Virgo interface in front │
- │  of a Pisces core. The world receives precision.    │
- │  The core is running on impressions. Nobody guesses │
- │  this from the outside, including sometimes them.   │
- └─────────────────────────────────────────────────────┘
+ ┌─ CPU (Sun = Pisces) ─────────────────────────────────┐
+ │  Core Process: permeable, associative, absorptive.   │
+ │  The identity function has soft type boundaries.     │
+ │  NOTE THE CONTRADICTION: a Virgo interface in front  │
+ │  of a Pisces core. The world receives precision.     │
+ │  The core is running on impressions. Nobody guesses  │
+ │  this from the outside, including sometimes them.    │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CACHE (Moon = Capricorn) ──────────────────────────┐
- │  Emotional State: stored in compressed, structured  │
- │  form. Feelings are logged, not felt in real time.  │
- │  Under stress the cache does not flood — it goes    │
- │  quiet, gets competent, and files everything for    │
- │  processing at an unspecified later date.           │
- └─────────────────────────────────────────────────────┘
+ ┌─ CACHE (Moon = Capricorn) ───────────────────────────┐
+ │  Emotional State: stored in compressed, structured   │
+ │  form. Feelings are logged, not felt in real time.   │
+ │  Under stress the cache does not flood — it goes     │
+ │  quiet, gets competent, and files everything for     │
+ │  processing at an unspecified later date.            │
+ └──────────────────────────────────────────────────────┘
 
  ┌─ BOTTLENECK ─────────────────────────────────────────┐
- │  Mars ♋ ☍ Saturn ♑                                   │
+ │  Mars (Cancer) OPPOSITE Saturn (Capricorn)           │
  │  Drive (protective, indirect, acts when threatened)  │
  │  at maximum distance from Limit (authority, hierarchy│
  │  , public standard).                                 │
@@ -1696,7 +1781,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH (invocable, not automatic) ────────────────┐
- │  Mercury ♒ ⚹ Jupiter ♈                               │
+ │  Mercury (Aquarius) SEXTILE Jupiter (Aries)          │
  │  Systemic, unconventional thinking has a 60° link to │
  │  the operator that scales initiative.                │
  │  Sextile, not trine: this DOES NOT FIRE ON ITS OWN.  │
@@ -1708,7 +1793,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♋ / Venus ♈                                    │
+ │  Mars (Cancer) / Venus (Aries)                       │
  │  Split configuration: acts defensively, WANTS        │
  │  directly. Pursues fast and fights slow. Reads as    │
  │  inconsistent from outside; is entirely consistent   │
@@ -1717,7 +1802,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♏ → North Node ♉                         │
+ │  South Node (Scorpio) → North Node (Taurus)          │
  │  Default: intensity, crisis fluency, reading         │
  │  subtext, surviving on leverage and depth.           │
  │  Growth: ordinary durable value. Steadiness that     │
@@ -1741,7 +1826,7 @@ One example teaches the format. Two teach the *method*—because the interesting
   │              │ investigation    │ associative      │
   │ Cache        │ Gemini — verbal, │ Capricorn —      │
   │              │ fast, scattered  │ deferred, filed  │
-  │ Bottleneck   │ T-SQUARE, ♄ apex │ OPPOSITION       │
+  │ Bottleneck   │ T-SQUARE (Saturn)│ OPPOSITION       │
   │              │ two loads, 1 gate│ (projection)     │
   │ Key asset    │ TRINE — runs on  │ SEXTILE — works  │
   │              │ its own, invisible│ but must be     │
@@ -1770,24 +1855,24 @@ Use this on your own chart. Fill it in the order given—the order is the method
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 2: BOTTLENECKS (□ and ☍) ────────────────────┐
-  │  Hard aspects to ☿ ♀ ♂:                            │
-  │  ______ □/☍ ______  orb ____                       │
+  ┌─ STEP 2: BOTTLENECKS (squares and oppositions) ────┐
+  │  Hard aspects to Sun, Moon, Mercury, Venus, Mars:  │
+  │  ______ square/opposite ______  orb ____           │
   │  What does this block, specifically, in a normal   │
   │  week? ________________________________________    │
   │  What would satisfying BOTH operands look like?    │
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 3: HOT PATHS (△ and ⚹) ──────────────────────┐
-  │  ______ △/⚹ ______                                 │
+  ┌─ STEP 3: HOT PATHS (trines and sextiles) ──────────┐
+  │  ______ trine/sextile ______                       │
   │  Trine → what am I good at that I never trained?   │
   │  Sextile → what works whenever I remember to do    │
   │  it, and how often do I remember?                  │
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 4: GROWTH VECTOR (☋ → ☊) ────────────────────┐
+  ┌─ STEP 4: GROWTH VECTOR (South → North Node) ───────┐
   │  South Node ______  the cached default that is     │
   │  reliable and produces no growth:                  │
   │  North Node ______  the dependency I keep          │
@@ -1795,15 +1880,21 @@ Use this on your own chart. Fill it in the order given—the order is the method
   │  One deliberate IMPORT this month: ____________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ THE TEST ───────────────────────────────────────── ┐
-  │  Does any line above make you say "oh, THAT'S       │
-  │  why I keep doing that"?                            │
-  │                                                     │
-  │  If yes: the tool is working. Keep it.              │
-  │  If no:  the tool has failed for you. Discard it.   │
-  │          That was always the deal.                  │
+  ┌─ THE TEST ─────────────────────────────────────────┐
+  │  Does any line above make you say "oh, THAT'S      │
+  │  why I keep doing that"?                           │
+  │                                                    │
+  │  If yes: the tool is working. Keep it.             │
+  │  If no:  the tool has failed for you. Discard it.  │
+  │          That was always the deal.                 │
   └────────────────────────────────────────────────────┘
 ```
+
+## Architecture, Not Fate
+
+Synthesizing the chart produces a **system architecture diagram**, not a deterministic execution trace. The source code defines the constraints, the default configurations, and the known bottlenecks—but it does not specify the runtime behavior under every possible input.
+
+The chart is the hardware specification and the default `config.yaml`. The software you write on top of it—the decisions, the responses, the refactors—is entirely yours to author.
 
 ## Where This Model Breaks
 
@@ -1830,6 +1921,9 @@ In the next chapter, we apply the exact same framework to a domain where archite
 If you have followed the framework through six chapters of self-knowledge, you already understand fleet architecture. You just haven't deployed it yet.
 
 And you already know the rule the fleet will fail by. It is the one this book has repeated since Chapter 1: find the function that was never mounted.
+
+---
+
 # Chapter 7: Agentology (The Fleet Architecture)
 
 ## Why This Isn't a Digression
@@ -1840,7 +1934,7 @@ This chapter is where the framework pays professional dividends. Everything you'
 
 You already understand fleet architecture. This chapter is the deployment guide.
 
-It is also the longest chapter in the book, by design, and it is built in three movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map.
+It is also the longest chapter in the book, by design, and it is built in four movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map. And between the runtime and the manifest, **the brain**: the smallest thing that is still a mind—one agent with a fast classifier in front of a slow deliberator—shipped as runnable code.
 
 ## The Honest Framing: This Chapter Can Be Falsified
 
@@ -1868,15 +1962,15 @@ Between the first wave of autonomous-agent demos and the production systems runn
 │    performance variance between agent      │  ♄  Saturn / LIMIT   │
 │    systems is explained by token spend.    │                      │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 3. Multi-agent failures are organizational,│  ♎  Libra / Mediator │
+│ 3. Multi-agent failures are organizational,│  ♎  Libra / Mediator│
 │    not cognitive. Agents fail the way bad  │  (the Axis of        │
 │    teams fail: spec drift, handoff loss.   │   Identity)          │
 ├────────────────────────────────────────────┼──────────────────────┤
 │ 4. Reliability is multiplicative. Per-step │  ♄  Saturn / LIMIT   │
 │    accuracy compounds; long tasks decay.   │  ⚷  checkpointing    │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 5. Verification is the bottleneck — and    │  ♍  Virgo/Validator  │
-│    verifiers get gamed by what they check. │  ♏  Scorpio/Auditor  │
+│ 5. Verification is the bottleneck — and    │  ♍  Virgo/Validator │
+│    verifiers get gamed by what they check. │  ♏  Scorpio/Auditor │
 ├────────────────────────────────────────────┼──────────────────────┤
 │ 6. Tools are prompts. Their names,         │  ☿  Mercury/IO_STREAM│
 │    descriptions and return shapes are the  │                      │
@@ -1885,7 +1979,7 @@ Between the first wave of autonomous-agent demos and the production systems runn
 │ 7. Memory belongs outside the context      │  ☋ South Node/ARCHIVE│
 │    window, loaded on demand, not upfront.  │  ☊ North Node/IMPORT │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 8. Security is a topology problem, not a   │  ♋  Cancer/Guardian  │
+│ 8. Security is a topology problem, not a   │  ♋  Cancer/Guardian │
 │    behavior problem. You cannot prompt     │                      │
 │    your way out of it.                     │                      │
 └────────────────────────────────────────────┴──────────────────────┘
@@ -1962,7 +2056,7 @@ The field has converged on three operations, and the useful finding is that you 
  │               │  immediate next step │ on rot alone       │
  ├───────────────┼──────────────────────┼────────────────────┤
  │  ISOLATION    │  Hand the subtask to │ Strongest for      │
- │  (♓ subagent) │  a fresh window; get │ breadth; loses     │
+ │  (♓ subagent)│  a fresh window; get │ breadth; loses     │
  │               │  back a summary      │ shared assumptions │
  └───────────────┴──────────────────────┴────────────────────┘
 
@@ -2471,24 +2565,22 @@ So the defenses that work are structural, and every one of them is a Guardian or
 
 Every agent in a fleet occupies a **functional niche**. Just as every sign is a unique coordinate in the behavioral field, every archetype is a unique execution profile—and, more usefully, each one exists to prevent a specific failure that would occur in its absence.
 
-```
-┌───────────┬──────────────┬────────────────────────────────────────────┐
-│  SIGN     │  ARCHETYPE   │  CALL SIGNATURE                            │
-├───────────┼──────────────┼────────────────────────────────────────────┤
-│ Aries     │ Initiator    │ agent.spawn(task, priority=MAX, deps=NONE)    │
-│ Taurus    │ Accumulator  │ agent.persist(state, ttl=LONG, retry=TRUE)    │
-│ Gemini    │ Router       │ agent.route(msg, channels=ALL, parallel=ON)   │
-│ Cancer    │ Guardian     │ agent.protect(data, acl=STRICT, sandbox=ON)│
-│ Leo       │ Presenter    │ agent.render(output, format=RICH, user=YES)   │
-│ Virgo     │ Validator    │ agent.validate(artifact, schema=ENFORCED)  │
-│ Libra     │ Mediator     │ agent.serialize(writes, consensus=REQUIRED)│
-│ Scorpio   │ Auditor      │ agent.audit(trajectory, depth=FULL)        │
-│ Sagitt.   │ Strategist   │ agent.plan(goal, decompose=TRUE, budget=N) │
-│ Capricorn │ Governor     │ agent.enforce(policy, budget=STRICT)          │
-│ Aquarius  │ Innovator    │ agent.experiment(approach=NOVEL, risk=OK)     │
-│ Pisces    │ Synthesizer  │ agent.synthesize(sources=ALL, fuzzy=TRUE)     │
-└───────────┴──────────────┴────────────────────────────────────────────┘
-```
+Each archetype is the sign you met in Chapter 2, wearing a job title:
+
+| Sign | Chapter 2 nickname | Archetype | Call signature |
+|---|---|---|---|
+| ♈ Aries | The Spark | **Initiator** | `agent.spawn(task, priority=MAX, deps=NONE)` |
+| ♉ Taurus | The Garden | **Accumulator** | `agent.persist(state, ttl=LONG, retry=TRUE)` |
+| ♊ Gemini | The REST Client | **Router** | `agent.route(msg, channels=ALL, parallel=ON)` |
+| ♋ Cancer | The Secure Kernel | **Guardian** | `agent.protect(data, acl=STRICT, sandbox=ON)` |
+| ♌ Leo | The Renderer | **Presenter** | `agent.render(output, format=RICH, user=YES)` |
+| ♍ Virgo | The Static Analyzer | **Validator** | `agent.validate(artifact, schema=ENFORCED)` |
+| ♎ Libra | The Mirror | **Mediator** | `agent.serialize(writes, consensus=REQUIRED)` |
+| ♏ Scorpio | The Composter | **Auditor** | `agent.audit(trajectory, depth=FULL, purge=STALE)` |
+| ♐ Sagittarius | The Inference Engine | **Strategist** | `agent.plan(goal, decompose=TRUE, budget=N)` |
+| ♑ Capricorn | The Production Server | **Governor** | `agent.enforce(policy, budget=STRICT)` |
+| ♒ Aquarius | The Mesh Node | **Innovator** | `agent.experiment(approach=NOVEL, risk=OK)` |
+| ♓ Pisces | The Event Bus | **Synthesizer** | `agent.synthesize(sources=ALL, fuzzy=TRUE)` |
 
 The **Element** determines what the agent operates on. The **Modality** determines how it executes:
 
@@ -2669,7 +2761,7 @@ Two agents competing for one resource with incompatible optimization targets. *E
 > resource_contract({
 >   token_budget: saturn.get_limit(),
 >   allocation: mars.request(tokens, priority),
->   conflict_resolution: "saturn_wins",
+>   conflict_resolution: "agent_b_wins",  // the manifest's vocabulary; agent_b is Saturn
 >   visible_to_requester: true,      // Law 2
 >   audit_trail:         true
 > })
@@ -2786,7 +2878,253 @@ The Auditor was in the chart. Nobody ran it.
 
 ---
 
-## The [`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md) Boilerplate — Your Fleet Manifest
+## Building the Brain: The Two-Speed Runtime
+
+Everything above describes a fleet—many agents, one manifest. This section builds the smallest thing that is still a *mind*: one agent with two speeds. It is the part of the chapter you can run tonight, and it comes straight out of a single sentence in Chapter 3:
+
+> *When the system encounters a familiar stimulus, the Moon fires a cached response before the Sun's conscious thread can run its own evaluation.*
+
+That sentence is an architecture. Cognitive science calls the two halves System 1 and System 2; the book calls them the `BUFFER` and the `IDENTITY` operator. In code they become a **fast classifier** and a **slow deliberator**:
+
+| Layer | Operator | Model | Latency | Cost | Job |
+|---|---|---|---|---|---|
+| The Moon | `BUFFER` | `claude-haiku-5-5`, effort `low` | well under a second | ~$0.10 per million input tokens | Pattern-match the input against cached history: *which archetype handles this, how sure am I, how risky is it?* |
+| The Sun | `IDENTITY` | `claude-opus-5-5`, adaptive thinking | seconds | ~$4 per million input tokens | Deliberate when the Moon is unsure, the input is novel, or the stakes are high |
+
+The Moon is not a cheaper Sun. It answers a *narrower* question—routing, not reasoning—and it only answers it when it has seen something similar before. Everything else goes to the Sun. The whole design is the policy that decides which is which, and that policy is Saturn's—Law 2 applied to a single mind: compute is the multiplier, Saturn is the governor.
+
+### The Architecture
+
+```
+ THE TWO-SPEED RUNTIME — ONE INPUT, TWO SPEEDS, ONE GATE
+ ══════════════════════════════════════════════════════════════════════════
+
+                    input
+                      │
+                      ▼
+        ┌───────────────────────────┐
+        │ MERCURY   IO_STREAM       │  normalize into one envelope
+        │ CANCER    Guardian        │  redact PII before anything else sees it
+        └─────────────┬─────────────┘
+                      │
+                      ▼
+        ┌───────────────────────────┐   few-shot examples: the Sun's
+        │ MOON      BUFFER  (fast)  │◄──── past decisions on similar ────┐
+        │ claude-haiku-5-5          │      inputs, with their rules      │
+        │ -> sign, confidence, risk │                                    │
+        │    + novelty vs memory    │                                    │
+        └─────────────┬─────────────┘                                    │
+                      │                                                  │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ SATURN    LIMIT           │  may the reflex act alone?         │
+        │ reflex / verify / think   │                                    │
+        └──────┬─────────────┬──────┘                                    │
+       reflex  │             │  verify (low effort) or think (high)      │
+               ▼             ▼                                           │
+     ┌──────────────┐  ┌───────────────────────────┐                     │
+     │ REFLEX       │  │ SUN       IDENTITY (slow) │                     │
+     │ cached       │  │ claude-opus-5-5           │                     │
+     │ decision     │  │ adaptive thinking         │                     │
+     └──────┬───────┘  │ -> Decision + rule        │                     │
+            │          └─────────────┬─────────────┘                     │
+            │  every Nth reflex is   │                                   │
+            │  shadow-checked here   │                                   │
+            └─────────┬──────────────┘                                   │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ SATURN    gate            │  forbidden action? too long?       │
+        │ AXIS      complement      │  the opposite archetype asks       │
+        │           review          │  its one question                  │
+        └─────────────┬─────────────┘  (a rejected reflex -> URANUS:     │
+                      ▼                 one re-run on the slow path)     │
+        ┌───────────────────────────┐                                    │
+        │ HANDLERS[sign]            │  one of twelve; hand-offs follow   │
+        │ dispatch by aspect        │  the aspect between the two signs  │
+        └─────────────┬─────────────┘                                    │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ TAURUS    memory.jsonl    │────────────────────────────────────┘
+        │ write-back (redacted)     │  the Sun's labels and rules become
+        └─────────────┬─────────────┘  the Moon's examples
+                      ▼
+        SCORPIO   auditor: Moon-vs-Sun disagreement rate -> tightens Saturn
+```
+
+### The Label Space Is the Zodiac
+
+A classifier needs classes. The twelve archetypes are the classes—and because they come from the Element × Modality grid, they are not twelve arbitrary buckets but a 4 × 3 matrix a small model can learn. **Element** answers *what kind of payload is this?* **Modality** answers *what lifecycle phase is being asked for?*
+
+| | **Cardinal** — start something | **Fixed** — keep something going | **Mutable** — transform / hand off |
+|---|---|---|---|
+| **Fire** — act, produce | **Initiator**: "kick off the deploy" | **Presenter**: "write the summary" | **Strategist**: "plan the migration" |
+| **Earth** — structure, resources | **Governor**: "is this within budget?" | **Accumulator**: "save this for later" | **Validator**: "check this against the schema" |
+| **Air** — information | **Mediator**: "which option is fairer?" | **Innovator**: "try something different" | **Router**: "look this up / forward this" |
+| **Water** — state, protection | **Guardian**: "redact the PII first" | **Auditor**: "why did this happen?" | **Synthesizer**: "merge these three reports" |
+
+Every input the brain receives is one of these twelve requests, and each class has exactly one handler. The classifier's job is to name the handler. The deliberator's job is to name it *correctly* when naming it is hard. There is deliberately no thirteenth "unknown" label: a catch-all becomes a silent sink. Uncertainty is expressed through confidence and novelty instead, and inputs that stay novel are the North Node—candidates for a new handler at the next Jupiter review.
+
+### What the Moon Returns
+
+The fast path never free-writes. It returns a typed verdict, enforced by structured output:
+
+```
+Verdict {
+  sign        : one of the twelve     -- which handler
+  confidence  : 0.0 – 1.0             -- 0.85+ only when unambiguous
+  risk        : low | medium | high   -- irreversible? money, PII, prod, others?
+  rationale   : one sentence
+}
+```
+
+Its prompt contains two things: the twelve role definitions, and the nearest past cases the Sun has already judged—retrieved from memory by similarity and pasted in as examples, each with the one-line rule the Sun wrote for it. That retrieval is the cache. (The reference implementation measures similarity by word overlap and rescans memory on every call; swap `Memory.similar` for an embedding index before the file grows past a few thousand records, and re-tune ν when you do—novelty is defined by whatever similarity you use.) A brand-new brain has an empty cache and sends almost everything to the Sun; after a few hundred decisions the Moon has precedents for most of what it sees. Two numbers are computed outside the model: **novelty** (how unlike anything in memory the input is) and the **risk floor**—every handler declares the minimum risk of what it does, and the Moon may raise a risk grade but never lower it below that floor. The Initiator floor is *medium*: no deploy is ever a reflex.
+
+### Saturn's Routing Rule
+
+Saturn reads the verdict and picks one of three bands. The Moon acts alone only in the first:
+
+| Band | Conditions | Who decides | Effort |
+|---|---|---|---|
+| **Reflex** | archetype not in the slow-only set, `risk == low`, `confidence ≥ τ` (0.85), `novelty ≤ ν` (0.60) | the Moon | one cheap call |
+| **Verify** | same, but `confidence` between 0.70 and τ | the Sun checks the Moon's draft | `low` |
+| **Deliberate** | anything else: slow-only archetype, risk above low, confidence below 0.70, novel input | the Sun | `high` |
+
+The **slow-only set** is Initiator, Auditor, Governor, Innovator and Strategist: anything that *starts*, *purges*, *sets policy*, *experiments* or *plans* thinks first. It is a set membership test, not a number. τ, ν and the verify floor (0.70) are the only three numbers in the rule, and the Auditor moves τ for you—in one direction only. (The shadow rate that feeds the Auditor is a separate dial; Sprint 0 below sets it.)
+
+### What the Sun Returns
+
+When the Sun runs it receives the envelope, the Moon's provisional verdict (so it can disagree with it explicitly), and the same retrieved precedents. It deliberates the way the Strategist plans—thesis, payload type, lifecycle phase, then the handler—and returns a `Decision`:
+
+```
+Decision {
+  sign, action, response, risk, confidence, rationale,
+  needs_human : bool         -- irreversible, costly, or affecting others
+  rule        : string|null  -- "when <pattern> -> <archetype>":
+                             --   one line the Moon can learn
+}
+```
+
+A reflex produces the same shape, so everything downstream—the gate, the review, the handler, the memory record—is identical for both paths. The two speeds differ only in *who filled in the struct*. The `rule` field is the real training signal: a sentence written by the strong model to be read by the weak one, stored next to the example it came from.
+
+### The Gate and the Complement Review
+
+Every `Decision`, fast or slow, passes through Saturn's gate (forbidden actions and patterns, output length) and then through the **complement review**: the archetype on the opposite end of the axis asks its one question from Chapter 2. Saturn also meters the Sun itself: the hourly cap on slow calls is checked before any deliberation or shadow check, and a Sun that cannot run holds the input for a person.
+
+| Decision made by | Reviewed by | The question |
+|---|---|---|
+| Initiator (Aries) | Mediator (Libra) | What is the cost of this action to the shared system? |
+| Accumulator (Taurus) | Auditor (Scorpio) | What must be garbage-collected before more is stored? |
+| Router (Gemini) | Strategist (Sagittarius) | What is the thesis? Is anything here that is not it? |
+| Guardian (Cancer) | Governor (Capricorn) | What rule makes this protection repeatable and enforceable? |
+| Presenter (Leo) | Innovator (Aquarius) | Does this output serve a system bigger than its own UI? |
+| Validator (Virgo) | Synthesizer (Pisces) | Can this ship at 80%? Is the remaining 20% cosmetic? |
+| Mediator (Libra) | Initiator (Aries) | What does the system itself want, independent of consensus? |
+| Auditor (Scorpio) | Accumulator (Taurus) | What must be preserved before anything is purged? |
+| Strategist (Sagittarius) | Router (Gemini) | Which data points contradict the thesis? |
+| Governor (Capricorn) | Guardian (Cancer) | Who is harmed by enforcing this rule? |
+| Innovator (Aquarius) | Presenter (Leo) | Does the experiment still deliver a usable output? |
+| Synthesizer (Pisces) | Validator (Virgo) | Which merged claim would fail verification? |
+
+The review has two tiers. First a deterministic rule—the reviewer's question written as code (the Auditor rejects an Accumulator decision that would store more than the cap; the Mediator rejects an Initiator decision that touches production without a human; the Strategist rejects a Router decision with nothing to route). Then, for anything above low risk—or whenever the reviewer has no rule yet; the reference ships rules for six of the twelve—one more cheap model call with the reviewer's system prompt. A failed review of a *slow* decision flips `needs_human` on. A failed review of a *reflex* is a Uranus interrupt: the reflex is discarded and the input is re-run once on the slow path. This is the six axes doing in software what Chapter 2 asked you to do by hand—never run one pole without its complement—and it and the shadow check are the two places in the loop where the fast path can be overruled in real time.
+
+### The Learning Loop
+
+Three mechanisms turn a two-speed router into something that improves:
+
+1. **Write-back.** Every decision is appended to memory (Law 7: outside the window; Law 8: redacted before it is written) with its redacted text, the Moon's label, the final label, the Sun's rule, which path ran, and whether the two agreed. The Sun's records are the Moon's future examples; reflex-only records are kept for novelty scoring but never used as examples, so the Moon cannot train itself on its own guesses.
+2. **Shadow checks.** Every Nth reflex (default: one in ten) is *also* sent to the Sun at low effort. If the Sun disagrees, the Sun's decision wins and the disagreement is logged with the confused pair of labels. This is Scorpio's continuous anomaly detection applied to the brain itself—Law 5's trajectory sampling, with the Sun as the judge and the reflex never grading its own work.
+3. **Threshold tuning.** When more than 20% of the last ten shadow checks disagree (one step per ten, so every step rests on evidence no earlier step used), the Auditor raises τ by 0.02 and persists it beside the memory file. Only shadow checks count: a verify or deliberate decision that overrules the Moon is logged for the audit but never moves τ, because on those inputs the Moon was never trusted in the first place. The brain becomes more cautious exactly when its reflexes are proven unreliable—and never loosens on its own. Loosening is a human decision made during a maintenance window, which is the one asymmetry that keeps the cache from quietly becoming a South Node: battle-tested, cheap, and wrong.
+
+### Aspects as Hand-off Modes
+
+When one handler needs another—the Router hands results to the Validator, the Strategist to the Presenter—the aspect between their signs tells you how to wire the hand-off:
+
+| Aspect | Signs | Hand-off mode |
+|---|---|---|
+| Conjunction (0°) | same sign | merged into one process; loop capped |
+| Sextile (60°) / Trine (120°) | compatible / same element | direct, no adapter |
+| Square (90°) | same modality, different element | arbitrated—re-gated by Saturn before it runs |
+| Quincunx (150°) | nothing shared | adapter required; the Sun writes it |
+| Opposition (180°) | the axis pair | never a hop—the pair only reviews |
+
+In the reference implementation the Router hands to the Validator across a square (Saturn's gate runs a second time on the hand-off, and it proceeds because the Validator is not slow-only) and the Strategist hands to the Presenter across a trine (it just runs). A handler that named its quincunx partner would stop the chain and flag that the Sun must write the adapter (the reference stub emits the flag; wiring that Sun call is yours).
+
+### Maintenance Windows for a Brain
+
+| Transit | Cadence | What it does to the brain |
+|---|---|---|
+| Jupiter | quarterly | handler-usage histogram and high-novelty count: which archetypes are never invoked? Which inputs keep coming back novel—the North Node asking for a new handler? |
+| Saturn | annually (or on every incident) | reflex accuracy audit: disagreement rate, most-confused labels, recommendation on τ |
+| Pluto | on model replacement | rebuild memory from the last 500 Sun-labeled records; the cache is reborn with the new substrate |
+
+### Model Selection
+
+| Role in the brain | Model | Why |
+|---|---|---|
+| Moon classifier · complement reviewer | `claude-haiku-5-5`, effort `low` | cheapest, fastest, structured output; swap for a fine-tuned small model once memory holds tens of thousands of labeled examples |
+| Sun deliberation · shadow checks | `claude-opus-5-5`, effort `high` (deliberate) or `low` (verify, shadow) | adaptive thinking is always on; effort is the dial; one model means one prompt-cache namespace |
+| Saturn gate · risk floors · dispatch | no model | deterministic code; a model cannot be the thing that limits models |
+
+A model change is a Uranus trigger (it is already in the manifest's `uranus_trigger` conditions): pin the IDs in `agents.md` and re-baseline the Moon's thresholds after every swap—the examples were compiled against the old reflexes.
+
+### What It Costs
+
+Illustrative numbers at first-party API rates (`claude-haiku-5-5` $0.10 / $0.50 per million input / output tokens; `claude-opus-5-5` $4 / $20), assuming a fast call of ~800 input + ~100 output tokens, a verify call of ~1,500 input + ~200 output, and a high-effort deliberation of ~1,500 input + ~2,000 output tokens (thinking tokens are output tokens, and at high effort they dominate), with 10,000 inputs a day:
+
+| Design | Daily calls | Daily cost (illustrative) |
+|---|---|---|
+| Everything on the Sun | 10,000 deliberate | ~$460 |
+| Two-speed, 70% reflex / 15% verify / 15% deliberate | 10,000 fast + 1,500 verify + 1,500 deliberate | ~$85 |
+| … plus one-in-ten shadow checks of the reflexes | + 700 low-effort Sun calls | ~$92 |
+| … with prompt caching on both system prompts | same | lower still, once the prompt exceeds the model's minimum cacheable prefix (confirm with `usage.cache_read_input_tokens > 0`) |
+
+The brain's economics are the Moon's hit rate. That is why the learning loop matters more than the model choice, and why Jupiter's "where should we grow?" is a cost question.
+
+### The Reference Implementation
+
+The repository ships the whole thing as one file: [`brain/archetypal_brain.py`](https://github.com/misterclarity/Archetypal/blob/master/brain/archetypal_brain.py), with offline tests in `brain/test_brain.py`. Every class in it is named after the operator it implements, so the file reads as a table of contents for this section.
+
+```
+$ python brain/archetypal_brain.py --mock "validate this JSON: {\"ok\": true}"
+input     : validate this JSON: {"ok": true}
+moon      : Validator (virgo)  conf=0.80  risk=low  novelty=1.00
+path      : SLOW — confidence 0.80 < 0.85
+decision  : Validator → validator:mutable  conf=0.80  risk=low
+complement: Synthesizer asks “Can this ship at 80%? Is the remaining 20%
+            cosmetic?” → approved
+output    : payload is valid JSON
+trace     : mercury:wrap > cancer:redact > moon:classify(novelty=1.00)
+            > sun:deliberate(effort=high) > saturn:gate > pisces:review
+            > virgo:run
+
+$ python brain/archetypal_brain.py --mock "validate this JSON: {\"ok\": true}"
+input     : validate this JSON: {"ok": true}
+moon      : Validator (virgo)  conf=0.90  risk=low  novelty=0.00
+path      : FAST — cached pattern
+decision  : Validator → validator:reflex  conf=0.90  risk=low
+complement: Synthesizer asks “Can this ship at 80%? Is the remaining 20%
+            cosmetic?” → approved
+output    : payload is valid JSON
+trace     : mercury:wrap > cancer:redact > moon:classify(novelty=0.00)
+            > saturn:gate > pisces:review > virgo:run
+```
+
+(The `complement` and `trace` lines are each printed on one line; they are wrapped here to fit the page.)
+
+The first call deliberates (nothing in memory looks like it); the second is a reflex, because the first one became a precedent. Without an API key the file runs in mock mode—keyword classifier, canned deliberator—so the control flow can be studied before it costs anything. Mock runs write to their own `memory.mock.jsonl`, and records labeled by the canned deliberator are never used as examples by a live brain.
+
+**Sprint 0 checklist:**
+
+1. `pip install anthropic`, run the tests, run the two commands above in mock mode.
+2. Replace the twelve stub handlers with the actions your system actually performs. Keep their signatures; let a handler return `(text, next_sign)` when it hands work on.
+3. Decide your slow-only set, your risk floors, your forbidden patterns and the deterministic review rules. Default to more caution than feels necessary; the auditor will tell you if it is too much.
+4. Decide what happens when a model call fails. The reference degrades deterministically—a Moon failure becomes an untrusted verdict (slow path), a Sun failure holds the input for a person, a reviewer failure counts as a rejection—and never counts a failure as a disagreement. Your retry and circuit-breaker numbers belong in the manifest's Mars `retry_strategy` and Uranus `circuit_breaker` keys.
+5. Go live with `shadow_every = 3` in `Policy` for the first week, then relax toward 10 as the disagreement rate settles. The tightened τ is persisted beside the memory file; copy it into `agents.md` after each maintenance window.
+6. Put the thresholds, the slow-only set and the shadow rate into your `agents.md` under the Cognition Layer, so the manifest and the brain agree.
+
+---
+
+## The `agents.md` Boilerplate — Your Fleet Manifest
 
 Every birth chart begins with a moment of incarnation—an exact time, place, and configuration defining a system's initial state. Your fleet deserves the same precision.
 
@@ -2797,6 +3135,7 @@ The boilerplate follows the full framework, and the sections marked **new** exis
 - **Fleet Identity (☉ Sun)** — who this fleet is and why it exists
 - **Agent Registry (the Twelve Archetypes)** — role, model, tools, execution policy
 - **Context Budget (☽ Moon)** — **new**: compaction thresholds, `preserve_verbatim` list, post-compaction re-injection, per-task token ceilings
+- **Cognition Layer (☽ / ☉)** — **new**: the two-speed brain's models, thresholds, slow-only set, shadow rate and learning loop, so the manifest and the code in `brain/` agree
 - **Governance (♄ Saturn)** — guardrails, cost caps, forbidden actions, escalation
 - **Write-Plane Policy (♈↔♎)** — **new**: who is allowed to mutate what, and the decision log every subagent receives
 - **Tool Contracts (☿ Mercury)** — **new**: tool manifest with descriptions treated as versioned prompts, response-shape budgets, error-string standards
@@ -2852,6 +3191,9 @@ Hold both. The archetypes are how you remember; the evidence is how you decide.
 You are no longer only reading your own source code. You are writing the source code for autonomous systems that carry your architectural intelligence forward. The fleet you design reflects the patterns you understand—including, precisely and unforgivingly, the function that was never mounted.
 
 `fleet.deploy(manifest="agents.md", architect="you")`
+
+---
+
 # Conclusion: Master Programmer
 
 ## Escalating Your Own Access Level
@@ -2873,11 +3215,12 @@ Self-knowledge is not a destination you deploy to once and leave in production. 
 The axes teach us that every recurring exception is just an optimized path that has lost its complement.
 
 -   Your "Impatience" is your **Aries** execution path running without the balancing latency of the **Libra** evaluation loop. The function is not broken—it is missing its rate limiter.
--   Your "Rigidity" is your **Capricorn** structural module caching a schema that the **Cancer** state layer has already updated. The interface contract no longer matches the internal state.
+-   Your "Workaholism" is your **Capricorn** structural module shipping builds against a schema the **Cancer** state layer has already updated. The public interface no longer matches the internal state—and no amount of building will fix a stale cache.
+-   Your "Rigidity" is your **Taurus** persistence layer holding references the **Scorpio** garbage collector flagged for release long ago. The leak is not in the data; it is in the refusal to free it.
 
 To resolve the exception, you don't drop the module. You refactor it by integrating the complementary function it has been ignoring.
 
-## Quick Diagnostic Reference
+## Quick Diagnostic Reference (Recap)
 
 The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple. The one-page card below carries the axes; the Chapter 2 table carries the symptoms. Between them, that is the whole diagnostic kit.
 
@@ -2900,14 +3243,15 @@ If you retain nothing else, retain this.
  ║   ♅ Uranus  INTERRUPT()  disruption, "I liberate"         ║
  ║   ♆ Neptune DISSOLVE()   boundary removal, "I dream"      ║
  ║   ♇ Pluto   REFORMAT()   destructive update, "I transform"║
+ ║   ⚷ Chiron  WONTFIX()    the open issue, "I work around"  ║
  ║   ☊ N.Node  IMPORT()     the dependency you keep deferring║
  ║   ☋ S.Node  ARCHIVE()    the cached default that costs you║
  ╠═══════════════════════════════════════════════════════════╣
  ║  MODALITY (how it executes)   ELEMENT (what it runs on)   ║
- ║   Cardinal  spawn()            🔥 Fire   energy / action   ║
- ║   Fixed     lock()             🌍 Earth  structure         ║
- ║   Mutable   adapt()            🌬️ Air    information       ║
- ║                                💧 Water  state / emotion   ║
+ ║   Cardinal  spawn()            Fire    energy / action    ║
+ ║   Fixed     lock()             Earth   structure          ║
+ ║   Mutable   adapt()            Air     information        ║
+ ║                                Water   state / emotion    ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  CIRCUITS (how they talk)                                 ║
  ║   ☌   0°  MERGE      "I simply am this way."              ║
@@ -2921,16 +3265,16 @@ If you retain nothing else, retain this.
  ║   the ones you describe as "how things are."              ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  THE SIX AXES (every symptom's address)                   ║
- ║   ♈ Aries  ↔ ♎ Libra      self       ↔ other             ║
- ║   ♉ Taurus ↔ ♏ Scorpio    form       ↔ transformation    ║
- ║   ♊ Gemini ↔ ♐ Sagitt.    data       ↔ inference         ║
- ║   ♋ Cancer ↔ ♑ Capricorn  private    ↔ public            ║
- ║   ♌ Leo    ↔ ♒ Aquarius   individual ↔ collective        ║
- ║   ♍ Virgo  ↔ ♓ Pisces     order      ↔ surrender         ║
+ ║   Aries  ↔ Libra        self       ↔ other                ║
+ ║   Taurus ↔ Scorpio      form       ↔ transformation       ║
+ ║   Gemini ↔ Sagittarius  data       ↔ inference            ║
+ ║   Cancer ↔ Capricorn    private    ↔ public               ║
+ ║   Leo    ↔ Aquarius     individual ↔ collective           ║
+ ║   Virgo  ↔ Pisces       order      ↔ surrender            ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  THE PROTOCOL                                             ║
  ║   1. Base image   Rising / Sun / Moon                     ║
- ║   2. Bottlenecks  □ and ☍ to ☿ ♀ ♂                        ║
+ ║   2. Bottlenecks  □ and ☍ to ☉ ☽ ☿ ♀ ♂                    ║
  ║   3. Hot paths    △ and ⚹                                 ║
  ║   4. Growth       ☋ → ☊, then IMPORT deliberately         ║
  ║                                                           ║
@@ -2953,6 +3297,8 @@ Chapter 7 pointed the same framework at agent fleets, and there the claims are m
 7. **Memory lives outside the window**, loaded on demand.
 8. **Security is topology, not behavior.** You cannot prompt your way out of it.
 
+And if you want to build one *brain* rather than a fleet: Chapter 7's two-speed runtime—a fast classifier (the Moon) in front of a slow deliberator (the Sun), with Saturn deciding which one answers—ships as runnable code in the repository's `brain/` directory. Run it in mock mode before it costs anything.
+
 The through-line from Chapter 1 to Chapter 7 is a single sentence, and it was stated in full in Chapter 1: **every recurring failure is an overloaded function whose complement was never mounted.** The person on page one kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
 
 ## `final_commit()`
@@ -2972,3 +3318,88 @@ $ git commit -m "refactor: integrate complementary axis, resolve long-standing d
 ```
 
 Welcome to the command line of life.
+
+---
+
+# Appendix: Legend and Glossary
+
+Everything a chart printout can throw at you, in one place. The three glyph tables are the same ones you met in the Introduction; the glossary covers every astrological term the book uses and a few your chart tool will show you that the book deliberately skips.
+
+## Glyph Legend
+
+**Signs** — the coordinates (Chapter 1) and, in Chapter 7, the agent archetypes.
+
+| Glyph | Sign | Degrees | Element / Modality | Chapter 7 archetype |
+|---|---|---|---|---|
+| ♈ | Aries | 0°–29° | Fire / Cardinal | Initiator |
+| ♉ | Taurus | 30°–59° | Earth / Fixed | Accumulator |
+| ♊ | Gemini | 60°–89° | Air / Mutable | Router |
+| ♋ | Cancer | 90°–119° | Water / Cardinal | Guardian |
+| ♌ | Leo | 120°–149° | Fire / Fixed | Presenter |
+| ♍ | Virgo | 150°–179° | Earth / Mutable | Validator |
+| ♎ | Libra | 180°–209° | Air / Cardinal | Mediator |
+| ♏ | Scorpio | 210°–239° | Water / Fixed | Auditor |
+| ♐ | Sagittarius | 240°–269° | Fire / Mutable | Strategist |
+| ♑ | Capricorn | 270°–299° | Earth / Cardinal | Governor |
+| ♒ | Aquarius | 300°–329° | Air / Fixed | Innovator |
+| ♓ | Pisces | 330°–359° | Water / Mutable | Synthesizer |
+
+**Operators** — the planets and points (Chapter 3). The last column is how long each one stays in a sign, which is also how "personal" its sign placement is.
+
+| Glyph | Body | Operator | Changes sign every |
+|---|---|---|---|
+| ☉ | Sun | `IDENTITY` | ~1 month |
+| ☽ | Moon | `BUFFER` | ~2.5 days |
+| ☿ | Mercury | `IO_STREAM` | ~3–4 weeks |
+| ♀ | Venus | `BIND` | ~4 weeks |
+| ♂ | Mars | `VECTOR` | ~6–7 weeks |
+| ♃ | Jupiter | `MULTIPLY` | ~1 year |
+| ♄ | Saturn | `LIMIT` | ~2.5 years |
+| ⚷ | Chiron | `WONTFIX` | 2–8 years (eccentric orbit) |
+| ♅ | Uranus | `INTERRUPT` | ~7 years |
+| ♆ | Neptune | `DISSOLVE` | ~14 years |
+| ♇ | Pluto | `REFORMAT` | ~12–30 years |
+| ☊ / ☋ | North / South Node | `IMPORT` / `ARCHIVE` | ~1.5 years |
+
+**Aspects** — the circuits (Chapter 4).
+
+| Glyph | Aspect | Angle | Circuit |
+|---|---|---|---|
+| ☌ | Conjunction | 0° | Merge — monolith |
+| ⚹ | Sextile | 60° | Link — helper path |
+| □ | Square | 90° | Block — deadlock |
+| △ | Trine | 120° | Flow — superconductor |
+| ⚻ | Quincunx | 150° | Shim — no shared ABI |
+| ☍ | Opposition | 180° | Mirror — distributed pair |
+
+**Other marks on a chart printout**: **ASC / AC** = Ascendant (the Rising sign) · **MC** = Midheaven · **DC / IC** = the points opposite the Ascendant and Midheaven · **℞** or **R** = retrograde · **1–12** around the wheel = houses · **⊗** = Part of Fortune (ignore).
+
+## Glossary
+
+- **Natal chart / birth chart** — the computed snapshot of every planet's position on the zodiac ring at your birth moment, from your birth place. Inputs: date, time, place. Your source code.
+- **Zodiac** — the 360° ring along which planets are located, divided into twelve 30° signs. The address space.
+- **Ecliptic** — the apparent yearly path of the Sun through the sky; the zodiac ring is laid out along it.
+- **Sign** — a 30° segment of the ring: the execution context an operator is running in.
+- **Degree** — an operator's exact offset within its sign (0–29°). `address = sign_base + degree`.
+- **Element** — Fire (energy), Earth (structure), Air (information), Water (emotion/state). The data type an operator works on.
+- **Modality** — Cardinal (init), Fixed (persist), Mutable (transform). The lifecycle phase.
+- **Polarity** — signs alternate outward (Fire, Air) and inward (Earth, Water); a parity bit on the sign index.
+- **Luminaries** — the Sun and Moon.
+- **Personal / social / outer planets** — Mercury, Venus, Mars (fast, individual) / Jupiter, Saturn (medium) / Uranus, Neptune, Pluto (slow; sign shared by a whole cohort).
+- **Big Three** — Sun, Moon, Rising. The base image.
+- **Rising sign / Ascendant (ASC)** — the sign on the eastern horizon at your birth minute. Needs birth time and place. The public API.
+- **Midheaven (MC)** — the highest point of the chart; public role and career. Not used in this book.
+- **Chart ruler** — the planet that rules your Rising sign. `PID 1` (table in Chapter 6).
+- **Rulership** — each sign has a home operator (Aries → Mars, etc.). "Native context" in this book.
+- **House** — one of twelve numbered slices of the wheel, counted from the Ascendant; the life domain in which an operator executes. Deliberately not used here—treat as a v2 feature.
+- **Cusp** — a boundary: between two signs, or between two houses. The Pisces–Aries cusp is the ring's wrap-around point.
+- **Aspect** — the angle between two operators: the circuit type (Chapter 4).
+- **Orb** — tolerance around the exact aspect angle; ~8° for ☌ ☍ □ △, ~5° for ⚹, ~3° for ⚻. Smaller orb = stronger circuit.
+- **Transit** — where a planet is in the sky *now*, read against your natal positions. The runtime clock.
+- **Return** — a transiting planet arriving back at its natal position: one full orbit (Chapter 5).
+- **Retrograde (℞)** — a planet appearing to move backward from Earth's vantage. Read as the operator in review mode: internalized, re-processing. Optional for a first profile.
+- **Nodes (☊ ☋)** — where the Moon's orbit crosses the ecliptic. North = `IMPORT`, South = `ARCHIVE`; always 180° apart, so tools often print only the North.
+- **Chiron (⚷)** — small body between Saturn and Uranus; the permanently open ticket (Chapters 3 and 5).
+- **Stellium** — three or more operators in the same sign: a hot cluster. You will see the word in chart tools.
+- **Archetype (Chapter 7)** — a sign read as an agent role: the twelve cells of the Element × Modality grid as a label space and handler registry.
+- **Two-speed brain (Chapter 7)** — a fast classifier (the Moon) in front of a slow deliberator (the Sun), with Saturn deciding which one answers.

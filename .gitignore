@@ -4,3 +4,11 @@ Thumbs.db
 .vscode
 .idea
 *.log
+
+# runtime files of the reference brain
+brain/memory.jsonl
+__pycache__/
+.claude/
+
+brain/memory.mock.jsonl
+brain/*.policy.json

@@ -8,7 +8,7 @@ This chapter is where the framework pays professional dividends. Everything you'
 
 You already understand fleet architecture. This chapter is the deployment guide.
 
-It is also the longest chapter in the book, by design, and it is built in three movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map.
+It is also the longest chapter in the book, by design, and it is built in four movements. First, **eight laws**—what the field measured between 2024 and 2026, each with its archetypal address. Then the **archetypes, axes, and topologies** as fleet design vocabulary, including a map of every documented multi-agent failure mode to the operator that prevents it. Finally the **runtime**: the maintenance calendar, an incident narrative, the manifest, and the limits of the model. If you only read one part, read the laws. If you only keep one artifact, keep the failure map. And between the runtime and the manifest, **the brain**: the smallest thing that is still a mind—one agent with a fast classifier in front of a slow deliberator—shipped as runnable code.
 
 ## The Honest Framing: This Chapter Can Be Falsified
 
@@ -36,15 +36,15 @@ Between the first wave of autonomous-agent demos and the production systems runn
 │    performance variance between agent      │  ♄  Saturn / LIMIT   │
 │    systems is explained by token spend.    │                      │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 3. Multi-agent failures are organizational,│  ♎  Libra / Mediator │
+│ 3. Multi-agent failures are organizational,│  ♎  Libra / Mediator│
 │    not cognitive. Agents fail the way bad  │  (the Axis of        │
 │    teams fail: spec drift, handoff loss.   │   Identity)          │
 ├────────────────────────────────────────────┼──────────────────────┤
 │ 4. Reliability is multiplicative. Per-step │  ♄  Saturn / LIMIT   │
 │    accuracy compounds; long tasks decay.   │  ⚷  checkpointing    │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 5. Verification is the bottleneck — and    │  ♍  Virgo/Validator  │
-│    verifiers get gamed by what they check. │  ♏  Scorpio/Auditor  │
+│ 5. Verification is the bottleneck — and    │  ♍  Virgo/Validator │
+│    verifiers get gamed by what they check. │  ♏  Scorpio/Auditor │
 ├────────────────────────────────────────────┼──────────────────────┤
 │ 6. Tools are prompts. Their names,         │  ☿  Mercury/IO_STREAM│
 │    descriptions and return shapes are the  │                      │
@@ -53,7 +53,7 @@ Between the first wave of autonomous-agent demos and the production systems runn
 │ 7. Memory belongs outside the context      │  ☋ South Node/ARCHIVE│
 │    window, loaded on demand, not upfront.  │  ☊ North Node/IMPORT │
 ├────────────────────────────────────────────┼──────────────────────┤
-│ 8. Security is a topology problem, not a   │  ♋  Cancer/Guardian  │
+│ 8. Security is a topology problem, not a   │  ♋  Cancer/Guardian │
 │    behavior problem. You cannot prompt     │                      │
 │    your way out of it.                     │                      │
 └────────────────────────────────────────────┴──────────────────────┘
@@ -130,7 +130,7 @@ The field has converged on three operations, and the useful finding is that you 
  │               │  immediate next step │ on rot alone       │
  ├───────────────┼──────────────────────┼────────────────────┤
  │  ISOLATION    │  Hand the subtask to │ Strongest for      │
- │  (♓ subagent) │  a fresh window; get │ breadth; loses     │
+ │  (♓ subagent)│  a fresh window; get │ breadth; loses     │
  │               │  back a summary      │ shared assumptions │
  └───────────────┴──────────────────────┴────────────────────┘
 
@@ -639,24 +639,22 @@ So the defenses that work are structural, and every one of them is a Guardian or
 
 Every agent in a fleet occupies a **functional niche**. Just as every sign is a unique coordinate in the behavioral field, every archetype is a unique execution profile—and, more usefully, each one exists to prevent a specific failure that would occur in its absence.
 
-```
-┌───────────┬──────────────┬────────────────────────────────────────────┐
-│  SIGN     │  ARCHETYPE   │  CALL SIGNATURE                            │
-├───────────┼──────────────┼────────────────────────────────────────────┤
-│ Aries     │ Initiator    │ agent.spawn(task, priority=MAX, deps=NONE)    │
-│ Taurus    │ Accumulator  │ agent.persist(state, ttl=LONG, retry=TRUE)    │
-│ Gemini    │ Router       │ agent.route(msg, channels=ALL, parallel=ON)   │
-│ Cancer    │ Guardian     │ agent.protect(data, acl=STRICT, sandbox=ON)│
-│ Leo       │ Presenter    │ agent.render(output, format=RICH, user=YES)   │
-│ Virgo     │ Validator    │ agent.validate(artifact, schema=ENFORCED)  │
-│ Libra     │ Mediator     │ agent.serialize(writes, consensus=REQUIRED)│
-│ Scorpio   │ Auditor      │ agent.audit(trajectory, depth=FULL)        │
-│ Sagitt.   │ Strategist   │ agent.plan(goal, decompose=TRUE, budget=N) │
-│ Capricorn │ Governor     │ agent.enforce(policy, budget=STRICT)          │
-│ Aquarius  │ Innovator    │ agent.experiment(approach=NOVEL, risk=OK)     │
-│ Pisces    │ Synthesizer  │ agent.synthesize(sources=ALL, fuzzy=TRUE)     │
-└───────────┴──────────────┴────────────────────────────────────────────┘
-```
+Each archetype is the sign you met in Chapter 2, wearing a job title:
+
+| Sign | Chapter 2 nickname | Archetype | Call signature |
+|---|---|---|---|
+| ♈ Aries | The Spark | **Initiator** | `agent.spawn(task, priority=MAX, deps=NONE)` |
+| ♉ Taurus | The Garden | **Accumulator** | `agent.persist(state, ttl=LONG, retry=TRUE)` |
+| ♊ Gemini | The REST Client | **Router** | `agent.route(msg, channels=ALL, parallel=ON)` |
+| ♋ Cancer | The Secure Kernel | **Guardian** | `agent.protect(data, acl=STRICT, sandbox=ON)` |
+| ♌ Leo | The Renderer | **Presenter** | `agent.render(output, format=RICH, user=YES)` |
+| ♍ Virgo | The Static Analyzer | **Validator** | `agent.validate(artifact, schema=ENFORCED)` |
+| ♎ Libra | The Mirror | **Mediator** | `agent.serialize(writes, consensus=REQUIRED)` |
+| ♏ Scorpio | The Composter | **Auditor** | `agent.audit(trajectory, depth=FULL, purge=STALE)` |
+| ♐ Sagittarius | The Inference Engine | **Strategist** | `agent.plan(goal, decompose=TRUE, budget=N)` |
+| ♑ Capricorn | The Production Server | **Governor** | `agent.enforce(policy, budget=STRICT)` |
+| ♒ Aquarius | The Mesh Node | **Innovator** | `agent.experiment(approach=NOVEL, risk=OK)` |
+| ♓ Pisces | The Event Bus | **Synthesizer** | `agent.synthesize(sources=ALL, fuzzy=TRUE)` |
 
 The **Element** determines what the agent operates on. The **Modality** determines how it executes:
 
@@ -837,7 +835,7 @@ Two agents competing for one resource with incompatible optimization targets. *E
 > resource_contract({
 >   token_budget: saturn.get_limit(),
 >   allocation: mars.request(tokens, priority),
->   conflict_resolution: "saturn_wins",
+>   conflict_resolution: "agent_b_wins",  // the manifest's vocabulary; agent_b is Saturn
 >   visible_to_requester: true,      // Law 2
 >   audit_trail:         true
 > })
@@ -954,7 +952,253 @@ The Auditor was in the chart. Nobody ran it.
 
 ---
 
-## The [`agents.md`](https://github.com/misterclarity/Archetypal/blob/master/agents.md) Boilerplate — Your Fleet Manifest
+## Building the Brain: The Two-Speed Runtime
+
+Everything above describes a fleet—many agents, one manifest. This section builds the smallest thing that is still a *mind*: one agent with two speeds. It is the part of the chapter you can run tonight, and it comes straight out of a single sentence in Chapter 3:
+
+> *When the system encounters a familiar stimulus, the Moon fires a cached response before the Sun's conscious thread can run its own evaluation.*
+
+That sentence is an architecture. Cognitive science calls the two halves System 1 and System 2; the book calls them the `BUFFER` and the `IDENTITY` operator. In code they become a **fast classifier** and a **slow deliberator**:
+
+| Layer | Operator | Model | Latency | Cost | Job |
+|---|---|---|---|---|---|
+| The Moon | `BUFFER` | `claude-haiku-5-5`, effort `low` | well under a second | ~$0.10 per million input tokens | Pattern-match the input against cached history: *which archetype handles this, how sure am I, how risky is it?* |
+| The Sun | `IDENTITY` | `claude-opus-5-5`, adaptive thinking | seconds | ~$4 per million input tokens | Deliberate when the Moon is unsure, the input is novel, or the stakes are high |
+
+The Moon is not a cheaper Sun. It answers a *narrower* question—routing, not reasoning—and it only answers it when it has seen something similar before. Everything else goes to the Sun. The whole design is the policy that decides which is which, and that policy is Saturn's—Law 2 applied to a single mind: compute is the multiplier, Saturn is the governor.
+
+### The Architecture
+
+```
+ THE TWO-SPEED RUNTIME — ONE INPUT, TWO SPEEDS, ONE GATE
+ ══════════════════════════════════════════════════════════════════════════
+
+                    input
+                      │
+                      ▼
+        ┌───────────────────────────┐
+        │ MERCURY   IO_STREAM       │  normalize into one envelope
+        │ CANCER    Guardian        │  redact PII before anything else sees it
+        └─────────────┬─────────────┘
+                      │
+                      ▼
+        ┌───────────────────────────┐   few-shot examples: the Sun's
+        │ MOON      BUFFER  (fast)  │◄──── past decisions on similar ────┐
+        │ claude-haiku-5-5          │      inputs, with their rules      │
+        │ -> sign, confidence, risk │                                    │
+        │    + novelty vs memory    │                                    │
+        └─────────────┬─────────────┘                                    │
+                      │                                                  │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ SATURN    LIMIT           │  may the reflex act alone?         │
+        │ reflex / verify / think   │                                    │
+        └──────┬─────────────┬──────┘                                    │
+       reflex  │             │  verify (low effort) or think (high)      │
+               ▼             ▼                                           │
+     ┌──────────────┐  ┌───────────────────────────┐                     │
+     │ REFLEX       │  │ SUN       IDENTITY (slow) │                     │
+     │ cached       │  │ claude-opus-5-5           │                     │
+     │ decision     │  │ adaptive thinking         │                     │
+     └──────┬───────┘  │ -> Decision + rule        │                     │
+            │          └─────────────┬─────────────┘                     │
+            │  every Nth reflex is   │                                   │
+            │  shadow-checked here   │                                   │
+            └─────────┬──────────────┘                                   │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ SATURN    gate            │  forbidden action? too long?       │
+        │ AXIS      complement      │  the opposite archetype asks       │
+        │           review          │  its one question                  │
+        └─────────────┬─────────────┘  (a rejected reflex -> URANUS:     │
+                      ▼                 one re-run on the slow path)     │
+        ┌───────────────────────────┐                                    │
+        │ HANDLERS[sign]            │  one of twelve; hand-offs follow   │
+        │ dispatch by aspect        │  the aspect between the two signs  │
+        └─────────────┬─────────────┘                                    │
+                      ▼                                                  │
+        ┌───────────────────────────┐                                    │
+        │ TAURUS    memory.jsonl    │────────────────────────────────────┘
+        │ write-back (redacted)     │  the Sun's labels and rules become
+        └─────────────┬─────────────┘  the Moon's examples
+                      ▼
+        SCORPIO   auditor: Moon-vs-Sun disagreement rate -> tightens Saturn
+```
+
+### The Label Space Is the Zodiac
+
+A classifier needs classes. The twelve archetypes are the classes—and because they come from the Element × Modality grid, they are not twelve arbitrary buckets but a 4 × 3 matrix a small model can learn. **Element** answers *what kind of payload is this?* **Modality** answers *what lifecycle phase is being asked for?*
+
+| | **Cardinal** — start something | **Fixed** — keep something going | **Mutable** — transform / hand off |
+|---|---|---|---|
+| **Fire** — act, produce | **Initiator**: "kick off the deploy" | **Presenter**: "write the summary" | **Strategist**: "plan the migration" |
+| **Earth** — structure, resources | **Governor**: "is this within budget?" | **Accumulator**: "save this for later" | **Validator**: "check this against the schema" |
+| **Air** — information | **Mediator**: "which option is fairer?" | **Innovator**: "try something different" | **Router**: "look this up / forward this" |
+| **Water** — state, protection | **Guardian**: "redact the PII first" | **Auditor**: "why did this happen?" | **Synthesizer**: "merge these three reports" |
+
+Every input the brain receives is one of these twelve requests, and each class has exactly one handler. The classifier's job is to name the handler. The deliberator's job is to name it *correctly* when naming it is hard. There is deliberately no thirteenth "unknown" label: a catch-all becomes a silent sink. Uncertainty is expressed through confidence and novelty instead, and inputs that stay novel are the North Node—candidates for a new handler at the next Jupiter review.
+
+### What the Moon Returns
+
+The fast path never free-writes. It returns a typed verdict, enforced by structured output:
+
+```
+Verdict {
+  sign        : one of the twelve     -- which handler
+  confidence  : 0.0 – 1.0             -- 0.85+ only when unambiguous
+  risk        : low | medium | high   -- irreversible? money, PII, prod, others?
+  rationale   : one sentence
+}
+```
+
+Its prompt contains two things: the twelve role definitions, and the nearest past cases the Sun has already judged—retrieved from memory by similarity and pasted in as examples, each with the one-line rule the Sun wrote for it. That retrieval is the cache. (The reference implementation measures similarity by word overlap and rescans memory on every call; swap `Memory.similar` for an embedding index before the file grows past a few thousand records, and re-tune ν when you do—novelty is defined by whatever similarity you use.) A brand-new brain has an empty cache and sends almost everything to the Sun; after a few hundred decisions the Moon has precedents for most of what it sees. Two numbers are computed outside the model: **novelty** (how unlike anything in memory the input is) and the **risk floor**—every handler declares the minimum risk of what it does, and the Moon may raise a risk grade but never lower it below that floor. The Initiator floor is *medium*: no deploy is ever a reflex.
+
+### Saturn's Routing Rule
+
+Saturn reads the verdict and picks one of three bands. The Moon acts alone only in the first:
+
+| Band | Conditions | Who decides | Effort |
+|---|---|---|---|
+| **Reflex** | archetype not in the slow-only set, `risk == low`, `confidence ≥ τ` (0.85), `novelty ≤ ν` (0.60) | the Moon | one cheap call |
+| **Verify** | same, but `confidence` between 0.70 and τ | the Sun checks the Moon's draft | `low` |
+| **Deliberate** | anything else: slow-only archetype, risk above low, confidence below 0.70, novel input | the Sun | `high` |
+
+The **slow-only set** is Initiator, Auditor, Governor, Innovator and Strategist: anything that *starts*, *purges*, *sets policy*, *experiments* or *plans* thinks first. It is a set membership test, not a number. τ, ν and the verify floor (0.70) are the only three numbers in the rule, and the Auditor moves τ for you—in one direction only. (The shadow rate that feeds the Auditor is a separate dial; Sprint 0 below sets it.)
+
+### What the Sun Returns
+
+When the Sun runs it receives the envelope, the Moon's provisional verdict (so it can disagree with it explicitly), and the same retrieved precedents. It deliberates the way the Strategist plans—thesis, payload type, lifecycle phase, then the handler—and returns a `Decision`:
+
+```
+Decision {
+  sign, action, response, risk, confidence, rationale,
+  needs_human : bool         -- irreversible, costly, or affecting others
+  rule        : string|null  -- "when <pattern> -> <archetype>":
+                             --   one line the Moon can learn
+}
+```
+
+A reflex produces the same shape, so everything downstream—the gate, the review, the handler, the memory record—is identical for both paths. The two speeds differ only in *who filled in the struct*. The `rule` field is the real training signal: a sentence written by the strong model to be read by the weak one, stored next to the example it came from.
+
+### The Gate and the Complement Review
+
+Every `Decision`, fast or slow, passes through Saturn's gate (forbidden actions and patterns, output length) and then through the **complement review**: the archetype on the opposite end of the axis asks its one question from Chapter 2. Saturn also meters the Sun itself: the hourly cap on slow calls is checked before any deliberation or shadow check, and a Sun that cannot run holds the input for a person.
+
+| Decision made by | Reviewed by | The question |
+|---|---|---|
+| Initiator (Aries) | Mediator (Libra) | What is the cost of this action to the shared system? |
+| Accumulator (Taurus) | Auditor (Scorpio) | What must be garbage-collected before more is stored? |
+| Router (Gemini) | Strategist (Sagittarius) | What is the thesis? Is anything here that is not it? |
+| Guardian (Cancer) | Governor (Capricorn) | What rule makes this protection repeatable and enforceable? |
+| Presenter (Leo) | Innovator (Aquarius) | Does this output serve a system bigger than its own UI? |
+| Validator (Virgo) | Synthesizer (Pisces) | Can this ship at 80%? Is the remaining 20% cosmetic? |
+| Mediator (Libra) | Initiator (Aries) | What does the system itself want, independent of consensus? |
+| Auditor (Scorpio) | Accumulator (Taurus) | What must be preserved before anything is purged? |
+| Strategist (Sagittarius) | Router (Gemini) | Which data points contradict the thesis? |
+| Governor (Capricorn) | Guardian (Cancer) | Who is harmed by enforcing this rule? |
+| Innovator (Aquarius) | Presenter (Leo) | Does the experiment still deliver a usable output? |
+| Synthesizer (Pisces) | Validator (Virgo) | Which merged claim would fail verification? |
+
+The review has two tiers. First a deterministic rule—the reviewer's question written as code (the Auditor rejects an Accumulator decision that would store more than the cap; the Mediator rejects an Initiator decision that touches production without a human; the Strategist rejects a Router decision with nothing to route). Then, for anything above low risk—or whenever the reviewer has no rule yet; the reference ships rules for six of the twelve—one more cheap model call with the reviewer's system prompt. A failed review of a *slow* decision flips `needs_human` on. A failed review of a *reflex* is a Uranus interrupt: the reflex is discarded and the input is re-run once on the slow path. This is the six axes doing in software what Chapter 2 asked you to do by hand—never run one pole without its complement—and it and the shadow check are the two places in the loop where the fast path can be overruled in real time.
+
+### The Learning Loop
+
+Three mechanisms turn a two-speed router into something that improves:
+
+1. **Write-back.** Every decision is appended to memory (Law 7: outside the window; Law 8: redacted before it is written) with its redacted text, the Moon's label, the final label, the Sun's rule, which path ran, and whether the two agreed. The Sun's records are the Moon's future examples; reflex-only records are kept for novelty scoring but never used as examples, so the Moon cannot train itself on its own guesses.
+2. **Shadow checks.** Every Nth reflex (default: one in ten) is *also* sent to the Sun at low effort. If the Sun disagrees, the Sun's decision wins and the disagreement is logged with the confused pair of labels. This is Scorpio's continuous anomaly detection applied to the brain itself—Law 5's trajectory sampling, with the Sun as the judge and the reflex never grading its own work.
+3. **Threshold tuning.** When more than 20% of the last ten shadow checks disagree (one step per ten, so every step rests on evidence no earlier step used), the Auditor raises τ by 0.02 and persists it beside the memory file. Only shadow checks count: a verify or deliberate decision that overrules the Moon is logged for the audit but never moves τ, because on those inputs the Moon was never trusted in the first place. The brain becomes more cautious exactly when its reflexes are proven unreliable—and never loosens on its own. Loosening is a human decision made during a maintenance window, which is the one asymmetry that keeps the cache from quietly becoming a South Node: battle-tested, cheap, and wrong.
+
+### Aspects as Hand-off Modes
+
+When one handler needs another—the Router hands results to the Validator, the Strategist to the Presenter—the aspect between their signs tells you how to wire the hand-off:
+
+| Aspect | Signs | Hand-off mode |
+|---|---|---|
+| Conjunction (0°) | same sign | merged into one process; loop capped |
+| Sextile (60°) / Trine (120°) | compatible / same element | direct, no adapter |
+| Square (90°) | same modality, different element | arbitrated—re-gated by Saturn before it runs |
+| Quincunx (150°) | nothing shared | adapter required; the Sun writes it |
+| Opposition (180°) | the axis pair | never a hop—the pair only reviews |
+
+In the reference implementation the Router hands to the Validator across a square (Saturn's gate runs a second time on the hand-off, and it proceeds because the Validator is not slow-only) and the Strategist hands to the Presenter across a trine (it just runs). A handler that named its quincunx partner would stop the chain and flag that the Sun must write the adapter (the reference stub emits the flag; wiring that Sun call is yours).
+
+### Maintenance Windows for a Brain
+
+| Transit | Cadence | What it does to the brain |
+|---|---|---|
+| Jupiter | quarterly | handler-usage histogram and high-novelty count: which archetypes are never invoked? Which inputs keep coming back novel—the North Node asking for a new handler? |
+| Saturn | annually (or on every incident) | reflex accuracy audit: disagreement rate, most-confused labels, recommendation on τ |
+| Pluto | on model replacement | rebuild memory from the last 500 Sun-labeled records; the cache is reborn with the new substrate |
+
+### Model Selection
+
+| Role in the brain | Model | Why |
+|---|---|---|
+| Moon classifier · complement reviewer | `claude-haiku-5-5`, effort `low` | cheapest, fastest, structured output; swap for a fine-tuned small model once memory holds tens of thousands of labeled examples |
+| Sun deliberation · shadow checks | `claude-opus-5-5`, effort `high` (deliberate) or `low` (verify, shadow) | adaptive thinking is always on; effort is the dial; one model means one prompt-cache namespace |
+| Saturn gate · risk floors · dispatch | no model | deterministic code; a model cannot be the thing that limits models |
+
+A model change is a Uranus trigger (it is already in the manifest's `uranus_trigger` conditions): pin the IDs in `agents.md` and re-baseline the Moon's thresholds after every swap—the examples were compiled against the old reflexes.
+
+### What It Costs
+
+Illustrative numbers at first-party API rates (`claude-haiku-5-5` $0.10 / $0.50 per million input / output tokens; `claude-opus-5-5` $4 / $20), assuming a fast call of ~800 input + ~100 output tokens, a verify call of ~1,500 input + ~200 output, and a high-effort deliberation of ~1,500 input + ~2,000 output tokens (thinking tokens are output tokens, and at high effort they dominate), with 10,000 inputs a day:
+
+| Design | Daily calls | Daily cost (illustrative) |
+|---|---|---|
+| Everything on the Sun | 10,000 deliberate | ~$460 |
+| Two-speed, 70% reflex / 15% verify / 15% deliberate | 10,000 fast + 1,500 verify + 1,500 deliberate | ~$85 |
+| … plus one-in-ten shadow checks of the reflexes | + 700 low-effort Sun calls | ~$92 |
+| … with prompt caching on both system prompts | same | lower still, once the prompt exceeds the model's minimum cacheable prefix (confirm with `usage.cache_read_input_tokens > 0`) |
+
+The brain's economics are the Moon's hit rate. That is why the learning loop matters more than the model choice, and why Jupiter's "where should we grow?" is a cost question.
+
+### The Reference Implementation
+
+The repository ships the whole thing as one file: [`brain/archetypal_brain.py`](https://github.com/misterclarity/Archetypal/blob/master/brain/archetypal_brain.py), with offline tests in `brain/test_brain.py`. Every class in it is named after the operator it implements, so the file reads as a table of contents for this section.
+
+```
+$ python brain/archetypal_brain.py --mock "validate this JSON: {\"ok\": true}"
+input     : validate this JSON: {"ok": true}
+moon      : Validator (virgo)  conf=0.80  risk=low  novelty=1.00
+path      : SLOW — confidence 0.80 < 0.85
+decision  : Validator → validator:mutable  conf=0.80  risk=low
+complement: Synthesizer asks “Can this ship at 80%? Is the remaining 20%
+            cosmetic?” → approved
+output    : payload is valid JSON
+trace     : mercury:wrap > cancer:redact > moon:classify(novelty=1.00)
+            > sun:deliberate(effort=high) > saturn:gate > pisces:review
+            > virgo:run
+
+$ python brain/archetypal_brain.py --mock "validate this JSON: {\"ok\": true}"
+input     : validate this JSON: {"ok": true}
+moon      : Validator (virgo)  conf=0.90  risk=low  novelty=0.00
+path      : FAST — cached pattern
+decision  : Validator → validator:reflex  conf=0.90  risk=low
+complement: Synthesizer asks “Can this ship at 80%? Is the remaining 20%
+            cosmetic?” → approved
+output    : payload is valid JSON
+trace     : mercury:wrap > cancer:redact > moon:classify(novelty=0.00)
+            > saturn:gate > pisces:review > virgo:run
+```
+
+(The `complement` and `trace` lines are each printed on one line; they are wrapped here to fit the page.)
+
+The first call deliberates (nothing in memory looks like it); the second is a reflex, because the first one became a precedent. Without an API key the file runs in mock mode—keyword classifier, canned deliberator—so the control flow can be studied before it costs anything. Mock runs write to their own `memory.mock.jsonl`, and records labeled by the canned deliberator are never used as examples by a live brain.
+
+**Sprint 0 checklist:**
+
+1. `pip install anthropic`, run the tests, run the two commands above in mock mode.
+2. Replace the twelve stub handlers with the actions your system actually performs. Keep their signatures; let a handler return `(text, next_sign)` when it hands work on.
+3. Decide your slow-only set, your risk floors, your forbidden patterns and the deterministic review rules. Default to more caution than feels necessary; the auditor will tell you if it is too much.
+4. Decide what happens when a model call fails. The reference degrades deterministically—a Moon failure becomes an untrusted verdict (slow path), a Sun failure holds the input for a person, a reviewer failure counts as a rejection—and never counts a failure as a disagreement. Your retry and circuit-breaker numbers belong in the manifest's Mars `retry_strategy` and Uranus `circuit_breaker` keys.
+5. Go live with `shadow_every = 3` in `Policy` for the first week, then relax toward 10 as the disagreement rate settles. The tightened τ is persisted beside the memory file; copy it into `agents.md` after each maintenance window.
+6. Put the thresholds, the slow-only set and the shadow rate into your `agents.md` under the Cognition Layer, so the manifest and the brain agree.
+
+---
+
+## The `agents.md` Boilerplate — Your Fleet Manifest
 
 Every birth chart begins with a moment of incarnation—an exact time, place, and configuration defining a system's initial state. Your fleet deserves the same precision.
 
@@ -965,6 +1209,7 @@ The boilerplate follows the full framework, and the sections marked **new** exis
 - **Fleet Identity (☉ Sun)** — who this fleet is and why it exists
 - **Agent Registry (the Twelve Archetypes)** — role, model, tools, execution policy
 - **Context Budget (☽ Moon)** — **new**: compaction thresholds, `preserve_verbatim` list, post-compaction re-injection, per-task token ceilings
+- **Cognition Layer (☽ / ☉)** — **new**: the two-speed brain's models, thresholds, slow-only set, shadow rate and learning loop, so the manifest and the code in `brain/` agree
 - **Governance (♄ Saturn)** — guardrails, cost caps, forbidden actions, escalation
 - **Write-Plane Policy (♈↔♎)** — **new**: who is allowed to mutate what, and the decision log every subagent receives
 - **Tool Contracts (☿ Mercury)** — **new**: tool manifest with descriptions treated as versioned prompts, response-shape budgets, error-string standards

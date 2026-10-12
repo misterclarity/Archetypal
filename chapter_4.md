@@ -4,41 +4,41 @@ If planets are operators and signs are coordinates, then **Aspects** are the int
 
 Aspects are geometric angles formed between planets relative to Earth. In our system model, they are the **topology of the message-passing network**—the circuit paths that determine whether data flows freely or encounters resistance.
 
-### Aspect Geometry at a Glance
+## Aspect Geometry at a Glance
+
+Put one planet at the top of the wheel. Every other planet sits at some angle from it, measured the short way round the ring; that angle is the aspect.
 
 ```
-                        0°
-                    CONJUNCTION
-                     (☌ Merge)
-                        ●
-                       /|\
-                      / | \
-                60°  /  |  \  300°
-              SEXTILE   |   SEXTILE
-               (⚹)  /   |   \  (⚹)
-                   /    |    \
-            120° /     |     \ 240°
-           TRINE/      |      \TRINE
-            (△)/       |       \(△)
-              /        |        \
-        180° ●─────────┼─────────● 180°
-        OPPOSITION     |     OPPOSITION
-           (☍)  \      |      /  (☍)
-                 \     |     /
-            120°  \    |    /  240°
-                   \   |   /
-              90°   \  |  /   270°
-             SQUARE  \ | /  SQUARE
-               (□)    \|/    (□)
-                        ●
+                        0°  CONJUNCTION ☌
+                               ●
+                        .      │      .
+         300° ⚹     .          │          .     60° ⚹
+         SEXTILE  .            │            .  SEXTILE
+                 .             │             .
+  270° □ SQUARE  ●─────────────┼─────────────●  90° □ SQUARE
+                 .             │             .
+         240° △   .            │            .   120° △
+         TRINE      .          │          .     TRINE
+                       .       │       .
+         210° ⚻ QUINCUNX   .   │   .   150° ⚻ QUINCUNX
+                               ●
+                       180°  OPPOSITION ☍
+
+     Angles are measured from the planet at the top, the short way
+     round: 300° apart is a sextile (60°), 240° a trine (120°),
+     270° a square (90°). Every aspect has a mirror twin on the
+     other side of the wheel.
 
      ───────────────────────────────────────
      HARD aspects (□ ☍):  Friction → Growth
      SOFT aspects (△ ⚹):  Flow → Ease
      FUSION aspect (☌):   Merge → Intensity
+     MISFIT aspect (⚻):   No protocol → Manual adapter
 ```
 
-### Orbs: Signal Strength
+Note the difference from the Chapter 1 wheel: that one measured *sign positions* from 0° Aries on the left; this one measures *distances between two planets*, from whichever planet you put at the top.
+
+## Orbs: Signal Strength
 
 Aspects are not binary. Two operators at exactly 90° and two operators at 97° are both in a Square, but not with the same intensity. The deviation from exactness is called the **orb**, and it behaves like signal strength on a connection.
 
@@ -71,6 +71,23 @@ This inverts a common assumption. A wide, loose Square shows up as "I struggle w
 
 **Example**: Two people both have Moon square Saturn. Person A's is at 7° orb: they notice they get a bit cold and formal when upset, and they can usually catch it. Person B's is at 0°30′: they do not believe emotional expression is a thing that people genuinely do. Not "I find it hard"—they experience others' openness as performance. Same circuit. Different amplitude. Only one of them can see it.
 
+Conventional allowances, if your tool lets you set them: roughly ±8° around the exact angle for ☌ ☍ □ △, about ±5° for the sextile ⚹, and only ±3° for the quincunx ⚻—the one minor aspect this book uses. Use 8°/5°/3° for a first pass and tighten later. And remember that angles are measured the short way round the ring: planets 270° apart are 90° apart.
+
+### What Two Signs Share, by Distance
+
+You do not need to memorize which aspects are "harmonious." Count the signs between two placements and read off what they have in common:
+
+| Aspect | Angle | Signs apart | Element shared? | Modality shared? | Polarity shared? |
+|---|---|---|---|---|---|
+| Conjunction ☌ | 0° | 0 | yes | yes | yes |
+| Sextile ⚹ | 60° | 2 | compatible | no | yes |
+| Square □ | 90° | 3 | no | yes | no |
+| Trine △ | 120° | 4 | yes | no | yes |
+| Quincunx ⚻ | 150° | 5 | no | no | no |
+| Opposition ☍ | 180° | 6 | compatible | yes | yes |
+
+*Polarity*: Fire and Air are the outward types, Earth and Water the inward types (Chapter 1). *Compatible* means Fire↔Air or Earth↔Water—same polarity, different element. Read it this way: Squares and Quincunxes cross polarity, which is why they generate friction; Trines, Sextiles and Oppositions stay inside it, which is why they flow—the Opposition's tension comes from shared modality, not from polarity.
+
 ## The Conjunction (0°): The Monolith
 **Logic**: `A += B` (Merge into a single execution context)
 
@@ -93,12 +110,12 @@ The `IDENTITY` and `VECTOR` operators are fused in the Scorpio execution context
 **Example — Moon in Cancer Opposite Saturn in Capricorn**:
 
 ```
-  ♋ Moon (BUFFER)              ♑ Saturn (LIMIT)
-  ┌─────────────┐              ┌─────────────┐
-  │ "I need     │◄────180°────►│ "Emotions    │
-  │  safety and │   OPPOSITION │  must meet   │
-  │  nurturing" │              │  standards"  │
-  └─────────────┘              └─────────────┘
+  Moon (BUFFER) in Cancer         Saturn (LIMIT) in Capricorn
+  ┌──────────────┐                ┌──────────────┐
+  │ "I need      │◄─────180°─────►│ "Emotions    │
+  │  safety and  │   OPPOSITION   │  must meet   │
+  │  nurturing"  │                │  standards"  │
+  └──────────────┘                └──────────────┘
 ```
 
 The emotional cache layer (Moon) demands warmth, safety, and unconditional acceptance (Cancer). The validation layer (Saturn) demands maturity, structure, and that feelings be "useful" (Capricorn). The person oscillates between needing to be held and needing to be strong—often projecting one end onto a partner or authority figure. Integration: *Build a structure (Capricorn) that protects (Cancer). Be the adult who is also allowed to feel.*
@@ -113,13 +130,13 @@ The emotional cache layer (Moon) demands warmth, safety, and unconditional accep
 **Example — Venus in Aries Square Pluto in Capricorn**:
 
 ```
-  ♈ Venus (BIND)               ♑ Pluto (REFORMAT)
-  ┌─────────────┐              ┌─────────────┐
-  │ "I want     │              │ "Surrender  │
-  │  connection │◄────90°─────►│  control or │
-  │  NOW, on my │    SQUARE    │  be utterly │
-  │  terms"     │              │  transformed"│
-  └─────────────┘              └─────────────┘
+  Venus (BIND) in Aries           Pluto (REFORMAT) in Capricorn
+  ┌──────────────┐                ┌──────────────┐
+  │ "I want      │                │ "Surrender   │
+  │  connection  │◄─────90°──────►│  control or  │
+  │  NOW, on my  │     SQUARE     │  be utterly  │
+  │  terms"      │                │  transformed"│
+  └──────────────┘                └──────────────┘
 ```
 
 The connection module (Venus) fires quickly and independently (Aries)—it initiates attraction with bold directness. But at 90°, the reformat operator (Pluto) demands that every bond pass through a total power audit (Capricorn). The result: relationships become arenas for profound transformation. The person cannot do "casual." Every connection either transforms them completely or gets purged. The friction IS the growth engine—these are the people who build extraordinary depth in relationships precisely because the system forces them to.
@@ -139,7 +156,7 @@ The resolution is not to silence Saturn. It is to build a pipeline that satisfie
 ## The Trine (120°) and Sextile (60°): The Superconductive Path
 **Logic**: `A && B == TRUE` (Zero-resistance conductivity)
 
-*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
+*   **The Circuit**: Operators in harmonious elements—Trines connect the same element (Fire-to-Fire), Sextiles connect compatible elements (Fire-to-Air, Earth-to-Water). The signal passes without impedance, latency, or packet loss. These are the optimized code paths—the subroutines that execute so efficiently they feel like native operations.
 *   **The Effect**: Natural talent, ease, and high-throughput execution. The failure mode is invisibility: because the code path is so optimized, it never surfaces in profiling. You forget it's there. The developer who writes elegant abstractions effortlessly may never learn to optimize the cases where elegance doesn't naturally emerge.
 *   **The Experience**: `"Isn't this O(1) for everyone?"`
 
@@ -287,19 +304,17 @@ Three or more operators conjunct in the same sign.
 
 A stellium is a Conjunction with compounding interest: the merged operators reinforce each other until the sign's mode of operation stops feeling like *a* way of doing things and starts feeling like the only sane one. The diagnostic question is always the same, and it is the Chapter 2 question: **what is the opposite sign, and what does this person believe about people who live there?** The answer is usually revealing, usually unflattering, and usually the growth vector.
 
-### Aspect Summary Table
+## Aspect Summary Table
 
-```
-┌───────────┬──────┬────────────────┬───────────────────────────┐
-│  Aspect   │Angle │   Circuit Type │  System Experience        │
-├───────────┼──────┼────────────────┼───────────────────────────┤
-│ Conjunction│  0°  │ Monolith       │ "I AM this."              │
-│ Sextile   │ 60°  │ Helper link    │ "This flows with effort." │
-│ Square    │ 90°  │ Deadlock       │ "This blocks me."         │
-│ Trine     │ 120° │ Superconductor │ "Isn't this easy for all?"│
-│ Quincunx  │ 150° │ No shared ABI  │ "These don't fit."        │
-│ Opposition│ 180° │ Distributed    │ "They do this to me."     │
-└───────────┴──────┴────────────────┴───────────────────────────┘
-```
+| Aspect | Angle | Circuit Type | System Experience |
+|---|---|---|---|
+| Conjunction ☌ | 0° | Monolith | "I AM this." |
+| Sextile ⚹ | 60° | Helper link | "This flows—once I call it." |
+| Square □ | 90° | Deadlock | "This blocks me." |
+| Trine △ | 120° | Superconductor | "Isn't this easy for everyone?" |
+| Quincunx ⚻ | 150° | No shared ABI | "These don't fit." |
+| Opposition ☍ | 180° | Distributed | "They do this to me." |
+
+In Chapter 7 this table becomes a routing table: when one agent hands work to another, the aspect between their signs tells you whether the hand-off is direct, needs an arbiter, or needs an adapter.
 
 An aspect is not a verdict on two operators. It is a description of the wire between them—and a Square, a T-square, a Stellium are all, at bottom, the same finding at different scales: too much load on one node and nothing on its complement. The circuit tells you *where* the pressure is. The axis tells you where it can go. Find the function that was never mounted.

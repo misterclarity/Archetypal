@@ -1,6 +1,6 @@
 > **Disclaimer:** This book is provided for educational and entertainment purposes only. It was expanded upon by an LLM based on an idea hatched during years of my own experience, intuitive insights, and research. Once the main body was done, I edited and added to it. I assume no responsibility or liability for any damage, loss, or disruption, whether financial, professional, physical, or mental, incurred from the study or implementation of the concepts, principles, or methodologies described. Apply at your own risk. Test in staging first. Saturn would insist.
 
-**Printing this book is possible by scrolling the sidebar all the way to the bottom and clicking the Print Book icon.**
+**Printing this book:** scroll the sidebar to the bottom and click *Print Book* (on a phone, use the *Print* button in the top bar). A plain-markdown copy of the whole book for pasting into an LLM is linked as *TLDR* in the same place.
 
 # Introduction: The Code of Consciousness
 
@@ -107,27 +107,27 @@ There is a persistent misconception that chaos and order are enemies—that a sy
 
 This principle is encoded directly in the Zodiac at the boundary between **Pisces** and **Aries**—the cusp of rebirth, the point where the cycle's address space wraps from 359° back to 0°.
 
-**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **low-symmetry, ordered phase** perceived as stillness (think deep meditation states). Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
+**Pisces** (♓), the final sign, is the archetype of dissolved boundaries: the `DISSOLVE` context where distinctions between self and other, signal and noise, structure and formlessness become transparent. In Pisces, the system surrenders its partitions. Every module merges into a shared memory space. This is a **high-symmetry, undifferentiated phase** perceived as stillness (think deep meditation states)—every point in the field is equivalent to every other. Here, the uniformity itself becomes a form of instability. When everything is equally connected to everything, no single state is preferred, and the system becomes maximally sensitive to perturbation. This is chaos in its technical sense: deterministic but unpredictable, a pressure building inside perfect uniformity.
 
-Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The low-symmetry disorder built up by Pisces' boundaryless uniformity gives rise to emergent order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
+Then the break comes. **Aries** (♈) at 0° is not a gradual transition—it is a **symmetry-breaking event**. The undifferentiated field of Pisces cracks open as a single point of differentiation asserts itself: *I exist. I am not everything else.* This is the first boundary, the first partition, the first `INIT` call on a fresh process. Chaos does not destroy the system here; it *restores* it. The high-symmetry uniformity built up by Pisces' boundarylessness gives rise to emergent, lower-symmetry order, precisely because a break in uniformity forces the system to settle into a specific state rather than hover across all possible states simultaneously.
 
 ```
  CUSP OF REBIRTH: CHAOS → EMERGENT ORDER
 
- ♓ Pisces (330°-359°)        ♈ Aries (0°-29°)
+ Pisces (330°–359°)          Aries (0°–29°)
  ┌──────────────────┐        ┌──────────────────┐
  │ All boundaries   │        │ First boundary   │
- │ dissolved        │   ⚡   │ asserted         │
+ │ dissolved        │ BREAK  │ asserted         │
  │                  │ ─────► │                  │
- │ Uniform field    │ BREAK  │ Differentiated   │
- │ (low-symmetry    │        │ state (emergent  │
- │  chaos)          │        │ order)           │
+ │ Uniform field    │        │ Differentiated   │
+ │ (high-symmetry   │        │ state (symmetry  │
+ │  chaos)          │        │ broken: order)   │
  └──────────────────┘        └──────────────────┘
    Deterministic but           Specific, directed,
    unpredictable               self-referencing
 ```
 
-In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
+In physics, this is analogous to a phase transition: water does not "decide" to become ice—the symmetric liquid state becomes unstable below a threshold, and the system *must* break its own symmetry to find a lower-energy configuration. Note the direction: in physics the uniform phase is the *high*-symmetry one—liquid water looks the same from every angle; an ice lattice does not. Symmetry breaking always runs from more symmetric to less, from Pisces to Aries. The Pisces-Aries cusp is the psychic equivalent. The "soul," for lack of a better word, saturated with undifferentiated potential, reaches the point where remaining formless costs more energy than choosing a form. Chaos does not oppose the new order—it *demands* it.
 
 This is why the Zodiac is not a line but a **cycle**. Dissolution feeds initiation. The end state of maximum entropy is simultaneously the precondition for maximum differentiation. Every Aries impulse carries the residue of the Piscean ocean it emerged from, and every Piscean surrender carries the seed of the Aries spark that will break it open again.
 
@@ -144,44 +144,58 @@ Your birth chart is not a prediction of your fate. Treating it as the **Source C
 
 To understand this system, we will use a new set of analogies grounded in logic and geometry:
 
-*   **The Signs are Coordinates**: They are not lists of traits, but the X and Y axes of a 360-degree field—a continuous address space, not a fixed `enum`.
+*   **The Signs are Coordinates**: They are not lists of traits, but twelve 30° segments of a circular, 360-degree address space—a ring, not a fixed `enum`.
 *   **The Planets are Operators**: They are the functions (`IF`, `THEN`, `AND`, `NOT`) that execute commands within that field.
 *   **The Aspects are Circuits**: They are the wires connecting the operators, forming the logic gates that govern how your internal modules communicate.
 
 ### The Architecture at a Glance
 
-```
-┌─────────────────────────────────────────────────┐
-│               THE BIRTH CHART                   │
-│                                                 │
-│  ┌──────────────┐    ┌──────────────┐           │
-│  │   SIGNS      │    │   PLANETS    │           │
-│  │ (Coordinates)│    │ (Operators)  │           │
-│  │              │    │              │           │
-│  │ Aries ♈  0° │    │ ☉ Sun  = IDENTITY()     │
-│  │ Taurus ♉ 30°│    │ ☽ Moon = BUFFER()       │
-│  │ Gemini ♊ 60°│    │ ☿ Merc = IO_STREAM()   │
-│  │ Cancer ♋ 90°│    │ ♀ Ven  = BIND()         │
-│  │ Leo ♌  120° │    │ ♂ Mars = VECTOR()       │
-│  │ Virgo ♍ 150°│    │ ♃ Jup  = MULTIPLY()    │
-│  │ Libra ♎ 180°│    │ ♄ Sat  = LIMIT()        │
-│  │ Scorp ♏ 210°│    │ ♅ Ura  = INTERRUPT()    │
-│  │ Sagit ♐ 240°│    │ ♆ Nep  = DISSOLVE()     │
-│  │ Capri ♑ 270°│    │ ♇ Plu  = REFORMAT()     │
-│  │ Aquar ♒ 300°│    └──────────────┘           │
-│  │ Pisces♓ 330°│                               │
-│  └──────────────┘    ┌──────────────┐           │
-│                      │   ASPECTS    │           │
-│                      │  (Circuits)  │           │
-│                      │              │           │
-│                      │ ☌  0° = MERGE│           │
-│                      │ ☍180° = MIRROR│          │
-│                      │ □ 90° = BLOCK│           │
-│                      │ △120° = FLOW │           │
-│                      │ ⚹ 60° = LINK│           │
-│                      └──────────────┘           │
-└─────────────────────────────────────────────────┘
-```
+The three tables below are the complete vocabulary of that grammar. Every glyph in this book is defined here (and again in the Appendix); bookmark it.
+
+**Signs — the coordinates.** Each sign is a 30° segment of the ring, typed by an element (what kind of payload) and a modality (what lifecycle phase). Chapter 1 explains both.
+
+| Glyph | Sign | Degrees | Element / Modality |
+|---|---|---|---|
+| ♈ | Aries | 0°–29° | Fire / Cardinal |
+| ♉ | Taurus | 30°–59° | Earth / Fixed |
+| ♊ | Gemini | 60°–89° | Air / Mutable |
+| ♋ | Cancer | 90°–119° | Water / Cardinal |
+| ♌ | Leo | 120°–149° | Fire / Fixed |
+| ♍ | Virgo | 150°–179° | Earth / Mutable |
+| ♎ | Libra | 180°–209° | Air / Cardinal |
+| ♏ | Scorpio | 210°–239° | Water / Fixed |
+| ♐ | Sagittarius | 240°–269° | Fire / Mutable |
+| ♑ | Capricorn | 270°–299° | Earth / Cardinal |
+| ♒ | Aquarius | 300°–329° | Air / Fixed |
+| ♓ | Pisces | 330°–359° | Water / Mutable |
+
+**Planets — the operators.** Chapter 3 defines each one.
+
+| Glyph | Operator | Function |
+|---|---|---|
+| ☉ | Sun | `IDENTITY()` — the main thread |
+| ☽ | Moon | `BUFFER()` — the cache layer |
+| ☿ | Mercury | `IO_STREAM()` — the data bus |
+| ♀ | Venus | `BIND()` — connection and value |
+| ♂ | Mars | `VECTOR()` — directed force |
+| ♃ | Jupiter | `MULTIPLY()` — expansion |
+| ♄ | Saturn | `LIMIT()` — constraint and validation |
+| ♅ | Uranus | `INTERRUPT()` — disruption |
+| ♆ | Neptune | `DISSOLVE()` — boundary removal |
+| ♇ | Pluto | `REFORMAT()` — irreversible rebuild |
+| ⚷ | Chiron | `WONTFIX()` — the permanently open issue |
+| ☊ / ☋ | North / South Node | `IMPORT()` / `ARCHIVE()` — the growth axis |
+
+**Aspects — the circuits.** The angle between two operators, measured the short way round the ring. Chapter 4 defines each one.
+
+| Glyph | Angle | Aspect | Circuit |
+|---|---|---|---|
+| ☌ | 0° | Conjunction | Merge — one monolith |
+| ⚹ | 60° | Sextile | Link — a helper path |
+| □ | 90° | Square | Block — a deadlock |
+| △ | 120° | Trine | Flow — a superconductor |
+| ⚻ | 150° | Quincunx | Shim — no shared ABI |
+| ☍ | 180° | Opposition | Mirror — a distributed pair |
 
 You've already seen one sentence of this language—Mars in Gemini, Square Saturn. By the end of this book, you will read the full source.
 
@@ -192,6 +206,25 @@ This book is written for software developers—people who think in systems, debu
 Every concept in this book is explained through programming metaphors: signs as coordinates, planets as operators, aspects as inter-process communication topologies. If you understand deadlocks, you understand Squares. If you understand caching, you understand the Moon. The metaphors are not decoration—they are the framework.
 
 You do not need any prior knowledge of astrology. You do not need to "believe" in anything. The only prerequisite is a willingness to try on a new vocabulary and see if it helps you articulate patterns you already sense in yourself but haven't had language for.
+
+### Before You Start: Pull Your Own Source
+
+Everything from Chapter 1 onward is more useful with your own chart open in another tab. A **birth chart** (also *natal chart*) is a computed snapshot of where every planet sat along the zodiac ring at the moment you were born, as seen from the place you were born. It is calculated, not interpreted—any two tools given the same inputs produce the same chart. The "sign" people ask about at parties is your Sun sign; it is one of roughly fifteen placements in the file.
+
+You need three inputs:
+
+| Input | What it fixes | If you don't have it |
+|---|---|---|
+| **Date of birth** | The Sun and every slow operator (Jupiter → Pluto) | Required. No chart without it. |
+| **Time of birth** (to the minute, local time) | The **Rising sign** (the sign on the eastern horizon at your birth minute—your chart tool labels it **ASC** or *Ascendant*; it changes every ~2 hours) and the Moon's exact degree (the Moon changes sign every ~2.5 days) | Check your birth certificate or hospital record. If unknown, enter 12:00, ignore the Rising sign, and treat the Moon sign as "probable." Everything else in this book still works. |
+| **Place of birth** (city is enough) | The horizon the Rising sign is measured against | Needed for Rising only. |
+
+Feed those into any free natal chart calculator (search the phrase; astro.com and astro-seek.com are long-standing options that need no account). If it asks for a *house system*, pick anything—this book doesn't use houses. Save two outputs:
+
+1. **The placement list** — each planet with its sign and degree, e.g. `Venus 15° Scorpio`. That is the `operator @ coordinate` notation this book uses.
+2. **The aspect table** (often a triangular grid of symbols) — which planet pairs sit at 0°, 60°, 90°, 120°, 150° or 180° from each other, within tolerance. That is your circuit diagram (Chapter 4).
+
+Ignore the numbered houses, "Part of Fortune," and anything else you don't recognize for now. The Appendix has a legend for every glyph you'll see, and Chapter 2 says more about the Rising sign and why the birth time matters.
 
 ## The Goal: "Debugging" the Self
 

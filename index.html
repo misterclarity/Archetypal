@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -122,20 +122,62 @@
         .main-content {
             margin-left: var(--sidebar-width);
             flex: 1;
+            min-width: 0;
+            /* let .table-wrap / pre scroll instead of widening the column */
             padding: 4rem 6rem;
             max-width: 1000px;
             /* Constrain reading width */
         }
 
+        /* Mobile top bar: replaces the sidebar on small screens */
+        .mobile-bar {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 1rem;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+        }
+
+        .mobile-bar .mobile-title {
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-right: auto;
+        }
+
+        .mobile-bar a {
+            color: var(--accent-secondary);
+            text-decoration: none;
+        }
+
+        .mobile-bar .print-btn {
+            margin-top: 0;
+            padding: 0.35rem 0.7rem;
+        }
+
         @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
             .sidebar {
                 display: none;
             }
 
-            /* Hide sidebar on mobile for now */
+            .mobile-bar {
+                display: flex;
+            }
+
             .main-content {
                 margin-left: 0;
-                padding: 2rem;
+                padding: 1.5rem 1rem 2rem;
             }
         }
 
@@ -207,6 +249,71 @@
             color: var(--accent-primary);
         }
 
+        /* Fenced blocks: ASCII diagrams and code samples */
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+            line-height: 1.35;
+        }
+
+        pre code {
+            display: block;
+            font-family: 'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace;
+            /* Space Mono has no box-drawing glyphs; borders must share the text's advance width */
+            background: none;
+            border: 0;
+            padding: 0;
+            border-radius: 0;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            white-space: pre;
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            font-family: var(--header-font);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        thead {
+            background: var(--card-bg);
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 0.9rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        tbody tr:nth-child(even) {
+            background: var(--card-bg);
+        }
+
+        td code,
+        th code {
+            white-space: nowrap;
+        }
+
         /* Blockquotes */
         blockquote {
             border-left: 3px solid var(--accent-secondary);
@@ -264,6 +371,29 @@
             border-color: var(--accent-primary);
         }
 
+        /* Mobile typography (after the base rules so it wins the cascade) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.02rem;
+            }
+
+            pre {
+                padding: 1rem;
+            }
+
+            pre code {
+                font-size: 0.72rem;
+            }
+        }
+
         /* Print Styles */
         @media print {
             body {
@@ -273,6 +403,7 @@
             }
 
             .sidebar,
+            .mobile-bar,
             #progress-bar,
             .print-btn {
                 display: none !important;
@@ -329,12 +460,18 @@
             }
 
             pre {
-                white-space: pre-wrap;
-                word-wrap: break-word;
                 border: 1px solid #ccc;
                 background: #f5f5f5;
+                padding: 0.75rem 1rem;
                 break-inside: avoid;
                 page-break-inside: avoid;
+            }
+
+            pre code {
+                white-space: pre-wrap;
+                overflow-wrap: anywhere;
+                color: #000;
+                font-size: 0.75rem;
             }
 
             table {
@@ -369,6 +506,13 @@
         </button>
     </nav>
 
+    <!-- Mobile top bar (shown only when the sidebar is hidden) -->
+    <header class="mobile-bar">
+        <span class="mobile-title">Archetypal OS</span>
+        <a href="tldr.md" title="Plain-markdown copy of the whole book">📄 TLDR</a>
+        <button class="print-btn" onclick="window.print()" title="Print book content">🖨️ Print</button>
+    </header>
+
     <!-- Main Content -->
     <main class="main-content">
         <div id="content"></div>
@@ -393,7 +537,8 @@
             'chapter_5.md',
             'chapter_6.md',
             'chapter_7.md',
-            'conclusion.md'
+            'conclusion.md',
+            'appendix.md'
         ];
 
         async function loadBook() {
@@ -403,7 +548,7 @@
 
                 // Fetch all chapters in parallel
                 const responses = await Promise.all(
-                    files.map(file => fetch(file).then(res => {
+                    files.map(file => fetch(file, { cache: 'no-cache' }).then(res => {
                         if (!res.ok) throw new Error(`Could not load ${file}`);
                         return res.text();
                     }))
@@ -443,8 +588,16 @@
                 // --- Render Markdown ---
                 contentDiv.innerHTML = marked.parse(rawMarkdown);
 
+                // Wrap tables so wide ones scroll horizontally instead of breaking the layout
+                contentDiv.querySelectorAll('table').forEach(table => {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'table-wrap';
+                    table.parentNode.insertBefore(wrap, table);
+                    wrap.appendChild(table);
+                });
+
                 // --- Generate TOC ---
-                const headers = contentDiv.querySelectorAll('h1, h2');
+                const headers = contentDiv.querySelectorAll('h1, h2, h3');
                 const tocList = document.createElement('ul');
 
                 headers.forEach((header, index) => {
@@ -466,6 +619,11 @@
                     if (header.tagName === 'H2') {
                         a.style.paddingLeft = '15px';
                         a.style.fontSize = '0.85rem';
+                    } else if (header.tagName === 'H3') {
+                        a.style.paddingLeft = '30px';
+                        a.style.fontSize = '0.78rem';
+                        a.style.opacity = '0.85';
+                        li.style.marginBottom = '0.35rem';
                     }
 
                     li.appendChild(a);

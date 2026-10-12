@@ -19,11 +19,12 @@ Self-knowledge is not a destination you deploy to once and leave in production. 
 The axes teach us that every recurring exception is just an optimized path that has lost its complement.
 
 -   Your "Impatience" is your **Aries** execution path running without the balancing latency of the **Libra** evaluation loop. The function is not broken—it is missing its rate limiter.
--   Your "Rigidity" is your **Capricorn** structural module caching a schema that the **Cancer** state layer has already updated. The interface contract no longer matches the internal state.
+-   Your "Workaholism" is your **Capricorn** structural module shipping builds against a schema the **Cancer** state layer has already updated. The public interface no longer matches the internal state—and no amount of building will fix a stale cache.
+-   Your "Rigidity" is your **Taurus** persistence layer holding references the **Scorpio** garbage collector flagged for release long ago. The leak is not in the data; it is in the refusal to free it.
 
 To resolve the exception, you don't drop the module. You refactor it by integrating the complementary function it has been ignoring.
 
-## Quick Diagnostic Reference
+## Quick Diagnostic Reference (Recap)
 
 The full Symptom → Operator → Patch diagnostic table was introduced in Chapter 2 and remains your most immediately practical tool. When a recurring pattern surfaces in your daily experience, use it: identify the symptom, check which axis is overloaded, and invoke the complementary function. The table is designed to be used *without* needing to believe anything about cosmology—it is a pattern-matching lookup, pure and simple. The one-page card below carries the axes; the Chapter 2 table carries the symptoms. Between them, that is the whole diagnostic kit.
 
@@ -46,14 +47,15 @@ If you retain nothing else, retain this.
  ║   ♅ Uranus  INTERRUPT()  disruption, "I liberate"         ║
  ║   ♆ Neptune DISSOLVE()   boundary removal, "I dream"      ║
  ║   ♇ Pluto   REFORMAT()   destructive update, "I transform"║
+ ║   ⚷ Chiron  WONTFIX()    the open issue, "I work around"  ║
  ║   ☊ N.Node  IMPORT()     the dependency you keep deferring║
  ║   ☋ S.Node  ARCHIVE()    the cached default that costs you║
  ╠═══════════════════════════════════════════════════════════╣
  ║  MODALITY (how it executes)   ELEMENT (what it runs on)   ║
- ║   Cardinal  spawn()            🔥 Fire   energy / action   ║
- ║   Fixed     lock()             🌍 Earth  structure         ║
- ║   Mutable   adapt()            🌬️ Air    information       ║
- ║                                💧 Water  state / emotion   ║
+ ║   Cardinal  spawn()            Fire    energy / action    ║
+ ║   Fixed     lock()             Earth   structure          ║
+ ║   Mutable   adapt()            Air     information        ║
+ ║                                Water   state / emotion    ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  CIRCUITS (how they talk)                                 ║
  ║   ☌   0°  MERGE      "I simply am this way."              ║
@@ -67,16 +69,16 @@ If you retain nothing else, retain this.
  ║   the ones you describe as "how things are."              ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  THE SIX AXES (every symptom's address)                   ║
- ║   ♈ Aries  ↔ ♎ Libra      self       ↔ other             ║
- ║   ♉ Taurus ↔ ♏ Scorpio    form       ↔ transformation    ║
- ║   ♊ Gemini ↔ ♐ Sagitt.    data       ↔ inference         ║
- ║   ♋ Cancer ↔ ♑ Capricorn  private    ↔ public            ║
- ║   ♌ Leo    ↔ ♒ Aquarius   individual ↔ collective        ║
- ║   ♍ Virgo  ↔ ♓ Pisces     order      ↔ surrender         ║
+ ║   Aries  ↔ Libra        self       ↔ other                ║
+ ║   Taurus ↔ Scorpio      form       ↔ transformation       ║
+ ║   Gemini ↔ Sagittarius  data       ↔ inference            ║
+ ║   Cancer ↔ Capricorn    private    ↔ public               ║
+ ║   Leo    ↔ Aquarius     individual ↔ collective           ║
+ ║   Virgo  ↔ Pisces       order      ↔ surrender            ║
  ╠═══════════════════════════════════════════════════════════╣
  ║  THE PROTOCOL                                             ║
  ║   1. Base image   Rising / Sun / Moon                     ║
- ║   2. Bottlenecks  □ and ☍ to ☿ ♀ ♂                        ║
+ ║   2. Bottlenecks  □ and ☍ to ☉ ☽ ☿ ♀ ♂                    ║
  ║   3. Hot paths    △ and ⚹                                 ║
  ║   4. Growth       ☋ → ☊, then IMPORT deliberately         ║
  ║                                                           ║
@@ -98,6 +100,8 @@ Chapter 7 pointed the same framework at agent fleets, and there the claims are m
 6. **Tools are prompts.** Their descriptions are the highest-leverage text you will write.
 7. **Memory lives outside the window**, loaded on demand.
 8. **Security is topology, not behavior.** You cannot prompt your way out of it.
+
+And if you want to build one *brain* rather than a fleet: Chapter 7's two-speed runtime—a fast classifier (the Moon) in front of a slow deliberator (the Sun), with Saturn deciding which one answers—ships as runnable code in the repository's `brain/` directory. Run it in mock mode before it costs anything.
 
 The through-line from Chapter 1 to Chapter 7 is a single sentence, and it was stated in full in Chapter 1: **every recurring failure is an overloaded function whose complement was never mounted.** The person on page one kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
 

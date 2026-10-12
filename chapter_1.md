@@ -6,39 +6,41 @@ In pop psychology and newspaper horoscopes, the Zodiac is often modeled as a fla
 
 To understand the source code of your psyche, you must stop treating the signs as isolated value objects in a flat schema and start treating them as **coordinates in a 360-degree continuous address space**.
 
-Just as a pixel on a screen is defined by its X and Y position within the coordinate grid—not by membership in a category—every planet in your birth chart occupies a specific degree within the ecliptic. This background field—the Zodiac—is the coordinate system against which the logical operators (the planets) execute their functions. The sign is not *what* a planet is; it is *where* it is executing, and that location determines its behavior.
+Just as an index into a ring buffer is defined by its offset—not by membership in a category—every planet in your birth chart occupies a specific degree on the **ecliptic**: the circular path the Sun appears to trace through the sky over a year, which is the ring the Zodiac is laid out along. The address space is one-dimensional and circular, 0° to 359°, wrapping. Each sign is a 30° page of that ring. This background field—the Zodiac—is the coordinate system against which the logical operators (the planets) execute their functions. The sign is not *what* a planet is; it is *where* it is executing, and that location determines its behavior.
 
 ```
-                    ♋ Cancer (90°)
+                     Capricorn (270°)
                          |
-            ♊ Gemini     |     ♌ Leo
-              (60°)      |      (120°)
+              Aquarius   |   Sagittarius
+               (300°)    |      (240°)
                   \      |      /
                    \     |     /
-     ♉ Taurus (30°) \   |   / ♍ Virgo (150°)
+       Pisces (330°) \   |   / Scorpio (210°)
                       \  |  /
                        \ | /
-     ♈ Aries (0°) ------+------ ♎ Libra (180°)
+          Aries (0°) ----+---- Libra (180°)
                        / | \
                       /  |  \
-     ♓ Pisces (330°)/   |   \ ♏ Scorpio (210°)
+        Taurus (30°) /   |   \ Virgo (150°)
                    /     |     \
                   /      |      \
-            ♒ Aquarius   |   ♐ Sagittarius
-              (300°)     |      (240°)
+               Gemini    |    Leo
+                (60°)    |    (120°)
                          |
-                   ♑ Capricorn (270°)
+                     Cancer (90°)
 ```
 
-**Example**: When we say "Venus is at 15° Scorpio," we mean the `BIND` operator is executing at coordinate 225° in the ecliptic field—not that Venus "is" a Scorpio personality, but that the attraction-and-connection function is running in the Scorpio execution context: deep, intense, all-or-nothing binding with a built-in garbage collection cycle for anything that fails the loyalty test.
+Longitude increases counter-clockwise, exactly as on the chart wheel your calculator will draw—but a real chart is rotated so that your Rising degree sits on the left-hand horizon line, and the sign at 9 o'clock is whatever was rising when you were born. The order of the signs never changes; only the rotation does. The diagram above is the special case of 0° Aries rising.
+
+**Example**: When we say "Venus is at 15° Scorpio," we mean the `BIND` operator is executing at coordinate 225° in the ecliptic field (`address = sign_base + offset` → Scorpio starts at 210°, plus 15°)—not that Venus "is" a Scorpio personality, but that the attraction-and-connection function is running in the Scorpio execution context: deep, intense, all-or-nothing binding with a built-in garbage collection cycle for anything that fails the loyalty test. Your chart tool prints the sign-relative form; the absolute degree is what the aspect math in Chapter 4 runs on.
 
 ## The Axis of Reflection: Linear Transformation
 
 The most critical architectural pattern in the astrological system is the **Axis**.
 
-In computer graphics and linear algebra, a **reflection** is a mapping from a Euclidean space to itself: an isometry with a hyperplane as its set of fixed points. For every point in space, there is a mirror image across that plane. Mutate one side and the other side changes to compensate.
+In linear algebra, the map that sends every point on the wheel to its opposite is a **point reflection** through the origin: `x ↦ −x`. In two dimensions this is identical to rotating the wheel by 180°. It is an isometry—distances are preserved—whose only fixed point is the center, and it is its own inverse: `reflect(reflect(x)) == x`. Every coordinate has exactly one antipode, and the pair is rigid: move one end and the other moves with it. (A mirror reflection across the wheel's vertical axis would pair Taurus with Leo—across its horizontal axis, with Aquarius; the Zodiac pairs Taurus with Scorpio. The six axes are the six diameters of the wheel, not six mirrors.)
 
-Astrology operates on the same invariant. No sign exists in isolation; every sign is defined relationally by its opposite. Polarity is not a feature of the system—it *is* the system.
+Astrology operates on the same invariant. No sign exists in isolation; every sign is defined relationally by its opposite. The axis is not a feature of the system—it *is* the system.
 
 - **Aries** (Self) has no computable definition without **Libra** (Other).
 - **Taurus** (Form) carries no stable value without **Scorpio** (Transformation).
@@ -101,24 +103,34 @@ Finally, it helps to model the signs not as hard-edged discrete types, but as a 
 
 Every sign occupies a unique cell in this 4×3 matrix. No two signs share both an element and a modality—each has a unique type signature.
 
+The four **Elements** are the data types the operators work on—what kind of payload a process running in that sign handles:
+
+- **Fire** — energy and action. Payload: impulse, will, momentum.
+- **Earth** — structure and matter. Payload: resources, bodies, build artifacts.
+- **Air** — information and relation. Payload: messages, ideas, protocols.
+- **Water** — emotion and state. Payload: feelings, memory, attachment.
+
+Element is the *type*; modality is the *lifecycle phase*. Twelve signs = four types × three phases.
+
 ```
-              🔥 FIRE        🌍 EARTH       🌬️ AIR        💧 WATER
-            (Energy)      (Structure)    (Information)  (Emotion)
-           ─────────────────────────────────────────────────────────
- CARDINAL  │  ♈ Aries    │  ♑ Capricorn │  ♎ Libra    │  ♋ Cancer  │
- (Init)    │  new Fire()  │  new Earth() │  new Air()   │  new Water()│
-           ─────────────────────────────────────────────────────────
- FIXED     │  ♌ Leo      │  ♉ Taurus   │  ♒ Aquarius │  ♏ Scorpio │
- (Persist) │  Fire.lock() │  Earth.lock()│  Air.lock()  │  Water.lock()│
-           ─────────────────────────────────────────────────────────
- MUTABLE   │  ♐ Sagitt.  │  ♍ Virgo    │  ♊ Gemini   │  ♓ Pisces  │
- (Transform)│  Fire.adapt()│  Earth.adapt()│ Air.adapt() │  Water.adapt()│
-           ─────────────────────────────────────────────────────────
+              FIRE           EARTH          AIR            WATER
+            (Energy)       (Structure)    (Information)  (Emotion)
+            ─────────────────────────────────────────────────────────────
+ CARDINAL   │ Aries        │ Capricorn    │ Libra        │ Cancer       │
+ (Init)     │ new Fire()   │ new Earth()  │ new Air()    │ new Water()  │
+            ─────────────────────────────────────────────────────────────
+ FIXED      │ Leo          │ Taurus       │ Aquarius     │ Scorpio      │
+ (Persist)  │ Fire.lock()  │ Earth.lock() │ Air.lock()   │ Water.lock() │
+            ─────────────────────────────────────────────────────────────
+ MUTABLE    │ Sagittarius  │ Virgo        │ Gemini       │ Pisces       │
+ (Transform)│ Fire.adapt() │ Earth.adapt()│ Air.adapt()  │ Water.adapt()│
+            ─────────────────────────────────────────────────────────────
 ```
 
 **Reading the Grid**:
-- Signs sharing an **Element** (same column) have compatible runtime environments—they speak the same language and data flows easily between them. Fire signs share the `Energy` type; Earth signs share the `Structure` type.
-- Signs sharing a **Modality** (same row) have the same lifecycle phase but different element domains—they compete for the same class of resource with incompatible strategies. This is the source of Square aspects (90° angles).
+- Signs sharing an **Element** (same column) have compatible runtime environments—they speak the same language and data flows easily between them. Fire signs share the `Energy` type; Earth signs share the `Structure` type. This is the source of Trine aspects (120°).
+- Signs sharing a **Modality** (same row) have the same lifecycle phase but different element domains—they compete for the same class of resource with incompatible strategies. This is the source of Square aspects (90°)—and of Oppositions (180°), which also pair two signs of the same modality. Rule of thumb: Trines run down a column; Squares and Oppositions run across a row.
+- Elements also alternate in **polarity**: Fire and Air are the outward, expressive types; Earth and Water are the inward, receptive types. Fire pairs naturally with Air and Earth with Water—the "compatible elements" behind the Sextile (60°). Think of polarity as a parity bit on the sign index: even signs (Aries, Gemini, Leo, ...) are outward, odd signs (Taurus, Cancer, Virgo, ...) are inward.
 
 **Example**: Mars in Aries (Cardinal Fire) and Mars in Cancer (Cardinal Water) are both trying to initialize a new process—but Aries spawns with raw velocity and zero dependencies, while Cancer spawns only after establishing a secure boundary. Same lifecycle stage, fundamentally different execution environments. This architectural mismatch is the friction engine that Squares create.
 
@@ -129,20 +141,20 @@ Elements are runtime environments. Two operators in compatible elements exchange
 ```
   DATA EXCHANGE BETWEEN ELEMENTS
 
-              FIRE      EARTH      AIR       WATER
-            ────────────────────────────────────────
-   FIRE    │  native  │  friction │  fuels  │ steam  │
-           │  △ trine │  □ square │ ⚹ sextile│□ square│
-            ────────────────────────────────────────
-   EARTH   │ friction │  native   │ friction│ nourish│
-           │  □ square│  △ trine  │ □ square│⚹ sextile│
-            ────────────────────────────────────────
-   AIR     │  fuels   │  friction │ native  │friction│
-           │ ⚹ sextile│  □ square │ △ trine │□ square│
-            ────────────────────────────────────────
-   WATER   │  steam   │  nourish  │ friction│ native │
-           │  □ square│ ⚹ sextile │ □ square│△ trine │
-            ────────────────────────────────────────
+               FIRE        EARTH        AIR        WATER
+           ─────────────────────────────────────────────────
+   FIRE    │  native   │ friction  │   fuels   │   steam   │
+           │  △ trine  │ □ square  │ ⚹ sextile │ □ square  │
+           ─────────────────────────────────────────────────
+   EARTH   │ friction  │  native   │ friction  │  nourish  │
+           │ □ square  │  △ trine  │ □ square  │ ⚹ sextile │
+           ─────────────────────────────────────────────────
+   AIR     │   fuels   │ friction  │  native   │ friction  │
+           │ ⚹ sextile │ □ square  │  △ trine  │ □ square  │
+           ─────────────────────────────────────────────────
+   WATER   │   steam   │  nourish  │ friction  │  native   │
+           │ □ square  │ ⚹ sextile │ □ square  │  △ trine  │
+           ─────────────────────────────────────────────────
 
    native  (△)  same element: zero-impedance, shared types
    fuels   (⚹)  Fire↔Air, Earth↔Water: compatible, needs
@@ -154,6 +166,8 @@ Elements are runtime environments. Two operators in compatible elements exchange
      Air feeds Fire.        Water nourishes Earth.
      Water quenches Fire.   Earth smothers Air.
 ```
+
+(Strictly, two signs of incompatible elements form a Square only when they also share a modality; otherwise the mismatch is a Quincunx or the minor 30° step. Chapter 4 has the full table.)
 
 **Example**: Mercury in Gemini (Air) and Jupiter in Libra (Air) share a runtime. Ideas serialize between them with no loss—the person thinks in conversation and their conclusions arrive already social. Mercury in Gemini and Saturn in Virgo (Air meets Earth) do not share a runtime. Every fast, exploratory thought must be marshalled into a structure that demands proof before it will accept the object. That is not a defect. That is the mismatch that eventually produces someone who can think fast *and* be right.
 

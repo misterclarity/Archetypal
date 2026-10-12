@@ -15,24 +15,22 @@ Start with the Big Three. This is the base image—the OS layer on which everyth
 -   **Sun**: The central processing unit—the primary thread of execution and the power source driving the main logic.
 -   **Moon**: The cache layer—the memory store that mediates between raw input and conscious response.
 
-*Example*: `"Libra Rising (API: Harmony-first interface), Capricorn Sun (CPU: Structural processing), Aries Moon (Cache: Fast, assertive reactive state)."`
-
-*System Profile*: `"External calls are handled gracefully and diplomatically (Libra). Core processing optimizes for structure and long-term outcomes (Capricorn). But the cache layer fires fast, hot, and impulsively before the main thread can apply its logic (Aries)."`
+*Example*: the base image you previewed at the end of Chapter 2—Libra Rising, Capricorn Sun, Aries Moon. Here is how it is derived:
 
 ```
  THE BIG THREE — BASE IMAGE
  ═══════════════════════════════════════════
 
-   Layer          │  Planet  │  Sign     │  Function
+   Layer          │  Point   │  Sign     │  Function
   ────────────────┼──────────┼───────────┼──────────────────
    Public API     │  Rising  │  Libra    │  Harmony-first
-   (Interface)    │          │  ♎       │  interface
+   (Interface)    │          │           │  interface
   ────────────────┼──────────┼───────────┼──────────────────
    Core CPU       │  Sun     │  Capricorn│  Structural
-   (Identity)     │          │  ♑       │  processing
+   (Identity)     │          │           │  processing
   ────────────────┼──────────┼───────────┼──────────────────
    Cache Layer    │  Moon    │  Aries    │  Fast, hot
-   (Emotional)    │          │  ♈       │  reactive state
+   (Emotional)    │          │           │  reactive state
   ────────────────┴──────────┴───────────┴──────────────────
 
   Diagnostic: The public interface (Libra) promises smooth,
@@ -44,7 +42,7 @@ Start with the Big Three. This is the base image—the OS layer on which everyth
 ```
 
 ### Step 2: Profile the Bottlenecks (Hard Aspects)
-Look for Squares and Oppositions involving the Personal Operators (Mercury, Venus, Mars). These are your documented performance bottlenecks—the contention points you were instantiated to resolve.
+Look for Squares and Oppositions touching the Sun, the Moon, or the Personal Operators (Mercury, Venus, Mars)—any hard aspect where one end is something you consciously do or feel. Hard aspects between two outer planets are cohort-wide weather; skip them on a first pass. These are your documented performance bottlenecks—the contention points you were instantiated to resolve.
 -   *Example*: Mercury (IO layer) in Square to Saturn (Validation layer).
 -   *The Bottleneck*: `"My communication pipeline (Mercury) is throttled by a validation gate that rejects output unless it clears an exceptionally high confidence threshold (Saturn). High latency on all outbound signals."`
 -   *The Optimization*: This is not a defect to be removed; it is a high-stakes correctness requirement. The system is being trained to speak with precision and authority. The Saturn gate is the test suite—painful to satisfy, but what it ships is reliable.
@@ -64,16 +62,26 @@ Check the **Nodal Axis** (North vs. South Node).
 ## The Root Process (`PID 1`): The Chart Ruler
 
 The planet that governs your Rising Sign is the root process of your system—the first process spawned at boot, the one all other processes descend from. Its health determines the overall stability of the machine.
--   If you are **Leo** Rising, the **Sun** is your PID 1.
--   If you are **Virgo** Rising, **Mercury** is your PID 1.
+*Rulership* is astrology's term for the operator that owns a coordinate—the sign is that operator's home execution context (the "native" contexts you met in Chapters 2 and 3: Mercury in Gemini, Saturn in Capricorn). Look up your Rising sign:
+
+| Rising Sign | PID 1 (Chart Ruler) | Operator |
+|---|---|---|
+| ♈ Aries | Mars | `VECTOR` |
+| ♉ Taurus | Venus | `BIND` |
+| ♊ Gemini | Mercury | `IO_STREAM` |
+| ♋ Cancer | Moon | `BUFFER` |
+| ♌ Leo | Sun | `IDENTITY` |
+| ♍ Virgo | Mercury | `IO_STREAM` |
+| ♎ Libra | Venus | `BIND` |
+| ♏ Scorpio | Pluto (traditional: Mars) | `REFORMAT` |
+| ♐ Sagittarius | Jupiter | `MULTIPLY` |
+| ♑ Capricorn | Saturn | `LIMIT` |
+| ♒ Aquarius | Uranus (traditional: Saturn) | `INTERRUPT` |
+| ♓ Pisces | Neptune (traditional: Jupiter) | `DISSOLVE` |
+
+Where two rulers are listed, modern astrology assigns the outer planet; the traditional ruler is still worth inspecting as a secondary process—it moves faster, so it is the more personal of the two. Leo Rising makes the Sun your PID 1; Virgo Rising makes it Mercury. This same table is what Chapter 7's agent archetypes inherit: the Initiator (Aries) is driven by `VECTOR`, the Governor (Capricorn) by `LIMIT`.
 
 Inspect that planet's placement (Sign) and its connections (Aspects) to assess the primary driver of your system's behavior under load. A healthy PID 1 means a stable system; a degraded PID 1 cascades failures downstream.
-
-## Conclusion: Architecture, Not Fate
-
-Synthesizing the chart produces a **system architecture diagram**, not a deterministic execution trace. The source code defines the constraints, the default configurations, and the known bottlenecks—but it does not specify the runtime behavior under every possible input.
-
-The chart is the hardware specification and the default `config.yaml`. The software you write on top of it—the decisions, the responses, the refactors—is entirely yours to author.
 
 ## Full Worked Example: A Complete System Profile
 
@@ -83,31 +91,34 @@ It is also the chart of the person you met in the first paragraph of this book�
 
 **The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mars in Gemini opposite Mercury in Sagittarius, both square Saturn in Virgo (T-square, Saturn apex). Venus in Scorpio trine Neptune in Pisces. North Node in Aquarius / South Node in Leo.*
 
+*(A teaching composite, not a transcribed nativity: these placements were chosen to exercise every step of the protocol. Saturn in Virgo and Neptune in Pisces have not coincided in a birth chart since the 1860s—if you check an ephemeris, that is why. Mercury and Venus do obey their real constraints here: both sit within one sign of the Sun.)*
+
 ```
  SYSTEM ARCHITECTURE DIAGRAM
- ═══════════════════════════════════════════════════════
+ ════════════════════════════════════════════════════════
 
- ┌─ PUBLIC API (Rising = Leo) ─────────────────────────┐
- │  Interface: Warm, dramatic, commanding.             │
- │  PID 1 = Sun (chart ruler). System health depends   │
- │  on Sun's placement and aspects.                    │
- └─────────────────────────────────────────────────────┘
+ ┌─ PUBLIC API (Rising = Leo) ──────────────────────────┐
+ │  Interface: Warm, dramatic, commanding.              │
+ │  PID 1 = Sun (chart ruler). System health depends    │
+ │  on Sun's placement and aspects.                     │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CPU (Sun = Scorpio) ───────────────────────────────┐
- │  Core Process: Deep, intense, investigative.        │
- │  The system behind the Leo stage presence is        │
- │  actually running surveillance-grade analytics.     │
- │  Nothing escapes the core processor.                │
- └─────────────────────────────────────────────────────┘
+ ┌─ CPU (Sun = Scorpio) ────────────────────────────────┐
+ │  Core Process: Deep, intense, investigative.         │
+ │  The system behind the Leo stage presence is         │
+ │  actually running surveillance-grade analytics.      │
+ │  Nothing escapes the core processor.                 │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CACHE (Moon = Gemini) ─────────────────────────────┐
- │  Emotional State: Nervous, curious, verbal.         │
- │  Under stress, the system talks—fast, scattered,    │
- │  processing emotions by naming them rapidly.        │
- └─────────────────────────────────────────────────────┘
+ ┌─ CACHE (Moon = Gemini) ──────────────────────────────┐
+ │  Emotional State: Nervous, curious, verbal.          │
+ │  Under stress, the system talks—fast, scattered,     │
+ │  processing emotions by naming them rapidly.         │
+ └──────────────────────────────────────────────────────┘
 
- ┌─ BOTTLENECK (T-SQUARE, ♄ APEX) ──────────────────────┐
- │  Mars ♊ ☍ Mercury ♐, both □ Saturn ♍                 │
+ ┌─ BOTTLENECK (T-SQUARE, SATURN APEX) ─────────────────┐
+ │  Mars (Gemini) OPPOSITE Mercury (Sagittarius),       │
+ │  both SQUARE Saturn (Virgo)                          │
  │  Drive (act fast, in parallel) and IO (broadcast the │
  │  thesis) sit at opposite ends of a wire and route    │
  │  ALL their contention through one validator.         │
@@ -122,7 +133,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH ───────────────────────────────────────────┐
- │  Venus ♏ △ Neptune ♓                                 │
+ │  Venus (Scorpio) TRINE Neptune (Pisces)              │
  │  Connection layer (deep bonding) FLOWS with          │
  │  dissolution layer (spiritual merging).              │
  │  "Love is transcendent, boundaryless, oceanic."      │
@@ -138,7 +149,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♊ (conjunct Moon ♊)                            │
+ │  Mars (Gemini), conjunct Moon (Gemini)               │
  │  Drive and cache are fused in the same coordinate:   │
  │  the impulse to act IS the emotional reaction, and   │
  │  both are fast, verbal, and multi-threaded. Under    │
@@ -148,7 +159,7 @@ It is also the chart of the person you met in the first paragraph of this book�
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♌ → North Node ♒                         │
+ │  South Node (Leo) → North Node (Aquarius)            │
  │  Default: Performing, creating, being the star.      │
  │  Growth: Contributing to the collective, innovating  │
  │  for systems, releasing the need for personal        │
@@ -171,36 +182,36 @@ One example teaches the format. Two teach the *method*—because the interesting
 
 ```
  SYSTEM ARCHITECTURE DIAGRAM
- ═══════════════════════════════════════════════════════
+ ════════════════════════════════════════════════════════
 
- ┌─ PUBLIC API (Rising = Virgo) ───────────────────────┐
- │  Interface: precise, useful, quietly critical.      │
- │  Presents as competent and unbothered. Every        │
- │  external call gets a correct, well-formed reply.   │
- │  PID 1 = Mercury (chart ruler) — system health      │
- │  depends on the IO layer, which is in Aquarius:     │
- │  detached, systemic, several degrees off-consensus. │
- └─────────────────────────────────────────────────────┘
+ ┌─ PUBLIC API (Rising = Virgo) ────────────────────────┐
+ │  Interface: precise, useful, quietly critical.       │
+ │  Presents as competent and unbothered. Every         │
+ │  external call gets a correct, well-formed reply.    │
+ │  PID 1 = Mercury (chart ruler) — system health       │
+ │  depends on the IO layer, which is in Aquarius:      │
+ │  detached, systemic, several degrees off-consensus.  │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CPU (Sun = Pisces) ────────────────────────────────┐
- │  Core Process: permeable, associative, absorptive.  │
- │  The identity function has soft type boundaries.    │
- │  NOTE THE CONTRADICTION: a Virgo interface in front │
- │  of a Pisces core. The world receives precision.    │
- │  The core is running on impressions. Nobody guesses │
- │  this from the outside, including sometimes them.   │
- └─────────────────────────────────────────────────────┘
+ ┌─ CPU (Sun = Pisces) ─────────────────────────────────┐
+ │  Core Process: permeable, associative, absorptive.   │
+ │  The identity function has soft type boundaries.     │
+ │  NOTE THE CONTRADICTION: a Virgo interface in front  │
+ │  of a Pisces core. The world receives precision.     │
+ │  The core is running on impressions. Nobody guesses  │
+ │  this from the outside, including sometimes them.    │
+ └──────────────────────────────────────────────────────┘
            │
- ┌─ CACHE (Moon = Capricorn) ──────────────────────────┐
- │  Emotional State: stored in compressed, structured  │
- │  form. Feelings are logged, not felt in real time.  │
- │  Under stress the cache does not flood — it goes    │
- │  quiet, gets competent, and files everything for    │
- │  processing at an unspecified later date.           │
- └─────────────────────────────────────────────────────┘
+ ┌─ CACHE (Moon = Capricorn) ───────────────────────────┐
+ │  Emotional State: stored in compressed, structured   │
+ │  form. Feelings are logged, not felt in real time.   │
+ │  Under stress the cache does not flood — it goes     │
+ │  quiet, gets competent, and files everything for     │
+ │  processing at an unspecified later date.            │
+ └──────────────────────────────────────────────────────┘
 
  ┌─ BOTTLENECK ─────────────────────────────────────────┐
- │  Mars ♋ ☍ Saturn ♑                                   │
+ │  Mars (Cancer) OPPOSITE Saturn (Capricorn)           │
  │  Drive (protective, indirect, acts when threatened)  │
  │  at maximum distance from Limit (authority, hierarchy│
  │  , public standard).                                 │
@@ -216,7 +227,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ HOT PATH (invocable, not automatic) ────────────────┐
- │  Mercury ♒ ⚹ Jupiter ♈                               │
+ │  Mercury (Aquarius) SEXTILE Jupiter (Aries)          │
  │  Systemic, unconventional thinking has a 60° link to │
  │  the operator that scales initiative.                │
  │  Sextile, not trine: this DOES NOT FIRE ON ITS OWN.  │
@@ -228,7 +239,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ DRIVE VECTOR ───────────────────────────────────────┐
- │  Mars ♋ / Venus ♈                                    │
+ │  Mars (Cancer) / Venus (Aries)                       │
  │  Split configuration: acts defensively, WANTS        │
  │  directly. Pursues fast and fights slow. Reads as    │
  │  inconsistent from outside; is entirely consistent   │
@@ -237,7 +248,7 @@ One example teaches the format. Two teach the *method*—because the interesting
  └──────────────────────────────────────────────────────┘
 
  ┌─ GROWTH VECTOR (Nodal Axis) ─────────────────────────┐
- │  South Node ♏ → North Node ♉                         │
+ │  South Node (Scorpio) → North Node (Taurus)          │
  │  Default: intensity, crisis fluency, reading         │
  │  subtext, surviving on leverage and depth.           │
  │  Growth: ordinary durable value. Steadiness that     │
@@ -261,7 +272,7 @@ One example teaches the format. Two teach the *method*—because the interesting
   │              │ investigation    │ associative      │
   │ Cache        │ Gemini — verbal, │ Capricorn —      │
   │              │ fast, scattered  │ deferred, filed  │
-  │ Bottleneck   │ T-SQUARE, ♄ apex │ OPPOSITION       │
+  │ Bottleneck   │ T-SQUARE (Saturn)│ OPPOSITION       │
   │              │ two loads, 1 gate│ (projection)     │
   │ Key asset    │ TRINE — runs on  │ SEXTILE — works  │
   │              │ its own, invisible│ but must be     │
@@ -290,24 +301,24 @@ Use this on your own chart. Fill it in the order given—the order is the method
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 2: BOTTLENECKS (□ and ☍) ────────────────────┐
-  │  Hard aspects to ☿ ♀ ♂:                            │
-  │  ______ □/☍ ______  orb ____                       │
+  ┌─ STEP 2: BOTTLENECKS (squares and oppositions) ────┐
+  │  Hard aspects to Sun, Moon, Mercury, Venus, Mars:  │
+  │  ______ square/opposite ______  orb ____           │
   │  What does this block, specifically, in a normal   │
   │  week? ________________________________________    │
   │  What would satisfying BOTH operands look like?    │
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 3: HOT PATHS (△ and ⚹) ──────────────────────┐
-  │  ______ △/⚹ ______                                 │
+  ┌─ STEP 3: HOT PATHS (trines and sextiles) ──────────┐
+  │  ______ trine/sextile ______                       │
   │  Trine → what am I good at that I never trained?   │
   │  Sextile → what works whenever I remember to do    │
   │  it, and how often do I remember?                  │
   │  ______________________________________________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ STEP 4: GROWTH VECTOR (☋ → ☊) ────────────────────┐
+  ┌─ STEP 4: GROWTH VECTOR (South → North Node) ───────┐
   │  South Node ______  the cached default that is     │
   │  reliable and produces no growth:                  │
   │  North Node ______  the dependency I keep          │
@@ -315,15 +326,21 @@ Use this on your own chart. Fill it in the order given—the order is the method
   │  One deliberate IMPORT this month: ____________    │
   └────────────────────────────────────────────────────┘
 
-  ┌─ THE TEST ───────────────────────────────────────── ┐
-  │  Does any line above make you say "oh, THAT'S       │
-  │  why I keep doing that"?                            │
-  │                                                     │
-  │  If yes: the tool is working. Keep it.              │
-  │  If no:  the tool has failed for you. Discard it.   │
-  │          That was always the deal.                  │
+  ┌─ THE TEST ─────────────────────────────────────────┐
+  │  Does any line above make you say "oh, THAT'S      │
+  │  why I keep doing that"?                           │
+  │                                                    │
+  │  If yes: the tool is working. Keep it.             │
+  │  If no:  the tool has failed for you. Discard it.  │
+  │          That was always the deal.                 │
   └────────────────────────────────────────────────────┘
 ```
+
+## Architecture, Not Fate
+
+Synthesizing the chart produces a **system architecture diagram**, not a deterministic execution trace. The source code defines the constraints, the default configurations, and the known bottlenecks—but it does not specify the runtime behavior under every possible input.
+
+The chart is the hardware specification and the default `config.yaml`. The software you write on top of it—the decisions, the responses, the refactors—is entirely yours to author.
 
 ## Where This Model Breaks
 

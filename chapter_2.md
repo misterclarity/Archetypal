@@ -11,7 +11,7 @@ This is the primary runtime context: the tension between the executing process a
 
 *   **Aries (The Spark)**: The raw `EXECUTE` command. It initializes the process, asserts a direction, and acts with subjective velocity. No dependency injection; it runs from internal state alone.
 *   **Libra (The Mirror)**: The `COMPARE` function. It evaluates the output of an action against an external reference point—the other process in the system. It seeks equilibrium by negotiating rather than asserting.
-*   **The Coupling**: Aries calls Libra to observe the side effects of its own execution. Libra calls Aries to recover the agent of choice it has outsourced to external consensus.
+*   **The Coupling**: Aries calls Libra to observe the side effects of its own execution. Libra calls Aries to recover the agency it has outsourced to external consensus.
 *   **The Integration**: Asserting direction (Aries) without introducing breaking changes to the shared system (Libra). Maintaining compatibility (Libra) without sacrificing the clarity of your own interface contract (Aries).
 
 **Worked Example — Venus on this Axis**:
@@ -19,12 +19,12 @@ This is the primary runtime context: the tension between the executing process a
 - *Venus in Libra*: The `BIND` operator runs in Other-first mode. Attraction is mediated through harmony-seeking negotiation. The system forms connections by mirroring: `"I want what you want; let us find the shared interface."` Elegant contract negotiation; risk of outsourcing the entire preference set.
 
 ```
-    ♈ ARIES                                    ♎ LIBRA
-  ┌──────────┐     Axis of Identity      ┌──────────┐
-  │ "I act"  │◄─────────────────────────►│ "We agree"│
-  │ EXECUTE  │    Self ◄────► Other      │ COMPARE   │
-  │ assert() │                           │ evaluate()│
-  └──────────┘                           └──────────┘
+    ARIES                                   LIBRA
+  ┌─────────────┐     Axis of Identity      ┌─────────────┐
+  │ "I act"     │◄─────────────────────────►│ "We agree"  │
+  │ EXECUTE     │     Self ◄────► Other     │ COMPARE     │
+  │ assert()    │                           │ evaluate()  │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 2. The Axis of Substance (Taurus <-> Scorpio)
@@ -34,7 +34,7 @@ This axis manages resource allocation and lifecycle—what the system retains in
 
 *   **Taurus (The Garden)**: The `PERSIST` operation. It writes to stable storage, builds redundancy, and resists state changes. It optimizes for durability and uptime. Its anti-pattern is memory leak: holding references that should have been released.
 *   **Scorpio (The Composter)**: The `PURGE` and `MERGE` operations. It runs the garbage collector, dereferences obsolete objects, and forces the destructive updates that enable regeneration. Its anti-pattern is destroying state before a replacement is ready.
-*   **The Coupling**: Taurus provides the stable container that Scorpio's intensity requires a vessel for. Scorpio runs the cleanup cycle that prevents Taurus from heap overflow.
+*   **The Coupling**: Taurus provides the stable container that Scorpio's intensity requires. Scorpio runs the cleanup cycle that prevents Taurus from heap overflow.
 *   **The Integration**: Maintaining persistent state (Taurus) while accepting that long-lived objects must eventually be garbage-collected (Scorpio). Building security (Taurus) while engaging in the deep merges that allow for genuine transformation (Scorpio).
 
 **Worked Example — The Moon on this Axis**:
@@ -42,12 +42,12 @@ This axis manages resource allocation and lifecycle—what the system retains in
 - *Moon in Scorpio*: The `BUFFER` function runs through deep encryption and compression. Emotional processing is intense, all-or-nothing, and never shallow. The cache holds everything—including what should have been garbage-collected years ago. `"I feel everything, and I delete nothing."`
 
 ```
-    ♉ TAURUS                                   ♏ SCORPIO
-  ┌──────────┐     Axis of Substance     ┌──────────┐
-  │ "I have" │◄─────────────────────────►│ "I purge"│
-  │ PERSIST  │   Form ◄────► Transform   │ MERGE    │
-  │ retain() │                           │ release()│
-  └──────────┘                           └──────────┘
+    TAURUS                                  SCORPIO
+  ┌─────────────┐     Axis of Substance     ┌─────────────┐
+  │ "I have"    │◄─────────────────────────►│ "I purge"   │
+  │ PERSIST     │   Form ◄────► Transform   │ MERGE       │
+  │ retain()    │                           │ release()   │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 3. The Axis of Mind (Gemini <-> Sagittarius)
@@ -65,12 +65,12 @@ This is the axis of information processing—from raw input to derived meaning.
 - *Mercury in Sagittarius*: The `IO_STREAM` operator trades bandwidth for depth. It runs a single, high-priority thread that synthesizes rather than collects. Communication is big-picture, philosophical, sometimes preachy. `"I don't want the data points—give me the thesis statement."`
 
 ```
-    ♊ GEMINI                                ♐ SAGITTARIUS
-  ┌──────────┐       Axis of Mind        ┌──────────┐
-  │ "I learn"│◄─────────────────────────►│"I believe"│
-  │ GET_DATA │   Data ◄────► Inference   │ EVALUATE  │
-  │ collect()│                           │ synthesize()│
-  └──────────┘                           └──────────┘
+    GEMINI                                  SAGITTARIUS
+  ┌─────────────┐       Axis of Mind        ┌─────────────┐
+  │ "I learn"   │◄─────────────────────────►│ "I believe" │
+  │ GET_DATA    │   Data ◄────► Inference   │ EVALUATE    │
+  │ collect()   │                           │ synthesize()│
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 4. The Axis of Foundation (Cancer <-> Capricorn)
@@ -88,12 +88,12 @@ This axis represents the infrastructure split between the internal runtime and t
 - *Saturn in Capricorn*: The `LIMIT` operator is in its native domain—the public build server. Structure, hierarchy, and career are taken with dead seriousness. The deployment pipeline has zero tolerance for untested code. `"I will not ship until every test passes. The build is sacred."`
 
 ```
-    ♋ CANCER                                 ♑ CAPRICORN
-  ┌──────────┐     Axis of Foundation    ┌──────────┐
-  │ "I feel" │◄─────────────────────────►│ "I build"│
-  │ PROTECT  │  Private ◄────► Public    │ COMPILE  │
-  │ secure() │                           │ deploy() │
-  └──────────┘                           └──────────┘
+    CANCER                                  CAPRICORN
+  ┌─────────────┐    Axis of Foundation     ┌─────────────┐
+  │ "I feel"    │◄─────────────────────────►│ "I build"   │
+  │ PROTECT     │   Private ◄────► Public   │ COMPILE     │
+  │ secure()    │                           │ deploy()    │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 5. The Axis of Expression (Leo <-> Aquarius)
@@ -111,12 +111,12 @@ This axis governs the relationship between the individual process and the distri
 - *Sun in Aquarius*: The `IDENTITY` function is defined through network contribution. The ego process runs as a mesh node rather than a central server. Identity is sourced from ideas, community, and systemic thinking. `"I am not the server; I am the protocol that connects them."`
 
 ```
-    ♌ LEO                                    ♒ AQUARIUS
-  ┌──────────┐     Axis of Expression    ┌──────────┐
-  │"I create"│◄─────────────────────────►│"I connect"│
-  │ RENDER   │ Individual ◄──► Collective│ BROADCAST │
-  │ display()│                           │ distribute()│
-  └──────────┘                           └──────────┘
+    LEO                                     AQUARIUS
+  ┌─────────────┐    Axis of Expression     ┌─────────────┐
+  │ "I create"  │◄─────────────────────────►│ "I connect" │
+  │ RENDER      │Individual ◄──► Collective │ BROADCAST   │
+  │ display()   │                           │ distribute()│
+  └─────────────┘                           └─────────────┘
 ```
 
 ## 6. The Axis of Service (Virgo <-> Pisces)
@@ -134,12 +134,12 @@ This is the axis of functional reality—how the system interfaces with the worl
 - *Jupiter in Pisces*: The `MULTIPLY` operator scales the event bus. Empathy, imagination, and spiritual receptivity expand without boundaries. The system absorbs every signal on the wire without filtering. `"I feel the entire network's traffic, and it is all meaningful."` Risk: the system floods and loses the ability to distinguish signal from noise.
 
 ```
-    ♍ VIRGO                                  ♓ PISCES
-  ┌──────────┐      Axis of Service      ┌──────────┐
-  │"I refine"│◄─────────────────────────►│"I dissolve"│
-  │ LINT     │   Order ◄────► Surrender  │ STREAM    │
-  │ debug()  │                           │ flow()    │
-  └──────────┘                           └──────────┘
+    VIRGO                                   PISCES
+  ┌─────────────┐      Axis of Service      ┌─────────────┐
+  │ "I refine"  │◄─────────────────────────►│ "I dissolve"│
+  │ LINT        │  Order ◄────► Surrender   │ STREAM      │
+  │ debug()     │                           │ flow()      │
+  └─────────────┘                           └─────────────┘
 ```
 
 ## Reading an Axis: The Three States
@@ -207,9 +207,9 @@ You now know the six axes—the core binary constraints of the human operating s
 
 ### First, Your Data—and One Term You Haven't Met
 
-To do any of this on yourself you need three inputs: **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
+If you skipped the Introduction's *Before You Start* box: to do any of this on yourself you need three inputs, **birth date, birth time, and birth place.** Any free natal chart calculator will turn those into the placements this book uses—each planet's sign, the aspects between them, the Nodes. You do not need to understand the calculation. You need the output.
 
-The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—a term the next table uses and this book has not yet defined. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
+The birth *time* matters more than people expect, because it is the only input that determines your **Rising sign**—the term the Introduction's inputs table glossed and the next table relies on. The Rising sign (also called the Ascendant) is the sign that was on the eastern horizon at the moment you were born. It changes roughly every two hours, which is why two people born the same day can have completely different ones. In this book's terms it is your **interface layer**: the public API contract, the response signature the outside world gets when it calls you, before your Sun has finished processing anything.
 
 If you do not know your birth time, you do not know your Rising sign. Say so honestly, work from Sun and Moon, and the method still holds—you have the CPU and the cache; you are missing the interface spec. Do not guess it from how you think you come across. That is the one input the framework cannot infer.
 
@@ -219,8 +219,8 @@ If you do not know your birth time, you do not know your Rising sign. Say so hon
 
 A complete chart reading produces a **system architecture diagram**. At its simplest, it starts with the "Big Three"—the base image of your operating system:
 
-| Layer | Planet | Sign | Function |
-|-------|--------|------|----------|
+| Layer | Point | Sign | Function |
+|-------|-------|------|----------|
 | Public API (Interface) | Rising | Libra ♎ | Harmony-first interface |
 | Core CPU (Identity) | Sun | Capricorn ♑ | Structural processing |
 | Cache Layer (Emotional) | Moon | Aries ♈ | Fast, hot reactive state |
@@ -237,50 +237,23 @@ You don't need to wait until Chapter 6 to start using the axes. Here is the most
 
 When a recurring pattern surfaces, identify the symptom, check which axis is likely overloaded, and consciously invoke the complementary function—not as a suppression of the original, but as the missing operand that completes the equation.
 
-```
-┌──────────────────┬───────────────┬──────────────────────────┐
-│  SYMPTOM         │  CHECK        │  LIKELY PATCH            │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Impulsive       │  ♂ Mars / ♈  │  Invoke ♎ Libra:         │
-│  action, burning │  Aries        │  "What is the cost to    │
-│  bridges         │  overload     │   the shared system?"    │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Paralysis,      │  ♄ Saturn / ♍│  Invoke ♓ Pisces:        │
-│  cannot ship     │  Virgo        │  "Ship at 80%. Accept    │
-│  or decide       │  overload     │   the ambiguity."        │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  People-pleasing,│  ♀ Venus / ♎ │  Invoke ♈ Aries:         │
-│  lost preferences│  Libra        │  "What do I want,        │
-│                  │  overload     │   independent of         │
-│                  │               │   consensus?"            │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Emotional       │  ☽ Moon / ♋  │  Invoke ♑ Capricorn:     │
-│  flooding,       │  Cancer       │  "Build a container.     │
-│  overwhelm       │  overload     │   Name the feeling.      │
-│                  │               │   Give it form."         │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Workaholism,    │  ☉ Sun / ♑   │  Invoke ♋ Cancer:        │
-│  cannot stop     │  Capricorn    │  "Return to private      │
-│  building        │  loop         │   state. Rest is not     │
-│                  │               │   weakness."             │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Info overload,  │  ☿ Merc / ♊  │  Invoke ♐ Sagittarius:   │
-│  too many open   │  Gemini       │  "What is the thesis?    │
-│  tabs            │  overload     │   Close everything       │
-│                  │               │   that isn't it."        │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Rigidity, fear  │  ♉ Taurus    │  Invoke ♏ Scorpio:       │
-│  of change       │  persistence  │  "What must be garbage-  │
-│  or loss         │  loop         │   collected to free      │
-│                  │               │   memory?"               │
-├──────────────────┼───────────────┼──────────────────────────┤
-│  Isolation,      │  ♌ Leo       │  Invoke ♒ Aquarius:      │
-│  "nobody sees    │  foreground   │  "Contribute to a system │
-│  the real me"    │  loop         │   bigger than your       │
-│                  │               │   own UI."               │
-└──────────────────┴───────────────┴──────────────────────────┘
-```
+| Symptom | Check | Likely Patch |
+|---|---|---|
+| Impulsive action, burning bridges | ♂ Mars / ♈ Aries overload | Invoke ♎ Libra: "What is the cost to the shared system?" |
+| Paralysis, cannot ship or decide | ♄ Saturn / ♍ Virgo overload | Invoke ♓ Pisces: "Ship at 80%. Accept the ambiguity." |
+| People-pleasing, lost preferences | ♀ Venus / ♎ Libra overload | Invoke ♈ Aries: "What do I want, independent of consensus?" |
+| Emotional flooding, overwhelm | ☽ Moon / ♋ Cancer overload | Invoke ♑ Capricorn: "Build a container. Name the feeling. Give it form." |
+| Workaholism, cannot stop building | ☉ Sun / ♑ Capricorn loop | Invoke ♋ Cancer: "Return to private state. Rest is not weakness." |
+| Info overload, too many open tabs | ☿ Mercury / ♊ Gemini overload | Invoke ♐ Sagittarius: "What is the thesis? Close everything that isn't it." |
+| Rigidity, fear of change or loss | ♉ Taurus persistence loop | Invoke ♏ Scorpio: "What must be garbage-collected to free memory?" |
+| Isolation, "nobody sees the real me" | ♌ Leo foreground loop | Invoke ♒ Aquarius: "Contribute to a system bigger than your own UI." |
+| Obsession, cannot let go, control | ♇ Pluto / ♏ Scorpio overload | Invoke ♉ Taurus: "What is already stable and enough? Stop digging." |
+| Grand theories, preaching, no evidence | ♃ Jupiter / ♐ Sagittarius overload | Invoke ♊ Gemini: "What does the raw data say? Fetch before you infer." |
+| Detachment, everyone is a node, nobody is a person | ♅ Uranus / ♒ Aquarius overload | Invoke ♌ Leo: "Render one warm, specific signal. Sign your work." |
+| Drift, no boundaries, no error handling | ♆ Neptune / ♓ Pisces overload | Invoke ♍ Virgo: "Add one validation gate. Name one concrete next step." |
 
-This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch.
+This table will make more sense as you learn the operators (Chapter 3) and the circuits (Chapter 4). But even now, with only the axes in hand, you can start using it. Identify the symptom. Look at which side of the axis is overloaded. Invoke the other side. That's the patch. Twelve rows, six axes, each diagnosable in both directions.
+
+In Chapter 7 these twelve questions get a second job: when an autonomous agent built on this framework makes a decision, the archetype on the opposite end of the axis asks exactly this question before the decision ships.
 
 The six axes are the map of what can go missing. The next chapter is about what runs on them: *find the function that was never mounted* only works once you know what the functions are.
