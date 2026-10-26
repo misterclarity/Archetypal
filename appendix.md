@@ -1,6 +1,6 @@
 # Appendix: Legend and Glossary
 
-Everything a chart printout can throw at you, in one place. The three glyph tables are the same ones you met in the Introduction; the glossary covers every astrological term the book uses and a few your chart tool will show you that the book deliberately skips.
+Here is everything a chart printout can throw at you, in one place. The three glyph tables are the same ones you met in the Introduction. The glossary covers every astrological term the book uses, plus a few that your chart tool shows you and that the book deliberately skips.
 
 ## Glyph Legend
 
@@ -68,13 +68,13 @@ Everything a chart printout can throw at you, in one place. The three glyph tabl
 - **Midheaven (MC)** — the highest point of the chart; public role and career. Not used in this book.
 - **Chart ruler** — the planet that rules your Rising sign. `PID 1` (table in Chapter 6).
 - **Rulership** — each sign has a home operator (Aries → Mars, etc.). "Native context" in this book.
-- **House** — one of twelve numbered slices of the wheel, counted from the Ascendant; the life domain in which an operator executes. Deliberately not used here—treat as a v2 feature.
+- **House** — one of twelve numbered slices of the wheel, counted from the Ascendant; the life domain in which an operator executes. Deliberately not used here; treat as a v2 feature.
 - **Cusp** — a boundary: between two signs, or between two houses. The Pisces–Aries cusp is the ring's wrap-around point.
 - **Aspect** — the angle between two operators: the circuit type (Chapter 4).
 - **Orb** — tolerance around the exact aspect angle; ~8° for ☌ ☍ □ △, ~5° for ⚹, ~3° for ⚻. Smaller orb = stronger circuit.
 - **Transit** — where a planet is in the sky *now*, read against your natal positions. The runtime clock.
 - **Return** — a transiting planet arriving back at its natal position: one full orbit (Chapter 5).
-- **Retrograde (℞)** — a planet appearing to move backward from Earth's vantage. Read as the operator in review mode: internalized, re-processing. Optional for a first profile.
+- **Retrograde (℞)** — a planet that appears to move backward when seen from Earth. Read as the operator in review mode: internalized, re-processing. Optional for a first profile.
 - **Nodes (☊ ☋)** — where the Moon's orbit crosses the ecliptic. North = `IMPORT`, South = `ARCHIVE`; always 180° apart, so tools often print only the North.
 - **Chiron (⚷)** — small body between Saturn and Uranus; the permanently open ticket (Chapters 3 and 5).
 - **Stellium** — three or more operators in the same sign: a hot cluster. You will see the word in chart tools.

@@ -1,12 +1,12 @@
 # Chapter 3: The Planetary Operators (The Logic Functions)
 
-If the signs are the coordinate field (the "Where"), the planets are the active execution layer (the "What"). In this algebraic framework, we strip away the mythological personas of the gods and treat them as **Logical Operators**: typed functions with specific signatures that process state and execute commands within the psyche's runtime.
+If the signs are the coordinate field (the "Where"), the planets are the active execution layer (the "What"). In this algebraic framework we strip away the gods' mythological personas and treat the planets as **Logical Operators**: typed functions with specific signatures. They process state and execute commands inside the psyche's runtime.
 
-Every planet represents a specific class of operation—a deterministic behavior that fires in a given context.
+Every planet represents a specific class of operation: a deterministic behavior that fires in a given context.
 
 ### The Operator Stack
 
-Not all operators run at the same layer. They differ in orbital speed, and orbital speed maps almost perfectly onto scope: fast operators are personal and change frequently; slow operators are generational and change on the timescale of cultural epochs.
+Operators run at different layers. They differ in orbital speed, and orbital speed maps almost perfectly onto scope. Fast operators are personal and change often. Slow operators are generational and change on the timescale of cultural epochs.
 
 ```
   THE OPERATOR STACK — by layer and cycle time
@@ -44,7 +44,7 @@ Not all operators run at the same layer. They differ in orbital speed, and orbit
 
 ### Operator Clock Speeds
 
-The stack above sorts operators by layer. This table turns the same orbital periods into a schedule: when an operator completes a full lap and returns to its natal coordinate, or reaches the quarter- and half-way points, the system gets a scheduled maintenance window. Chapter 5 is built entirely on it.
+The stack above sorts operators by layer. This table turns the same orbital periods into a schedule. When an operator completes a full lap, it returns to its natal coordinate. At that return, and at the quarter- and half-way points, the system gets a scheduled maintenance window. Chapter 5 is built entirely on this schedule.
 
 | Operator | Glyph | One full cycle | Changes sign every | Natal return at age | Opposition at age | Tier |
 |---|---|---|---|---|---|---|
@@ -61,19 +61,19 @@ The stack above sorts operators by layer. This table turns the same orbital peri
 | Pluto | ♇ | 247.9 years | 12–30 years | never in one life | — (square at ~36–60, varies by generation) | outer / generational |
 | Lunar Nodes | ☊ ☋ | 18.6 years (moving backwards) | ~1.5 years | ~19, 37, 56 | ~9, 28, 46 | axis |
 
-Mercury and Venus orbit inside Earth's orbit, so from here they never get far from the Sun—at most ~28° and ~47°—and their lap around the ring, the lap the return column counts, takes a year regardless of their 88- and 225-day trips around the Sun.
+Mercury and Venus orbit inside Earth's orbit, so from here they never get far from the Sun: at most ~28° and ~47°. Their lap around the ring, the lap the return column counts, takes a year. Their 88- and 225-day trips around the Sun do not change that.
 
-Read it as a cron table. The fast operators return so often that their returns are noise; the slow ones return so rarely that each return is a version bump.
+Read it as a cron table. The fast operators return so often that their returns are noise. The slow ones return so rarely that each return is a version bump.
 
 ## The Constants (The Luminaries)
-These are the core binaries of consciousness: the process identity and its stateful context. (*Luminaries* is astrology's word for the two lights—the Sun and the Moon—which the chart ranks as its two most important operators even though neither is, astronomically, a planet.)
+These are the core binaries of consciousness: the process identity and its stateful context. (*Luminaries* is astrology's word for the two lights, the Sun and the Moon. The chart ranks them as its two most important operators, even though neither is, astronomically, a planet.)
 
 ### The Sun: The `IDENTITY` Function
 *   **The Operator**: `define self()`
-*   **The Logic**: The Sun is the origin point `(0,0,0)` of your personal coordinate system—the central reference from which all other positions are measured. It is the main thread of the process: the conscious will, the ego, the narrative that gives continuity to the execution. All other operators run relative to this reference.
+*   **The Logic**: The Sun is the origin point `(0,0,0)` of your personal coordinate system. Every other position is measured from that central reference. The Sun is also the main thread of the process: the conscious will, the ego, the narrative that gives the execution its continuity. All other operators run relative to this reference.
 *   **Syntax**: `"I am [Sign]."` — The function that resolves the question: *what is this process?*
 
-This chapter uses two table formats. The luminaries (Sun, Moon) are shown across the **four elements**, because element is the dimension along which they vary most. The personal and social operators are shown across **all twelve signs**, because for them the sign-level detail is what you will actually look up.
+This chapter uses two table formats. The luminaries (Sun, Moon) are shown across the **four elements**, because element is where they vary most. The personal and social operators are shown across **all twelve signs**, because for them the sign-level detail is what you will look up.
 
 **The Sun Across Four Elements** — Same operator, different execution contexts:
 
@@ -86,7 +86,7 @@ This chapter uses two table formats. The luminaries (Sun, Moon) are shown across
 
 ### The Moon: The `BUFFER` Function
 *   **The Operator**: `save_state()` / `load_state()`
-*   **The Logic**: The Moon is the memory management layer. It caches the residual charge of past events, building the lookup table we call "instinct" or "gut reaction." It manages emotional state not by reasoning but by pattern-matching against cached history. When the system encounters a familiar stimulus, the Moon fires a cached response before the Sun's conscious thread can run its own evaluation.
+*   **The Logic**: The Moon is the memory management layer. It caches the residual charge of past events, building the lookup table we call "instinct" or "gut reaction." It manages emotional state by pattern-matching against cached history. It does not reason. When the system meets a familiar stimulus, the Moon fires a cached response before the Sun's conscious thread can run its own evaluation.
 *   **Syntax**: `"I feel [Sign]."` — The function that gives the process its history and context.
 
 **The Moon Across Four Elements** — Same cache layer, different storage strategies:
@@ -103,7 +103,7 @@ These operators handle the daily I/O throughput and interaction with the immedia
 
 ### Mercury: The `IO_STREAM` Operator
 *   **The Operator**: `connect()` / `transmit()`
-*   **The Logic**: Mercury is the data bus. It handles the ingestion of sensory and informational input and the serialization of internal state into communicable output. It is the logic of the protocol layer itself—the syntax rules that determine whether a message is well-formed and transmissible.
+*   **The Logic**: Mercury is the data bus. It takes in sensory and informational input, and it serializes internal state into output that others can read. It is the logic of the protocol layer: the syntax rules that decide whether a message is well-formed and transmissible.
 *   **Syntax**: `"I think [Sign]."`
 
 **Mercury: Quick Reference Across All Twelve Signs** — *"How does the system process and transmit data?"*
@@ -125,7 +125,7 @@ These operators handle the daily I/O throughput and interaction with the immedia
 
 ### Venus: The `BIND` Operator
 *   **The Operator**: `bind()` / `merge()`
-*   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension not by cutting through it, but by establishing a shared interface contract that satisfies both sides.
+*   **The Logic**: Venus is the principle of connection and unification. Like the logical `AND` connective, it evaluates to true only when both operands are present and joined. It governs attraction, value, and the formation of stable dependencies between systems. It resolves tension by building a shared interface contract that satisfies both sides. It does not cut through the tension.
 *   **Syntax**: `"I value [Sign]."`
 
 **Venus: Quick Reference Across All Twelve Signs** — *"How does the system form connections and value?"*
@@ -147,7 +147,7 @@ These operators handle the daily I/O throughput and interaction with the immedia
 
 ### Mars: The `VECTOR` Operator
 *   **The Operator**: `force()` / `separate()`
-*   **The Logic**: Mars is the directed force—a vector with both magnitude and heading. It acts to separate the subject from the object in order to achieve a defined objective. Where Venus creates dependencies, Mars severs them. It resolves tension by applying directional pressure until the blocking constraint is removed.
+*   **The Logic**: Mars is directed force: a vector with both magnitude and heading. It separates the subject from the object to reach a defined objective. Where Venus creates dependencies, Mars severs them. It resolves tension by pushing in one direction until the blocking constraint is removed.
 *   **Syntax**: `"I act [Sign]."`
 
 **Mars: Quick Reference Across All Twelve Signs** — *"How does the system apply force?"*
@@ -168,11 +168,11 @@ These operators handle the daily I/O throughput and interaction with the immedia
 | ♓ Pisces | Passive resistance | `force(dissolve_boundary, absorb)` |
 
 ## The Social & Outer Operators
-These operators handle the scaling, structuring, and transformation of the system at the architectural level.
+These operators scale, structure, and transform the system at the architectural level.
 
 ### Jupiter: The `MULTIPLY` Operator
 *   **The Operator**: `scale_up()` / `optimize()`
-*   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path—the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
+*   **The Logic**: Jupiter is the horizontal scaling function. It takes any active process and applies a positive multiplier: expanding scope, increasing throughput, broadcasting meaning. It is the "Yes" path, the branch that widens the execution surface. Its failure mode is unconstrained growth: heap bloat, feature creep, a system that scales without purpose.
 *   **Syntax**: `"I expand [Sign]."`
 
 **Jupiter: Quick Reference Across All Twelve Signs** — *"What does the system scale up without being told?"*
@@ -194,11 +194,11 @@ These operators handle the scaling, structuring, and transformation of the syste
 
 Jupiter has no brake. Whatever sits in this coordinate gets multiplied *whether or not it should be*. This is why Jupiter placements read as "luck" from the outside and "I cannot stop doing this" from the inside.
 
-**Example — Jupiter in Gemini vs Jupiter in Scorpio**: Same operator, opposite scaling targets. Jupiter in Gemini multiplies inputs—forty open tabs, six side projects, three languages half-learned, an inbox that is functionally a landfill. Abundance of *breadth*. Jupiter in Scorpio multiplies intensity—there are four things in this person's life and all four are total. Abundance of *depth*. Neither is more fortunate. Each is over-supplied in exactly the dimension the other is starved in, and each finds the other's life unimaginable.
+**Example — Jupiter in Gemini vs Jupiter in Scorpio**: Same operator, opposite scaling targets. Jupiter in Gemini multiplies inputs: forty open tabs, six side projects, three languages half-learned, an inbox that is functionally a landfill. Abundance of *breadth*. Jupiter in Scorpio multiplies intensity: there are four things in this person's life and all four are total. Abundance of *depth*. Neither is more fortunate. Each is over-supplied in the one dimension the other is starved in, and each finds the other's life unimaginable.
 
 ### Saturn: The `LIMIT` Operator
 *   **The Operator**: `limit()` / `validate()`
-*   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines something precisely by what it is *not*. It throws the exception when boundaries are violated. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships but it ships wrong. The "No" that creates definition.
+*   **The Logic**: Saturn is the compiler and the constraint enforcer. Like the logical `NOT`, it defines a thing by what it is *not*. It throws the exception when a boundary is crossed. It is the type checker, the schema validator, the test suite that refuses to pass until the implementation is correct. Without Saturn, code ships, but it ships wrong. Saturn is the "No" that creates definition.
 *   **Syntax**: `"I structure [Sign]."`
 
 **Saturn: Quick Reference Across All Twelve Signs** — *"Where does the system enforce constraints?"*
@@ -222,32 +222,32 @@ Jupiter has no brake. Whatever sits in this coordinate gets multiplied *whether 
 
 > **Saturn in Gemini**: The `LIMIT` operator constrains the data bus. Communication is tested for precision; no sloppy output passes the review. The system learns slowly but speaks with earned authority. *Think: a compiler that rejects code with any ambiguous syntax.*
 >
-> **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims are subjected to rigorous testing. Belief must be earned, not assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
+> **Saturn in Sagittarius**: The `LIMIT` operator constrains the inference engine. Grand theories and philosophical claims get tested rigorously. Belief has to be earned. It is never assumed. *Think: a compiler that rejects untested generalizations and demands empirical evidence for every docstring.*
 
 ### Chiron: The `WONTFIX` Operator
 *   **The Operator**: `known_issue()` / `work_around()`
-*   **The Logic**: Chiron (⚷) is not one of the classical planets. It is a small body orbiting between Saturn and Uranus—between the `LIMIT` and the `INTERRUPT`—and astrology reads it as the system's permanently open issue: the defect that Saturn could not validate away and Uranus could not patch out. Every release has shipped around it. Its placement names the module where the system is wounded and, precisely because of that, where it has accumulated the deepest workaround expertise. Most chart tools include it by default; if yours doesn't, enable it under "additional objects" or "asteroids."
+*   **The Logic**: Chiron (⚷) is not a classical planet. It is a small body that orbits between Saturn and Uranus, between the `LIMIT` and the `INTERRUPT`. Astrology reads it as the system's permanently open issue: the defect Saturn could not validate away and Uranus could not patch out. Every release has shipped around it. Its placement names the module where the system is wounded. Because of that, the same module is also where the system has accumulated the deepest workaround expertise. Most chart tools include it by default; if yours doesn't, enable it under "additional objects" or "asteroids."
 *   **Syntax**: `"I work around [Sign]."`
-*   **Runtime**: Its ~50-year lap produces the Chiron return of Chapter 5—the point where the open ticket gets reclassified from *defect* to *documented behavior*.
+*   **Runtime**: Its ~50-year lap produces the Chiron return of Chapter 5. That is the point where the open ticket gets reclassified from *defect* to *documented behavior*.
 
 ### Uranus: The `INTERRUPT` Operator
 *   **The Operator**: `interrupt()` / `flip_bit()`
-*   **The Logic**: Uranus is the asynchronous interrupt—the signal that fires outside of the normal execution cycle and forces the main thread to yield. It is the exception that no `try/catch` can suppress, the bit-flip that changes the state of a running system in ways the original specification did not anticipate. It prevents the process from entering a stable but stagnant infinite loop by introducing controlled chaos.
+*   **The Logic**: Uranus is the asynchronous interrupt: the signal that fires outside the normal execution cycle and forces the main thread to yield. It is the exception no `try/catch` can suppress. It is the bit-flip that changes the state of a running system in ways the original specification never anticipated. By introducing controlled chaos, it keeps the process out of a stable but stagnant infinite loop.
 *   **Syntax**: `"I liberate [Sign]."`
 
 ### Neptune: The `DISSOLVE` Operator
 *   **The Operator**: `blur()` / `transcend()`
-*   **The Logic**: Neptune removes type boundaries between variables. It increases transparency and decreases the opacity of the ego's encapsulation. Under Neptune, hard contracts become fuzzy; strict interfaces relax into duck typing; the edges between `self` and `other` become permeable. It is the logic of dreams—the runtime state where the type system is suspended and raw data flows without schema.
+*   **The Logic**: Neptune removes the type boundaries between variables. It increases transparency and makes the ego's encapsulation less opaque. Under Neptune, hard contracts turn fuzzy, strict interfaces relax into duck typing, and the edge between `self` and `other` becomes permeable. It is the logic of dreams: the runtime state where the type system is suspended and raw data flows without schema.
 *   **Syntax**: `"I dream [Sign]."`
 
 ### Pluto: The `REFORMAT` Operator
 *   **The Operator**: `purge()` / `reboot()`
-*   **The Logic**: Pluto is the destructive update that cannot be rolled back. It identifies corrupt memory blocks or deeply outdated dependencies and initiates a full wipe-and-reinstall cycle. It does not patch; it replaces. It is the operator that governs the irreversible state transitions—the ones where the system that comes back online after the reformat is not the same system that went offline.
+*   **The Logic**: Pluto is the destructive update that cannot be rolled back. It finds corrupt memory blocks or long-outdated dependencies and starts a full wipe-and-reinstall cycle. It does not patch; it replaces. It governs the irreversible state transitions. After a reformat, the system that comes back online is a different system from the one that went offline.
 *   **Syntax**: `"I transform [Sign]."`
 
 ### The Outer Operators in Practice: Generational Firmware
 
-Because Uranus, Neptune, and Pluto move so slowly, their placements describe a *cohort*, not a person. Everyone born in a several-year window shares the same value. This is why "Pluto in Scorpio" tells you about a generation's relationship to power, secrecy, and taboo—and tells you nothing at all about whether a specific person born in 1988 is guarded or open.
+Uranus, Neptune, and Pluto move slowly, so their placements describe a *cohort*. They do not describe a person. Everyone born in a several-year window shares the same value. That is why "Pluto in Scorpio" tells you about a generation's relationship to power, secrecy, and taboo. It tells you nothing about whether one specific person born in 1988 is guarded or open.
 
 The outer operators become personal in exactly one circumstance: **when they aspect a personal operator.**
 
@@ -280,27 +280,27 @@ The outer operators become personal in exactly one circumstance: **when they asp
   An outer planet's ASPECT is the person.
 ```
 
-**Worked example — Uranus square Mercury**: The `INTERRUPT` operator is in 90° contention with the `IO_STREAM` operator. This person's thoughts arrive as interrupts rather than as a stream: the idea shows up mid-sentence, out of order, and refuses to queue. In school this is a discipline problem. In a design review it is the observation nobody else could have made, delivered at the worst possible moment. The friction never resolves into smoothness—but it does, eventually, resolve into *timing*, which is what a person with this placement is actually learning across their twenties and thirties. The interrupt handler cannot be disabled. It can be given a scheduler.
+**Worked example — Uranus square Mercury**: The `INTERRUPT` operator is in 90° contention with the `IO_STREAM` operator. This person's thoughts arrive as interrupts rather than as a stream: the idea shows up mid-sentence, out of order, and refuses to queue. In school this is a discipline problem. In a design review it is the observation nobody else could have made, delivered at the worst possible moment. The friction never resolves into smoothness. It does, eventually, resolve into *timing*, and timing is what a person with this placement is learning across their twenties and thirties. The interrupt handler cannot be disabled. It can be given a scheduler.
 
 ## The Nodal Operators (The Evolutionary Axis)
-The Nodes of the Moon are not planets but intersection points—crossings of the Moon's orbital plane with the ecliptic. They function as a **directional flow controller**: a chronological axis that governs the trajectory of the system's development over time.
+The Nodes of the Moon are intersection points, not planets. They mark where the Moon's orbital plane crosses the ecliptic. They work as a **directional flow controller**: an axis in time that sets which way the system develops.
 
-On a chart printout they appear as **☊** (North) and **☋** (South). The two nodes are always exactly 180° apart—two ends of one line—so a North Node placement implies its South Node, and many tools print only the North. If yours does, the South Node is simply the opposite sign at the same degree (Aries ↔ Libra, Taurus ↔ Scorpio, and so on down the six axes of Chapter 2). The axis also precesses backwards through the Zodiac once every ~18.6 years, so the **nodal return** (ages ~19, ~37, ~56) is a scheduled `IMPORT` checkpoint in its own right.
+On a chart printout they appear as **☊** (North) and **☋** (South). The two nodes are always exactly 180° apart, two ends of one line. So a North Node placement implies its South Node, and many tools print only the North. If yours does, the South Node is the opposite sign at the same degree. (Aries ↔ Libra, Taurus ↔ Scorpio, and so on down the six axes of Chapter 2.) The axis also precesses backwards through the Zodiac once every ~18.6 years. That makes the **nodal return** (ages ~19, ~37, ~56) a scheduled `IMPORT` checkpoint in its own right.
 
 ### North Node: The `IMPORT` Operator
 *   **The Operator**: `fetch_new()` / `load_dependency()`
-*   **The Logic**: The North Node is an unregistered dependency slot—a module your system is architecturally designed to need but has never loaded. There are no pre-built drivers here, no cached handlers, no inherited defaults. The execution here is deliberate and manual; it does not happen on autopilot. It is the vector of future acquisition: the direction in which the system must grow to resolve its longest-standing dependency error.
+*   **The Logic**: The North Node is an unregistered dependency slot: a module your system is architecturally designed to need but has never loaded. There are no pre-built drivers here, no cached handlers, no inherited defaults. Execution here is deliberate and manual; there is no autopilot. It is the vector of future acquisition: the direction in which the system must grow to resolve its longest-standing dependency error.
 *   **Function**: Ingesting new experiences to balance the overall system load.
 
 ### South Node: The `ARCHIVE` Operator
 *   **The Operator**: `read_cache()` / `load_defaults()`
-*   **The Logic**: The South Node is your pre-compiled default configuration—a compressed bundle (`.tar.gz`) of all accumulated mastery and accumulated technical debt from prior cycles. It is the path of least resistance: the cached response your system returns without ever hitting the live logic. Proficiency here is high; the code is battle-tested. But staying in this cache loop indefinitely prevents the system from ever pulling the new dependencies it actually needs.
+*   **The Logic**: The South Node is your pre-compiled default configuration: a compressed bundle (`.tar.gz`) of all the mastery and technical debt you accumulated in prior cycles. It is the path of least resistance: the cached response your system returns without ever hitting the live logic. Proficiency is high and the code is battle-tested. But if the system stays in this cache loop indefinitely, it never pulls the new dependencies it actually needs.
 *   **Function**: Releasing old patterns to free up capacity for the North Node's imports.
 
 **The Nodal Axis: Worked Example**
 
-> **North Node in Aries / South Node in Libra**: The system's pre-compiled defaults are all about consensus, diplomacy, and other-management (South Node in Libra). The cache is full of elegant compromise routines that run beautifully on autopilot. But the unregistered dependency is self-assertion (North Node in Aries)—the system needs to `IMPORT` the ability to act unilaterally, even at the risk of being disagreeable. The growth vector: *from "What do you think?" to "This is what I'm doing."*
+> **North Node in Aries / South Node in Libra**: The system's pre-compiled defaults are all about consensus, diplomacy, and managing other people (South Node in Libra). The cache is full of elegant compromise routines that run beautifully on autopilot. But the unregistered dependency is self-assertion (North Node in Aries). The system needs to `IMPORT` the ability to act unilaterally, even at the risk of being disagreeable. The growth vector: *from "What do you think?" to "This is what I'm doing."*
 >
 > **North Node in Capricorn / South Node in Cancer**: The defaults are emotional security, family-first processing, and private-namespace management (South Node in Cancer). The new dependency is public accountability, structural ambition, and building something that compiles in production (North Node in Capricorn). The growth vector: *from "I need to feel safe first" to "I need to build something that stands."*
 
-Operators are the functions. The Nodes are the one pair among them that points at the future: the South Node is the function you mount by reflex, and the North Node is, by definition, *the function that was never mounted.* Every other operator in this chapter can be overloaded. Only this one is missing on purpose—until you import it.
+Operators are the functions. The Nodes are the one pair among them that points at the future. The South Node is the function you mount by reflex. The North Node is, by definition, *the function that was never mounted.* Every other operator in this chapter can be overloaded. Only this one is missing on purpose, until you import it.
