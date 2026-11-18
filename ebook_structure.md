@@ -1,13 +1,15 @@
 # Archetypal Operating System: A Logical Approach to Astrological Self-Knowledge
 
 ## Introduction: The Code of Consciousness
+- **Epigraph**: *Astrology is quantized infinity.* The book's motto, unpacked in **Quantized Infinity** below.
 - **Start Here: One Line of Code**: Opening with a concrete worked example (Mars in Gemini square Saturn in Virgo) wrapped in a relatable developer scenario. This person recurs in Chapters 4 and 6.
 - **The Decoder Ring**: The universal grammar of a placement — Operator / Coordinate / Circuit — plus three additional parsed statements.
 - **What This Framework Is (and Isn't)**: Explicit epistemic framing — a cognitive reframing tool, not a cosmological truth claim.
 - **Beyond Belief**: Addressing the "I don't believe in astrology" response. Astrology as a symbolic language, not a belief system.
 - **The Platonic Problem**: Signs as Forms — why the system resists conventional scientific analysis.
-- **Chaos, Symmetry, and the Cusp of Rebirth**: The Pisces-Aries cusp as symmetry-breaking event (framed as structural metaphor) — why the Zodiac is a cycle, not a line.
-- **Archetypal Operating System**: The birth chart as Source Code — Parameters, Functions, Architecture. **The Architecture at a Glance**: the three glyph tables (signs, operators, aspects) that define every symbol in the book.
+- **Quantized Infinity**: The motto, read in two directions. *From continuous to countable*: like an analog-to-digital converter, astrology samples one minute and quantizes the sky into a finite alphabet; the quantization error (the part of you no symbol captures) is where choice lives. *A finite set with infinite depth*: each archetype can be counted but never exhausted; read through Lacan's fantasy frame, astrology is the finite frame that lets a living being experience an infinite reality without being overwhelmed by it.
+- **Chaos, Symmetry, and the Cusp of Rebirth**: The Pisces-Aries cusp as symmetry-breaking event (framed as structural metaphor) — why the Zodiac is a cycle, not a line. Pisces as the infinity, Aries as the moment it is quantized; a birth chart as one sampled minute.
+- **Archetypal Operating System**: The birth chart as Source Code — Parameters, Functions, Architecture. **The Architecture at a Glance**: the three glyph tables (signs, operators, aspects) that define every symbol in the book — the finite alphabet of the motto.
 - **The Framework**: Signs as Coordinates, Planets as Operators, Aspects as Circuits.
 - **How to Read This Book**: Developer-focused reading guide. No prior astrology knowledge required.
 - **Before You Start: Pull Your Own Source**: The three inputs (date, time, place), what each one fixes, and the two outputs to save from any chart calculator.
