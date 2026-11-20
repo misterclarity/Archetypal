@@ -87,7 +87,7 @@ Inspect that planet's placement (Sign) and its connections (Aspects); they show 
 
 Below is a simplified but complete reading that puts all the layers together. This is the kind of synthesis the whole book has been building toward.
 
-It is also the chart of the person you met in the first paragraph of this book, the one who could not get the sentence out in the meeting. You have already seen three pieces of their chart: Mars in Gemini square Saturn in Virgo (page one), Mercury in Sagittarius square Saturn in Virgo (Chapter 4), and the T-square those two turn out to form (Chapter 4 again). Here is the rest of the source.
+It is also the chart of the person you met in the Introduction, the one who could not get the sentence out in the meeting. You have already seen three pieces of their chart: Mars in Gemini square Saturn in Virgo (the Introduction), Mercury in Sagittarius square Saturn in Virgo (Chapter 4), and the T-square those two turn out to form (Chapter 4 again). Here is the rest of the source.
 
 **The Chart**: *Sun in Scorpio, Moon in Gemini, Leo Rising. Mars in Gemini opposite Mercury in Sagittarius, both square Saturn in Virgo (T-square, Saturn apex). Venus in Scorpio trine Neptune in Pisces. North Node in Aquarius / South Node in Leo.*
 
@@ -124,7 +124,7 @@ It is also the chart of the person you met in the first paragraph of this book, 
  │  ALL their contention through one validator.         │
  │  "Every impulse to act or speak hits the same        │
  │   inner editor, and the editor never sleeps."        │
- │  This is the meeting on page one AND the unshipped   │
+ │  This is the meeting scene AND the unshipped         │
  │  blog post: one architecture, not two bugs.          │
  │  Resolution: run the EMPTY LEG (Pisces). Suspend     │
  │  validation on purpose. Ship at 80%. The friction    │
@@ -168,9 +168,9 @@ It is also the chart of the person you met in the first paragraph of this book, 
  └──────────────────────────────────────────────────────┘
 ```
 
-**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal, and fused with the drive to act (Moon conjunct Mars in Gemini). The primary bottleneck is a T-square. Both the drive to act and the drive to speak are routed through one overworked validator (Saturn in Virgo at the apex). That is why this person is formidably precise and chronically unable to ship. It is also why the meeting on page one and the unfinished blog post were the same bug. The release valve is the empty leg, Pisces, and the chart has already found it once. Intimacy is the hot path (Venus trine Neptune in Pisces), the one domain where the validator is off. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
+**The Executive Summary**: *A system that presents as warm and commanding (Leo Rising) while running deep investigative analytics beneath the surface (Scorpio Sun). Emotional processing is fast and verbal, and fused with the drive to act (Moon conjunct Mars in Gemini). The primary bottleneck is a T-square. Both the drive to act and the drive to speak are routed through one overworked validator (Saturn in Virgo at the apex). That is why this person is formidably precise and chronically unable to ship. It is also why the meeting scene in the Introduction and the unfinished blog post were the same bug. The release valve is the empty leg, Pisces, and the chart has already found it once. Intimacy is the hot path (Venus trine Neptune in Pisces), the one domain where the validator is off. The life trajectory moves from personal stage presence (South Node in Leo) toward collective innovation (North Node in Aquarius).*
 
-Go back and reread the first page now. "You've tried 'just speak up.'" Of course that didn't work. It is an instruction to run Mars harder against a gate that was already handling two streams. The patch was never on the Mars side. It was the function that was never mounted: Pisces, on purpose, in the domains where this person has only ever run it by accident.
+Go back and reread the meeting scene in the Introduction now. "You've tried 'just speak up.'" Of course that didn't work. It is an instruction to run Mars harder against a gate that was already handling two streams. The patch was never on the Mars side. It was the function that was never mounted: Pisces, on purpose, in the domains where this person has only ever run it by accident.
 
 You are not running someone else's binary. You have the source. You have the build tools. The question is whether you will read the codebase before you start making changes.
 

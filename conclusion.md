@@ -103,7 +103,7 @@ Chapter 7 pointed the same framework at agent fleets. There the claims are measu
 
 If you want to build one *brain* rather than a fleet, Chapter 7's two-speed runtime ships as runnable code in the repository's `brain/` directory. A fast classifier (the Moon) sits in front of a slow deliberator (the Sun), and Saturn decides which one answers. Run it in mock mode before it costs anything.
 
-The through-line from Chapter 1 to Chapter 7 is a single sentence. Chapter 1 stated it in full: **every recurring failure is an overloaded function whose complement was never mounted.** The person on page one kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
+The through-line from Chapter 1 to Chapter 7 is a single sentence. Chapter 1 stated it in full: **every recurring failure is an overloaded function whose complement was never mounted.** The person in the Introduction's meeting scene kept being told to speak up—to run the overloaded function harder. The support fleet in Chapter 7 had its Auditor in the manifest and never ran it. Same finding, different substrate. Find the function that was never mounted. That is true of a fleet. It is true of you.
 
 ## `final_commit()`
 

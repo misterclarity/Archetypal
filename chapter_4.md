@@ -143,7 +143,7 @@ The connection module (Venus) fires fast and on its own (Aries). It starts attra
 
 **Extended Example — Mercury in Sagittarius Square Saturn in Virgo (The Developer Who Can't Ship a Blog Post)**:
 
-This is the person from the first page of this book. Same Saturn, same Virgo gate. In the opening scene, Mars (the drive to *speak*) could not clear the validator. Here it is Mercury, the drive to *write*. Two different operators, one gate. If you are paying attention, you already suspect this is one architecture, not two bugs. Hold that thought. It pays off in the T-square section below.
+This is the person from the meeting scene in the Introduction. Same Saturn, same Virgo gate. In that scene, Mars (the drive to *speak*) could not clear the validator. Here it is Mercury, the drive to *write*. Two different operators, one gate. If you are paying attention, you already suspect this is one architecture, not two bugs. Hold that thought. It pays off in the T-square section below.
 
 You know *exactly* what you want to say. You have a clear thesis about microservice architecture that you've been refining for months. You open a document and start writing. The ideas flow: big, sweeping, confident. *This* is the architecture post that will finally get traction.
 
@@ -206,7 +206,7 @@ Single aspects are two-node circuits. Charts also contain **patterns**: three or
 
 Two operators in Opposition, both Square a third. The third operator absorbs pressure from both sides.
 
-The person from the opening page comes back here, for the third time. On page one, Mars in Gemini was blocked by Saturn in Virgo. In the blog-post example above, Mercury in Sagittarius was blocked by Saturn in Virgo. Gemini and Sagittarius are opposite signs. So Mars and Mercury are *also* in Opposition to each other. That is one pattern, not two squares:
+The person from the Introduction's meeting scene comes back here, for the third time. In that scene, Mars in Gemini was blocked by Saturn in Virgo. In the blog-post example above, Mercury in Sagittarius was blocked by Saturn in Virgo. Gemini and Sagittarius are opposite signs. So Mars and Mercury are *also* in Opposition to each other. That is one pattern, not two squares:
 
 ```
         ♂ MARS (Gemini)
@@ -232,7 +232,7 @@ The person from the opening page comes back here, for the third time. On page on
    The geometry and the diagnostic agree.
 ```
 
-Read what that means for this person. The meeting scene on page one and the blog-post scene above were never separate problems. Every impulse to act (Mars) and every impulse to communicate (Mercury) is routed through a single overworked validator. That validator has become the most developed function in the whole system, because it has never done anything *but* handle two streams of pressure at once. That is why they are formidable at precision under load, and why they cannot stop checking.
+Read what that means for this person. The meeting scene in the Introduction and the blog-post scene above were never separate problems. Every impulse to act (Mars) and every impulse to communicate (Mercury) is routed through a single overworked validator. That validator has become the most developed function in the whole system, because it has never done anything *but* handle two streams of pressure at once. That is why they are formidable at precision under load, and why they cannot stop checking.
 
 The T-square is the highest-output configuration in the system, and the most exhausting. The apex operator becomes hyper-developed. The cost is that it cannot rest. The fix is almost never "do less." It is to run the empty leg on purpose. For this person that is Pisces: suspend validation deliberately, ship at eighty percent, treat some ambiguity as a feature. Chapter 2 said the same thing. Now you can see it in the geometry instead of taking it from a lookup table. In Chapter 6 you will read their whole chart and find that the empty leg is not quite empty. Where the pressure actually escapes turns out to be the best thing in the profile.
 
